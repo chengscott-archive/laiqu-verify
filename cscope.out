@@ -1,0 +1,10977 @@
+cscope 15 $HOME/work/host/laiqu -q 0000000461 0000069720
+	@acctManager/changePass.php
+
+1 ï»¿<?
+php
+ 
+»quœe_Úû
+('../common/checkAuthority.php'); ?>
+
+2 <
+html
+ 
+	gxmÊs
+="http://www.w3.org/1999/xhtml">
+
+3 <
+h—d
+>
+
+4 <
+t™Ë
+>éªŒè¯å¹³å°</title>
+
+5 <
+m‘a
+ 
+h‰p
+-
+equiv
+="CÚ‹Á-Ty³" 
+cÚ‹Á
+="text/html; charset=utf-8">
+
+7 <
+lšk
+ 
+h»f
+="../css/com_css.css" 
+»l
+="¡yËsh“t" 
+ty³
+="text/css" />
+
+8 <
+lšk
+ 
+h»f
+="css/·sswÜd_css.css" 
+»l
+="¡yËsh“t" 
+ty³
+="text/css" />
+
+10 <
+süt
+ 
+¤c
+="../js/jquery.min.js"></script>
+
+11 <
+süt
+ 
+¤c
+="js/changePass.js"></script>
+
+12 </
+h—d
+>
+
+13 <
+body
+>
+
+16 <
+div
+ 
+şass
+="maš" 
+id
+="main">
+
+20 <
+div
+ 
+şass
+="top_blank">
+
+21 </
+div
+>
+
+23 <
+div
+ 
+şass
+="top">
+
+24 <
+img
+ 
+¤c
+="../images/logo.jpg" />
+
+25 </
+div
+>
+
+27 <
+div
+ 
+şass
+="body">
+
+29 <
+div
+ 
+şass
+="body_l">
+
+30 <
+div
+ 
+şass
+="nav">
+
+31 <
+p
+ 
+şass
+="nav_title">å•† æˆ· ç®¡ ç†</p>
+
+32 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="../v”ifyCoupÚ/šdex.php">æ¶ˆ è´¹ ç™» è®°</a><
+br
+ />
+
+33 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="../¡©i¡ics/‹amLi¡.php">é¡¹ ç›® ç»Ÿ è®¡</a><
+br
+ />
+
+34 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="#">æ¶ˆ è´¹ è¯„ ä»·</a><
+br
+ />
+
+35 <
+div
+ 
+şass
+="nav_bg">
+
+36 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="javasüt:void(0);">ä¿® æ”¹ å¯† ç </a><
+br
+ />
+
+37 </
+div
+>
+
+38 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="../v”ifyLogš/logšOut.php">é€€ å‡º ç™» å½•</a><
+br
+ />
+
+39 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="#">å¸® åŠ©</a>
+
+40 </
+div
+>
+
+41 <
+div
+ 
+şass
+="serv">
+
+42 <
+div
+ 
+şass
+="tel" > </div>
+
+43 <
+a
+ 
+şass
+="online_qq"></a>
+
+44 </
+div
+>
+
+45 </
+div
+>
+
+47 <
+div
+ 
+şass
+="body_r fl">
+
+48 <
+p
+ 
+şass
+="title_r">>ä¿®æ”¹å¯†ç </p>
+
+49 <
+div
+ 
+şass
+="title_line"></div>
+
+50 <
+p
+ 
+şass
+="t_‹xt" 
+id
+="result_msg_area">é‡è¦æç¤ºï¼šé¦–æ¬¡ç™»å½•ä½¿ç”¨é»˜è®¤å¯†ç åï¼Œå»ºè®®æ‚¨ä¿®æ”¹å¯†ç ï¼Œå¹¶å¦¥å–„ä¿å­˜ã€‚</p>
+
+52 <
+div
+ 
+şass
+="password">
+
+53 <
+div
+ 
+şass
+="password_f ">
+
+54 <
+p
+ 
+şass
+="pw_text fl">åŸå¯†ç </p>
+
+55 <
+div
+ 
+şass
+="password_b fl">
+
+56 <
+šput
+ 
+şass
+="im_·sswÜd" 
+Çme
+="" 
+id
+="Üigš_·sswd" 
+v®ue
+="" 
+ty³
+='password'/>
+
+57 </
+div
+>
+
+59 <!-- <
+p
+ 
+şass
+="guide_‹xˆæ">å¯†ç ç”±6-16ä½åŠè§’å­—ï¼ˆå­—æ¯ã€æ•°å­—ã€ç¬¦å·ï¼‰ç¬¦ç»„æˆï¼Œ<
+br
+ />æ³¨æ„åŒºåˆ†å¤§å°å†™ã€‚</p> -->
+
+61 <
+p
+ 
+şass
+="”rÜ_‹xˆæ" 
+id
+='origin_msg_area'></p>
+
+64 </
+div
+>
+
+66 <
+div
+ 
+şass
+="password_f ">
+
+67 <
+p
+ 
+şass
+="pw_text fl">æ–°å¯†ç </p>
+
+68 <
+div
+ 
+şass
+="password_b fl">
+
+69 <
+šput
+ 
+şass
+="im_·sswÜd" 
+Çme
+="" 
+id
+="Ãw_·sswd" 
+v®ue
+="" 
+ty³
+='password'/>
+
+70 </
+div
+>
+
+71 <
+p
+ 
+şass
+="guide_‹xˆæ" 
+id
+='Ãw_msg_¬—'>å¯†ç ç”±6-18ä½ï¼ˆå­—æ¯ã€æ•°å­—ï¼‰ç»„æˆï¼Œ<
+br
+ />å¿…é¡»ä»¥å­—æ¯å¼€å¤´ã€‚</p>
+
+73 <!-- <
+p
+ 
+şass
+="error_text fl">å¯†ç ä¸ç¬¦åˆè¦æ±‚ã€‚</p> -->
+
+75 </
+div
+>
+
+77 <
+div
+ 
+şass
+="password_x ">
+
+78 <
+p
+ 
+şass
+="pw_text fl">ç¡®è®¤å¯†ç </p>
+
+79 <
+div
+ 
+şass
+="password_b fl">
+
+80 <
+šput
+ 
+şass
+="im_·sswÜd" 
+Çme
+="" 
+id
+="Ãw_·sswd_cÚfœm" 
+v®ue
+="" 
+ty³
+='password'/>
+
+81 </
+div
+>
+
+82 <!-- <
+p
+ 
+şass
+="guide_‹xˆæ">å¯†ç ç”±6-16ä½åŠè§’å­—ï¼ˆå­—æ¯ã€æ•°å­—ã€ç¬¦å·ï¼‰ç¬¦ç»„æˆï¼Œ<
+br
+ />æ³¨æ„åŒºåˆ†å¤§å°å†™ã€‚</p> -->
+
+84 <!-- <
+p
+ 
+şass
+="error_text fl">å¯†ç ä¸ç¬¦åˆè¦æ±‚ã€‚</p> -->
+
+85 <
+p
+ 
+şass
+="”rÜ_‹xˆæ" 
+id
+='new_confirm_msg_area'></p>
+
+86 </
+div
+>
+
+88 <
+div
+ 
+şass
+="password_f ">
+
+89 <
+a
+ 
+şass
+="§ve_bu‰Ú" 
+h»f
+="javasüt:void(0);" 
+id
+='do_change_btn'></a>
+
+92 </
+div
+>
+
+94 </
+div
+>
+
+95 </
+div
+>
+
+99 </
+div
+>
+
+101 <
+div
+ 
+şass
+="footer">
+
+102 <
+div
+ 
+şass
+="bottom_line ">
+
+103 </
+div
+>
+
+104 <
+p
+ 
+şass
+="footer_text">æ¥ è¶£ ç½‘ ç»œ ç§‘ æŠ€ æœ‰ é™ å…¬ å¸</p>
+
+105 </
+div
+>
+
+107 </
+div
+>
+
+119 </
+body
+>
+
+120 </
+html
+>
+
+	@acctManager/do_changePass.php
+
+1 <?
+php
+
+
+11 
+»quœe_Úû
+('../common/checkAuthority.php');
+
+12 
+»quœe_Úû
+('../common/utilities.php');
+
+13 
+»quœe_Úû
+('../module/Partner.php');
+
+16 
+funùiÚ
+ 
+	$ruÁimeE¼ÜHªdËr
+(
+$”ºo
+, 
+$”r¡r
+, 
+$”rfe
+, 
+$”¾še
+)
+
+19 
+$code
+ = 
+CommÚCodeMsg
+::
+SYSTEM_RUNTIME_ERROR
+;
+
+21 
+	`”rÜ_log
+(
+$”r¡r
+);
+
+22 
+	`d›
+(
+	`g’_»¥Ú£_jsÚ
+('ChªgePassCodeMsg', 
+$code
+));
+
+24 
+	}
+}
+
+25 
+funùiÚ
+ 
+	$exû±iÚHªdËr
+(
+$exû±iÚ
+)
+
+27 
+$code
+ = 
+$exû±iÚ
+->
+	`g‘Code
+();
+
+28 
+$v”ifyMsg
+ = 
+ChªgePassCodeMsg
+::
+	`g‘_mes§ge
+(
+$code
+);
+
+29 ià(
+	`em±y
+(
+$v”ifyMsg
+))
+
+31 
+$code
+ = 
+CommÚCodeMsg
+::
+UNCAUGHT_FATAL_ERROR
+;
+
+32 
+$”r¡r
+ = 
+$exû±iÚ
+->
+	`g‘Mes§ge
+();
+
+34 
+	`”rÜ_log
+(
+$”r¡r
+);
+
+36 
+	`d›
+(
+	`g’_»¥Ú£_jsÚ
+('ChªgePassCodeMsg', 
+$code
+));
+
+37 
+	}
+}
+
+38 
+£t_”rÜ_hªdËr
+('ruÁimeE¼ÜHªdËr', 
+E_ERROR
+);
+
+39 
+£t_exû±iÚ_hªdËr
+('exceptionHandler');
+
+42 
+	g$·¹ÃrId
+ = 
+$_SESSION
+['partnerId'];
+
+44 
+	g$·¹Ãr
+ = 
+Ãw
+ 
+P¬Š”
+();
+
+46 
+	g$ÜigšPasswd
+ = 
+$_POST
+['originPasswd'];
+
+47 
+	g$ÃwPasswd
+ = 
+$_POST
+['newPasswd'];
+
+49 ià(
+	gLQ_OK
+ ==ğ
+$·¹Ãr
+->
+chªgePass
+(
+$·¹ÃrId
+, 
+$ÜigšPasswd
+, 
+$ÃwPasswd
+))
+
+50 
+	g$»¥Ú£Code
+ = 
+ChªgePassCodeMsg
+::
+CHANGE_PASS_SUCCESS
+;
+
+52 
+	g$»¥Ú£Code
+ = 
+ChªgePassCodeMsg
+::
+CHANGE_PASS_FAILED
+;
+
+53 
+echo
+ 
+g’_»¥Ú£_jsÚ
+('ChªgePassCodeMsg', 
+$»¥Ú£Code
+);
+
+	@common/CodeMessages.php
+
+1 <?
+php
+
+
+12 şas 
+	cCommÚCodeMsg
+
+
+16 cÚ¡ 
+	mSYSTEM_RUNTIME_ERROR
+ = 20000;
+
+17 cÚ¡ 
+	mUNCAUGHT_FATAL_ERROR
+ = 20001;
+
+18 cÚ¡ 
+	mINVALID_ARGUMENT_ERROR
+ = 20002;
+
+19 cÚ¡ 
+	mUNKNOWN_EXCEPTION
+ = 20003;
+
+20 cÚ¡ 
+	mCODEMSG_CLASS_NOT_EXIST
+ = 20004;
+
+21 cÚ¡ 
+	mMYSQL_CONNECT_ERROR
+ = 20005;
+
+22 cÚ¡ 
+	mMYSQL_SELECT_DB_ERROR
+ = 20006;
+
+25 
+´iv©e
+ 
+	m$_codeMes§ges
+ = 
+¬¿y
+ (
+
+26 
+£lf
+::
+SYSTEM_RUNTIME_ERROR
+ => "ç³»ç»Ÿè¿è¡Œæ—¶é”™è¯¯",
+
+27 
+£lf
+::
+UNCAUGHT_FATAL_ERROR
+ => "æœªæ•æ‰çš„è‡´å‘½é”™è¯¯",
+
+28 
+£lf
+::
+INVALID_ARGUMENT_ERROR
+ => "æ— æ•ˆçš„å‚æ•°",
+
+29 
+£lf
+::
+UNKNOWN_EXCEPTION
+ => "æœªçŸ¥å¼‚å¸¸",
+
+30 
+£lf
+::
+CODEMSG_CLASS_NOT_EXIST
+ => "é”™è¯¯ä»£ç ä¿¡æ¯ç±»ä¸å­˜åœ¨",
+
+31 
+£lf
+::
+MYSQL_CONNECT_ERROR
+ => "æ•°æ®åº“è¿æ¥é”™è¯¯",
+
+32 
+£lf
+::
+MYSQL_SELECT_DB_ERROR
+ => "æ•°æ®åº“é€‰æ‹©é”™è¯¯"
+
+44 
+public
+ 
+funùiÚ
+ 
+	$g‘_mes§ge
+(
+$code
+ = 
+nuÎ
+)
+
+46 ià(
+$code
+ ==ğ
+nuÎ
+)
+
+47  
+£lf
+::
+$_codeMes§ges
+;
+
+49  
+	`is£t
+(
+£lf
+::
+$_codeMes§ges
+[
+$code
+]è? s–f::$_codeMes§ges[$code] : 
+nuÎ
+;
+
+51 
+	}
+}
+
+53 şas 
+	cV”ifyCoupÚCodeMsg
+
+
+57 cÚ¡ 
+	mVERIFY_COUPON_SUCCESS
+ = 21000;
+
+58 cÚ¡ 
+	mVERIFY_COUPON_FAIL
+ = 210001;
+
+60 cÚ¡ 
+	mUNKNOWN_PLATFORM_ERROR
+ = 21100;
+
+61 cÚ¡ 
+	mTRANSFER_REQUEST_PARAM_ERROR
+ = 21102;
+
+62 cÚ¡ 
+	mREQUEST_EXCEPTION
+ = 21103;
+
+63 cÚ¡ 
+	mPARSE_RESPONSE_EXCEPTION
+ = 21104;
+
+64 cÚ¡ 
+	mPARSE_CONFIG_FILE_EXCEPTION
+ = 21105;
+
+65 cÚ¡ 
+	mUNKNOWN_EXCEPTION
+ = 21106;
+
+66 cÚ¡ 
+	mMARK_COUPON_CONSUMED_ERROR
+ = 21107;
+
+67 cÚ¡ 
+	mINVALID_COUPONID_ARG_ERROR
+ = 21108;
+
+68 cÚ¡ 
+	mINVALID_COUPONPWD_ARG_ERROR
+ = 21109;
+
+72 
+´iv©e
+ 
+	m$_codeMes§ges
+ = 
+¬¿y
+ (
+
+73 
+£lf
+::
+VERIFY_COUPON_SUCCESS
+ => "éªŒè¯æˆåŠŸ",
+
+74 
+£lf
+::
+VERIFY_COUPON_FAIL
+ => "éªŒè¯å¤±è´¥",
+
+75 
+£lf
+::
+UNKNOWN_PLATFORM_ERROR
+ => "æœªçŸ¥å¹³å°é”™è¯¯",
+
+76 
+£lf
+::
+TRANSFER_REQUEST_PARAM_ERROR
+ => "å°†å®¢æˆ·ç«¯è¾“å…¥è½¬ä¸ºAPIè¯·æ±‚å‚æ•°é”™è¯¯",
+
+77 
+£lf
+::
+REQUEST_EXCEPTION
+ => "æ¥å£éªŒè¯APIå¼‚å¸¸",
+
+78 
+£lf
+::
+PARSE_RESPONSE_EXCEPTION
+ => "è§£ææ¥å£è¿”å›å¼‚å¸¸",
+
+79 
+£lf
+::
+PARSE_CONFIG_FILE_EXCEPTION
+ => "è§£æå¹³å°æ¥å£é…ç½®æ–‡ä»¶å¼‚å¸¸",
+
+80 
+£lf
+::
+UNKNOWN_EXCEPTION
+ => "æœªçŸ¥å¼‚å¸¸",
+
+81 
+£lf
+::
+MARK_COUPON_CONSUMED_ERROR
+ => "æ ‡è®°å›¢è´­åˆ¸å·²æ¶ˆè´¹é”™è¯¯",
+
+82 
+£lf
+::
+INVALID_COUPONID_ARG_ERROR
+ => "å›¢è´­åˆ¸IDå‚æ•°æ— æ•ˆ",
+
+83 
+£lf
+::
+INVALID_COUPONPWD_ARG_ERROR
+ => "å›¢è´­åˆ¸å¯†ç å‚æ•°æ— æ•ˆ"
+
+95 
+public
+ 
+funùiÚ
+ 
+	$g‘_mes§ge
+(
+$code
+ = 
+nuÎ
+)
+
+97 ià(
+$code
+ ==ğ
+nuÎ
+)
+
+98  
+£lf
+::
+$_codeMes§ges
+;
+
+100 
+$msg
+ = 
+	`is£t
+(
+£lf
+::
+$_codeMes§ges
+[
+$code
+]) ? self::$_codeMessages[$code] : "";
+
+101 
+$msg
+ = $msg ==ğ""? 
+CommÚCodeMsg
+::
+	`g‘_mes§ge
+(
+$code
+) : $msg;
+
+102  
+$msg
+;
+
+104 
+	}
+}
+
+106 şas 
+	cV”ifyLogšCodeMsg
+
+
+110 cÚ¡ 
+	mVERIFY_LOGIN_SUCCESS
+ = 22000;
+
+111 cÚ¡ 
+	mVERIFY_LOGIN_FAIL
+ = 22001;
+
+112 cÚ¡ 
+	mMYSQL_CONNECT_ERROR
+ = 22100;
+
+113 cÚ¡ 
+	mMYSQL_SELECT_DB_ERROR
+ = 22101;
+
+114 cÚ¡ 
+	mINVALID_NAME_PASS
+ = 22102;
+
+115 cÚ¡ 
+	mERROR_NAME_PASS
+ = 22103;
+
+118 
+´iv©e
+ 
+	m$_codeMes§ges
+ = 
+¬¿y
+ (
+
+119 
+£lf
+::
+VERIFY_LOGIN_SUCCESS
+ => "ç™»é™†éªŒè¯æˆåŠŸ",
+
+120 
+£lf
+::
+VERIFY_LOGIN_FAIL
+ => "ç™»é™†éªŒè¯å¤±è´¥",
+
+121 
+£lf
+::
+MYSQL_CONNECT_ERROR
+ => "å»ºç«‹æ•°æ®åº“è¿æ¥å¤±è´¥",
+
+122 
+£lf
+::
+MYSQL_SELECT_DB_ERROR
+ => "é€‰æ‹©æ•°æ®åº“é”™è¯¯",
+
+123 
+£lf
+::
+INVALID_NAME_PASS
+ => "æ— æ•ˆçš„ç”¨æˆ·åå’Œå¯†ç ",
+
+124 
+£lf
+::
+ERROR_NAME_PASS
+ => "é”™è¯¯çš„ç”¨æˆ·åå’Œå¯†ç "
+
+136 
+public
+ 
+funùiÚ
+ 
+	$g‘_mes§ge
+(
+$code
+ = 
+nuÎ
+)
+
+138 ià(
+$code
+ ==ğ
+nuÎ
+)
+
+139  
+£lf
+::
+$_codeMes§ges
+;
+
+141 
+$msg
+ = 
+	`is£t
+(
+£lf
+::
+$_codeMes§ges
+[
+$code
+]) ? self::$_codeMessages[$code] : "";
+
+142 
+$msg
+ = $msg ==ğ""? 
+CommÚCodeMsg
+::
+	`g‘_mes§ge
+(
+$code
+) : $msg;
+
+143  
+$msg
+;
+
+145 
+	}
+}
+
+147 şas 
+	cChªgePassCodeMsg
+
+
+151 cÚ¡ 
+	mCHANGE_PASS_SUCCESS
+ = 23000;
+
+152 cÚ¡ 
+	mORIGIN_PASS_NOT_MATCH
+ = 23001;
+
+153 cÚ¡ 
+	mNEW_PASS_NOT_ALLOWED_ERROR
+ = 23002;
+
+154 cÚ¡ 
+	mCHANGE_PASS_FAILED
+ = 23003;
+
+157 
+´iv©e
+ 
+	m$_codeMes§ges
+ = 
+¬¿y
+ (
+
+158 
+£lf
+::
+CHANGE_PASS_SUCCESS
+ => "æ›´æ”¹å¯†ç æˆåŠŸ",
+
+159 
+£lf
+::
+ORIGIN_PASS_NOT_MATCH
+ => "åŸå§‹å¯†ç ä¸è¾“å…¥å¯†ç ä¸ä¸€è‡´",
+
+160 
+£lf
+::
+NEW_PASS_NOT_ALLOWED_ERROR
+ => "æ–°å¯†ç ä¸ç¬¦åˆè¦æ±‚",
+
+161 
+£lf
+::
+CHANGE_PASS_FAILED
+ => "æ›´æ–°å¯†ç å¤±è´¥"
+
+173 
+public
+ 
+funùiÚ
+ 
+	$g‘_mes§ge
+(
+$code
+ = 
+nuÎ
+)
+
+175 ià(
+$code
+ ==ğ
+nuÎ
+)
+
+176  
+£lf
+::
+$_codeMes§ges
+;
+
+178 
+$msg
+ = 
+	`is£t
+(
+£lf
+::
+$_codeMes§ges
+[
+$code
+]) ? self::$_codeMessages[$code] : "";
+
+179 
+$msg
+ = $msg ==ğ""? 
+CommÚCodeMsg
+::
+	`g‘_mes§ge
+(
+$code
+) : $msg;
+
+180  
+$msg
+;
+
+182 
+	}
+}
+
+	@common/Exception.php
+
+1 <?
+php
+
+
+11 şas 
+	cV”ifyCoupÚ_Exû±iÚ
+ 
+ex‹nds
+ 
+	mExû±iÚ
+
+
+27 
+public
+ 
+funùiÚ
+ 
+	$__cÚ¡ruù
+(
+$mes§ge
+ = 
+nuÎ
+, 
+$code
+ =‚ull)
+
+29 
+·»Á
+::
+	`__cÚ¡ruù
+(
+$mes§ge
+, 
+$code
+);
+
+31 
+	}
+}
+
+36 şas 
+	cV”ifyCoupÚ_Reque¡Exû±iÚ
+ 
+ex‹nds
+ 
+	mV”ifyCoupÚ_Exû±iÚ
+ {};
+
+41 şas 
+	cV”ifyCoupÚ_P¬£Re¥Ú£Exû±iÚ
+ 
+ex‹nds
+ 
+	mV”ifyCoupÚ_Exû±iÚ
+ {};
+
+46 şas 
+	cV”ifyCoupÚ_P¬£CÚfigFeExû±iÚ
+ 
+ex‹nds
+ 
+	mV”ifyCoupÚ_Exû±iÚ
+ {};
+
+	@common/RESTclient.php
+
+1 <?
+php
+
+
+3 
+	g»quœe_Úû
+ "HTTP/Request2.php";
+
+5 şas 
+	cRESTCl›Á
+
+
+9 
+´iv©e
+ 
+	m$u£r_Çme
+ = "";
+
+10 
+´iv©e
+ 
+	m$·sswÜd
+ = "";
+
+11 
+´iv©e
+ 
+	m$»¥Ú£
+ = "";
+
+12 
+´iv©e
+ 
+	m$»¥Ú£Body
+ = "";
+
+13 
+´iv©e
+ 
+	m$»q
+ = 
+nuÎ
+;
+
+14 
+´iv©e
+ 
+	m$cu¼_u¾
+ = 
+nuÎ
+;
+
+16 
+public
+ 
+funùiÚ
+ 
+__cÚ¡ruù
+(
+$u¾
+ = "", 
+$u£r_Çme
+ = "", 
+$·sswÜd
+ = "") {
+
+18 
+$this
+->
+u£r_Çme
+ = 
+$u£r_Çme
+;
+
+19 
+	m$this
+->
+	m·sswÜd
+ = 
+$·sswÜd
+;
+
+20 ià(
+	m$u¾
+ != "") {
+
+21 
+$this
+->
+ü—‹Reque¡
+(
+$u¾
+, "GET");
+
+22 
+	m$this
+->
+£ndReque¡
+();
+
+24  
+	mŒue
+;
+
+27 
+public
+ 
+funùiÚ
+ 
+ü—‹Reque¡
+(
+$u¾
+, 
+$m‘hod
+ = 'GET', 
+$¬r
+ = 
+nuÎ
+) {
+
+29 
+$this
+->
+»q
+ =& 
+Ãw
+ 
+HTTP_Reque¡2
+(
+$u¾
+);
+
+30 
+	g$this
+->
+	gcu¼_u¾
+ = 
+$this
+->
+»q
+->
+g‘U¾
+();
+
+31 ià(
+	g$this
+->
+	gu£r_Çme
+ !ğ"" && 
+$this
+->
+·sswÜd
+ != "") {
+
+32 
+$this
+->
+»q
+->
+£tAuth
+($this->
+u£r_Çme
+, $this->
+·sswÜd
+);
+
+35 
+	g$m‘hod
+) {
+
+37 
+$this
+->
+»q
+->
+£tM‘hod
+(
+HTTP_Reque¡2
+::
+METHOD_GET
+);
+
+40 
+$this
+->
+»q
+->
+£tM‘hod
+(
+HTTP_Reque¡2
+::
+METHOD_POST
+);
+
+41 
+	g$this
+->
+addPo¡P¬am‘”
+(
+$¬r
+);
+
+44 
+$this
+->
+»q
+->
+£tM‘hod
+(
+HTTP_Reque¡2
+::
+METHOD_PUT
+);
+
+48 
+$this
+->
+»q
+->
+£tM‘hod
+(
+HTTP_Reque¡2
+::
+METHOD_DELETE
+);
+
+54 
+´iv©e
+ 
+funùiÚ
+ 
+	$addPo¡P¬am‘”
+(
+$¬r
+) {
+
+55 ià(
+$¬r
+ !ğ
+nuÎ
+) {
+
+56 
+$this
+->
+»q
+->
+	`addPo¡P¬am‘”
+(
+$¬r
+);
+
+58 
+	}
+}
+
+60 
+public
+ 
+funùiÚ
+ 
+	$£ndReque¡
+() {
+
+61 
+$this
+->
+»¥Ú£
+ = $this->
+»q
+->
+	`£nd
+();
+
+67 
+$this
+->
+»¥Ú£Body
+ = $this->
+»¥Ú£
+->
+	`g‘Body
+();
+
+68 
+	}
+}
+
+70 
+public
+ 
+funùiÚ
+ 
+	$g‘Re¥Ú£
+() {
+
+71  
+$this
+->
+»¥Ú£Body
+;
+
+72 
+	}
+}
+
+74 
+public
+ 
+funùiÚ
+ 
+	$g‘U¾
+() {
+
+75  
+$this
+->
+cu¼_u¾
+;
+
+76 
+	}
+}
+
+78 
+public
+ 
+funùiÚ
+ 
+	$£tU¾
+(
+$u¾
+) {
+
+79 ià(!
+$this
+->
+»q
+)
+
+80  
+çl£
+;
+
+81 
+$this
+->
+»q
+->
+	`£tU¾
+(
+$u¾
+);
+
+82 
+	}
+}
+
+84 
+public
+ 
+funùiÚ
+ 
+	$£tH—d”
+(
+$h—d”
+)
+
+86 if(
+$this
+->
+»q
+)
+
+87 
+$this
+->
+»q
+->
+	`£tH—d”
+(
+$h—d”
+);
+
+88 
+	}
+}
+
+	@common/checkAuthority.php
+
+1 <?
+php
+
+
+11 
+»quœe_Úû
+('common.php');
+
+13 
+defše
+('WEBROOT','http://192.168.137.109:8888/laiqu');
+
+15 ià(!
+	$is_·¹Ãr_logš
+())
+
+16 
+	`»dœeù
+(
+WEBROOT
+.'/verifyLogin/login.html');
+
+	@common/class/Database.php
+
+1 <?
+php
+
+
+11 
+»quœe_Úû
+('../../common/CodeMessages.php');
+
+12 
+»quœe_Úû
+('../../common/Exception.php');
+
+14 şas 
+	cMyTabË
+
+
+17 cÚ¡ 
+	mDBHOST
+ = 'localhost';
+
+18 cÚ¡ 
+	mDBUSER
+ = 'root';
+
+19 cÚ¡ 
+	mDBPASS
+ = 'ghz86377328';
+
+20 cÚ¡ 
+	mDBDATABASE
+ = 'lq_verify';
+
+22 
+´Ùeùed
+ 
+	m$_dbcÚn
+ = 
+nuÎ
+;
+
+29 
+public
+ 
+funùiÚ
+ 
+	$__cÚ¡ruù
+()
+
+31 
+$this
+->
+_dbcÚn
+ = 
+	`mysql_cÚÃù
+(
+£lf
+::
+DBHOST
+, s–f::
+DBUSER
+, s–f::
+DBPASS
+);
+
+32 ià(!
+$this
+->
+_dbcÚn
+)
+
+34 
+throw
+ 
+Ãw
+ 
+	`Exû±iÚ
+(
+
+35 
+V”ifyLogšCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyLogšCodeMsg::
+MYSQL_CONNECT_ERROR
+),
+
+36 
+V”ifyLogšCodeMsg
+::
+MYSQL_CONNECT_ERROR
+);
+
+38 ià(!
+	`mysql_£Ëù_db
+(
+£lf
+::
+DBDATABASE
+, 
+$this
+->
+_dbcÚn
+))
+
+40 
+throw
+ 
+Ãw
+ 
+	`Exû±iÚ
+(
+
+41 
+V”ifyLogšCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyLogšCodeMsg::
+MYSQL_SELECT_DB_ERROR
+),
+
+42 
+V”ifyLogšCodeMsg
+::
+MYSQL_SELECT_DB_ERROR
+);
+
+46 
+	}
+}
+
+	@common/class/MyTable.php
+
+1 <?
+php
+
+
+11 
+»quœe_Úû
+('../common/CodeMessages.php');
+
+12 
+»quœe_Úû
+('../common/Exception.php');
+
+14 şas 
+	cMyTabË
+
+
+17 cÚ¡ 
+	mDBHOST
+ = 'localhost';
+
+18 cÚ¡ 
+	mDBUSER
+ = 'root';
+
+19 cÚ¡ 
+	mDBPASS
+ = 'ghz86377328';
+
+20 cÚ¡ 
+	mDBDATABASE
+ = 'lq_verify';
+
+22 
+´Ùeùed
+ 
+	m$_dbcÚn
+ = 
+nuÎ
+;
+
+29 
+public
+ 
+funùiÚ
+ 
+	$__cÚ¡ruù
+()
+
+31 
+$this
+->
+	`assu»_dbCÚÃùiÚ
+();
+
+34 
+´Ùeùed
+ 
+funùiÚ
+ 
+	$assu»_dbCÚÃùiÚ
+()
+
+36 
+$this
+->
+_dbcÚn
+ = 
+	`mysql_cÚÃù
+(
+£lf
+::
+DBHOST
+, s–f::
+DBUSER
+, s–f::
+DBPASS
+);
+
+37 ià(!
+$this
+->
+_dbcÚn
+)
+
+39 
+throw
+ 
+Ãw
+ 
+	`Exû±iÚ
+(
+
+40 
+V”ifyLogšCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyLogšCodeMsg::
+MYSQL_CONNECT_ERROR
+),
+
+41 
+V”ifyLogšCodeMsg
+::
+MYSQL_CONNECT_ERROR
+);
+
+43 ià(!
+	`mysql_£Ëù_db
+(
+£lf
+::
+DBDATABASE
+, 
+$this
+->
+_dbcÚn
+))
+
+45 
+throw
+ 
+Ãw
+ 
+	`Exû±iÚ
+(
+
+46 
+V”ifyLogšCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyLogšCodeMsg::
+MYSQL_SELECT_DB_ERROR
+),
+
+47 
+V”ifyLogšCodeMsg
+::
+MYSQL_SELECT_DB_ERROR
+);
+
+49 
+	`mysql_qu”y
+("SET CHARACTER SET 'utf8'", 
+$this
+->
+_dbcÚn
+);
+
+50 
+	}
+}
+
+52 
+´Ùeùed
+ 
+funùiÚ
+ 
+	$g‘_dbTabËName
+(
+$bËName
+)
+
+54 ià(
+$bËName
+ !== "")
+
+55 
+$bËName
+ = 
+£lf
+::
+DBDATABASE
+.".".$tableName;
+
+57  
+$bËName
+;
+
+58 
+	}
+}
+
+	@common/common.php
+
+1 <?
+php
+
+
+2 
+»quœe_Úû
+('constants.php');
+
+3 
+»quœe_Úû
+('utilities.php');
+
+7 
+funùiÚ
+ 
+	$»dœeù
+(
+$u¾
+) {
+
+8 if(!
+	`em±y
+(
+$u¾
+))
+
+10 
+	`h—d”
+("Location: {$url}");
+
+12 
+ex™
+;
+
+13 
+	}
+}
+
+18 
+funùiÚ
+ 
+	$is_·¹Ãr_logš
+()
+
+20 
+	`£ssiÚ_¡¬t
+();
+
+21 ià(
+	`is£t
+(
+$_SESSION
+['partnerId']))
+
+22  (
+$_SESSION
+['partnerId'] > 0);
+
+23  
+çl£
+;
+
+24 
+	}
+}
+
+33 
+funùiÚ
+ 
+	$üy±_·ss
+(
+$·ss
+)
+
+35 ià(
+	`em±y
+(
+$·ss
+))
+
+36  
+çl£
+;
+
+37 
+$§É
+ = 
+	`sub¡r
+(
+	`md5
+(
+$·ss
+), 0, 2);
+
+38  
+	`md5
+(
+	`üy±
+(
+$·ss
+, 
+$§É
+));
+
+39 
+	}
+}
+
+51 
+funùiÚ
+ 
+	$g‘_·geNavHtml
+(
+$·ge
+, 
+$tÙ®Pages
+, 
+$u¾P»fix
+, 
+$showPagesNums
+ = 11)
+
+53 ià(
+$tÙ®Pages
+ <ğ0 || 
+$·ge
+ <= 0)
+
+55 ià(
+$showPagesNums
+ <3 || $showPagesNums%2 === 0)
+
+57 
+$·geNavHtml
+ = "";
+
+59 
+$sideShowPages
+ = 
+	`æoÜ
+(
+$showPagesNums
+/2);
+
+60 
+$¡¬t
+ = (
+$·ge
+ - 
+$sideShowPages
+) > 1? $page-$sideShowPages : 1;
+
+61 
+$’d
+ = (
+$·ge
+ + 
+$sideShowPages
+è< 
+$tÙ®Pages
+? $page+$sideShowPages : $totalPages;
+
+63 
+$i
+ = 
+$¡¬t
+; $i<=
+$’d
+; $i++)
+
+65 
+$—chPageU¾
+ = 
+$u¾P»fix
+."·ge=".
+$i
+;
+
+66 
+$·geNavHtml
+ .= "<a href='$eachPageUrl' id='page_num_$i'>$i</a>&nbsp";
+
+68  
+$·geNavHtml
+;
+
+69 
+	}
+}
+
+	@common/constants.php
+
+1 <?
+	gphp
+
+
+5 
+defše
+('LQ_OK', 0);
+
+6 
+defše
+('LQ_FAIL', 1);
+
+	@common/include/errorCatcher.php
+
+1 <?
+php
+
+
+12 
+funùiÚ
+ 
+	$ruÁimeE¼ÜHªdËr
+(
+$”ºo
+, 
+$”r¡r
+, 
+$”rfe
+, 
+$”¾še
+)
+
+15 
+	`”rÜ_log
+(
+$”r¡r
+);
+
+16 
+ex™
+;
+
+17 
+	}
+}
+
+18 
+funùiÚ
+ 
+	$exû±iÚHªdËr
+(
+$exû±iÚ
+)
+
+20 
+$”r¡r
+ = 
+$exû±iÚ
+->
+	`g‘Mes§ge
+();
+
+22 
+	`”rÜ_log
+(
+$”r¡r
+);
+
+23 
+ex™
+;
+
+24 
+	}
+}
+
+25 
+£t_”rÜ_hªdËr
+('ruÁimeE¼ÜHªdËr', 
+E_ERROR
+);
+
+26 
+£t_exû±iÚ_hªdËr
+('exceptionHandler');
+
+	@common/utilities.php
+
+1 <?
+php
+
+
+11 
+»quœe_Úû
+('CodeMessages.php');
+
+24 
+funùiÚ
+ 
+g’_»¥Ú£_jsÚ
+(
+$codeMsg
+, 
+$»suÉ
+, 
+$msg
+ = "")
+
+27 ià(
+em±y
+(
+$codeMsg
+è|| !
+şass_exi¡s
+($codeMsg))
+
+29 
+$code
+ = 
+CommÚCodeMsg
+::
+CODEMSG_CLASS_NOT_EXIST
+;
+
+30 
+	g$msg
+ = 
+CommÚCodeMsg
+::
+g‘_mes§ge
+(
+$code
+);
+
+32 
+	g$code
+ = 
+$»suÉ
+;
+
+33 ià(
+	g$msg
+ == "")
+
+36 
+$codeMsgIn¡ªû
+ = 
+Ãw
+ 
+$codeMsg
+();
+
+37 
+	g$msg
+ = 
+$codeMsgIn¡ªû
+->
+g‘_mes§ge
+(
+$code
+);
+
+40 ià(
+em±y
+(
+$msg
+))
+
+42 
+	g$code
+ = 
+CommÚCodeMsg
+::
+INVALID_ARGUMENT_ERROR
+;
+
+43 
+	g$msg
+ = 
+CommÚCodeMsg
+::
+g‘_mes§ge
+(
+$code
+);
+
+48 
+	g$»¥Ú£
+['code'] = 
+$code
+;
+
+49 
+	g$»¥Ú£
+['msg'] = 
+$msg
+;
+
+50 
+	g$»¥Ú£
+['d©eTime'] = 
+d©e
+("Y-m-d, h:i:s");
+
+52  
+jsÚ_’code
+(
+$»¥Ú£
+);
+
+63 
+funùiÚ
+ 
+	$ÿl_tÙ®Pages
+(
+$rowNums
+, 
+$rowNumsEachPage
+)
+
+65 ià(
+$rowNums
+ > 0)
+
+67 
+$tÙ®Pages
+ = 
+	`û
+(
+$rowNums
+/
+$rowNumsEachPage
+);
+
+69 
+$tÙ®Pages
+ = 0;
+
+71  
+$tÙ®Pages
+;
+
+72 
+	}
+}
+
+	@module/Coupon.php
+
+1 <?
+php
+
+
+11 
+»quœe_Úû
+('../common/class/MyTable.php');
+
+12 
+»quœe_Úû
+('../common/Exception.php');
+
+13 
+»quœe_Úû
+('../common/CodeMessages.php');
+
+15 şas 
+	cCoupÚ
+ 
+ex‹nds
+ 
+	mMyTabË
+
+
+18 cÚ¡ 
+	mCOUPON_TABLE
+ = 'coupon';
+
+19 cÚ¡ 
+	mTEAM_TABLE
+ = 'team';
+
+20 cÚ¡ 
+	mORDER_TABLE
+ = 'order';
+
+21 cÚ¡ 
+	mUSER_TABLE
+ = 'user';
+
+29 
+public
+ 
+funùiÚ
+ 
+	$__cÚ¡ruù
+()
+
+31 
+·»Á
+::
+	`__cÚ¡ruù
+();
+
+43 
+public
+ 
+funùiÚ
+ 
+	$g‘_cÚsumedCoupÚs
+(
+$£¬chF›lds
+, 
+$¡¬t
+, 
+$off£t
+)
+
+45 
+	`fÜ—ch
+ (
+$£¬chF›lds
+ 
+as
+ 
+$f›ldKey
+ => 
+$f›ldV®ue
+)
+
+47 
+$$f›ldKey
+ = 
+	`is_¡ršg
+(
+$f›ldV®ue
+)?
+	`mysql_»®_esÿ³_¡ršg
+($fieldValue): $fieldValue;
+
+50 ià(
+$¡¬t
+ < 0) $start = 0;
+
+51 ià(
+$off£t
+ <= 0) $offset = 6;
+
+53 
+$£Ëù
+ = "select c.order_id‡s orderId,.title‡seamTitle, c.id‡s couponId,";
+
+54 
+$£Ëù
+ .= "u.username‡s username, u.email‡sƒmail, o.subbranch‡s subbranch, c.consume_time‡s consumeTime";
+
+55 
+$£Ëù
+ .ğ' from '.
+£lf
+::
+DBDATABASE
+.'.'.£lf::
+COUPON_TABLE
+.' c,'.£lf::DBDATABASE.'.'.£lf::
+TEAM_TABLE
+.','.£lf::DBDATABASE.'.'.£lf::
+USER_TABLE
+.' u,'.£lf::DBDATABASE.'.'.£lf::
+ORDER_TABLE
+.' o ';
+
+56 
+$sql
+ = 
+$£Ëù
+." WHERE c.consume='Y' ";
+
+57 ià(
+	`couÁ
+(
+£¬chF–ds
+) > 0)
+
+59 ià(
+$·¹ÃrId
+ > 0)
+
+60 
+$sql
+ .= " AND c.partner_id=$partnerId";
+
+61 ià(
+$‹amId
+ > 0)
+
+62 
+$sql
+ .= " AND c.team_id=$teamId ";
+
+63 ià(!
+	`em±y
+(
+$¶©fÜm
+))
+
+64 
+$sql
+ .= " AND c.platform_key='$platform'";
+
+65 ià(
+$Üd”Id
+ > 0)
+
+66 
+$sql
+ .= " AND c.order_id=$orderId";
+
+67 ià(
+$coupÚId
+ > 0)
+
+68 
+$sql
+ .= " AND c.id=$couponId";
+
+69 ià(!
+	`em±y
+(
+$u£ºame
+))
+
+70 
+$sql
+ .= " AND u.username='$username'";
+
+72 
+$sql
+ .= " AND.id=c.team_id AND o.id=c.order_id AND u.id=c.user_id";
+
+73 
+$sql
+ .= " AND.id=c.team_id AND o.id=c.order_id AND u.id=c.user_id";
+
+75 
+$sql
+ .= " order by c.consume_time desc";
+
+76 
+$sql
+ .= " LIMIT $start,$offset";
+
+78 
+$»suÉ
+ = 
+	`mysql_qu”y
+(
+$sql
+);
+
+79 ià(
+	`mysql_num_rows
+(
+$»suÉ
+) < 1)
+
+80  
+	`¬¿y
+();
+
+82  
+$this
+->
+	`·r£_coupÚLi¡
+(
+$»suÉ
+);
+
+83 
+	}
+}
+
+92 
+public
+ 
+funùiÚ
+ 
+	$g‘_cÚsumedCoupÚNums
+(
+$£¬chF›lds
+)
+
+94 
+$this
+->
+	`assu»_dbCÚÃùiÚ
+();
+
+95 
+	`fÜ—ch
+ (
+$£¬chF›lds
+ 
+as
+ 
+$f›ldKey
+ => 
+$f›ldV®ue
+)
+
+97 
+$$f›ldKey
+ = 
+	`is_¡ršg
+(
+$f›ldV®ue
+)?
+	`mysql_»®_esÿ³_¡ršg
+($fieldValue): $fieldValue;
+
+100 
+$sql
+ = "SELECT couÁ(*èa coupÚNum FROM ".
+$this
+->
+	`g‘_dbTabËName
+(
+£lf
+::
+COUPON_TABLE
+).'‡s c,';
+
+101 
+$sql
+ .ğ
+$this
+->
+	`g‘_dbTabËName
+(
+£lf
+::
+USER_TABLE
+).'‡s u';
+
+102 
+$sql
+ .= " WHERE consume='Y'";
+
+104 ià(
+	`couÁ
+(
+$£¬chF›lds
+) > 0)
+
+106 
+$sql
+ .ğ
+$·¹ÃrId
+>0 ? " AND c.partner_id=".$partnerId : "";
+
+107 
+$sql
+ .ğ!
+	`em±y
+(
+$¶©fÜm
+)? " AND c.platform_key='$platform'" : "";
+
+108 
+$sql
+ .ğ
+$‹amId
+>0 ? " AND c.team_id=".$teamId : "";
+
+109 
+$sql
+ .ğ
+$Üd”Id
+>0 ? " AND c.order_id=".$orderId : "";
+
+110 
+$sql
+ .ğ
+$coupÚId
+>0 ? " AND c.coupon_id=".$couponId : "";
+
+111 
+$sql
+ .ğ!
+	`em±y
+(
+$u£ºame
+) ? " AND u.username='$username'" : "";
+
+114 
+$coupÚNums
+ = 0;
+
+115 
+$»suÉ
+ = 
+	`mysql_qu”y
+(
+$sql
+);
+
+116 ià(
+	`is_»sourû
+(
+$»suÉ
+è&& 
+	`mysql_num_rows
+($result) > 0)
+
+118 
+$couÁRow
+ = 
+	`mysql_ãtch_¬¿y
+(
+$»suÉ
+);
+
+119 
+$coupÚNums
+ = 
+$couÁRow
+['couponNums'];
+
+122  
+$coupÚNums
+;
+
+123 
+	}
+}
+
+131 
+public
+ 
+funùiÚ
+ 
+	$cÚsume_coupÚ
+(
+$coupÚId
+, 
+$¶©fÜmKey
+)
+
+133 ià(
+$coupÚId
+ <ğ0 || 
+	`em±y
+(
+$¶©fÜmKey
+))
+
+135 
+throw
+ 
+Ãw
+ 
+	`V”ifyCoupÚ_Exû±iÚ
+(
+
+136 
+CommÚCodeMsg
+::
+	`g‘_mes§ge
+(CommÚCodeMsg::
+INVALID_ARGUMENT_ERROR
+),
+
+137 
+CommÚCodeMsg
+::
+INVALID_ARGUMENT_ERROR
+);
+
+139 
+$upd©e
+ = 'UPDATE '.
+£lf
+::
+DBDATABASE
+.'.'.£lf::
+COUPON_TABLE
+;
+
+140 
+$upd©e
+ .= " set consume='Y',consume_time=UNIX_TIMESTAMP() ";
+
+141 
+$wh”e
+ = "WHERE id=".
+$coupÚId
+." AND…ÏtfÜm_key='".
+$¶©fÜmKey
+."' AND consume='N'";
+
+142 
+$sql
+ = 
+$upd©e
+.
+$wh”e
+;
+
+144  
+	`mysql_qu”y
+(
+$sql
+);
+
+145 
+	}
+}
+
+153 
+´iv©e
+ 
+funùiÚ
+ 
+	$·r£_coupÚLi¡
+(
+$»suÉ
+)
+
+155 
+$cÚsumedCoupÚLi¡
+ = 
+	`¬¿y
+();
+
+156 
+$coupÚNums
+ = 
+	`mysql_num_rows
+(
+$»suÉ
+);
+
+157 ià(
+$coupÚNums
+ > 0)
+
+159 
+$cÚsumedCoupÚ
+ = 
+	`mysql_ãtch_¬¿y
+(
+$»suÉ
+))
+
+161 
+	`¬¿y_push
+(
+$cÚsumedCoupÚLi¡
+, 
+$cÚsumedCoupÚ
+);
+
+164  
+$cÚsumedCoupÚLi¡
+;
+
+165 
+	}
+}
+
+	@module/Partner.php
+
+1 <?
+php
+
+
+11 
+»quœe_Úû
+('../common/Exception.php');
+
+12 
+»quœe_Úû
+('../common/class/MyTable.php');
+
+13 
+»quœe_Úû
+('../common/common.php');
+
+15 şas 
+	cP¬Š”
+ 
+ex‹nds
+ 
+	mMyTabË
+
+
+18 cÚ¡ 
+	mPARTNER_TABLE
+ = 'partner';
+
+23 
+public
+ 
+funùiÚ
+ 
+	$__cÚ¡ruù
+()
+
+25 
+·»Á
+::
+	`__cÚ¡ruù
+();
+
+35 
+public
+ 
+funùiÚ
+ 
+	$chªgePass
+(
+$·¹ÃrId
+, 
+$ÜigšPasswd
+, 
+$ÃwPasswd
+)
+
+37 
+$this
+->
+	`assu»_dbCÚÃùiÚ
+();
+
+38 
+$ÜigšPasswd
+ = 
+	`mysql_»®_esÿ³_¡ršg
+($originPasswd);
+
+39 
+$ÃwPasswd
+ = 
+	`mysql_»®_esÿ³_¡ršg
+($newPasswd);
+
+40 ià(
+	`¡¾’
+(
+$ÃwPasswd
+) < 6 || strlen($newPasswd) > 16)
+
+42 
+throw
+ 
+Ãw
+ 
+	`Exû±iÚ
+(
+
+43 
+ChªgePassCodeMsg
+::
+	`g‘_mes§ge
+(ChªgePassCodeMsg::
+NEW_PASS_NOT_ALLOWED_ERROR
+),
+
+44 
+ChªgePassCodeMsg
+::
+NEW_PASS_NOT_ALLOWED_ERROR
+);
+
+46 ià(!
+	`em±y
+(
+$ÜigšPasswd
+))
+
+48 
+$ÜigšPasswd
+ = 
+	`üy±_·ss
+($originPasswd);
+
+49 
+$£ËùSql
+ = "SELECT * FROM ".
+$this
+->
+	`g‘_dbTabËName
+(
+£lf
+::
+PARTNER_TABLE
+)." WHERE id=".
+$·¹ÃrId
+.
+
+50 " AND…asswÜd='".
+$ÜigšPasswd
+."'";
+
+51 
+$»suÉ
+ = 
+	`mysql_qu”y
+(
+$£ËùSql
+);
+
+52 ià(
+$»suÉ
+ && 
+	`mysql_num_rows
+($result) == 1)
+
+54 
+$upd©eSql
+ = "UPDATE ".
+$this
+->
+	`g‘_dbTabËName
+(
+£lf
+::
+PARTNER_TABLE
+)." SET";
+
+55 
+$upd©eSql
+ .ğ"…asswÜd='".
+	`üy±_·ss
+(
+$ÃwPasswd
+)."'"." WHERE id=".
+$·¹ÃrId
+;
+
+56  
+	`mysql_qu”y
+(
+$upd©eSql
+)? 
+LQ_OK
+: 
+LQ_FAIL
+;
+
+60 
+throw
+ 
+Ãw
+ 
+	`Exû±iÚ
+(
+
+61 
+ChªgePassCodeMsg
+::
+	`g‘_mes§ge
+(ChªgePassCodeMsg::
+ORIGIN_PASS_NOT_MATCH
+),
+
+62 
+ChªgePassCodeMsg
+::
+ORIGIN_PASS_NOT_MATCH
+);
+
+63 
+	}
+}
+
+	@module/Team.php
+
+1 <?
+php
+
+
+11 
+»quœe_Úû
+('../common/class/MyTable.php');
+
+13 şas 
+	cT—m
+ 
+ex‹nds
+ 
+	mMyTabË
+
+
+16 cÚ¡ 
+	mTEAM_TABLE
+ = 'team';
+
+17 cÚ¡ 
+	mPLATFORM_TABLE
+ = 'platform';
+
+25 
+public
+ 
+funùiÚ
+ 
+	$__cÚ¡ruù
+()
+
+27 
+·»Á
+::
+	`__cÚ¡ruù
+();
+
+36 
+public
+ 
+funùiÚ
+ 
+	$g‘_‹ams
+(
+$£¬chF›lds
+, 
+$¡¬t
+, 
+$off£t
+)
+
+38 
+	`fÜ—ch
+ (
+$£¬chF›lds
+ 
+as
+ 
+$f›ldKey
+ => 
+$f›ldV®ue
+)
+
+40 
+$$f›ldKey
+ = 
+	`is_¡ršg
+(
+$f›ldV®ue
+)?
+	`mysql_»®_esÿ³_¡ršg
+($fieldValue): $fieldValue;
+
+43 ià(
+$·¹ÃrId
+ <= 0)
+
+45 
+throw
+ 
+Ãw
+ 
+	`Exû±iÚ
+(
+
+46 
+CommÚCodeMsg
+::
+	`g‘_mes§ge
+(CommÚCodeMsg::
+INVALID_ARGUMENT_ERROR
+),
+
+47 
+CommÚCodeMsg
+::
+INVALID_ARGUEMENT
+);
+
+49 ià(
+$¡¬t
+ < 0) $start = 0;
+
+50 ià(
+$off£t
+ <= 0) $offset = 4;
+
+52 
+$£Ëù
+ = "select.id‡seamId,.title‡seamTitle,….title‡s…latformTitle,.begin_time‡s beginTime,";
+
+53 
+$£Ëù
+ .= "t.end_time‡sƒndTime,.now_num‡s‚owNum,.min_num‡s minNum,.team_price‡seamPrice,";
+
+54 
+$£Ëù
+ .= "t.market_price‡s marketPrice,.platform_key‡s…latformKey,";
+
+55 
+$£Ëù
+ .= "t.expire_time‡sƒxpireTime,.state";
+
+56 
+$£Ëù
+ .ğ' from '.
+£lf
+::
+DBDATABASE
+.'.'.£lf::
+TEAM_TABLE
+.','.£lf::DBDATABASE.'.'.£lf::
+PLATFORM_TABLE
+.'…';
+
+57 
+$sql
+ = 
+$£Ëù
+." WHERE.partner_id=$partnerId AND.platform_key=p.key ";
+
+58 
+$sql
+ .= "order by.state desc,t.expire_time desc,t.id desc ";
+
+59 
+$sql
+ .= "LIMIT $start,$offset ";
+
+61 
+$»suÉ
+ = 
+	`mysql_qu”y
+(
+$sql
+);
+
+62 ià(
+	`mysql_num_rows
+(
+$»suÉ
+) < 1)
+
+63  
+	`¬¿y
+();
+
+65  
+$this
+->
+	`·r£_‹amLi¡
+(
+$»suÉ
+);
+
+66 
+	}
+}
+
+75 
+public
+ 
+funùiÚ
+ 
+	$g‘_‹amNums
+(
+$£¬chF›lds
+)
+
+77 
+$this
+->
+	`assu»_dbCÚÃùiÚ
+();
+
+78 
+	`fÜ—ch
+ (
+$£¬chF›lds
+ 
+as
+ 
+$f›ldKey
+ => 
+$f›ldV®ue
+)
+
+80 
+$$f›ldKey
+ = 
+	`is_¡ršg
+(
+$f›ldV®ue
+)?
+	`mysql_»®_esÿ³_¡ršg
+($fieldValue): $fieldValue;
+
+83 
+$sql
+ = "SELECT couÁ(*èa ‹amNum FROM ".
+$this
+->
+	`g‘_dbTabËName
+(
+£lf
+::
+TEAM_TABLE
+);
+
+84 
+$sql
+ .= " WHERE…artner_id=$partnerId";
+
+86 
+$‹amNums
+ = 0;
+
+87 
+$»suÉ
+ = 
+	`mysql_qu”y
+(
+$sql
+);
+
+88 ià(
+	`is_»sourû
+(
+$»suÉ
+è&& 
+	`mysql_num_rows
+($result) > 0)
+
+90 
+$‹amRow
+ = 
+	`mysql_ãtch_¬¿y
+(
+$»suÉ
+);
+
+91 
+$‹amNums
+ = 
+$‹amRow
+['teamNums'];
+
+94  
+$‹amNums
+;
+
+95 
+	}
+}
+
+103 
+´iv©e
+ 
+funùiÚ
+ 
+	$·r£_‹amLi¡
+(
+$»suÉ
+)
+
+105 
+$‹amLi¡
+ = 
+	`¬¿y
+();
+
+106 
+$‹amNums
+ = 
+	`mysql_num_rows
+(
+$»suÉ
+);
+
+107 ià(
+$‹amNums
+ > 0)
+
+109 
+$‹am
+ğ
+	`mysql_ãtch_¬¿y
+(
+$»suÉ
+))
+
+111 
+	`¬¿y_push
+(
+$‹amLi¡
+, 
+$‹am
+);
+
+114  
+$‹amLi¡
+;
+
+115 
+	}
+}
+
+	@old_trial/CommonDefine.php
+
+1 <?
+php
+
+
+2 
+defše
+('PLATFORM_360BUY', 0);
+
+3 
+defše
+('VERITY_TYPE_COUPON_PASSWD', 0);
+
+4 
+defše
+('FILE_NAME_GROUP_DIR_LIST', 'groupon_apis_list.conf');
+
+5 
+defše
+('REQUEST_METHOD', 'REST');
+
+6 
+defše
+('RESPONSE_TYPE', 'XML');
+
+	@old_trial/VerifyCoupon.php
+
+1 <?
+php
+
+
+2 
+»quœe_Úû
+("CommonDefine.php");
+
+3 
+»quœe_Úû
+("VerifyFunction_def.php");
+
+5 
+	g$»suÉ
+ = 
+v”ify_coupÚ
+(
+$_REQUEST
+);
+
+6 ià(
+	g$»suÉ
+ =ğ
+çl£
+)
+
+7 
+echo
+ 'å‘é€éªŒè¯è¯·æ±‚å¤±è´¥!';
+
+9 
+echo
+ 
+	g$»suÉ
+;
+
+	@old_trial/VerifyCoupon_laiqu.php
+
+1 <?
+php
+
+
+2 
+	g$u¾
+ = "http://www.laiquwang.com/api/verify.php?".
+
+3 "b¬code=".
+$CoupÚId
+;
+
+5 
+	g$»suÉ
+ = @
+fe_g‘_cÚ‹Á
+(
+$u¾
+);
+
+6 ià(!
+	g$»suÉ
+)
+
+8 
+	g$»suÉ
+ = @
+fe_g‘_cÚ‹Á
+(
+$u¾
+);
+
+9 ià(!
+	g$»suÉ
+)
+
+10 
+d›
+('æ¥å£è°ƒç”¨å¤±è´¥!');
+
+13 
+funùiÚ
+ 
+	$·r£_ÏiquResuÉ
+(
+$»suÉ
+)
+
+16 
+	}
+}
+
+	@old_trial/VerifyFunction_def.php
+
+1 <?
+php
+
+
+2 
+funùiÚ
+ 
+	$v”ify_coupÚ
+(
+$v”ifyD©a
+)
+
+4 
+$iPÏtfÜm
+ = 
+$v”ifyD©a
+["platform"];
+
+5 
+$aGroupÚDœLi¡
+ = 
+	`decode_cÚfFeIÁoA¼ay
+('./groupÚ_­is_cÚfs/'.
+FILE_NAME_GROUP_DIR_LIST
+);
+
+7 
+$¡rV”ifyCoupÚReque¡Xml
+ = "";
+
+8 
+$¡rV”ifyCoupÚReque¡CÚf
+ = "";
+
+9 
+$¡rV”ifyCoupÚRe¥Ú£CÚf
+ = "";
+
+11 
+	`š™_cÚfP©hs
+(
+$iPÏtfÜm
+,
+
+12 
+$aGroupÚDœLi¡
+,
+
+13 &
+$¡rV”ifyCoupÚReque¡Xml
+,
+
+14 &
+$¡rV”ifyCoupÚReque¡CÚf
+,
+
+15 &
+$¡rV”ifyCoupÚRe¥Ú£CÚf
+);
+
+17 
+$v”ifyResuÉ
+ = 
+	`£nd_v”ifyReque¡
+(
+$v”ifyD©a
+,
+
+18 
+$¡rV”ifyCoupÚReque¡Xml
+,
+
+19 
+$¡rV”ifyCoupÚReque¡CÚf
+);
+
+20  
+$v”ifyResuÉ
+;
+
+21 
+	}
+}
+
+23 
+funùiÚ
+ 
+	$decode_cÚfFeIÁoA¼ay
+(
+$feName
+)
+
+26 
+$aCÚ‹Á
+ = 
+	`fe_g‘_cÚ‹Ás
+(
+$feName
+);
+
+27  
+	`jsÚ_decode
+(
+$aCÚ‹Á
+, 
+Œue
+);
+
+28 
+	}
+}
+
+30 
+funùiÚ
+ 
+	$š™_cÚfP©hs
+(
+
+31 
+$iPÏtfÜm
+,
+
+32 
+$aGroupÚDœLi¡
+,
+
+33 
+$¡rV”ifyCoupÚReque¡Xml
+,
+
+34 
+$¡rV”ifyCoupÚReque¡CÚf
+,
+
+35 
+$¡rV”ifyCoupÚRe¥Ú£CÚf
+ )
+
+38 
+$roÙDœ
+ = './groupÚ_­is_cÚfs/' . 
+$aGroupÚDœLi¡
+[
+$iPÏtfÜm
+];
+
+40 
+$¡rV”ifyCoupÚReque¡Xml
+ = 
+$roÙDœ
+ . '/apis/verifyCouponRequest.xml';
+
+41 
+$¡rV”ifyCoupÚReque¡CÚf
+ = 
+$roÙDœ
+ . '/confs/verifyCouponRequest.conf';
+
+42 
+$¡rV”ifyCoupÚRe¥Ú£CÚf
+ = 
+$roÙDœ
+ . '/confs/verifyCouponResponse.conf';
+
+43 
+	}
+}
+
+45 
+funùiÚ
+ 
+	$£nd_v”ifyReque¡
+(
+
+46 
+$aV”ifyD©a
+,
+
+47 
+$¡rV”ifyCoupÚReque¡Xml
+,
+
+48 
+$¡rV”ifyCoupÚReque¡CÚf
+)
+
+50 
+$aReque¡IÅuts
+ = 
+	`decode_cÚfFeIÁoA¼ay
+(
+$¡rV”ifyCoupÚReque¡CÚf
+);
+
+51 
+$xml
+ = @
+	`sim¶exml_lßd_fe
+(
+$¡rV”ifyCoupÚReque¡Xml
+);
+
+52 ià(!
+$xml
+)
+
+54 
+$xml
+ = @
+	`sim¶exml_lßd_fe
+(
+$¡rV”ifyCoupÚReque¡Xml
+);
+
+55 ià(!
+$xml
+)
+
+56  
+çl£
+;
+
+59 
+	`fÜ—ch
+(
+$aReque¡IÅuts
+ 
+as
+ 
+$šput
+)
+
+63 
+echo
+ 
+$aV”ifyD©a
+[
+$šput
+];
+
+64 
+$xml
+->
+CoupÚId
+[0]->
+node_v®ue
+ = 
+$aV”ifyD©a
+[
+$šput
+];
+
+71 
+echo
+ 
+$xml
+->
+	`asXML
+();
+
+73 
+	}
+}
+
+	@old_trial/soapAndRest_sp.php
+
+1 <?
+php
+
+
+8 
+funùiÚ
+ 
+	$brow£NodeS—rch
+(
+$brow£Node
+, 
+$·ge
+, 
+$mode
+) {
+
+9 
+$this
+->
+S”viû
+ = "AWSECommerceService";
+
+10 
+$this
+->
+O³¿tiÚ
+ = "I‹mS—rch"; $this->
+AWSAcûssKeyId
+ = 
+DEVTAG
+;
+
+11 
+$this
+->
+AssocŸ‹Tag
+ = 
+ASSOCIATEID
+;
+
+12 
+$this
+->
+Brow£Node
+ = 
+$brow£Node
+; $this->
+Re¥Ú£Group
+ = "Large";
+
+13 
+$this
+->
+S—rchIndex
+ğ
+$mode
+;
+
+14 
+$this
+->
+SÜt
+= "salesrank";
+
+15 
+$this
+->
+TÙ®Pages
+ğ
+$·ge
+;
+
+16 if(
+METHOD
+=='SOAP') {
+
+17 
+$sßpş›Á
+ = 
+Ãw
+ 
+	`nusßp_ş›Á
+( 'http://ecs.amazonaws.com/AWSECommerceService/AWSECommerceService.wsdl', 'wsdl');
+
+19 
+$sßp_´oxy
+ = 
+$sßpş›Á
+->
+	`g‘Proxy
+();
+
+21 
+$»que¡
+ = 
+	`¬¿y
+ ('S”viû' => 
+$this
+->
+S”viû
+,
+
+22 'O³¿tiÚ' => 
+$this
+->
+O³¿tiÚ
+, 'Brow£Node' => $this->
+Brow£Node
+,
+
+23 'Re¥Ú£Group' => 
+$this
+->
+Re¥Ú£Group
+, 'S—rchIndex' => $this->
+S—rchIndex
+,
+
+24 'SÜt' => 
+$this
+->
+SÜt
+, 'TÙ®Pages' => $this->
+TÙ®Pages
+);
+
+26 
+$·¿m‘”s
+ = 
+	`¬¿y
+('AWSAcûssKeyId' => 
+DEVTAG
+, 'AssocŸ‹Tag' => 
+ASSOCIATEID
+, 'Reque¡'=>¬¿y(
+$»que¡
+));
+
+29 
+$»suÉ
+ = 
+$sßp_´oxy
+->
+	`I‹mS—rch
+(
+$·¿m‘”s
+);
+
+30 if(
+	`isSOAPE¼Ü
+(
+jjkjkkjjhhkkjkjjkdd
+@
+aj
+@aj@
+aj$»suÉ
+)) {
+
+31  
+çl£
+;
+
+33 
+$this
+->
+tÙ®ResuÉs
+ = 
+$»suÉ
+['TotalResults'];
+
+34 
+	`fÜ—ch
+(
+$»suÉ
+['I‹ms']['I‹m'] 
+as
+ 
+$´oduù
+) {
+
+35 
+$this
+->
+´oduùs
+[] = 
+Ãw
+ 
+	`Produù
+(
+$´oduù
+);
+
+37 
+	`un£t
+(
+$sßpş›Á
+);
+
+38 
+	`un£t
+(
+$sßp_´oxy
+);
+
+41 ï¿¼
+$this
+->
+u¾
+ = "h‰p://ecs.amazÚaws.com/Úÿ/xml?". "S”viû=".$this->
+S”viû
+. "&O³¿tiÚ=".$this->
+O³¿tiÚ
+. "&AssocŸ‹Tag=".$this->
+AssocŸ‹Tag
+. "&AWSAcûssKeyId=".$this->
+AWSAcûssKeyId
+. "&Brow£Node=".$this->
+Brow£Node
+. "&Re¥Ú£Group=".$this->
+Re¥Ú£Group
+.
+
+42 "&S—rchIndex=".
+$this
+->
+S—rchIndex
+. "&SÜt=".$this->
+SÜt
+. "&TÙ®Pages=".$this->
+TÙ®Pages
+;
+
+43 
+$this
+->
+	`·r£XML
+();
+
+45  
+$this
+->
+´oduùs
+;
+
+46 
+	}
+}
+
+49 
+funùiÚ
+ 
+	$·r£XML
+()
+
+52 
+$xml
+ = @
+	`sim¶exml_lßd_fe
+(
+$this
+->
+u¾
+);
+
+53 if(!
+$xml
+) {
+
+55 
+$xml
+ = @
+	`sim¶exml_lßd_fe
+(
+$this
+->
+u¾
+);
+
+56 if(!
+$xml
+)
+
+58  
+çl£
+;
+
+61 
+$this
+->
+tÙ®ResuÉs
+ = (
+š‹g”
+)
+$xml
+->
+TÙ®ResuÉs
+;
+
+62 
+	`fÜ—ch
+(
+$xml
+->
+I‹ms
+->
+I‹m
+ 
+as
+ 
+$´oduùXML
+) {
+
+63 
+$this
+->
+´oduùs
+[] = 
+Ãw
+ 
+	`Produù
+(
+$´oduùXML
+);
+
+66 
+	}
+}
+
+	@old_trial/test_360buyRest.php
+
+1 <?
+php
+
+
+2 
+	g»quœe_Úû
+ 'RESTclient.php';
+
+3 
+defše
+('METHOD', 'GET');
+
+5 
+	g$»¡
+ = 
+Ãw
+ 
+RESTş›Á
+();
+
+7 
+	g$šputs
+ = 
+¬¿y
+();
+
+13 
+	g$u¾Addr
+ = 'http://api.douban.com/book/subject/1220562?apikey=01ba41401a376797052ec3c04ea636c5';
+
+14 ià(
+	gMETHOD
+ == 'POST') {
+
+15 
+$»¡
+->
+ü—‹Reque¡
+("$u¾Addr", "POST", 
+$šputs
+);
+
+17 
+	g$»¡
+->
+ü—‹Reque¡
+(
+$u¾Addr
+);
+
+18 
+	g$u¾
+ = 
+$»¡
+->
+g‘U¾
+();
+
+19 
+	g$u¾
+->
+£tQu”yV¬ŸbËs
+(
+$šputs
+);
+
+21 
+	g$»¡
+->
+£ndReque¡
+();
+
+22 
+	g$ouut
+ = 
+$»¡
+->
+g‘Re¥Ú£
+();
+
+24 
+	g$xml
+ = 
+sim¶exml_lßd_¡ršg
+(
+$ouut
+);
+
+25 
+echo
+ 
+	g$xml
+->
+	gt™Ë
+;
+
+	@old_trial/test_RestClient.php
+
+1 <?
+php
+
+
+2 
+	g»quœe_Úû
+ 'RESTclient.php';
+
+4 
+	g$¶©fÜm
+ = 'laiqu';
+
+5 
+	g$rg‘Api
+ = 'verifyCoupon';
+
+8 
+	g$m‘hod
+ = '';
+
+9 
+	g$»que¡M‘hod
+ = '';
+
+10 
+	g$»que¡Ty³
+ = '';
+
+11 
+	g$­iU¾
+ = "";
+
+12 
+	g$»que¡P¬ams
+ = 
+nuÎ
+;
+
+13 
+	g$»que¡P¬amsStic
+ = 
+nuÎ
+;
+
+14 
+	g$»suÉTag
+ = 
+nuÎ
+;
+
+15 
+	g$codeSucûss
+ = 200;
+
+17 
+·r£_¶©fÜm_cÚfs
+(
+$¶©fÜm
+);
+
+19 
+	g$»¡
+ = 
+Ãw
+ 
+RESTş›Á
+();
+
+21 
+	g$šputs
+['couponId'] = '24902218';
+
+22 
+	g$·¿ms
+ = 
+g‘_»que¡P¬ams
+(
+$šputs
+);
+
+24 ià(
+	g$»que¡M‘hod
+ == 'POST') {
+
+25 
+$»¡
+->
+ü—‹Reque¡
+(
+$­iU¾
+, "POST", 
+$·¿ms
+);
+
+27 
+	g$»¡
+->
+ü—‹Reque¡
+(
+$­iU¾
+);
+
+28 
+	g$u¾
+ = 
+$»¡
+->
+g‘U¾
+();
+
+29 
+	g$u¾
+->
+£tQu”yV¬ŸbËs
+(
+$·¿ms
+);
+
+31 
+	g$»¡
+->
+£ndReque¡
+();
+
+32 
+	g$»¥Ú£
+ = 
+$»¡
+->
+g‘Re¥Ú£
+();
+
+33 
+	g$»suÉ
+ = 
+·r£_¶©fÜm_»¥Ú£
+(
+$»¥Ú£
+, 
+$m‘hod
+, 
+$»que¡Ty³
+, 
+$»suÉTag
+, 
+$codeSucûss
+);
+
+35 ià(!
+	g$»suÉ
+)
+
+36 
+	gecho
+ 'call‡pi failed!';
+
+38 
+echo
+ 
+	g$»suÉ
+;
+
+40 <?
+php
+
+
+41 
+funùiÚ
+ 
+	$·r£_¶©fÜm_»¥Ú£
+(
+$»¥Ú£
+, 
+$m‘hod
+, 
+$»que¡Ty³
+, 
+$»suÉTag
+, 
+$codeSucûss
+)
+
+43 ià(
+$m‘hod
+ != 'REST')
+
+44 
+	`d›
+('ç›®å‰åªæ”¯æŒRESTfulæ¥å£çš„å¹³å°!');
+
+45 ià(
+$»que¡Ty³
+ == 'LAIQU')
+
+47 
+$»suÉ
+ = 
+	`g‘_»¥Ú£Code_Ïiqu
+(
+$»¥Ú£
+, 
+$»suÉTag
+, 
+$codeSucûss
+);
+
+49  
+$»suÉ
+;
+
+50 
+	}
+}
+
+52 
+funùiÚ
+ 
+	$g‘_»¥Ú£Code_Ïiqu
+(
+$»¥Ú£
+, 
+$»suÉTag
+, 
+$codeSucûss
+)
+
+54 
+	`´eg_m©ch_®l
+("/(<([\w]+)[^>]*>)(.*?)(<\/\\2>)/", 
+$»¥Ú£
+, 
+$m©ches
+, 
+PREG_SET_ORDER
+);
+
+55 
+	`fÜ—ch
+ (
+$m©ches
+ 
+as
+ 
+$v®
+) {
+
+56 ià(
+$v®
+[2] =ğ
+$»suÉTag
+)
+
+58  
+$v®
+[3] =ğ
+$codeSucûss
+ ? 'éªŒè¯æˆåŠŸ!':'éªŒè¯å¤±è´¥';
+
+61  
+çl£
+;
+
+62 
+	}
+}
+
+64 
+funùiÚ
+ 
+	$·r£_¶©fÜm_cÚfs
+(
+$¶©fÜm
+)
+
+66 
+glob®
+ 
+$m‘hod
+;
+
+67 
+glob®
+ 
+$»que¡M‘hod
+;
+
+68 
+glob®
+ 
+$»que¡Ty³
+;
+
+69 
+glob®
+ 
+$­iU¾
+;
+
+70 
+glob®
+ 
+$»que¡P¬ams
+;
+
+71 
+glob®
+ 
+$»que¡P¬amsStic
+;
+
+72 
+glob®
+ 
+$»suÉTag
+;
+
+73 
+glob®
+ 
+$codeSucûss
+;
+
+75 
+$cÚfigFeName
+ = "¶©fÜm_­i_cÚfs/" . 
+$¶©fÜm
+ . ".conf";
+
+76 
+$cÚ‹Á
+ = 
+	`fe_g‘_cÚ‹Ás
+(
+$cÚfigFeName
+);
+
+77 
+$cÚfigs
+ = 
+	`jsÚ_decode
+(
+$cÚ‹Á
+);
+
+78 
+	`fÜ—ch
+ (
+$cÚfigs
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+80 
+glob®
+ 
+$$key
+;
+
+81 
+$$key
+ = 
+$v®ue
+;
+
+83 
+$­iU¾
+ = 
+$$rg‘Api
+->
+­iU¾
+;
+
+84 
+$»que¡P¬ams
+ = 
+$$rg‘Api
+->
+»que¡P¬ams
+;
+
+85 
+$»que¡P¬amsStic
+ = 
+$$rg‘Api
+->
+»que¡P¬amsStic
+;
+
+86 
+$»suÉTag
+ = 
+$$rg‘Api
+->
+»¥Ú£ResuÉ
+->
+»suÉTag
+;
+
+87 
+$codeSucûss
+ = 
+$$rg‘Api
+->
+»¥Ú£ResuÉStic
+->
+codeSucûss
+;
+
+88 
+	}
+}
+
+90 
+funùiÚ
+ 
+	$g‘_»que¡P¬ams
+(
+$šputs
+)
+
+92 
+$·¿ms
+ = 
+	`¬¿y
+();
+
+93 
+glob®
+ 
+$»que¡P¬ams
+;
+
+94 
+glob®
+ 
+$»que¡P¬amsStic
+;
+
+95 
+	`fÜ—ch
+ (
+$»que¡P¬ams
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+98 
+$·¿ms
+[
+$v®ue
+] = 
+$šputs
+[
+$key
+];
+
+100 ià(
+$»¥Ú£ResuÉStic
+)
+
+103 
+	`fÜ—ch
+ (
+$»que¡P¬amsStic
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+105 
+$·¿ms
+[
+$key
+] = 
+$v®ue
+;
+
+108  
+$·¿ms
+;
+
+109 
+	}
+}
+
+	@statistics/consumedCoupons.php
+
+1 ï»¿<?
+php
+
+
+2 
+»quœe_Úû
+('../common/checkAuthority.php');
+
+3 
+»quœe_Úû
+('../common/include/errorCatcher.php');
+
+4 
+»quœe_Úû
+('../module/Coupon.php');
+
+5 
+»quœe_Úû
+('../common/common.php');
+
+7 
+defše
+("TABLE_ROW_NUMS", 6);
+
+9 
+	g$®lowPageShowNums
+ = 6;
+
+10 
+	g$·¹ÃrId
+ = 
+$_SESSION
+['partnerId'];
+
+11 
+	g$Üd”Id
+ = 0;
+
+14 if(
+is£t
+(
+$_GET
+['fromTeamPage']))
+
+16 
+	g$_SESSION
+['äomT—mPage'] = 
+$_GET
+['fromTeamPage'];
+
+18 
+	g$äomT—mPage
+ = 
+is£t
+(
+$_SESSION
+['fromTeamPage'])? $_SESSION['fromTeamPage'] : 1;
+
+19 if(
+is£t
+(
+$_GET
+['teamId']))
+
+21 
+	g$_SESSION
+['‹amId'] = 
+$_GET
+['teamId'];
+
+23 
+	g$‹amId
+ = 
+is£t
+(
+$_SESSION
+['teamId'])? $_SESSION['teamId']: 0;
+
+24 if(
+is£t
+(
+$_GET
+['platform']))
+
+26 
+	g$_SESSION
+['¶©fÜm'] = 
+$_GET
+['platform'];
+
+28 
+	g$¶©fÜm
+ = 
+is£t
+(
+$_SESSION
+['platform'])? $_SESSION['platform']: '';
+
+30 
+	g$Üd”Id
+ = 
+is£t
+(
+$_GET
+['orderId'])? $_GET['orderId']: 0;
+
+31 
+	g$coupÚId
+ = 
+is£t
+(
+$_GET
+['couponId'])? $_GET['couponId']: 0;
+
+32 
+	g$u£ºame
+ = 
+is£t
+(
+$_GET
+['username'])? $_GET['username']: '';
+
+34 
+	g$·ge
+ = 1;
+
+35 ià(
+is£t
+(
+$_GET
+['·ge']è&& 
+	g$_GET
+['page'] > 0)
+
+36 
+	g$·ge
+ = 
+$_GET
+['page'];
+
+37 
+	g$¡¬t
+ = (
+$·ge
+-1)*
+TABLE_ROW_NUMS
+;
+
+39 
+	g$coupÚ
+ = 
+Ãw
+ 
+CoupÚ
+();
+
+41 
+	g$£¬chF›lds
+ = 
+¬¿y
+(
+
+42 '·¹ÃrId' => 
+$·¹ÃrId
+,
+
+43 '‹amId' => 
+$‹amId
+,
+
+44 '¶©fÜm' => 
+$¶©fÜm
+,
+
+45 'Üd”Id' => 
+$Üd”Id
+,
+
+46 'coupÚId' => 
+$coupÚId
+,
+
+47 'u£ºame' => 
+$u£ºame
+);
+
+48 
+	g$coupÚLi¡
+ = 
+$coupÚ
+->
+g‘_cÚsumedCoupÚs
+(
+$£¬chF›lds
+, 
+$¡¬t
+, 
+TABLE_ROW_NUMS
+);
+
+49 
+	g$coupÚTÙ®Nums
+ = 
+$coupÚ
+->
+g‘_cÚsumedCoupÚNums
+(
+$£¬chF›lds
+);
+
+50 
+	g$tÙ®Pages
+ = 
+ÿl_tÙ®Pages
+(
+$coupÚTÙ®Nums
+, 
+TABLE_ROW_NUMS
+);
+
+53 <
+html
+ 
+	gxmÊs
+="http://www.w3.org/1999/xhtml">
+
+54 <
+h—d
+>
+
+55 <
+t™Ë
+>éªŒè¯å¹³å°</title>
+
+56 <
+m‘a
+ 
+h‰p
+-
+equiv
+="CÚ‹Á-Ty³" 
+cÚ‹Á
+="text/html; charset=utf-8">
+
+58 <
+lšk
+ 
+h»f
+="../css/com_css.css" 
+»l
+="¡yËsh“t" 
+ty³
+="text/css" />
+
+59 <
+lšk
+ 
+h»f
+="css/coupÚ_css.css" 
+»l
+="¡yËsh“t" 
+ty³
+="text/css" />
+
+60 <
+süt
+ 
+¤c
+='../js/jquery.min.js'></script>
+
+61 <
+süt
+ 
+¤c
+='js/consumedCoupon.js'></script>
+
+62 </
+h—d
+>
+
+63 <
+body
+>
+
+66 <
+div
+ 
+şass
+="maš" 
+id
+="main">
+
+70 <
+div
+ 
+şass
+="top_blank">
+
+71 </
+div
+>
+
+73 <
+div
+ 
+şass
+="top">
+
+74 <
+img
+ 
+¤c
+="../images/logo.jpg" />
+
+75 </
+div
+>
+
+77 <
+div
+ 
+şass
+="body">
+
+79 <
+div
+ 
+şass
+="body_l">
+
+80 <
+div
+ 
+şass
+="nav">
+
+83 <
+p
+ 
+şass
+="nav_title">å•† æˆ· ç®¡ ç†</p>
+
+84 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="../v”ifyCoupÚ/šdex.php">æ¶ˆ è´¹ ç™» è®°</a><
+br
+ />
+
+85 <
+div
+ 
+şass
+="nav_bg">
+
+86 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="‹amLi¡.php">é¡¹ ç›® ç»Ÿ è®¡</a><
+br
+ />
+
+87 </
+div
+>
+
+88 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="javasüt:void(0);">æ¶ˆ è´¹ è¯„ ä»·</a><
+br
+ />
+
+89 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="../acùMªag”/chªgePass.php">ä¿® æ”¹ å¯† ç </a><
+br
+ />
+
+90 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="../V”ifyLogš/logšOut.php">é€€ å‡º ç™» å½•</a><
+br
+ />
+
+91 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="javascript:void(0);">å¸® åŠ©</a>
+
+94 </
+div
+>
+
+96 <
+div
+ 
+şass
+="serv">
+
+97 <
+div
+ 
+şass
+="‹l" 
+h»f
+="javascript:void(0);"> </div>
+
+98 <
+a
+ 
+şass
+="online_qq"></a>
+
+99 </
+div
+>
+
+101 </
+div
+>
+
+103 <
+div
+ 
+şass
+="body_r fl">
+
+104 <
+p
+ 
+şass
+="t™Ë_r"
+i
+>><
+a
+ 
+h»f
+="‹amLi¡.php" 
+¡yË
+="cŞÜ:#çad08;">é¡¹ç›®åˆ—è¡¨</a>&
+nb¥
+>å·²æ¶ˆè´¹åˆ¸åˆ—è¡¨</p>
+
+106 <
+div
+ 
+şass
+="title_line"></div>
+
+108 <
+div
+ 
+şass
+="search" >
+
+109 <
+a
+ 
+şass
+="back_‹xˆæ" 
+h»f
+="teamList.php?page=<?phpƒcho $fromTeamPage; ?>">è¿”å›</a>
+
+110 <
+p
+ 
+şass
+="search_text fl">è®¢å•å·</p>
+
+111 <
+šput
+ 
+şass
+="Üd”Id fl" 
+Çme
+="" 
+id
+="Üd”IdS—rch" 
+v®ue
+=""/>
+
+113 <
+p
+ 
+şass
+="search_text fl">åˆ¸å·</p>
+
+114 <
+šput
+ 
+şass
+="coupÚId fl" 
+Çme
+="" 
+id
+="coupÚIdS—rch" 
+v®ue
+=""/>
+
+116 <
+p
+ 
+şass
+="search_text fl">ç”¨æˆ·å</p>
+
+117 <
+šput
+ 
+şass
+="U£ºamæ" 
+Çme
+="" 
+id
+="u£ºameS—rch" 
+v®ue
+=""/>
+
+119 <
+a
+ 
+şass
+="£¬ch_bu‰Ú fl" 
+ty³
+="" 
+v®ue
+="" 
+Çme
+="" 
+id
+="£¬chCoupÚ" 
+h»f
+="javasüt:void(0);"><
+img
+ 
+¤c
+="../images/search.jpg" /></a>
+
+121 </
+div
+>
+
+126 <
+div
+ 
+şass
+="table">
+
+127 <
+div
+ 
+şass
+="table_title">
+
+128 <
+div
+ 
+şass
+="1 fl">
+
+129 <
+p
+ 
+şass
+="table_title_text">è®¢å•å·</p>
+
+130 </
+div
+>
+
+131 <
+div
+ 
+şass
+="t2 fl">
+
+132 <
+p
+ 
+şass
+="table_title_text">é¡¹ç›®åç§°</p>
+
+133 </
+div
+>
+
+134 <
+div
+ 
+şass
+="t3 fl">
+
+135 <
+p
+ 
+şass
+="table_title_text">åˆ¸å·</p>
+
+136 </
+div
+>
+
+137 <
+div
+ 
+şass
+="t4 fl">
+
+138 <
+p
+ 
+şass
+="table_title_text">è´­ä¹°è€…</p>
+
+139 </
+div
+>
+
+140 <
+div
+ 
+şass
+="t1 fl">
+
+141 <
+p
+ 
+şass
+="table_title_text">åˆ†åº—å</p>
+
+142 </
+div
+>
+
+143 <
+div
+ 
+şass
+="t5 fl">
+
+144 <
+p
+ 
+şass
+="table_title_text">æ¶ˆè´¹æ—¶é—´</p>
+
+145 </
+div
+>
+
+146 </
+div
+>
+
+148 <?
+php
+
+
+149 
+$htmlCoupÚLi¡
+ = '';
+
+150 
+	g$i
+=0; $˜< 
+couÁ
+(
+$coupÚLi¡
+); $i++)
+
+152 
+	g$cÚsumeCoupÚ
+ = 
+$coupÚLi¡
+[
+$i
+];
+
+153 ià(
+	g$i
+%2 == 0)
+
+154 
+$oddCÏss
+ = " item_bg";
+
+156 
+	g$oddCÏss
+ = "";
+
+157 
+	g$htmlCoupÚLi¡
+ .= "<div class='table_item_1' id='couponRowWrap_{$i}'>
+
+158 <
+div
+ 
+şass
+='item1 fl$oddClass'>
+
+159 <
+a
+ 
+şass
+='bË_™em_‹xˆ'>{
+$cÚsumeCoupÚ
+['orderId']}</a>
+
+160 </
+div
+>
+
+161 <
+div
+ 
+şass
+='item2 fl$oddClass'>
+
+162 <
+a
+ 
+şass
+='bË_™em_‹xt' >{
+$cÚsumeCoupÚ
+['teamTitle']}</a>
+
+163 </
+div
+>
+
+164 <
+div
+ 
+şass
+='item3 fl$oddClass'>
+
+165 <
+a
+ 
+şass
+='bË_™em_‹xt' >{
+$cÚsumeCoupÚ
+['couponId']}</a>
+
+166 </
+div
+>
+
+167 <
+div
+ 
+şass
+='item4 fl$oddClass'>
+
+168 <
+a
+ 
+şass
+='bË_™em_‹xt' >{
+$cÚsumeCoupÚ
+['u£ºame']}<
+br
+ />{$consumeCoupon['email']}</a>
+
+169 </
+div
+>
+
+170 <
+div
+ 
+şass
+='item1 fl$oddClass'>
+
+171 <
+a
+ 
+şass
+='bË_™em_‹xt' >{
+$cÚsumeCoupÚ
+['subbranch']}</a>
+
+172 </
+div
+>
+
+173 <
+div
+ 
+şass
+='item6 fl$oddClass'>
+
+174 <
+a
+ 
+şass
+='table_item_text' >";
+
+175 
+$htmlCoupÚLi¡
+ .ğ
+d©e
+('Y-m-d',
+$cÚsumeCoupÚ
+['consumeTime']).
+
+176 "<b¸/>".
+d©e
+('h:i:s',
+$cÚsumeCoupÚ
+['consumeTime'])."</a> </div> </div>";
+
+178 
+echo
+ 
+	g$htmlCoupÚLi¡
+;
+
+181 </
+	gdiv
+>
+
+182 <
+šput
+ 
+	gty³
+='hidd’' 
+id
+='·ge' <?
+php
+ 
+echo
+ "v®ue=".
+$·ge
+; ?> />
+
+183 <
+šput
+ 
+	gty³
+='hidd’' 
+id
+='Üd”Id' <?
+php
+ ià(
+$Üd”Id
+ >0è
+echo
+ "value=".$orderId; ?> />
+
+184 <
+šput
+ 
+	gty³
+='hidd’' 
+id
+='coupÚId' <?
+php
+ ià(
+$coupÚId
+ >0è
+echo
+ "value=".$couponId; ?> />
+
+185 <
+šput
+ 
+	gty³
+='hidd’' 
+id
+='u£ºame' <?
+php
+ ià(
+$u£ºame
+ !==''è
+echo
+ "value='".$username."'"; ?> />
+
+186 <
+šput
+ 
+	gty³
+='hidd’' 
+id
+='cÚsumedCoupÚNums' <?
+php
+ 
+echo
+ "v®ue=".
+$cÚsumedCoupÚNums
+; ?> />
+
+188 <
+div
+ 
+	gşass
+="page_turn">
+
+189 <
+a
+ 
+şass
+="tuº_‹xˆæ" 
+h»f
+="javasüt:void(0);" 
+id
+='goPrevPage'> ä¸Šä¸€é¡µ </a>
+
+190 <
+div
+ 
+şass
+="page fl">
+
+191 <
+p
+ 
+şass
+="tuº_‹xt" 
+id
+='·geG­'>&
+nb¥
+
+
+192 <?
+php
+
+
+193 
+$showPageNums
+ = 11;
+
+194 
+	g$u¾P»fix
+ = "consumedCoupons.php?action=search";
+
+195 ià(
+	g$Üd”Id
+ > 0è
+	g$u¾P»fix
+ .= "&orderId=$orderId";
+
+196 ià(
+	g$coupÚId
+ > 0è
+	g$u¾P»fix
+ .= "&couponId=$couponId";
+
+197 ià(
+	g$u£ºame
+ !=ğ""è
+$u¾P»fix
+ .= "&username=$username";
+
+198 
+	g$u¾P»fix
+ .= "&";
+
+199 
+echo
+ 
+g‘_·geNavHtml
+(
+$·ge
+, 
+$tÙ®Pages
+, 
+$u¾P»fix
+, 
+$showPageNums
+);
+
+201 &
+	gnb¥
+</
+	gp
+>
+
+202 </
+	gdiv
+>
+
+203 <
+a
+ 
+	gşass
+="tuºexˆæ" 
+h»f
+="javasüt:void(0);" 
+id
+='goNextPage'> ä¸‹ä¸€é¡µ </a>
+
+204 </
+div
+>
+
+206 </
+div
+>
+
+212 </
+div
+>
+
+214 <
+div
+ 
+şass
+="footer">
+
+218 <
+div
+ 
+şass
+="bottom_line ">
+
+219 </
+div
+>
+
+221 <
+p
+ 
+şass
+="footer_text">æ¥ è¶£ ç½‘ ç»œ ç§‘ æŠ€ æœ‰ é™ å…¬ å¸</p>
+
+223 </
+div
+>
+
+225 </
+div
+>
+
+237 </
+body
+>
+
+238 </
+html
+>
+
+	@statistics/teamList.php
+
+1 ï»¿<?
+php
+
+
+2 
+»quœe_Úû
+('../common/checkAuthority.php');
+
+3 
+»quœe_Úû
+('../common/include/errorCatcher.php');
+
+4 
+»quœe_Úû
+('../module/Team.php');
+
+5 
+»quœe_Úû
+('../common/common.php');
+
+7 
+defše
+("TABLE_ROW_NUMS", 4);
+
+9 
+	g$·¹ÃrId
+ = 
+$_SESSION
+['partnerId'];
+
+10 
+	g$Üd”Id
+ = 0;
+
+11 
+	g$®lowPageShowNums
+ = 6;
+
+13 
+	g$·ge
+ = 1;
+
+14 ià(
+is£t
+(
+$_GET
+['·ge']è&& 
+	g$_GET
+['page'] > 0)
+
+15 
+	g$·ge
+ = 
+$_GET
+['page'];
+
+16 
+	g$¡¬t
+ = (
+$·ge
+-1)*
+TABLE_ROW_NUMS
+;
+
+18 
+	g$‹am
+ = 
+Ãw
+ 
+T—m
+();
+
+20 
+	g$£¬chF›lds
+ = 
+¬¿y
+(
+
+21 '·¹ÃrId' => 
+$·¹ÃrId
+);
+
+22 
+	g$‹amLi¡
+ = 
+$‹am
+->
+g‘_‹ams
+(
+$£¬chF›lds
+, 
+$¡¬t
+, 
+TABLE_ROW_NUMS
+);
+
+23 
+	g$‹amNums
+ = 
+$‹am
+->
+g‘_‹amNums
+(
+$£¬chF›lds
+);
+
+24 
+	g$tÙ®Pages
+ = 
+ÿl_tÙ®Pages
+(
+$‹amNums
+, 
+TABLE_ROW_NUMS
+);
+
+27 <
+html
+ 
+	gxmÊs
+="http://www.w3.org/1999/xhtml">
+
+28 <
+h—d
+>
+
+29 <
+t™Ë
+>éªŒè¯å¹³å°</title>
+
+30 <
+m‘a
+ 
+h‰p
+-
+equiv
+="CÚ‹Á-Ty³" 
+cÚ‹Á
+="text/html; charset=utf-8">
+
+32 <
+lšk
+ 
+h»f
+="../css/com_css.css" 
+»l
+="¡yËsh“t" 
+ty³
+="text/css" />
+
+33 <
+lšk
+ 
+h»f
+="css/couÁ_css.css" 
+»l
+="¡yËsh“t" 
+ty³
+="text/css" />
+
+35 <
+süt
+ 
+¤c
+='../js/jquery.min.js'></script>
+
+36 <
+süt
+ 
+¤c
+='js/teamList.js'></script>
+
+37 </
+h—d
+>
+
+38 <
+body
+>
+
+41 <
+div
+ 
+şass
+="maš" 
+id
+="main">
+
+45 <
+div
+ 
+şass
+="top_blank">
+
+46 </
+div
+>
+
+48 <
+div
+ 
+şass
+="top">
+
+49 <
+img
+ 
+¤c
+="../images/logo.jpg" />
+
+50 </
+div
+>
+
+52 <
+div
+ 
+şass
+="body">
+
+54 <
+div
+ 
+şass
+="body_l">
+
+55 <
+div
+ 
+şass
+="nav">
+
+58 <
+p
+ 
+şass
+="nav_title">å•† æˆ· ç®¡ ç†</p>
+
+59 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="../v”ifyCoupÚ/šdex.php">æ¶ˆ è´¹ ç™» è®°</a><
+br
+ />
+
+60 <
+div
+ 
+şass
+="nav_bg">
+
+61 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="javasüt:void(0);">é¡¹ ç›® ç»Ÿ è®¡</a><
+br
+ />
+
+62 </
+div
+>
+
+63 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="javasüt:void(0);">æ¶ˆ è´¹ è¯„ ä»·</a><
+br
+ />
+
+64 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="../acùMªag”/chªgePass.php">ä¿® æ”¹ å¯† ç </a><
+br
+ />
+
+65 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="../V”ifyLogš/logšOut.php">é€€ å‡º ç™» å½•</a><
+br
+ />
+
+66 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="javascript:void(0);">å¸® åŠ©</a>
+
+69 </
+div
+>
+
+71 <
+div
+ 
+şass
+="serv">
+
+72 <
+div
+ 
+şass
+="‹l" 
+h»f
+="javascript:void(0);"> </div>
+
+73 <
+a
+ 
+şass
+="online_qq"></a>
+
+74 </
+div
+>
+
+76 </
+div
+>
+
+78 <
+div
+ 
+şass
+="body_r fr">
+
+79 <
+p
+ 
+şass
+="title_r">>é¡¹ç›®åˆ—è¡¨</p>
+
+81 <
+div
+ 
+şass
+="title_line"></div>
+
+83 <
+div
+ 
+şass
+="table">
+
+84 <
+div
+ 
+şass
+="table_title">
+
+85 <
+div
+ 
+şass
+="1 fl">
+
+86 <
+p
+ 
+şass
+="bË_t™Ë_‹xt">é¡¹ç›®
+ID
+</p>
+
+87 </
+div
+>
+
+88 <
+div
+ 
+şass
+="t2 fl">
+
+89 <
+p
+ 
+şass
+="table_title_text">é¡¹ç›®åç§°</p>
+
+90 </
+div
+>
+
+91 <
+div
+ 
+şass
+="t3 fl">
+
+92 <
+p
+ 
+şass
+="table_title_text">å¹³å°</p>
+
+93 </
+div
+>
+
+94 <
+div
+ 
+şass
+="t3 fl">
+
+95 <
+p
+ 
+şass
+="table_title_text">æ—¥æœŸ</p>
+
+96 </
+div
+>
+
+97 <
+div
+ 
+şass
+="t1 fl">
+
+98 <
+p
+ 
+şass
+="table_title_text">æˆäº¤</p>
+
+99 </
+div
+>
+
+100 <
+div
+ 
+şass
+="t1 fl">
+
+101 <
+p
+ 
+şass
+="table_title_text">å›¢è´­ä»·</p>
+
+102 </
+div
+>
+
+103 <
+div
+ 
+şass
+="t4 fl">
+
+104 <
+p
+ 
+şass
+="table_title_text">æ“ä½œ</p>
+
+105 </
+div
+>
+
+106 </
+div
+>
+
+108 <!--<
+div
+ 
+şass
+="table_item">-->
+
+109 <?
+php
+
+
+110 
+$htmlT—mLi¡
+ = '';
+
+111 
+	g$i
+ = 0; $˜< 
+couÁ
+(
+$‹amLi¡
+); $i++)
+
+113 
+fÜ—ch
+ (
+$‹amLi¡
+[
+$i
+] 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+115 
+$$key
+ = 
+$v®ue
+;
+
+117 ià(
+	g$i
+%2 != 0)
+
+118 
+$oddEv’CÏss
+ = ' item_bg';
+
+120 
+	g$oddEv’CÏss
+ = '';
+
+122 
+	g$htmlT—mLi¡
+ .= "<div class='table_item_1' id='teamRowWrap_{$i}'>
+
+123 <
+div
+ 
+şass
+='item1 fl{$oddEvenClass}'>";
+
+124 ià(
+time
+()< 
+$expœeTime
+ && 
+$¡©e
+ == 'undone')
+
+125 
+$htmlT—mLi¡
+ .= "<div class='new_ico '></div>";
+
+126 
+	g$htmlT—mLi¡
+ .="<a class='table_item_id ' >{$teamId}</a>
+
+127 </
+div
+>
+
+128 <
+div
+ 
+şass
+='item2 fl{$oddEvenClass}'>
+
+129 <
+a
+ 
+şass
+='bË_™em_‹xt' >{
+$‹amT™Ë
+}</a>
+
+130 </
+div
+>
+
+131 <
+div
+ 
+şass
+='item3 fl{$oddEvenClass}'>
+
+132 <
+a
+ 
+şass
+='bË_™em_icØæ' ><
+img
+ 
+¤c
+='../images/logo_‹am_{$¶©fÜmKey}.jpg' 
+®t
+='$¶©fÜmT™Ë' 
+t™Ë
+='$platformTitle'/></a>
+
+133 </
+div
+> <div 
+şass
+='item4 fl{$oddEvenClass}'>
+
+134 <
+a
+ 
+şass
+='table_item_text' >";
+
+135 
+$htmlT—mLi¡
+ .ğ
+d©e
+('Y-m-d',
+$begšTime
+).'<b¸/>'.d©e('Y-m-d',
+$’dTime
+);
+
+136 
+	g$htmlT—mLi¡
+ .="</a></div>
+
+137 <
+div
+ 
+şass
+='item1 fl{$oddEvenClass}'>
+
+138 <
+a
+ 
+şass
+='bË_™em_‹xt' >{
+$nowNum
+}/{
+$mšNum
+}</a>
+
+139 </
+div
+>
+
+140 <
+div
+ 
+şass
+='item6 fl{$oddEvenClass}'>
+
+141 <
+a
+ 
+şass
+='bË_™em_‹xt' >ï¿¥{
+$‹amPriû
+}<
+br
+ />ï¿¥{
+$m¬k‘Priû
+}</a>
+
+142 </
+div
+>
+
+143 <
+div
+ 
+şass
+='item7 fl{$oddEvenClass}'>
+
+144 <
+div
+ 
+şass
+='n_1'>
+
+145 <
+a
+ 
+şass
+='bË_™em_‹xˆxf' 
+h»f
+='cÚsumedCoupÚs.php?‹amId={$‹amId}&¶©fÜm={$¶©fÜmKey}&äomT—mPage={$·ge}'>å·²æ¶ˆè´¹</a><
+p
+ class='table_item_text fl_line'> | </p><a class='table_item_text xz' href='javascript:void(0);'>ä¸‹è½½</a>
+
+146 </
+div
+>
+
+147 <
+br
+/><
+div
+ 
+şass
+='n_2'>
+
+148 <
+a
+ 
+şass
+='bË_™em_‹xt' 
+h»f
+='javascript:void(0);'>ç»Ÿè®¡</a>
+
+149 </
+div
+></div></div>";
+
+151 
+echo
+ 
+	g$htmlT—mLi¡
+;
+
+155 </
+	gdiv
+>
+
+156 <
+šput
+ 
+	gty³
+='hidd’' 
+id
+='·ge' <?
+php
+ 
+echo
+ "v®ue=".
+$·ge
+; ?> />
+
+157 <
+šput
+ 
+	gty³
+='hidd’' 
+id
+='‹amNums' <?
+php
+ 
+echo
+ "v®ue=".
+$‹amNums
+; ?> />
+
+159 <
+div
+ 
+	gşass
+="page_turn">
+
+160 <
+a
+ 
+şass
+="tuº_‹xˆæ" 
+h»f
+="javasüt:void(0);" 
+id
+='goPrevPage'> ä¸Šä¸€é¡µ </a>
+
+161 <
+div
+ 
+şass
+="page fl">
+
+162 <
+p
+ 
+şass
+="tuº_‹xt" 
+id
+='·geG­'>&
+nb¥
+
+
+163 <?
+php
+
+
+164 
+$showPageNums
+ = 11;
+
+165 
+	g$u¾P»fix
+ = "teamList.php?";
+
+166 
+echo
+ 
+g‘_·geNavHtml
+(
+$·ge
+, 
+$tÙ®Pages
+, 
+$u¾P»fix
+, 
+$showPageNums
+);
+
+169 &
+	gnb¥
+</
+	gp
+>
+
+170 </
+	gdiv
+>
+
+171 <
+a
+ 
+	gşass
+="tuºexˆæ" 
+h»f
+="javasüt:void(0);" 
+id
+='goNextPage'> ä¸‹ä¸€é¡µ </a>
+
+172 </
+div
+>
+
+174 </
+div
+>
+
+180 </
+div
+>
+
+182 <
+div
+ 
+şass
+="footer">
+
+186 <
+div
+ 
+şass
+="bottom_line ">
+
+187 </
+div
+>
+
+189 <
+p
+ 
+şass
+="footer_text">æ¥ è¶£ ç½‘ ç»œ ç§‘ æŠ€ æœ‰ é™ å…¬ å¸</p>
+
+191 </
+div
+>
+
+193 </
+div
+>
+
+205 </
+body
+>
+
+206 </
+html
+>
+
+	@verifyCoupon/VerifyCoupon.php
+
+1 <?
+php
+
+
+13 
+»quœe_Úû
+('../common/Exception.php');
+
+14 
+»quœe_Úû
+('../common/CodeMessages.php');
+
+19 şas 
+	cV”ifyCoupÚ
+
+
+25 cÚ¡ 
+	mTARGET_API
+ = 'verifyCoupon';
+
+29 
+´iv©e
+ 
+	m$_suµÜtPÏtfÜms
+ = 
+¬¿y
+("laiqu", "360buy");
+
+31 
+´iv©e
+ 
+	m$_¶©fÜm
+ = '';
+
+32 
+´iv©e
+ 
+	m$_»que¡M‘hod
+ = '';
+
+33 
+´iv©e
+ 
+	m$_h‰pM‘hod
+ = '';
+
+34 
+´iv©e
+ 
+	m$_»¥Ú£Ty³
+ = '';
+
+35 
+´iv©e
+ 
+	m$_­iU¾
+ = '';
+
+36 
+´iv©e
+ 
+	m$_»que¡P¬ams
+ = 
+¬¿y
+();
+
+37 
+´iv©e
+ 
+	m$_»que¡P¬amsStic
+ = 
+¬¿y
+();
+
+38 
+´iv©e
+ 
+	m$_codeTag
+ = '';
+
+39 
+´iv©e
+ 
+	m$_codeSucûss
+ = '';
+
+40 
+´iv©e
+ 
+	m$_coupÚId
+ = 0;
+
+54 
+public
+ 
+funùiÚ
+ 
+	$š™
+(
+$¶©fÜm
+)
+
+56 iàĞ!
+$this
+->
+	`is_suµÜ‹d
+(
+$¶©fÜm
+) )
+
+58 
+throw
+ 
+Ãw
+ 
+	`V”ifyCoupÚ_Reque¡Exû±iÚ
+(
+
+59 
+V”ifyCoupÚCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyCoupÚCodeMsg::
+UNKNOWN_PLATFORM_ERROR
+),
+
+60 
+V”ifyCoupÚCodeMsg
+::
+UNKNOWN_PLATFORM_ERROR
+);
+
+62 
+$this
+->
+_¶©fÜm
+ = 
+$¶©fÜm
+;
+
+64 
+$cÚfigFeName
+ = "../¶©fÜm_­i_cÚfs/" . 
+$this
+->
+_¶©fÜm
+ . ".conf";
+
+65 
+$cÚ‹Á
+ = 
+	`fe_g‘_cÚ‹Ás
+(
+$cÚfigFeName
+);
+
+66 
+$cÚfigs
+ = 
+	`jsÚ_decode
+(
+$cÚ‹Á
+);
+
+68 ià(
+$cÚfigs
+ =ğ
+nuÎ
+)
+
+70 
+throw
+ 
+Ãw
+ 
+	`V”ifyCoupÚ_P¬£CÚfigFeExû±iÚ
+(
+
+71 
+V”ifyCoupÚCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyCoupÚCodeMsg::
+PARSE_CONFIG_FILE_ERROR
+),
+
+72 
+V”ifyCoupÚCodeMsg
+::
+PARSE_CONFIG_FILE_ERROR
+);
+
+75 
+$this
+->
+_»que¡M‘hod
+ = 
+$cÚfigs
+->
+»que¡M‘hod
+;
+
+76 
+$this
+->
+_h‰pM‘hod
+ = 
+$cÚfigs
+->
+h‰pM‘hod
+;
+
+77 
+$this
+->
+_»¥Ú£Ty³
+ = 
+$cÚfigs
+->
+»¥Ú£Ty³
+;
+
+78 
+$rg‘Api
+ = 
+£lf
+::
+TARGET_API
+;
+
+79 
+$rg‘ApiCÚfs
+ = 
+$cÚfigs
+->
+$rg‘Api
+;
+
+81 
+$this
+->
+_­iU¾
+ = 
+$rg‘ApiCÚfs
+->
+­iU¾
+;
+
+82 
+$this
+->
+_»que¡P¬ams
+ = 
+$rg‘ApiCÚfs
+->
+»que¡P¬ams
+;
+
+83 
+$this
+->
+_»que¡P¬amsStic
+ = 
+$rg‘ApiCÚfs
+->
+»que¡P¬amsStic
+;
+
+84 
+$this
+->
+_codeTag
+ = 
+$rg‘ApiCÚfs
+->
+»¥Ú£ResuÉ
+->
+codeTag
+;
+
+85 
+$this
+->
+_codeSucûss
+ = 
+$rg‘ApiCÚfs
+->
+»¥Ú£ResuÉStic
+->
+codeSucûss
+;
+
+87  
+Œue
+;
+
+99 
+public
+ 
+funùiÚ
+ 
+	$is_suµÜ‹d
+(
+$¶©fÜm
+)
+
+101 ià(
+$¶©fÜm
+ == '')
+
+102  
+çl£
+;
+
+103 
+	`fÜ—ch
+ (
+$this
+->
+_suµÜtPÏtfÜms
+ 
+as
+ 
+$suµÜt
+)
+
+105 ià(
+$¶©fÜm
+ =ğ
+$suµÜt
+)
+
+106  
+Œue
+;
+
+109  
+çl£
+;
+
+110 
+	}
+}
+
+122 
+public
+ 
+funùiÚ
+ 
+	$š™_v”ifyIÅuts
+(
+$»que¡
+)
+
+124 ià(!
+	`is£t
+(
+$»que¡
+['couponId']) || $request['couponId'] == '')
+
+126 
+throw
+ 
+Ãw
+ 
+	`V”ifyCoupÚ_Reque¡Exû±iÚ
+(
+
+127 
+V”ifyCoupÚCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyCoupÚCodeMsg::
+INVALID_COUPONID_ARG_ERROR
+),
+
+128 
+V”ifyCoupÚCodeMsg
+::
+INVALID_COUPON_ARG_ERROR
+);
+
+130 
+$šputs
+['coupÚId'] = 
+$»que¡
+['couponId'];
+
+132 ià(
+	`is£t
+(
+$this
+->
+_»que¡P¬ams
+->
+coupÚPwd
+))
+
+134 ià(
+$»que¡
+['couponPwd'] == '')
+
+136 
+throw
+ 
+Ãw
+ 
+	`V”ifyCoupÚ_Reque¡Exû±iÚ
+(
+
+137 
+V”ifyCoupÚCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyCoupÚCodeMsg::
+INVALID_COUPONPWD_ARG_ERROR
+),
+
+138 
+V”ifyCoupÚCodeMsg
+::
+INVALID_COUPONPWD_ARG_ERROR
+);
+
+141 
+$šputs
+['coupÚPwd'] = 
+$»que¡
+['couponPwd'];
+
+144  
+$šputs
+;
+
+145 
+	}
+}
+
+157 
+public
+ 
+funùiÚ
+ 
+	$g‘_»¥Ú£Code
+(
+$»¥Ú£
+)
+
+159 
+$»¥Ú£Code
+ = "";
+
+160 ià(
+$»¥Ú£
+ =ğ"" || 
+$this
+->
+_»¥Ú£Ty³
+ == "" ||
+
+161 
+$this
+->
+_codeTag
+ =ğ"" || $this->
+_codeSucûss
+ == "")
+
+163 
+throw
+ 
+Ãw
+ 
+	`V”ifyCoupÚ_P¬£Re¥Ú£Exû±iÚ
+(
+
+164 
+V”ifyCoupÚCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyCoupÚCodeMsg::
+PARSE_RESPONSE_EXCEPTION
+),
+
+165 
+V”ifyCoupÚCodeMsg
+::
+PARSE_RESPONSE_EXCEPTION
+);
+
+168 ià(
+$this
+->
+_»¥Ú£Ty³
+ == "LAIQU")
+
+170 
+	`´eg_m©ch_®l
+("/(<([\w]+)[^>]*>)(.*?)(<\/\\2>)/", 
+$»¥Ú£
+, 
+$m©ches
+, 
+PREG_SET_ORDER
+);
+
+171 
+	`fÜ—ch
+ (
+$m©ches
+ 
+as
+ 
+$v®
+) {
+
+172 ià(
+$v®
+[2] =ğ
+$this
+->
+_codeTag
+)
+
+174 
+$»¥Ú£Code
+ = 
+$v®
+[3];
+
+177 } ià(
+$this
+->
+_»¥Ú£Ty³
+ == "XML")
+
+179 
+$xmlRe¥Ú£
+ = 
+	`sim¶exml_lßd_¡ršg
+(
+$»¥Ú£
+);
+
+180 
+$»¥Ú£Code
+ = 
+$xmlRe¥Ú£
+->
+$code
+;
+
+183 ià(
+$»¥Ú£Code
+ == '')
+
+185 
+throw
+ 
+Ãw
+ 
+	`V”ifyCoupÚ_P¬£Re¥Ú£Exû±iÚ
+(
+
+186 
+V”ifyCoupÚCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyCoupÚCodeMsg::
+PARSE_RESPONSE_EXCEPTION
+),
+
+187 
+V”ifyCoupÚCodeMsg
+::
+PARSE_RESPONSE_EXCEPTION
+);
+
+189 ià(
+$»¥Ú£Code
+ =ğ
+$this
+->
+_codeSucûss
+)
+
+191  
+V”ifyCoupÚCodeMsg
+::
+VERIFY_COUPON_SUCCESS
+;
+
+194  
+V”ifyCoupÚCodeMsg
+::
+VERIFY_COUPON_FAIL
+;
+
+195 
+	}
+}
+
+207 
+public
+ 
+funùiÚ
+ 
+	$g‘_»que¡P¬ams
+(
+$šputs
+)
+
+209 ià(!
+	`is_¬¿y
+(
+$šputs
+))
+
+211 
+throw
+ 
+Ãw
+ 
+	`V”ifyCoupÚ_Reque¡Exû±iÚ
+(
+
+212 
+V”ifyCoupÚCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyCoupÚCodeMsg::
+TRANSFER_REQUEST_PARAM_ERROR
+),
+
+213 
+V”ifyCoupÚCodeMsg
+::
+TRANSFER_REQUEST_PARAM_ERROR
+);
+
+216 
+$·¿ms
+ = 
+	`¬¿y
+();
+
+217 
+	`fÜ—ch
+ (
+$this
+->
+_»que¡P¬ams
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+220 ià(!
+	`is£t
+(
+$šputs
+[
+$key
+]))
+
+222 
+throw
+ 
+Ãw
+ 
+	`V”ifyCoupÚ_Reque¡Exû±iÚ
+(
+
+223 
+V”ifyCoupÚCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyCoupÚCodeMsg::
+TRANSFER_REQUEST_PARAM_ERROR
+),
+
+224 
+V”ifyCoupÚCodeMsg
+::
+TRANSFER_REQUEST_PARAM_ERROR
+);
+
+227 
+$·¿ms
+[
+$v®ue
+] = 
+$šputs
+[
+$key
+];
+
+229 ià(
+$this
+->
+_»que¡P¬amsStic
+ !ğ
+nuÎ
+)
+
+232 
+	`fÜ—ch
+ (
+$this
+->
+_»que¡P¬amsStic
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+234 
+$·¿ms
+[
+$key
+] = 
+$v®ue
+;
+
+237  
+$·¿ms
+;
+
+238 
+	}
+}
+
+249 
+public
+ 
+funùiÚ
+ 
+g’_»¥Ú£_jsÚ
+(
+$»suÉ
+, 
+$msg
+ = "")
+
+252 
+$code
+ = 
+$»suÉ
+;
+
+253 ià(
+	g$msg
+ == "")
+
+256 
+$msg
+ = 
+V”ifyCoupÚCodeMsg
+::
+g‘_mes§ge
+(
+$code
+);
+
+259 ià(
+em±y
+(
+$msg
+))
+
+261 
+	g$code
+ = 
+CommÚCodeMsg
+::
+INVALID_ARGUMENT_ERROR
+;
+
+262 
+	g$msg
+ = 
+CommÚCodeMsg
+::
+g‘_mes§ge
+(
+$code
+);
+
+266 
+	g$»¥Ú£
+['code'] = 
+$code
+;
+
+267 
+	g$»¥Ú£
+['msg'] = 
+$msg
+;
+
+268 
+	g$»¥Ú£
+['d©eTime'] = 
+d©e
+("Y-m-d, h:i:s");
+
+270  
+jsÚ_’code
+(
+$»¥Ú£
+);
+
+275 
+public
+ 
+funùiÚ
+ 
+	$g‘_¶©fÜm
+()
+
+277  
+$this
+->
+_¶©fÜm
+;
+
+278 
+	}
+}
+
+282 
+public
+ 
+funùiÚ
+ 
+	$g‘_»que¡M‘hod
+()
+
+284  
+$this
+->
+_»que¡M‘hod
+;
+
+285 
+	}
+}
+
+289 
+public
+ 
+funùiÚ
+ 
+	$g‘_h‰pM‘hod
+()
+
+291  
+$this
+->
+_h‰pM‘hod
+;
+
+292 
+	}
+}
+
+296 
+public
+ 
+funùiÚ
+ 
+	$g‘_»¥Ú£Ty³
+()
+
+298  
+$this
+->
+_»¥Ú£Ty³
+;
+
+299 
+	}
+}
+
+303 
+public
+ 
+funùiÚ
+ 
+	$g‘_­iU¾
+()
+
+305  
+$this
+->
+_­iU¾
+;
+
+306 
+	}
+}
+
+310 
+public
+ 
+funùiÚ
+ 
+	$g‘_codeTag
+()
+
+312  
+$this
+->
+_codeTag
+;
+
+313 
+	}
+}
+
+317 
+public
+ 
+funùiÚ
+ 
+	$g‘_codeSucûss
+()
+
+319  
+$this
+->
+_codeSucûss
+;
+
+320 
+	}
+}
+
+	@verifyCoupon/VerifyCoupon_funcs.php
+
+1 <?
+php
+
+
+9 
+funùiÚ
+ 
+	$š™_v”ifyIÅuts
+(
+$»que¡
+)
+
+11 
+$šputs
+ = 
+	`¬¿y
+();
+
+14 
+$šputs
+['coupÚId'] = 
+$»que¡
+['couponId'];
+
+15 ià(
+$»que¡
+['couponPwd'] != '')
+
+16 
+$šputs
+['coupÚPwd'] = 
+$»que¡
+['couponPwd'];
+
+17  
+$šputs
+;
+
+18 
+	}
+}
+
+30 
+funùiÚ
+ 
+	$·r£_¶©fÜm_»¥Ú£
+(
+$»¥Ú£
+, 
+$»que¡M‘hod
+, 
+$»¥Ú£Ty³
+, 
+$codeTag
+, 
+$codeSucûss
+)
+
+32 ià(
+$»que¡M‘hod
+ != 'REST')
+
+33  
+CODE_ERROR_ONLY_SUPPORT_REST
+;
+
+34  
+	`g‘_»¥Ú£Code
+(
+$»¥Ú£
+, 
+$»¥Ú£Ty³
+, 
+$codeTag
+, 
+$codeSucûss
+);
+
+35 
+	}
+}
+
+37 
+funùiÚ
+ 
+	$g‘_»¥Ú£Code
+(
+$»¥Ú£
+, 
+$»¥Ú£Ty³
+, 
+$codeTag
+, 
+$codeSucûss
+)
+
+39 
+$»¥Ú£Code
+ = "";
+
+40 ià(
+$»¥Ú£
+ =ğ"" || 
+$»¥Ú£Ty³
+ == "" ||
+
+41 
+$codeTag
+ =ğ"" || 
+$codeSucûss
+ == "")
+
+42  
+CODE_ERROR_API_CALL
+;
+
+44 ià(
+$»¥Ú£Ty³
+ == "LAIQU")
+
+46 
+	`´eg_m©ch_®l
+("/(<([\w]+)[^>]*>)(.*?)(<\/\\2>)/", 
+$»¥Ú£
+, 
+$m©ches
+, 
+PREG_SET_ORDER
+);
+
+47 
+	`fÜ—ch
+ (
+$m©ches
+ 
+as
+ 
+$v®
+) {
+
+48 ià(
+$v®
+[2] =ğ
+$codeTag
+)
+
+50 
+$»¥Ú£Code
+ = 
+$v®
+[3];
+
+53 } ià(
+$»¥Ú£Ty³
+ == "XML")
+
+55 
+$xmlRe¥Ú£
+ = 
+	`sim¶exml_lßd_¡ršg
+(
+$»¥Ú£
+);
+
+56 
+$»¥Ú£Code
+ = 
+$xmlRe¥Ú£
+->
+$code
+;
+
+59 ià(
+$»¥Ú£Code
+ == '')
+
+60  
+CODE_ERROR_API_CALL
+;
+
+62  
+$»¥Ú£Code
+ =ğ
+$codeSucûss
+ ? 
+CODE_SUCCESS_VERIFY_COUPON
+:
+CODE_FAIL_VERIFY_COUPON
+;
+
+63 
+	}
+}
+
+72 
+funùiÚ
+ 
+	$·r£_¶©fÜm_cÚfs
+(
+$¶©fÜm
+)
+
+74 
+glob®
+ 
+$»que¡M‘hod
+;
+
+75 
+glob®
+ 
+$h‰pM‘hod
+;
+
+76 
+glob®
+ 
+$»¥Ú£Ty³
+;
+
+77 
+glob®
+ 
+$­iU¾
+;
+
+78 
+glob®
+ 
+$»que¡P¬ams
+;
+
+79 
+glob®
+ 
+$»que¡P¬amsStic
+;
+
+80 
+glob®
+ 
+$codeTag
+;
+
+81 
+glob®
+ 
+$codeSucûss
+;
+
+83 
+$cÚfigFeName
+ = "¶©fÜm_­i_cÚfs/" . 
+$¶©fÜm
+ . ".conf";
+
+84 
+$cÚ‹Á
+ = 
+	`fe_g‘_cÚ‹Ás
+(
+$cÚfigFeName
+);
+
+85 
+$cÚfigs
+ = 
+	`jsÚ_decode
+(
+$cÚ‹Á
+);
+
+86 
+	`fÜ—ch
+ (
+$cÚfigs
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+88 
+glob®
+ 
+$$key
+;
+
+89 
+$$key
+ = 
+$v®ue
+;
+
+91 
+$­iU¾
+ = 
+$$rg‘Api
+->
+­iU¾
+;
+
+92 
+$»que¡P¬ams
+ = 
+$$rg‘Api
+->
+»que¡P¬ams
+;
+
+93 
+$»que¡P¬amsStic
+ = 
+$$rg‘Api
+->
+»que¡P¬amsStic
+;
+
+94 
+$codeTag
+ = 
+$$rg‘Api
+->
+»¥Ú£ResuÉ
+->
+codeTag
+;
+
+95 
+$codeSucûss
+ = 
+$$rg‘Api
+->
+»¥Ú£ResuÉStic
+->
+codeSucûss
+;
+
+96 
+	}
+}
+
+105 
+funùiÚ
+ 
+	$g‘_»que¡P¬ams
+(
+$šputs
+)
+
+107 
+$·¿ms
+ = 
+	`¬¿y
+();
+
+108 
+glob®
+ 
+$»que¡P¬ams
+;
+
+109 
+glob®
+ 
+$»que¡P¬amsStic
+;
+
+110 
+	`fÜ—ch
+ (
+$»que¡P¬ams
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+113 
+$·¿ms
+[
+$v®ue
+] = 
+$šputs
+[
+$key
+];
+
+115 ià(
+$»que¡P¬amsStic
+ !ğ
+nuÎ
+)
+
+118 
+	`fÜ—ch
+ (
+$»que¡P¬amsStic
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+120 
+$·¿ms
+[
+$key
+] = 
+$v®ue
+;
+
+123  
+$·¿ms
+;
+
+124 
+	}
+}
+
+133 
+funùiÚ
+ 
+	$g’_»¥Ú£_jsÚ
+(
+$»suÉ
+)
+
+135 
+glob®
+ 
+$codeMes§ges
+;
+
+136 
+$»¥Ú£
+ = 
+	`¬¿y
+();
+
+138 ià(!
+$»suÉ
+ || 
+$codeMes§ges
+[$result] == '')
+
+139 
+$»suÉ
+ = 
+CODE_ERROR_UNKNOWN
+;
+
+141 
+$»¥Ú£
+['code'] = 
+$»suÉ
+;
+
+142 
+$»¥Ú£
+['msg'] = 
+$codeMes§ges
+[
+$»suÉ
+];
+
+143 
+$»¥Ú£
+['d©eTime'] = 
+	`d©e
+("Y-m-d, h:i:s");
+
+145  
+	`jsÚ_’code
+(
+$»¥Ú£
+);
+
+146 
+	}
+}
+
+	@verifyCoupon/doVerifyCoupon.php
+
+1 <?
+php
+
+
+10 
+	g»quœe_Úû
+ '../common/checkAuthority.php';
+
+11 
+	g»quœe_Úû
+ '../common/RESTclient.php';
+
+12 
+	g»quœe_Úû
+ 'VerifyCoupon.php';
+
+13 
+	g»quœe_Úû
+ '../module/Coupon.php';
+
+14 
+»quœe_Úû
+('../common/CodeMessages.php');
+
+16 
+funùiÚ
+ 
+	$ruÁimeE¼ÜHªdËr
+(
+$”ºo
+, 
+$”r¡r
+, 
+$”rfe
+, 
+$”¾še
+)
+
+19 
+$code
+ = 
+CommÚCodeMsg
+::
+SYSTEM_RUNTIME_ERROR
+;
+
+21 
+	`”rÜ_log
+(
+$”r¡r
+);
+
+22 
+	`d›
+(
+V”ifyCoupÚ
+::
+	`g’_»¥Ú£_jsÚ
+(
+$code
+));
+
+24 
+	}
+}
+
+25 
+funùiÚ
+ 
+	$exû±iÚHªdËr
+(
+$exû±iÚ
+)
+
+27 
+$code
+ = 
+$exû±iÚ
+->
+	`g‘Code
+();
+
+28 
+$v”ifyMsg
+ = 
+V”ifyCoupÚCodeMsg
+::
+	`g‘_mes§ge
+(
+$code
+);
+
+29 ià(
+	`em±y
+(
+$v”ifyMsg
+))
+
+31 
+$code
+ = 
+CommÚCodeMsg
+::
+UNCAUGHT_FATAL_ERROR
+;
+
+32 
+$”r¡r
+ = 
+$exû±iÚ
+->
+	`g‘Mes§ge
+();
+
+34 
+	`”rÜ_log
+(
+$”r¡r
+);
+
+36 
+	`d›
+(
+V”ifyCoupÚ
+::
+	`g’_»¥Ú£_jsÚ
+(
+$code
+));
+
+37 
+	}
+}
+
+38 
+£t_”rÜ_hªdËr
+('ruÁimeE¼ÜHªdËr', 
+E_ERROR
+);
+
+39 
+£t_exû±iÚ_hªdËr
+('exceptionHandler');
+
+41 
+	g$¶©fÜm
+ = 
+$_REQUEST
+['platform'];
+
+42 
+	g$v”ifyCoupÚ
+ = 
+Ãw
+ 
+V”ifyCoupÚ
+();
+
+44 
+	g$v”ifyCoupÚ
+->
+š™
+(
+$¶©fÜm
+);
+
+46 
+	g$šputs
+ = 
+$v”ifyCoupÚ
+->
+š™_v”ifyIÅuts
+(
+$_REQUEST
+);
+
+48 
+	g$»¡
+ = 
+Ãw
+ 
+RESTş›Á
+();
+
+49 
+	g$·¿ms
+ = 
+$v”ifyCoupÚ
+->
+g‘_»que¡P¬ams
+(
+$šputs
+);
+
+51 ià(
+	g$v”ifyCoupÚ
+->
+g‘_h‰pM‘hod
+() == 'POST') {
+
+52 
+$»¡
+->
+ü—‹Reque¡
+(
+$v”ifyCoupÚ
+->
+g‘_­iU¾
+(), 'POST', 
+$·¿ms
+);
+
+54 
+	g$»¡
+->
+ü—‹Reque¡
+(
+$v”ifyCoupÚ
+->
+g‘_­iU¾
+());
+
+55 
+	g$u¾
+ = 
+$»¡
+->
+g‘U¾
+();
+
+56 
+	g$u¾
+->
+£tQu”yV¬ŸbËs
+(
+$·¿ms
+);
+
+58 
+	g$»¥Ú£
+ = '';
+
+59 
+	g$»¡
+->
+£ndReque¡
+();
+
+60 
+	g$»¥Ú£
+ = 
+$»¡
+->
+g‘Re¥Ú£
+();
+
+61 
+	g$»¥Ú£Code
+ = 
+$v”ifyCoupÚ
+->
+g‘_»¥Ú£Code
+(
+$»¥Ú£
+);
+
+62 ià(
+	g$»¥Ú£Code
+ ==ğ
+V”ifyCoupÚCodeMsg
+::
+VERIFY_COUPON_SUCCESS
+)
+
+64 
+$coupÚId
+ = 
+$šputs
+['couponId'];
+
+65 
+	g$coupÚ
+ = 
+Ãw
+ 
+CoupÚ
+();
+
+67 ià(!
+	g$coupÚ
+->
+cÚsume_coupÚ
+(
+$coupÚId
+, 
+$¶©fÜm
+))
+
+69 
+d›
+(
+V”ifyCoupÚ
+::
+g’_»¥Ú£_jsÚ
+(
+
+70 
+V”ifyCoupÚCodeMsg
+::
+MARK_COUPON_CONSUMED_ERROR
+,
+
+71 "E¼ÜCode: ".
+V”ifyCoupÚCodeMsg
+::
+MARK_COUPON_CONSUMED_ERROR
+." å¹³å°:".
+$¶©fÜm
+."ç¼–å·ä¸º".
+$coupÚId
+."çš„å·²æ¶ˆè´¹çš„å›¢è´­åˆ¸åœ¨æœ¬åœ°æ ‡è®°å¤±è´¥!"));
+
+74 
+echo
+ 
+	gV”ifyCoupÚ
+::
+g’_»¥Ú£_jsÚ
+(
+$»¥Ú£Code
+);
+
+	@verifyCoupon/index.php
+
+1 ï»¿<?
+php
+ 
+»quœe_Úû
+('../common/checkAuthority.php'); ?>
+
+2 <
+html
+ 
+	gxmÊs
+="http://www.w3.org/1999/xhtml">
+
+3 <
+h—d
+>
+
+4 <
+t™Ë
+>éªŒè¯å¹³å°</title>
+
+5 <
+m‘a
+ 
+h‰p
+-
+equiv
+="CÚ‹Á-Ty³" 
+cÚ‹Á
+="text/html; charset=utf-8">
+
+6 <
+lšk
+ 
+h»f
+="css/check_css.css" 
+»l
+="¡yËsh“t" 
+ty³
+="text/css" />
+
+8 <
+lšk
+ 
+h»f
+="../css/com_css.css" 
+»l
+="¡yËsh“t" 
+ty³
+="text/css" />
+
+9 </
+h—d
+>
+
+10 <
+body
+>
+
+11 <
+süt
+ 
+¤c
+="js/jquery.min.js"></script>
+
+12 <
+süt
+ 
+¤c
+="js/verifyCoupon.js"></script>
+
+14 <
+div
+ 
+şass
+="maš" 
+id
+="main">
+
+18 <
+div
+ 
+şass
+="top_blank">
+
+19 </
+div
+>
+
+21 <
+div
+ 
+şass
+="top">
+
+22 <
+img
+ 
+¤c
+="../images/logo.jpg" />
+
+23 </
+div
+>
+
+25 <
+div
+ 
+şass
+="body">
+
+27 <
+div
+ 
+şass
+="body_l">
+
+28 <
+div
+ 
+şass
+="nav">
+
+31 <
+p
+ 
+şass
+="nav_title">å•† æˆ· ç®¡ ç†</p>
+
+32 <
+div
+ 
+şass
+="nav_bg">
+
+33 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="javasüt:void(0);">æ¶ˆ è´¹ ç™» è®°</a><
+br
+ />
+
+34 </
+div
+>
+
+35 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="../¡©i¡ics/‹amLi¡.php">é¡¹ ç›® ç»Ÿ è®¡</a><
+br
+ />
+
+36 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="#">æ¶ˆ è´¹ è¯„ ä»·</a><
+br
+ />
+
+37 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="../acùMªag”/chªgePass.php">ä¿® æ”¹ å¯† ç </a><
+br
+ />
+
+38 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="../V”ifyLogš/logšOut.php">é€€ å‡º ç™» å½•</a><
+br
+ />
+
+39 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="#">å¸® åŠ©</a>
+
+42 </
+div
+>
+
+44 <
+div
+ 
+şass
+="serv">
+
+45 <
+div
+ 
+şass
+="‹l" 
+h»f
+="#"> </div>
+
+46 <
+a
+ 
+şass
+="online_qq"></a>
+
+47 </
+div
+>
+
+49 </
+div
+>
+
+51 <
+div
+ 
+şass
+="body_r" > <!--è¿™é‡Œçš„
+body_r
+ æ˜¯åŸæ¥çš„
+body
+ -->
+
+53 <
+div
+ 
+şass
+="fl fl_1">
+
+54 <
+fÜm
+ 
+aùiÚ
+="V”ifyCoupÚ.php" 
+m‘hod
+="g‘" 
+acû±
+-
+ch¬£t
+="utf-8">
+
+56 <
+div
+ 
+şass
+="platform_b">
+
+57 <
+£Ëù
+ 
+şass
+="¶©fÜm" 
+Çme
+="¶©fÜm" 
+id
+="platform">
+
+58 <
+İtiÚ
+ 
+v®ue
+="laiqu">æ¥è¶£</option>
+
+59 <
+İtiÚ
+ 
+v®ue
+="360buy">äº¬ä¸œ</option>
+
+60 </
+£Ëù
+>
+
+61 </
+div
+>
+
+63 <
+div
+ 
+şass
+="coupÚId_b" 
+Çme
+="coupÚIdW¿µ”" 
+id
+="couponIdWrapper">
+
+64 <
+šput
+ 
+şass
+="coupÚId" 
+Çme
+="coupÚId" 
+id
+="coupÚId" 
+v®ue
+="åˆ¸å·"/>
+
+65 </
+div
+>
+
+67 <
+div
+ 
+şass
+="coupÚPwd_b" 
+Çme
+="coupÚPwdW¿µ”" 
+id
+="couponPwdWrapper">
+
+68 <
+šput
+ 
+şass
+="coupÚPwd" 
+Çme
+="coupÚPwd" 
+id
+="coupÚPwd" 
+v®ue
+="å¯†ç "/>
+
+69 </
+div
+>
+
+71 <
+div
+ 
+şass
+="button">
+
+72 <
+a
+ 
+şass
+="»£t" 
+ty³
+="»£t" 
+v®ue
+="" 
+Çme
+="»£t" 
+id
+="»£t" 
+h»f
+="#"></a>
+
+73 <
+a
+ 
+şass
+="subm™" 
+ty³
+="subm™" 
+v®ue
+="" 
+Çme
+="subm™" 
+id
+="subm™" 
+h»f
+="#"></a>
+
+74 </
+div
+>
+
+75 </
+fÜm
+>
+
+76 </
+div
+>
+
+78 <
+div
+ 
+şass
+="mid">
+
+79 </
+div
+>
+
+82 <
+div
+ 
+şass
+="fr fr_1">
+
+84 <
+p
+ 
+şass
+="‹xt_1"><
+b
+>éªŒè¯ç»“æœï¼š</b></p>
+
+86 <
+div
+ 
+Çme
+="imageRe¥Ú£" 
+id
+="imageRe¥Ú£" 
+şass
+="imageResponse" ></div>
+
+87 <
+div
+ 
+şass
+="line"></div>
+
+88 <
+p
+ 
+şass
+="‹xt_2_2" 
+Çme
+="msgRe¥Ú£" 
+id
+="msgResponse">è¯·åœ¨å·¦è¾¹è¾“å…¥æ¡†ä¸­è¾“å…¥ç›¸åº”çš„åˆ¸å·åŠå¯†ç ã€‚</p>
+
+91 </
+div
+>
+
+94 </
+div
+>
+
+97 </
+div
+>
+
+100 <
+div
+ 
+şass
+="footer">
+
+102 <
+div
+ 
+şass
+="bottom_1">
+
+103 </
+div
+>
+
+105 <
+div
+ 
+şass
+="bottom_line">
+
+107 </
+div
+>
+
+109 <
+p
+ 
+şass
+="footer_text">æ¥ è¶£ ç½‘ ç»œ ç§‘ æŠ€ æœ‰ é™ å…¬ å¸</p>
+
+111 </
+div
+>
+
+113 </
+div
+>
+
+115 </
+body
+>
+
+116 </
+html
+>
+
+	@verifyCoupon/v1000/Exception.php
+
+1 <?
+php
+
+
+18 şas 
+	cV”ifyCoupÚ_Exû±iÚ
+ 
+ex‹nds
+ 
+	mPEAR_Exû±iÚ
+
+
+22 cÚ¡ 
+	mCODE_SUCCESS_VERIFY_COUPON
+ = 200;
+
+25 cÚ¡ 
+	mCODE_FAIL_VERIFY_COUPON
+ = 300;
+
+28 cÚ¡ 
+	mCODE_ERROR_API_CALL
+ = 400;
+
+29 cÚ¡ 
+	mCODE_ERROR_PARSE_RESPONSR
+ = 401;
+
+30 cÚ¡ 
+	mCODE_ERROR_ONLY_SUPPORT_REST
+ = 402;
+
+31 cÚ¡ 
+	mCODE_ERROR_UNIVERSAL_SERVER
+ = 403;
+
+32 cÚ¡ 
+	mCODE_ERROR_UNKNOWN
+ = 404;
+
+33 cÚ¡ 
+	mCODE_ERROR_INVALID_ARG
+ = 405;
+
+36 
+´iv©e
+ 
+	m$_codeMes§ges
+ = 
+¬¿y
+ (
+
+37 
+£lf
+::
+CODE_SUCCESS_VERIFY_COUPON
+ => "éªŒè¯æˆåŠŸ",
+
+38 
+£lf
+::
+CODE_FAIL_VERIFY_COUPON
+ => "éªŒè¯å¤±è´¥",
+
+39 
+£lf
+::
+CODE_ERROR_API_CALL
+ => "æ¥å£è°ƒç”¨å‡ºé”™",
+
+40 
+£lf
+::
+CODE_ERROR_PARSE_RESPONSE
+ => "è§£ææ¥å£è¿”å›å‡ºé”™",
+
+41 
+£lf
+::
+CODE_ERROR_ONLY_SUPPORT_REST
+ => "å¹³å°ç›®å‰åªæ”¯æŒRESTfulæ¥å£çš„å¹³å°",
+
+42 
+£lf
+::
+CODE_ERROR_UNIVERSAL_SERVER
+ => "éªŒè¯å¹³å°åç«¯é€šç”¨é”™è¯¯",
+
+43 
+£lf
+::
+CODE_ERROR_UNKNOWN
+ => "æœªçŸ¥é”™è¯¯",
+
+44 
+£lf
+::
+CODE_ERROR_INVALID_ARG
+ => "æ— æ•ˆçš„å‚æ•°"
+
+55 
+public
+ 
+funùiÚ
+ 
+	$__cÚ¡ruù
+(
+$mes§ge
+ = 
+nuÎ
+, 
+$code
+ =‚ull)
+
+57 ià(
+$mes§ge
+ !ğ
+nuÎ
+ && 
+$code
+ ==‚ull)
+
+59 
+Œy
+ {
+
+60 
+$mes§ge
+ = 
+£lf
+::
+	`g‘_mes§ge
+(
+$code
+);
+
+61 
+·»Á
+::
+	`__cÚ¡ruù
+(
+$mes§ge
+, 
+$code
+);
+
+63 
+	`ÿtch
+ (
+PEAR_Exû±iÚ
+ 
+$´
+)
+
+65 
+throw
+ 
+$´
+;
+
+68 
+·»Á
+::
+	`__cÚ¡ruù
+(
+$mes§ge
+, 
+$code
+);
+
+81 
+public
+ 
+funùiÚ
+ 
+	$g‘_mes§ge
+(
+$code
+ = 
+nuÎ
+)
+
+83 ià(
+$code
+ =ğ
+nuÎ
+)
+
+84  
+£lf
+::
+$_codeMes§ges
+;
+
+86 ià(! 
+	`is£t
+(
+£lf
+::
+$_codeMes§ges
+[
+$code
+]))
+
+87 
+throw
+ 
+Ãw
+ 
+	`PEAR_Exû±iÚ
+(
+£lf
+::
+	`$_codeMes§ge
+(£lf::
+CODE_ERROR_INVALID_ARG
+),
+
+88 
+£lf
+::
+CODE_ERROR_INVALID_ARG
+);
+
+90  
+£lf
+::
+$_codeMes§ges
+[
+$code
+];
+
+91 
+	}
+}
+
+	@verifyCoupon/v1000/VerifyCoupon.php
+
+1 <?
+php
+
+
+10 şas 
+	cV”ifyCoupÚ
+
+
+14 cÚ¡ 
+	mCODE_SUCCESS_VERIFY_COUPON
+ = 200;
+
+17 cÚ¡ 
+	mCODE_FAIL_VERIFY_COUPON
+ = 300;
+
+20 cÚ¡ 
+	mCODE_ERROR_API_CALL
+ = 400;
+
+21 cÚ¡ 
+	mCODE_ERROR_PARSE_RESPONSR
+ = 401;
+
+22 cÚ¡ 
+	mCODE_ERROR_ONLY_SUPPORT_REST
+ = 402;
+
+23 cÚ¡ 
+	mCODE_ERROR_UNIVERSAL_SERVER
+ = 403;
+
+24 cÚ¡ 
+	mCODE_ERROR_UNKNOWN
+ = 404;
+
+27 cÚ¡ 
+	mTARGET_API
+ = 'verifyCoupon';
+
+30 
+´iv©e
+ 
+	m$_codeMes§ges
+ = 
+¬¿y
+ (
+
+31 
+£lf
+::
+CODE_SUCCESS_VERIFY_COUPON
+ => "éªŒè¯æˆåŠŸ",
+
+32 
+£lf
+::
+CODE_FAIL_VERIFY_COUPON
+ => "éªŒè¯å¤±è´¥",
+
+33 
+£lf
+::
+CODE_ERROR_API_CALL
+ => "æ¥å£è°ƒç”¨å‡ºé”™",
+
+34 
+£lf
+::
+CODE_ERROR_PARSE_RESPONSE
+ => "è§£ææ¥å£è¿”å›å‡ºé”™",
+
+35 
+£lf
+::
+CODE_ERROR_ONLY_SUPPORT_REST
+ => "å¹³å°ç›®å‰åªæ”¯æŒRESTfulæ¥å£çš„å¹³å°",
+
+36 
+£lf
+::
+CODE_ERROR_UNIVERSAL_SERVER
+ => "éªŒè¯å¹³å°åç«¯é€šç”¨é”™è¯¯",
+
+37 
+£lf
+::
+CODE_ERROR_UNKNOWN
+ => "æœªçŸ¥é”™è¯¯");
+
+40 
+´iv©e
+ 
+	m$_suµÜtPÏtfÜms
+ = 
+¬¿y
+("laiqu", "360buy");
+
+42 
+´iv©e
+ 
+	m$_¶©fÜm
+ = '';
+
+43 
+´iv©e
+ 
+	m$_»que¡M‘hod
+ = '';
+
+44 
+´iv©e
+ 
+	m$_h‰pM‘hod
+ = '';
+
+45 
+´iv©e
+ 
+	m$_»¥Ú£Ty³
+ = '';
+
+46 
+´iv©e
+ 
+	m$_­iU¾
+ = '';
+
+47 
+´iv©e
+ 
+	m$_»que¡P¬ams
+ = 
+¬¿y
+();
+
+48 
+´iv©e
+ 
+	m$_»que¡P¬amsStic
+ = 
+¬¿y
+();
+
+49 
+´iv©e
+ 
+	m$_codeTag
+ = '';
+
+50 
+´iv©e
+ 
+	m$_codeSucûss
+ = '';
+
+63 
+public
+ 
+funùiÚ
+ 
+	$š™
+(
+$¶©fÜm
+)
+
+65 iàĞ!
+$this
+->
+	`is_suµÜ‹d
+(
+$¶©fÜm
+) )
+
+66  
+çl£
+;
+
+67 
+$this
+->
+_¶©fÜm
+ = 
+$¶©fÜm
+;
+
+69 
+$cÚfigFeName
+ = "¶©fÜm_­i_cÚfs/" . 
+$this
+->
+_¶©fÜm
+ . ".conf";
+
+70 
+$cÚ‹Á
+ = 
+	`fe_g‘_cÚ‹Ás
+(
+$cÚfigFeName
+);
+
+71 
+$cÚfigs
+ = 
+	`jsÚ_decode
+(
+$cÚ‹Á
+);
+
+73 ià(!
+	`is£t
+(
+$cÚfigs
+))
+
+74  
+çl£
+;
+
+76 
+$this
+->
+_»que¡M‘hod
+ = 
+$cÚfigs
+->
+»que¡M‘hod
+;
+
+77 
+$this
+->
+_h‰pM‘hod
+ = 
+$cÚfigs
+->
+h‰pM‘hod
+;
+
+78 
+$this
+->
+_»¥Ú£Ty³
+ = 
+$cÚfigs
+->
+»¥Ú£Ty³
+;
+
+79 
+$rg‘Api
+ = 
+£lf
+::
+TARGET_API
+;
+
+80 
+$rg‘ApiCÚfs
+ = 
+$cÚfigs
+->
+$rg‘Api
+;
+
+82 
+$this
+->
+_­iU¾
+ = 
+$rg‘ApiCÚfs
+->
+­iU¾
+;
+
+83 
+$this
+->
+_»que¡P¬ams
+ = 
+$rg‘ApiCÚfs
+->
+»que¡P¬ams
+;
+
+84 
+$this
+->
+_»que¡P¬amsStic
+ = 
+$rg‘ApiCÚfs
+->
+»que¡P¬amsStic
+;
+
+85 
+$this
+->
+_codeTag
+ = 
+$rg‘ApiCÚfs
+->
+»¥Ú£ResuÉ
+->
+codeTag
+;
+
+86 
+$this
+->
+_codeSucûss
+ = 
+$rg‘ApiCÚfs
+->
+»¥Ú£ResuÉStic
+->
+codeSucûss
+;
+
+88  
+Œue
+;
+
+100 
+public
+ 
+funùiÚ
+ 
+	$is_suµÜ‹d
+(
+$¶©fÜm
+)
+
+102 ià(
+$¶©fÜm
+ == '')
+
+103  
+çl£
+;
+
+104 
+	`fÜ—ch
+ (
+$this
+->
+_suµÜtPÏtfÜms
+ 
+as
+ 
+$suµÜt
+)
+
+106 ià(
+$¶©fÜm
+ =ğ
+$suµÜt
+)
+
+107  
+Œue
+;
+
+110  
+çl£
+;
+
+111 
+	}
+}
+
+123 
+public
+ 
+funùiÚ
+ 
+	$š™_v”ifyIÅuts
+(
+$»que¡
+)
+
+125 ià(!
+	`is£t
+(
+$»que¡
+['couponId']) || $request['couponId'] == '')
+
+126  
+çl£
+;
+
+127 
+$šputs
+['coupÚId'] = 
+$»que¡
+['couponId'];
+
+129 ià(
+	`is£t
+(
+$this
+->
+_»que¡P¬ams
+->
+coupÚPwd
+))
+
+131 ià(
+$»que¡
+['couponPwd'] == '')
+
+132  
+çl£
+;
+
+134 
+$šputs
+['coupÚPwd'] = 
+$»que¡
+['couponPwd'];
+
+137  
+$šputs
+;
+
+138 
+	}
+}
+
+149 
+public
+ 
+funùiÚ
+ 
+	$g‘_»¥Ú£Code
+(
+$»¥Ú£
+)
+
+151 
+$»¥Ú£Code
+ = "";
+
+152 ià(
+$»¥Ú£
+ =ğ"" || 
+$this
+->
+_»¥Ú£Ty³
+ == "" ||
+
+153 
+$this
+->
+_codeTag
+ =ğ"" || $this->
+_codeSucûss
+ == "")
+
+154  
+£lf
+::
+CODE_ERROR_PARSE_RESPONSE
+;
+
+156 ià(
+$this
+->
+_»¥Ú£Ty³
+ == "LAIQU")
+
+158 
+	`´eg_m©ch_®l
+("/(<([\w]+)[^>]*>)(.*?)(<\/\\2>)/", 
+$»¥Ú£
+, 
+$m©ches
+, 
+PREG_SET_ORDER
+);
+
+159 
+	`fÜ—ch
+ (
+$m©ches
+ 
+as
+ 
+$v®
+) {
+
+160 ià(
+$v®
+[2] =ğ
+$this
+->
+_codeTag
+)
+
+162 
+$»¥Ú£Code
+ = 
+$v®
+[3];
+
+165 } ià(
+$this
+->
+_»¥Ú£Ty³
+ == "XML")
+
+167 
+$xmlRe¥Ú£
+ = 
+	`sim¶exml_lßd_¡ršg
+(
+$»¥Ú£
+);
+
+168 
+$»¥Ú£Code
+ = 
+$xmlRe¥Ú£
+->
+$code
+;
+
+171 ià(
+$»¥Ú£Code
+ == '')
+
+172  
+£lf
+::
+CODE_ERROR_PARSE_RESPONSE
+;
+
+174  
+$»¥Ú£Code
+ =ğ
+$this
+->
+_codeSucûss
+ ? 
+£lf
+::
+CODE_SUCCESS_VERIFY_COUPON
+ : s–f::
+CODE_FAIL_VERIFY_COUPON
+;
+
+175 
+	}
+}
+
+186 
+public
+ 
+funùiÚ
+ 
+	$g‘_»que¡P¬ams
+(
+$šputs
+)
+
+188 
+$·¿ms
+ = 
+	`¬¿y
+();
+
+189 
+	`fÜ—ch
+ (
+$this
+->
+_»que¡P¬ams
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+192 
+$·¿ms
+[
+$v®ue
+] = 
+$šputs
+[
+$key
+];
+
+194 ià(
+$this
+->
+_»que¡P¬amsStic
+ !ğ
+nuÎ
+)
+
+197 
+	`fÜ—ch
+ (
+$this
+->
+_»que¡P¬amsStic
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+199 
+$·¿ms
+[
+$key
+] = 
+$v®ue
+;
+
+202  
+$·¿ms
+;
+
+203 
+	}
+}
+
+214 
+public
+ 
+funùiÚ
+ 
+	$g’_»¥Ú£_jsÚ
+(
+$»suÉ
+)
+
+216 ià(!
+$»suÉ
+ || 
+£lf
+::
+$_codeMes§ges
+[$result] == '')
+
+217  
+çl£
+;
+
+219 
+$»¥Ú£
+['code'] = 
+$»suÉ
+;
+
+220 
+$»¥Ú£
+['msg'] = 
+£lf
+::
+$_codeMes§ges
+[
+$»suÉ
+];
+
+221 
+$»¥Ú£
+['d©eTime'] = 
+	`d©e
+("Y-m-d, h:i:s");
+
+223  
+	`jsÚ_’code
+(
+$»¥Ú£
+);
+
+224 
+	}
+}
+
+234 
+public
+ 
+funùiÚ
+ 
+	$g‘_mes§ge
+(
+$code
+ = 
+nuÎ
+)
+
+236 ià(
+$code
+ =ğ
+nuÎ
+)
+
+237  
+£lf
+::
+$_codeMes§ges
+;
+
+239  
+	`is£t
+(
+£lf
+::
+$_codeMes§ges
+[
+$code
+]è? s–f::$_codeMes§ges[$code] : 
+nuÎ
+;
+
+240 
+	}
+}
+
+244 
+public
+ 
+funùiÚ
+ 
+	$g‘_¶©fÜm
+()
+
+246  
+$this
+->
+_¶©fÜm
+;
+
+247 
+	}
+}
+
+251 
+public
+ 
+funùiÚ
+ 
+	$g‘_»que¡M‘hod
+()
+
+253  
+$this
+->
+_»que¡M‘hod
+;
+
+254 
+	}
+}
+
+258 
+public
+ 
+funùiÚ
+ 
+	$g‘_h‰pM‘hod
+()
+
+260  
+$this
+->
+_h‰pM‘hod
+;
+
+261 
+	}
+}
+
+265 
+public
+ 
+funùiÚ
+ 
+	$g‘_»¥Ú£Ty³
+()
+
+267  
+$this
+->
+_»¥Ú£Ty³
+;
+
+268 
+	}
+}
+
+272 
+public
+ 
+funùiÚ
+ 
+	$g‘_­iU¾
+()
+
+274  
+$this
+->
+_­iU¾
+;
+
+275 
+	}
+}
+
+279 
+public
+ 
+funùiÚ
+ 
+	$g‘_codeTag
+()
+
+281  
+$this
+->
+_codeTag
+;
+
+282 
+	}
+}
+
+286 
+public
+ 
+funùiÚ
+ 
+	$g‘_codeSucûss
+()
+
+288  
+$this
+->
+_codeSucûss
+;
+
+289 
+	}
+}
+
+	@verifyCoupon/v1000/doVerifyCoupon.php
+
+1 <?
+php
+
+
+2 
+	g»quœe_Úû
+ 'RESTclient.php';
+
+3 
+	g»quœe_Úû
+ 'VerifyCoupon.php';
+
+5 
+	g$¶©fÜm
+ = 
+$_REQUEST
+['platform'];
+
+6 
+	g$v”ifyCoupÚ
+ = 
+Ãw
+ 
+V”ifyCoupÚ
+();
+
+8 if(!
+	g$v”ifyCoupÚ
+->
+	$š™
+(
+$¶©fÜm
+))
+
+10 
+	`d›
+(
+V”ifyCoupÚ
+::
+	`g’_»¥Ú£_jsÚ
+(V”ifyCoupÚ::
+CODE_ERROR_UNIVERSAL_SERVER
+));
+
+11 
+	}
+}
+
+13 
+	g$šputs
+ = 
+$v”ifyCoupÚ
+->
+š™_v”ifyIÅuts
+(
+$_REQUEST
+);
+
+15 
+	g$»¡
+ = 
+Ãw
+ 
+RESTş›Á
+();
+
+17 
+	g$·¿ms
+ = 
+$v”ifyCoupÚ
+->
+g‘_»que¡P¬ams
+(
+$šputs
+);
+
+19 ià(
+	g$v”ifyCoupÚ
+->
+g‘_h‰pM‘hod
+() == 'POST') {
+
+20 
+$»¡
+->
+ü—‹Reque¡
+(
+$v”ifyCoupÚ
+->
+g‘_­iU¾
+(), 'POST', 
+$·¿ms
+);
+
+22 
+	g$»¡
+->
+ü—‹Reque¡
+(
+$v”ifyCoupÚ
+->
+g‘_­iU¾
+());
+
+23 
+	g$u¾
+ = 
+$»¡
+->
+g‘U¾
+();
+
+24 
+	g$u¾
+->
+£tQu”yV¬ŸbËs
+(
+$·¿ms
+);
+
+26 
+	g$»¡
+->
+£ndReque¡
+();
+
+27 
+	g$»¥Ú£
+ = 
+$»¡
+->
+g‘Re¥Ú£
+();
+
+28 
+	g$»suÉ
+ = 
+$v”ifyCoupÚ
+->
+g‘_»¥Ú£Code
+(
+$»¥Ú£
+);
+
+30 
+echo
+ 
+	gV”ifyCoupÚ
+::
+g’_»¥Ú£_jsÚ
+(
+$»suÉ
+);
+
+	@verifyLogin/VerifyLogin.php
+
+1 <?
+php
+
+
+15 
+»quœe_Úû
+('../common/CodeMessages.php');
+
+16 
+»quœe_Úû
+('../common/Exception.php');
+
+18 şas 
+	cV”ifyLogš
+
+
+21 cÚ¡ 
+	mDBHOST
+ = 'localhost';
+
+22 cÚ¡ 
+	mDBUSER
+ = 'root';
+
+23 cÚ¡ 
+	mDBPASS
+ = 'ghz86377328';
+
+24 cÚ¡ 
+	mDBDATABASE
+ = 'lq_verify';
+
+25 cÚ¡ 
+	mUSERTABLE
+ = 'partner';
+
+27 
+´iv©e
+ 
+	m$_dbcÚn
+ = 
+nuÎ
+;
+
+35 
+public
+ 
+funùiÚ
+ 
+	$__cÚ¡ruù
+()
+
+37 
+$this
+->
+_dbcÚn
+ = 
+	`mysql_cÚÃù
+(
+£lf
+::
+DBHOST
+, s–f::
+DBUSER
+, s–f::
+DBPASS
+);
+
+38 ià(!
+$this
+->
+_dbcÚn
+)
+
+40 
+throw
+ 
+Ãw
+ 
+	`Exû±iÚ
+(
+
+41 
+V”ifyLogšCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyLogšCodeMsg::
+MYSQL_CONNECT_ERROR
+),
+
+42 
+V”ifyLogšCodeMsg
+::
+MYSQL_CONNECT_ERROR
+);
+
+44 ià(!
+	`mysql_£Ëù_db
+(
+£lf
+::
+DBDATABASE
+, 
+$this
+->
+_dbcÚn
+))
+
+46 
+throw
+ 
+Ãw
+ 
+	`Exû±iÚ
+(
+
+47 
+V”ifyLogšCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyLogšCodeMsg::
+MYSQL_SELECT_DB_ERROR
+),
+
+48 
+V”ifyLogšCodeMsg
+::
+MYSQL_SELECT_DB_ERROR
+);
+
+60 
+public
+ 
+funùiÚ
+ 
+	$v”ify_logš
+(
+$u£ºame
+, 
+$·sswÜd
+)
+
+62 
+$u£r
+ = 
+	`mysql_»®_esÿ³_¡ršg
+(
+$u£ºame
+);
+
+63 
+$·ss
+ = 
+	`mysql_»®_esÿ³_¡ršg
+(
+$·sswÜd
+);
+
+64 ià(
+	`em±y
+(
+$u£r
+è||ƒm±y(
+$·ss
+) )
+
+66 
+throw
+ 
+Ãw
+ 
+	`Exû±iÚ
+(
+
+67 
+V”ifyLogšCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyLogšCodeMsg::
+INVALID_NAME_PASS
+),
+
+68 
+V”ifyLogšCodeMsg
+::
+INVALID_NAME_PASS
+
+
+71 
+$·ss
+ = 
+$this
+->
+	`üy±_·ss
+($pass);
+
+72 
+$qu”y
+ = 
+	`¥rštf
+("SELECT * FROM %s WHERE username='%s' AND…assword='%s' LIMIT 1",
+
+73 
+£lf
+::
+USERTABLE
+, 
+$u£r
+, 
+$·ss
+);
+
+75 
+$»suÉ
+ = 
+	`mysql_qu”y
+(
+$qu”y
+);
+
+77 ià(
+	`mysql_num_rows
+(
+$»suÉ
+) == 1)
+
+79 
+$row
+ = 
+	`mysql_ãtch_¬¿y
+(
+$»suÉ
+);
+
+80 
+	`£ssiÚ_¡¬t
+();
+
+81 
+$_SESSION
+['·¹ÃrId'] = 
+$row
+['id'];
+
+82 
+$_SESSION
+['u£ºame'] = 
+$row
+['username'];
+
+83 
+$_SESSION
+['t™Ë'] = 
+$row
+['title'];
+
+85 
+throw
+ 
+Ãw
+ 
+	`Exû±iÚ
+(
+
+86 
+V”ifyLogšCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyLogšCodeMsg::
+ERROR_NAME_PASS
+),
+
+87 
+V”ifyLogšCodeMsg
+::
+ERROR_NAME_PASS
+);
+
+89 
+	}
+}
+
+98 
+´iv©e
+ 
+funùiÚ
+ 
+	$üy±_·ss
+(
+$·ss
+)
+
+100 ià(
+	`em±y
+(
+$·ss
+))
+
+101  
+çl£
+;
+
+102 
+$§É
+ = 
+	`sub¡r
+(
+	`md5
+(
+$·ss
+), 0, 2);
+
+103  
+	`md5
+(
+	`üy±
+(
+$·ss
+, 
+$§É
+));
+
+104 
+	}
+}
+
+121 
+public
+ 
+funùiÚ
+ 
+	$g’_»¥Ú£_jsÚ
+(
+$code
+)
+
+124 
+$msg
+ = 
+V”ifyLogšCodeMsg
+::
+	`g‘_mes§ge
+(
+$code
+);
+
+127 ià(
+	`em±y
+(
+$msg
+))
+
+129 
+$code
+ = 
+CommÚCodeMsg
+::
+INVALID_ARGUMENT_ERROR
+;
+
+130 
+$msg
+ = 
+CommÚCodeMsg
+::
+	`g‘_mes§ge
+(
+$code
+);
+
+133 
+$»¥Ú£
+['code'] = 
+$code
+;
+
+134 
+$»¥Ú£
+['msg'] = 
+$msg
+;
+
+135 
+$»¥Ú£
+['d©eTime'] = 
+	`d©e
+("Y-m-d, h:i:s");
+
+137  
+	`jsÚ_’code
+(
+$»¥Ú£
+);
+
+138 
+	}
+}
+
+	@verifyLogin/doVerifyLogin.php
+
+1 <?
+php
+
+
+11 
+»quœe_Úû
+('verifyLogin.php');
+
+13 
+funùiÚ
+ 
+	$ruÁimeE¼ÜHªdËr
+(
+$”ºo
+, 
+$”r¡r
+, 
+$”rfe
+, 
+$”¾še
+)
+
+16 
+$code
+ = 
+CommÚCodeMsg
+::
+SYSTEM_RUNTIME_ERROR
+;
+
+18 
+	`”rÜ_log
+(
+$”r¡r
+);
+
+19 
+	`d›
+(
+V”ifyLogš
+::
+	`g’_»¥Ú£_jsÚ
+(
+$code
+));
+
+21 
+	}
+}
+
+22 
+funùiÚ
+ 
+	$exû±iÚHªdËr
+(
+$exû±iÚ
+)
+
+24 
+$code
+ = 
+$exû±iÚ
+->
+	`g‘Code
+();
+
+25 
+$v”ifyMsg
+ = 
+V”ifyLogšCodeMsg
+::
+	`g‘_mes§ge
+(
+$code
+);
+
+26 ià(
+	`em±y
+(
+$v”ifyMsg
+))
+
+28 
+$code
+ = 
+CommÚCodeMsg
+::
+UNCAUGHT_FATAL_ERROR
+;
+
+29 
+$”r¡r
+ = 
+$exû±iÚ
+->
+	`g‘Mes§ge
+();
+
+31 
+	`”rÜ_log
+(
+$”r¡r
+);
+
+33 
+	`d›
+(
+V”ifyLogš
+::
+	`g’_»¥Ú£_jsÚ
+(
+$code
+));
+
+34 
+	}
+}
+
+35 
+£t_”rÜ_hªdËr
+('ruÁimeE¼ÜHªdËr', 
+E_ERROR
+);
+
+36 
+£t_exû±iÚ_hªdËr
+('exceptionHandler');
+
+38 
+	g$u£ºame
+ = 
+$_POST
+['username'];
+
+39 
+	g$·sswÜd
+ = 
+$_POST
+['password'];
+
+41 
+	g$v”ifyLogš
+ = 
+Ãw
+ 
+V”ifyLogš
+();
+
+42 
+	g$v”ifyLogš
+->
+v”ify_logš
+(
+$u£ºame
+, 
+$·sswÜd
+);
+
+43 
+echo
+ 
+	gV”ifyLogš
+::
+g’_»¥Ú£_jsÚ
+(
+V”ifyLogšCodeMsg
+::
+VERIFY_LOGIN_SUCCESS
+);
+
+	@verifyLogin/loginOut.php
+
+1 <?
+php
+
+
+11 
+»quœe_Úû
+('../common/common.php');
+
+13 
+£ssiÚ_¡¬t
+();
+
+14 ià(
+is£t
+(
+$_SESSION
+['partnerId']))
+
+16 
+un£t
+(
+$_SESSION
+['partnerId']);
+
+17 
+un£t
+(
+$_SESSION
+['username']);
+
+18 
+un£t
+(
+$_SESSION
+['title']);
+
+20 
+»dœeù
+('login.html');
+
+	@
+1
+.
+0
+34
+921
+acctManager/changePass.php
+acctManager/do_changePass.php
+common/CodeMessages.php
+common/Exception.php
+common/RESTclient.php
+common/checkAuthority.php
+common/class/Database.php
+common/class/MyTable.php
+common/common.php
+common/constants.php
+common/include/errorCatcher.php
+common/utilities.php
+module/Coupon.php
+module/Partner.php
+module/Team.php
+old_trial/CommonDefine.php
+old_trial/VerifyCoupon.php
+old_trial/VerifyCoupon_laiqu.php
+old_trial/VerifyFunction_def.php
+old_trial/soapAndRest_sp.php
+old_trial/test_360buyRest.php
+old_trial/test_RestClient.php
+statistics/consumedCoupons.php
+statistics/teamList.php
+verifyCoupon/VerifyCoupon.php
+verifyCoupon/VerifyCoupon_funcs.php
+verifyCoupon/doVerifyCoupon.php
+verifyCoupon/index.php
+verifyCoupon/v1000/Exception.php
+verifyCoupon/v1000/VerifyCoupon.php
+verifyCoupon/v1000/doVerifyCoupon.php
+verifyLogin/VerifyLogin.php
+verifyLogin/doVerifyLogin.php
+verifyLogin/loginOut.php
