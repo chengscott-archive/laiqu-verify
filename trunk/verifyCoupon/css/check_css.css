@@ -1,0 +1,26 @@
+﻿.body{ width:775px; height:327px;}
+
+.body_r{ width:621px; height:327px; background-color:#eef0f2; float:right;}
+.mid{ float:left; width:1px; height:203px; margin-left:25px; margin-top:50px; background-color:#bfc0c2;}
+
+.fl_1{ width:259px; height:247px; padding-left:25px; margin-top:38px; } /*这里原来的fl改成fl_1*/
+.platform_b{ width:259px; height:54px; background-image:url(../../images/bg_select.jpg);}
+.platform{ width:200px; height:20px; border:none; margin-top:15px; margin-left:38px;}
+.couponId_b{ width:259px; height:54px; background-image:url(../../images/bg_input_num.jpg); margin-top:8px;}
+.couponId{width:200px; height:20px; border:none; margin-top:15px; margin-left:38px;}
+.couponPwd_b{width:259px; height:55px; background-image:url(../../images/bg_input_code.jpg); margin-top:8px; margin-bottom:8px;}
+.couponPwd{width:200px; height:20px; border:none; margin-top:15px; margin-left:38px;}
+.reset{ float:left; width:121px; height:50px; border:none; }
+/*.submit{ width:121px; height:50px; float:right; background-image:url(../../images/submit_1.jpg); border:none;}*/
+.submit{ width:121px; height:50px; float:right; background-image:url(../../images/submit_1.jpg); display:block;}
+.button{width:259px; height:50px;}
+.submit:hover{ background-image:url(../../images/submit_2.jpg);}
+.reset{ background-image:url(../../images/reset.jpg); }
+
+.fr_1{ width:259px; height:247px; padding-right:25px; margin-top:55px;} /*这里原来的fr改成fr_1*/
+.text_1{ font-size:18px; margin-top:10px; color:#cc1105;}
+.line{ width:255px; height:3px; margin-top:10px; background-image:url(../../images/bg_line.jpg); background-repeat:repeat-x;}
+.text_2_2{ line-height:150%; margin-top:10px; color:#7a7a7a;}
+.imageResponse{ width:89px; height:60px;}
+.result_r{ width:89px; height:60px; margin-top:15px; margin-left:84px; background-image:url(../../images/result_r.jpg);}
+.result_w{ width:75px; height:75px; margin-top:15px; margin-left:84px; background-image:url(../../images/result_w.jpg)}

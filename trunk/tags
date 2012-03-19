@@ -1,0 +1,551 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CHANGE_PASS_FAILED	common/CodeMessages.php	/^    const CHANGE_PASS_FAILED = 23003;$/;"	d
+CHANGE_PASS_SUCCESS	common/CodeMessages.php	/^    const CHANGE_PASS_SUCCESS = 23000;$/;"	d
+CODEMSG_CLASS_NOT_EXIST	common/CodeMessages.php	/^    const CODEMSG_CLASS_NOT_EXIST = 20004;$/;"	d
+CODE_ERROR_API_CALL	verifyCoupon/v1000/Exception.php	/^    const CODE_ERROR_API_CALL = 400;$/;"	d
+CODE_ERROR_API_CALL	verifyCoupon/v1000/VerifyCoupon.php	/^    const CODE_ERROR_API_CALL = 400;$/;"	d
+CODE_ERROR_INVALID_ARG	verifyCoupon/v1000/Exception.php	/^    const CODE_ERROR_INVALID_ARG =  405;$/;"	d
+CODE_ERROR_ONLY_SUPPORT_REST	verifyCoupon/v1000/Exception.php	/^    const CODE_ERROR_ONLY_SUPPORT_REST = 402;$/;"	d
+CODE_ERROR_ONLY_SUPPORT_REST	verifyCoupon/v1000/VerifyCoupon.php	/^    const CODE_ERROR_ONLY_SUPPORT_REST = 402;$/;"	d
+CODE_ERROR_PARSE_RESPONSR	verifyCoupon/v1000/Exception.php	/^    const CODE_ERROR_PARSE_RESPONSR = 401;$/;"	d
+CODE_ERROR_PARSE_RESPONSR	verifyCoupon/v1000/VerifyCoupon.php	/^    const CODE_ERROR_PARSE_RESPONSR = 401;$/;"	d
+CODE_ERROR_UNIVERSAL_SERVER	verifyCoupon/v1000/Exception.php	/^    const CODE_ERROR_UNIVERSAL_SERVER =  403;$/;"	d
+CODE_ERROR_UNIVERSAL_SERVER	verifyCoupon/v1000/VerifyCoupon.php	/^    const CODE_ERROR_UNIVERSAL_SERVER =  403;$/;"	d
+CODE_ERROR_UNKNOWN	verifyCoupon/v1000/Exception.php	/^    const CODE_ERROR_UNKNOWN =  404;$/;"	d
+CODE_ERROR_UNKNOWN	verifyCoupon/v1000/VerifyCoupon.php	/^    const CODE_ERROR_UNKNOWN =  404;$/;"	d
+CODE_FAIL_VERIFY_COUPON	verifyCoupon/v1000/Exception.php	/^    const CODE_FAIL_VERIFY_COUPON = 300;$/;"	d
+CODE_FAIL_VERIFY_COUPON	verifyCoupon/v1000/VerifyCoupon.php	/^    const CODE_FAIL_VERIFY_COUPON = 300;$/;"	d
+CODE_SUCCESS_VERIFY_COUPON	verifyCoupon/v1000/Exception.php	/^    const CODE_SUCCESS_VERIFY_COUPON = 200;$/;"	d
+CODE_SUCCESS_VERIFY_COUPON	verifyCoupon/v1000/VerifyCoupon.php	/^    const CODE_SUCCESS_VERIFY_COUPON = 200;$/;"	d
+COUPON_TABLE	module/Coupon.php	/^    const COUPON_TABLE = 'coupon';    $/;"	d
+ChangePassCodeMsg	common/CodeMessages.php	/^class ChangePassCodeMsg$/;"	c
+CommonCodeMsg	common/CodeMessages.php	/^class CommonCodeMsg$/;"	c
+Coupon	module/Coupon.php	/^class Coupon extends MyTable$/;"	c
+DBDATABASE	common/class/Database.php	/^    const DBDATABASE = 'lq_verify';$/;"	d
+DBDATABASE	common/class/MyTable.php	/^    const DBDATABASE = 'lq_verify';$/;"	d
+DBDATABASE	verifyLogin/VerifyLogin.php	/^    const DBDATABASE = 'lq_verify';$/;"	d
+DBHOST	common/class/Database.php	/^    const DBHOST = 'localhost';$/;"	d
+DBHOST	common/class/MyTable.php	/^    const DBHOST = 'localhost';$/;"	d
+DBHOST	verifyLogin/VerifyLogin.php	/^    const DBHOST = 'localhost';$/;"	d
+DBPASS	common/class/Database.php	/^    const DBPASS = 'ghz86377328';$/;"	d
+DBPASS	common/class/MyTable.php	/^    const DBPASS = 'ghz86377328';$/;"	d
+DBPASS	verifyLogin/VerifyLogin.php	/^    const DBPASS = 'ghz86377328';$/;"	d
+DBUSER	common/class/Database.php	/^    const DBUSER = 'root';$/;"	d
+DBUSER	common/class/MyTable.php	/^    const DBUSER = 'root';$/;"	d
+DBUSER	verifyLogin/VerifyLogin.php	/^    const DBUSER = 'root';$/;"	d
+ERROR_NAME_PASS	common/CodeMessages.php	/^    const ERROR_NAME_PASS = 22103;$/;"	d
+FILE_NAME_GROUP_DIR_LIST	old_trial/CommonDefine.php	/^define('FILE_NAME_GROUP_DIR_LIST', 'groupon_apis_list.conf');$/;"	d
+INVALID_ARGUMENT_ERROR	common/CodeMessages.php	/^    const INVALID_ARGUMENT_ERROR = 20002;    \/\/ universal error when pass wrong argument to a function$/;"	d
+INVALID_COUPONID_ARG_ERROR	common/CodeMessages.php	/^    const INVALID_COUPONID_ARG_ERROR = 21108;$/;"	d
+INVALID_COUPONPWD_ARG_ERROR	common/CodeMessages.php	/^    const INVALID_COUPONPWD_ARG_ERROR = 21109;$/;"	d
+INVALID_NAME_PASS	common/CodeMessages.php	/^    const INVALID_NAME_PASS = 22102;$/;"	d
+LQ_FAIL	common/constants.php	/^define('LQ_FAIL', 1);$/;"	d
+LQ_OK	common/constants.php	/^define('LQ_OK', 0);$/;"	d
+MARK_COUPON_CONSUMED_ERROR	common/CodeMessages.php	/^    const MARK_COUPON_CONSUMED_ERROR = 21107;$/;"	d
+METHOD	old_trial/test_360buyRest.php	/^define('METHOD', 'GET');$/;"	d
+MYSQL_CONNECT_ERROR	common/CodeMessages.php	/^    const MYSQL_CONNECT_ERROR = 20005;$/;"	d
+MYSQL_CONNECT_ERROR	common/CodeMessages.php	/^    const MYSQL_CONNECT_ERROR = 22100;$/;"	d
+MYSQL_SELECT_DB_ERROR	common/CodeMessages.php	/^    const MYSQL_SELECT_DB_ERROR = 20006;$/;"	d
+MYSQL_SELECT_DB_ERROR	common/CodeMessages.php	/^    const MYSQL_SELECT_DB_ERROR = 22101;$/;"	d
+MyTable	common/class/Database.php	/^class MyTable$/;"	c
+MyTable	common/class/MyTable.php	/^class MyTable$/;"	c
+NEW_PASS_NOT_ALLOWED_ERROR	common/CodeMessages.php	/^    const NEW_PASS_NOT_ALLOWED_ERROR = 23002;$/;"	d
+ORDER_TABLE	module/Coupon.php	/^    const ORDER_TABLE  = 'order';$/;"	d
+ORIGIN_PASS_NOT_MATCH	common/CodeMessages.php	/^    const ORIGIN_PASS_NOT_MATCH = 23001;$/;"	d
+PARSE_CONFIG_FILE_EXCEPTION	common/CodeMessages.php	/^    const PARSE_CONFIG_FILE_EXCEPTION = 21105;$/;"	d
+PARSE_RESPONSE_EXCEPTION	common/CodeMessages.php	/^    const PARSE_RESPONSE_EXCEPTION = 21104;$/;"	d
+PARTNER_TABLE	module/Partner.php	/^    const PARTNER_TABLE = 'partner';$/;"	d
+PLATFORM_360BUY	old_trial/CommonDefine.php	/^define('PLATFORM_360BUY', 0);$/;"	d
+PLATFORM_TABLE	module/Team.php	/^    const PLATFORM_TABLE  = 'platform';$/;"	d
+Partner	module/Partner.php	/^class Partner extends MyTable$/;"	c
+REQUEST_EXCEPTION	common/CodeMessages.php	/^    const REQUEST_EXCEPTION = 21103;$/;"	d
+REQUEST_METHOD	old_trial/CommonDefine.php	/^define('REQUEST_METHOD', 'REST');       \/\/could be SOAP$/;"	d
+RESPONSE_TYPE	old_trial/CommonDefine.php	/^define('RESPONSE_TYPE', 'XML');$/;"	d
+RESTClient	common/RESTclient.php	/^class RESTClient $/;"	c
+SYSTEM_RUNTIME_ERROR	common/CodeMessages.php	/^    const SYSTEM_RUNTIME_ERROR = 20000;$/;"	d
+TABLE_ROW_NUMS	statistics/consumedCoupons.php	/^define("TABLE_ROW_NUMS", 6);$/;"	d
+TABLE_ROW_NUMS	statistics/teamList.php	/^define("TABLE_ROW_NUMS", 4);$/;"	d
+TARGET_API	verifyCoupon/VerifyCoupon.php	/^    const TARGET_API = 'verifyCoupon';$/;"	d
+TARGET_API	verifyCoupon/v1000/VerifyCoupon.php	/^    const TARGET_API = 'verifyCoupon';$/;"	d
+TEAM_TABLE	module/Coupon.php	/^    const TEAM_TABLE  = 'team';$/;"	d
+TEAM_TABLE	module/Team.php	/^    const TEAM_TABLE  = 'team';$/;"	d
+TRANSFER_REQUEST_PARAM_ERROR	common/CodeMessages.php	/^    const TRANSFER_REQUEST_PARAM_ERROR = 21102;$/;"	d
+Team	module/Team.php	/^class Team extends MyTable$/;"	c
+UNCAUGHT_FATAL_ERROR	common/CodeMessages.php	/^    const UNCAUGHT_FATAL_ERROR = 20001;$/;"	d
+UNKNOWN_EXCEPTION	common/CodeMessages.php	/^    const UNKNOWN_EXCEPTION = 20003;$/;"	d
+UNKNOWN_EXCEPTION	common/CodeMessages.php	/^    const UNKNOWN_EXCEPTION = 21106;$/;"	d
+UNKNOWN_PLATFORM_ERROR	common/CodeMessages.php	/^    const UNKNOWN_PLATFORM_ERROR = 21100;$/;"	d
+USERTABLE	verifyLogin/VerifyLogin.php	/^    const USERTABLE = 'partner';$/;"	d
+USER_TABLE	module/Coupon.php	/^    const USER_TABLE  = 'user';$/;"	d
+VERIFY_COUPON_FAIL	common/CodeMessages.php	/^    const VERIFY_COUPON_FAIL = 210001;$/;"	d
+VERIFY_COUPON_SUCCESS	common/CodeMessages.php	/^    const VERIFY_COUPON_SUCCESS = 21000;$/;"	d
+VERIFY_LOGIN_FAIL	common/CodeMessages.php	/^    const VERIFY_LOGIN_FAIL = 22001;$/;"	d
+VERIFY_LOGIN_SUCCESS	common/CodeMessages.php	/^    const VERIFY_LOGIN_SUCCESS = 22000;$/;"	d
+VERITY_TYPE_COUPON_PASSWD	old_trial/CommonDefine.php	/^define('VERITY_TYPE_COUPON_PASSWD', 0);$/;"	d
+VerifyCoupon	verifyCoupon/VerifyCoupon.php	/^ * VerifyCoupon.php class VerifyCoupon$/;"	c
+VerifyCoupon	verifyCoupon/VerifyCoupon.php	/^class VerifyCoupon$/;"	c
+VerifyCoupon	verifyCoupon/doVerifyCoupon.php	/^ * @history   v1.001 using class VerifyCoupon with Exception handling 2012-3-9 下午5:09$/;"	c
+VerifyCoupon	verifyCoupon/v1000/VerifyCoupon.php	/^class VerifyCoupon$/;"	c
+VerifyCouponCodeMsg	common/CodeMessages.php	/^class VerifyCouponCodeMsg$/;"	c
+VerifyCoupon_Exception	common/Exception.php	/^class VerifyCoupon_Exception extends Exception$/;"	c
+VerifyCoupon_Exception	verifyCoupon/v1000/Exception.php	/^ class VerifyCoupon_Exception extends PEAR_Exception$/;"	c
+VerifyCoupon_ParseConfigFileException	common/Exception.php	/^class VerifyCoupon_ParseConfigFileException extends VerifyCoupon_Exception {};$/;"	c
+VerifyCoupon_ParseResponseException	common/Exception.php	/^class VerifyCoupon_ParseResponseException extends VerifyCoupon_Exception {};$/;"	c
+VerifyCoupon_RequestException	common/Exception.php	/^class VerifyCoupon_RequestException extends VerifyCoupon_Exception {};$/;"	c
+VerifyLogin	verifyLogin/VerifyLogin.php	/^class VerifyLogin$/;"	c
+VerifyLoginCodeMsg	common/CodeMessages.php	/^class VerifyLoginCodeMsg$/;"	c
+WEBROOT	common/checkAuthority.php	/^define('WEBROOT','http:\/\/192.168.137.109:8888\/laiqu');$/;"	d
+_SESSION	statistics/consumedCoupons.php	/^    $_SESSION['fromTeamPage'] = $_GET['fromTeamPage'];$/;"	p
+_SESSION	statistics/consumedCoupons.php	/^    $_SESSION['platform'] = $_GET['platform'];$/;"	p
+_SESSION	statistics/consumedCoupons.php	/^    $_SESSION['teamId'] = $_GET['teamId'];$/;"	p
+_SESSION	verifyLogin/VerifyLogin.php	/^            $_SESSION['partnerId'] = $row['id'];$/;"	p
+_SESSION	verifyLogin/VerifyLogin.php	/^            $_SESSION['title']     = $row['title'];$/;"	p
+_SESSION	verifyLogin/VerifyLogin.php	/^            $_SESSION['username']  = $row['username'];$/;"	p
+__construct	common/Exception.php	/^    public function __construct($message = null, $code = null)$/;"	f
+__construct	common/RESTclient.php	/^    public function __construct($url = "", $user_name = "", $password = "") {$/;"	f
+__construct	common/class/Database.php	/^    public function __construct()$/;"	f
+__construct	common/class/MyTable.php	/^    public function __construct()$/;"	f
+__construct	module/Coupon.php	/^    public function __construct()$/;"	f
+__construct	module/Partner.php	/^    public function __construct()$/;"	f
+__construct	module/Team.php	/^    public function __construct()$/;"	f
+__construct	verifyCoupon/v1000/Exception.php	/^    public function __construct($message = null, $code = null)$/;"	f
+__construct	verifyLogin/VerifyLogin.php	/^    public function __construct()$/;"	f
+__destruct	verifyLogin/VerifyLogin.php	/^    \/\/public function __destruct()$/;"	f
+_apiUrl	verifyCoupon/VerifyCoupon.php	/^    private $_apiUrl = '';$/;"	p
+_apiUrl	verifyCoupon/v1000/VerifyCoupon.php	/^    private $_apiUrl = '';$/;"	p
+_codeMessages	common/CodeMessages.php	/^    static private $_codeMessages = array ($/;"	p
+_codeMessages	verifyCoupon/v1000/Exception.php	/^    static private $_codeMessages = array ($/;"	p
+_codeMessages	verifyCoupon/v1000/VerifyCoupon.php	/^    static private $_codeMessages = array ($/;"	p
+_codeSuccess	verifyCoupon/VerifyCoupon.php	/^    private $_codeSuccess = '';         \/\/ code value stand for successful api call$/;"	p
+_codeSuccess	verifyCoupon/v1000/VerifyCoupon.php	/^    private $_codeSuccess = '';         \/\/ code value stand for successful api call$/;"	p
+_codeTag	verifyCoupon/VerifyCoupon.php	/^    private $_codeTag = '';             \/\/ tag name for holding response code$/;"	p
+_codeTag	verifyCoupon/v1000/VerifyCoupon.php	/^    private $_codeTag = '';             \/\/ tag name for holding response code$/;"	p
+_couponId	verifyCoupon/VerifyCoupon.php	/^    private $_couponId = 0;             \/\/ coupon id for verification$/;"	p
+_dbconn	verifyLogin/VerifyLogin.php	/^    private $_dbconn = null;$/;"	p
+_httpMethod	verifyCoupon/VerifyCoupon.php	/^    private $_httpMethod = '';          \/\/ http request method => 'GET','POST'$/;"	p
+_httpMethod	verifyCoupon/v1000/VerifyCoupon.php	/^    private $_httpMethod = '';          \/\/ http request method => 'GET','POST'$/;"	p
+_platform	verifyCoupon/VerifyCoupon.php	/^    private $_platform = '';$/;"	p
+_platform	verifyCoupon/v1000/VerifyCoupon.php	/^    private $_platform = '';$/;"	p
+_requestMethod	verifyCoupon/VerifyCoupon.php	/^    private $_requestMethod = '';   \/\/ api request method => 'REST'$/;"	p
+_requestMethod	verifyCoupon/v1000/VerifyCoupon.php	/^    private $_requestMethod = '';   \/\/ api request method => 'REST'$/;"	p
+_requestParams	verifyCoupon/VerifyCoupon.php	/^    private $_requestParams = array();$/;"	p
+_requestParams	verifyCoupon/v1000/VerifyCoupon.php	/^    private $_requestParams = array();$/;"	p
+_requestParamsStatic	verifyCoupon/VerifyCoupon.php	/^    private $_requestParamsStatic = array();$/;"	p
+_requestParamsStatic	verifyCoupon/v1000/VerifyCoupon.php	/^    private $_requestParamsStatic = array();$/;"	p
+_responseType	verifyCoupon/VerifyCoupon.php	/^    private $_responseType = '';        \/\/ api response type => 'XML','JSON'$/;"	p
+_responseType	verifyCoupon/v1000/VerifyCoupon.php	/^    private $_responseType = '';        \/\/ api response type => 'XML','JSON'$/;"	p
+_supportPlatforms	verifyCoupon/VerifyCoupon.php	/^    private $_supportPlatforms = array("laiqu", "360buy");$/;"	p
+_supportPlatforms	verifyCoupon/v1000/VerifyCoupon.php	/^    private $_supportPlatforms = array("laiqu", "360buy");$/;"	p
+aContent	old_trial/VerifyFunction_def.php	/^    $aContent = file_get_contents($fileName);$/;"	p
+aGrouponDirList	old_trial/VerifyFunction_def.php	/^                    $aGrouponDirList,$/;"	p
+aGrouponDirList	old_trial/VerifyFunction_def.php	/^    $aGrouponDirList = decode_confFileIntoArray('.\/groupon_apis_confs\/'.FILE_NAME_GROUP_DIR_LIST);$/;"	p
+aGrouponDirList	old_trial/VerifyFunction_def.php	/^    $aGrouponDirList,$/;"	p
+aRequestInputs	old_trial/VerifyFunction_def.php	/^    $aRequestInputs = decode_confFileIntoArray($strVerifyCouponRequestConf);$/;"	p
+aVerifyData	old_trial/VerifyFunction_def.php	/^    $aVerifyData, $/;"	p
+addPostParameter	common/RESTclient.php	/^    private function addPostParameter($arr) {$/;"	f
+apiUrl	old_trial/test_RestClient.php	/^   $apiUrl = $$targetApi->apiUrl;$/;"	p
+apiUrl	verifyCoupon/VerifyCoupon_funcs.php	/^   $apiUrl = $$targetApi->apiUrl;$/;"	p
+assure_dbConnection	common/class/MyTable.php	/^    protected function assure_dbConnection()$/;"	f
+browseNodeSearch	old_trial/soapAndRest_sp.php	/^function browseNodeSearch($browseNode, $page, $mode) {$/;"	f
+by	verifyCoupon/VerifyCoupon.php	/^    * initialize class by parse specified configure file$/;"	c
+by	verifyCoupon/v1000/VerifyCoupon.php	/^    * initialize class by parse specified configure file$/;"	c
+cal_totalPages	common/utilities.php	/^function cal_totalPages($rowNums, $rowNumsEachPage)$/;"	f
+call	common/constants.php	/^ * constants for function call$/;"	f
+changePass	module/Partner.php	/^    public function changePass($partnerId, $originPasswd, $newPasswd)$/;"	f
+code	acctManager/do_changePass.php	/^        $code = CommonCodeMsg::UNCAUGHT_FATAL_ERROR;$/;"	p
+code	acctManager/do_changePass.php	/^    $code = $exception->getCode();$/;"	p
+code	acctManager/do_changePass.php	/^    $code = CommonCodeMsg::SYSTEM_RUNTIME_ERROR;$/;"	p
+code	common/utilities.php	/^                $code =  CommonCodeMsg::INVALID_ARGUMENT_ERROR;$/;"	p
+code	common/utilities.php	/^        $code = $result;$/;"	p
+code	common/utilities.php	/^       $code = CommonCodeMsg::CODEMSG_CLASS_NOT_EXIST; $/;"	p
+code	common/utilities.php	/^* @param    class  code or exception to response$/;"	c
+code	verifyCoupon/VerifyCoupon.php	/^                $code =  CommonCodeMsg::INVALID_ARGUMENT_ERROR;$/;"	p
+code	verifyCoupon/VerifyCoupon.php	/^        $code = $result;$/;"	p
+code	verifyCoupon/doVerifyCoupon.php	/^        $code = CommonCodeMsg::UNCAUGHT_FATAL_ERROR;$/;"	p
+code	verifyCoupon/doVerifyCoupon.php	/^    $code = $exception->getCode();$/;"	p
+code	verifyCoupon/doVerifyCoupon.php	/^    $code = CommonCodeMsg::SYSTEM_RUNTIME_ERROR;$/;"	p
+code	verifyLogin/VerifyLogin.php	/^            $code =  CommonCodeMsg::INVALID_ARGUMENT_ERROR;$/;"	p
+code	verifyLogin/doVerifyLogin.php	/^        $code = CommonCodeMsg::UNCAUGHT_FATAL_ERROR;$/;"	p
+code	verifyLogin/doVerifyLogin.php	/^    $code = $exception->getCode();$/;"	p
+code	verifyLogin/doVerifyLogin.php	/^    $code = CommonCodeMsg::SYSTEM_RUNTIME_ERROR;$/;"	p
+codeMsgInstance	common/utilities.php	/^            $codeMsgInstance = new $codeMsg();$/;"	p
+codeSuccess	old_trial/test_RestClient.php	/^   $codeSuccess = $$targetApi->responseResultStatic->codeSuccess;$/;"	p
+codeSuccess	verifyCoupon/VerifyCoupon_funcs.php	/^   $codeSuccess = $$targetApi->responseResultStatic->codeSuccess;$/;"	p
+codeTag	verifyCoupon/VerifyCoupon_funcs.php	/^        $codeTag == ""  || $codeSuccess == "")$/;"	p
+codeTag	verifyCoupon/VerifyCoupon_funcs.php	/^   $codeTag = $$targetApi->responseResult->codeTag;$/;"	p
+configFileName	old_trial/test_RestClient.php	/^   $configFileName = "platform_api_confs\/" . $platform . ".conf"; $/;"	p
+configFileName	verifyCoupon/VerifyCoupon.php	/^        $configFileName = "..\/platform_api_confs\/" . $this->_platform . ".conf"; $/;"	p
+configFileName	verifyCoupon/VerifyCoupon_funcs.php	/^   $configFileName = "platform_api_confs\/" . $platform . ".conf"; $/;"	p
+configFileName	verifyCoupon/v1000/VerifyCoupon.php	/^        $configFileName = "platform_api_confs\/" . $this->_platform . ".conf"; $/;"	p
+configs	old_trial/test_RestClient.php	/^   $configs = json_decode($content);$/;"	p
+configs	verifyCoupon/VerifyCoupon.php	/^        $configs = json_decode($content);$/;"	p
+configs	verifyCoupon/VerifyCoupon_funcs.php	/^   $configs = json_decode($content);$/;"	p
+configs	verifyCoupon/v1000/VerifyCoupon.php	/^        $configs = json_decode($content);$/;"	p
+constants	common/Exception.php	/^    * @param int    package error code, one of class constants$/;"	c
+constants	verifyCoupon/v1000/Exception.php	/^    * @param int    package error code, one of class constants$/;"	c
+consumeCoupon	statistics/consumedCoupons.php	/^                    $consumeCoupon = $couponList[$i];$/;"	p
+consume_coupon	module/Coupon.php	/^    public function consume_coupon($couponId, $platformKey)$/;"	f
+consumedCouponList	module/Coupon.php	/^        $consumedCouponList = array();$/;"	p
+content	old_trial/test_RestClient.php	/^   $content = file_get_contents($configFileName);$/;"	p
+content	verifyCoupon/VerifyCoupon.php	/^        $content = file_get_contents($configFileName);$/;"	p
+content	verifyCoupon/VerifyCoupon_funcs.php	/^   $content = file_get_contents($configFileName);$/;"	p
+content	verifyCoupon/v1000/VerifyCoupon.php	/^        $content = file_get_contents($configFileName);$/;"	p
+countRow	module/Coupon.php	/^            $countRow = mysql_fetch_array($result);$/;"	p
+coupon	verifyCoupon/doVerifyCoupon.php	/^    $coupon = new Coupon();$/;"	p
+couponId	verifyCoupon/doVerifyCoupon.php	/^    $couponId = $inputs['couponId'];$/;"	p
+couponNums	module/Coupon.php	/^            $couponNums = $countRow['couponNums'];$/;"	p
+couponNums	module/Coupon.php	/^        $couponNums = 0;$/;"	p
+couponNums	module/Coupon.php	/^        $couponNums = mysql_num_rows($result);$/;"	p
+createRequest	common/RESTclient.php	/^    public function createRequest($url, $method = 'GET', $arr = null) {$/;"	f
+crypt_pass	common/common.php	/^function crypt_pass($pass) $/;"	f
+crypt_pass	verifyLogin/VerifyLogin.php	/^    private function crypt_pass($pass)$/;"	f
+curr_url	common/RESTclient.php	/^    private $curr_url = null;$/;"	p
+decode_confFileIntoArray	old_trial/VerifyFunction_def.php	/^function decode_confFileIntoArray($fileName)$/;"	f
+eachPageUrl	common/common.php	/^        $eachPageUrl = $urlPrefix."page=".$i;$/;"	p
+end	common/common.php	/^    $end = ($page + $sideShowPages) < $totalPages? $page+$sideShowPages : $totalPages;$/;"	p
+errstr	acctManager/do_changePass.php	/^        $errstr = $exception->getMessage();$/;"	p
+errstr	common/include/errorCatcher.php	/^    $errstr = $exception->getMessage();$/;"	p
+errstr	verifyCoupon/doVerifyCoupon.php	/^        $errstr = $exception->getMessage();$/;"	p
+errstr	verifyLogin/doVerifyLogin.php	/^        $errstr = $exception->getMessage();$/;"	p
+exceptionHandler	acctManager/do_changePass.php	/^function exceptionHandler($exception)$/;"	f
+exceptionHandler	common/include/errorCatcher.php	/^function exceptionHandler($exception)$/;"	f
+exceptionHandler	verifyCoupon/doVerifyCoupon.php	/^function exceptionHandler($exception)$/;"	f
+exceptionHandler	verifyLogin/doVerifyLogin.php	/^function exceptionHandler($exception)$/;"	f
+for	common/class/Database.php	/^ * MyTable.php base class for table manipulation$/;"	c
+for	common/class/MyTable.php	/^ * MyTable.php base class for table manipulation$/;"	c
+for	module/Partner.php	/^ * Partner.php  class for handling table partner$/;"	c
+gen_response_json	common/utilities.php	/^function gen_response_json($codeMsg, $result, $msg = "")$/;"	f
+gen_response_json	verifyCoupon/VerifyCoupon.php	/^    static public function gen_response_json($result, $msg = "")$/;"	f
+gen_response_json	verifyCoupon/VerifyCoupon_funcs.php	/^function gen_response_json($result)$/;"	f
+gen_response_json	verifyCoupon/v1000/VerifyCoupon.php	/^    static public function gen_response_json($result)$/;"	f
+gen_response_json	verifyLogin/VerifyLogin.php	/^    static public function gen_response_json($code)$/;"	f
+getResponse	common/RESTclient.php	/^    public function getResponse() {$/;"	f
+getUrl	common/RESTclient.php	/^    public function getUrl() {$/;"	f
+get_apiUrl	verifyCoupon/VerifyCoupon.php	/^    public function get_apiUrl()$/;"	f
+get_apiUrl	verifyCoupon/v1000/VerifyCoupon.php	/^    public function get_apiUrl()$/;"	f
+get_codeSuccess	verifyCoupon/VerifyCoupon.php	/^    public function get_codeSuccess()$/;"	f
+get_codeSuccess	verifyCoupon/v1000/VerifyCoupon.php	/^    public function get_codeSuccess()$/;"	f
+get_codeTag	verifyCoupon/VerifyCoupon.php	/^    public function get_codeTag()$/;"	f
+get_codeTag	verifyCoupon/v1000/VerifyCoupon.php	/^    public function get_codeTag()$/;"	f
+get_consumedCouponNums	module/Coupon.php	/^    public function get_consumedCouponNums($searchFields)$/;"	f
+get_consumedCoupons	module/Coupon.php	/^    public function get_consumedCoupons($searchFields, $start, $offset)$/;"	f
+get_dbTableName	common/class/MyTable.php	/^    protected function get_dbTableName($tableName)$/;"	f
+get_httpMethod	verifyCoupon/VerifyCoupon.php	/^    public function get_httpMethod()$/;"	f
+get_httpMethod	verifyCoupon/v1000/VerifyCoupon.php	/^    public function get_httpMethod()$/;"	f
+get_message	common/CodeMessages.php	/^    static public function get_message($code = null)$/;"	f
+get_message	verifyCoupon/v1000/Exception.php	/^    static public function get_message($code = null)$/;"	f
+get_message	verifyCoupon/v1000/VerifyCoupon.php	/^    static public function get_message($code = null)$/;"	f
+get_pageNavHtml	common/common.php	/^function get_pageNavHtml($page, $totalPages, $urlPrefix, $showPagesNums = 11)$/;"	f
+get_platform	verifyCoupon/VerifyCoupon.php	/^    public function get_platform()$/;"	f
+get_platform	verifyCoupon/v1000/VerifyCoupon.php	/^    public function get_platform()$/;"	f
+get_requestMethod	verifyCoupon/VerifyCoupon.php	/^    public function get_requestMethod()$/;"	f
+get_requestMethod	verifyCoupon/v1000/VerifyCoupon.php	/^    public function get_requestMethod()$/;"	f
+get_requestParams	old_trial/test_RestClient.php	/^function get_requestParams($inputs)$/;"	f
+get_requestParams	verifyCoupon/VerifyCoupon.php	/^    public function get_requestParams($inputs)$/;"	f
+get_requestParams	verifyCoupon/VerifyCoupon_funcs.php	/^function get_requestParams($inputs)$/;"	f
+get_requestParams	verifyCoupon/v1000/VerifyCoupon.php	/^    public function get_requestParams($inputs)$/;"	f
+get_responseCode	verifyCoupon/VerifyCoupon.php	/^    public function get_responseCode($response)$/;"	f
+get_responseCode	verifyCoupon/VerifyCoupon_funcs.php	/^function get_responseCode($response, $responseType, $codeTag, $codeSuccess)$/;"	f
+get_responseCode	verifyCoupon/v1000/VerifyCoupon.php	/^    public function get_responseCode($response)$/;"	f
+get_responseCode_laiqu	old_trial/test_RestClient.php	/^function get_responseCode_laiqu($response, $resultTag, $codeSuccess)$/;"	f
+get_responseType	verifyCoupon/VerifyCoupon.php	/^    public function get_responseType()$/;"	f
+get_responseType	verifyCoupon/v1000/VerifyCoupon.php	/^    public function get_responseType()$/;"	f
+get_teamNums	module/Team.php	/^    public function get_teamNums($searchFields)$/;"	f
+get_teams	module/Team.php	/^    public function get_teams($searchFields, $start, $offset)$/;"	f
+htmlCouponList	statistics/consumedCoupons.php	/^                    $htmlCouponList .= "<div class='table_item_1' id='couponRowWrap_{$i}'>$/;"	p
+htmlCouponList	statistics/consumedCoupons.php	/^                    $htmlCouponList .= date('Y-m-d',$consumeCoupon['consumeTime']).$/;"	p
+htmlCouponList	statistics/consumedCoupons.php	/^                $htmlCouponList = '';$/;"	p
+htmlTeamList	statistics/teamList.php	/^                        $htmlTeamList .= "<div class='new_ico '><\/div>";    \/\/add new mark$/;"	p
+htmlTeamList	statistics/teamList.php	/^                    $htmlTeamList .= "<div class='table_item_1' id='teamRowWrap_{$i}'>$/;"	p
+htmlTeamList	statistics/teamList.php	/^                    $htmlTeamList .= date('Y-m-d',$beginTime).'<br \/>'.date('Y-m-d',$endTime);$/;"	p
+htmlTeamList	statistics/teamList.php	/^                    $htmlTeamList .="<\/a><\/div>$/;"	p
+htmlTeamList	statistics/teamList.php	/^                    $htmlTeamList .="<a class='table_item_id ' >{$teamId}<\/a>$/;"	p
+htmlTeamList	statistics/teamList.php	/^                $htmlTeamList = '';$/;"	p
+iPlatform	old_trial/VerifyFunction_def.php	/^    $iPlatform = $verifyData["platform"];$/;"	p
+iPlatform	old_trial/VerifyFunction_def.php	/^    $iPlatform,$/;"	p
+init	verifyCoupon/VerifyCoupon.php	/^    public function init($platform)$/;"	f
+init	verifyCoupon/v1000/VerifyCoupon.php	/^    public function init($platform)$/;"	f
+init_confPaths	old_trial/VerifyFunction_def.php	/^function init_confPaths($/;"	f
+init_verifyInputs	verifyCoupon/VerifyCoupon.php	/^    public function init_verifyInputs($request)$/;"	f
+init_verifyInputs	verifyCoupon/VerifyCoupon_funcs.php	/^function init_verifyInputs($request)$/;"	f
+init_verifyInputs	verifyCoupon/v1000/VerifyCoupon.php	/^    public function init_verifyInputs($request)$/;"	f
+inputs	verifyCoupon/VerifyCoupon.php	/^                $inputs['couponPwd'] = $request['couponPwd'];$/;"	p
+inputs	verifyCoupon/VerifyCoupon.php	/^        $inputs['couponId'] = $request['couponId'];$/;"	p
+inputs	verifyCoupon/VerifyCoupon_funcs.php	/^        $inputs['couponPwd'] = $request['couponPwd'];$/;"	p
+inputs	verifyCoupon/VerifyCoupon_funcs.php	/^    $inputs = array();$/;"	p
+inputs	verifyCoupon/VerifyCoupon_funcs.php	/^    $inputs['couponId'] = $request['couponId'];$/;"	p
+inputs	verifyCoupon/v1000/VerifyCoupon.php	/^                $inputs['couponPwd'] = $request['couponPwd'];$/;"	p
+inputs	verifyCoupon/v1000/VerifyCoupon.php	/^        $inputs['couponId'] = $request['couponId'];$/;"	p
+is_partner_login	common/common.php	/^function is_partner_login()$/;"	f
+is_supported	verifyCoupon/VerifyCoupon.php	/^    public function is_supported($platform)$/;"	f
+is_supported	verifyCoupon/v1000/VerifyCoupon.php	/^    public function is_supported($platform)$/;"	f
+message	verifyCoupon/v1000/Exception.php	/^                $message = self::get_message($code);$/;"	p
+msg	common/CodeMessages.php	/^        $msg = $msg === ""? CommonCodeMsg::get_message($code) : $msg;$/;"	p
+msg	common/CodeMessages.php	/^        $msg = isset(self::$_codeMessages[$code]) ? self::$_codeMessages[$code] : "";$/;"	p
+msg	common/utilities.php	/^                $msg  =  CommonCodeMsg::get_message($code);  $/;"	p
+msg	common/utilities.php	/^            $msg = $codeMsgInstance->get_message($code);$/;"	p
+msg	common/utilities.php	/^       $msg  = CommonCodeMsg::get_message($code); $/;"	p
+msg	verifyCoupon/VerifyCoupon.php	/^                $msg  =  CommonCodeMsg::get_message($code);  $/;"	p
+msg	verifyCoupon/VerifyCoupon.php	/^            $msg = VerifyCouponCodeMsg::get_message($code);$/;"	p
+msg	verifyLogin/VerifyLogin.php	/^            $msg  =  CommonCodeMsg::get_message($code);  $/;"	p
+msg	verifyLogin/VerifyLogin.php	/^        $msg = VerifyLoginCodeMsg::get_message($code);$/;"	p
+newPasswd	module/Partner.php	/^        $newPasswd = mysql_real_escape_string($newPasswd);$/;"	p
+oddClass	statistics/consumedCoupons.php	/^                        $oddClass = " item_bg";$/;"	p
+oddClass	statistics/consumedCoupons.php	/^                        $oddClass = "";$/;"	p
+oddEvenClass	statistics/teamList.php	/^                        $oddEvenClass = ' item_bg';$/;"	p
+oddEvenClass	statistics/teamList.php	/^                        $oddEvenClass = '';$/;"	p
+originPasswd	module/Partner.php	/^            $originPasswd = crypt_pass($originPasswd);$/;"	p
+originPasswd	module/Partner.php	/^        $originPasswd = mysql_real_escape_string($originPasswd);$/;"	p
+page	statistics/consumedCoupons.php	/^    $page = $_GET['page'];$/;"	p
+page	statistics/teamList.php	/^    $page = $_GET['page'];$/;"	p
+pageNavHtml	common/common.php	/^        $pageNavHtml .= "<a href='$eachPageUrl' id='page_num_$i'>$i<\/a>&nbsp";$/;"	p
+pageNavHtml	common/common.php	/^    $pageNavHtml = "";$/;"	p
+parameters	old_trial/soapAndRest_sp.php	/^        $parameters = array('AWSAccessKeyId' => DEVTAG, 'AssociateTag' => ASSOCIATEID, 'Request'=>array($request));$/;"	p
+params	old_trial/test_RestClient.php	/^            $params[$key] = $value;$/;"	p
+params	old_trial/test_RestClient.php	/^        $params[$value] = $inputs[$key];$/;"	p
+params	old_trial/test_RestClient.php	/^    $params = array();$/;"	p
+params	verifyCoupon/VerifyCoupon.php	/^                $params[$key] = $value;$/;"	p
+params	verifyCoupon/VerifyCoupon.php	/^                $params[$value] = $inputs[$key];$/;"	p
+params	verifyCoupon/VerifyCoupon.php	/^        $params = array();$/;"	p
+params	verifyCoupon/VerifyCoupon_funcs.php	/^            $params[$key] = $value;$/;"	p
+params	verifyCoupon/VerifyCoupon_funcs.php	/^        $params[$value] = $inputs[$key];$/;"	p
+params	verifyCoupon/VerifyCoupon_funcs.php	/^    $params = array();$/;"	p
+params	verifyCoupon/v1000/VerifyCoupon.php	/^                $params[$key] = $value;$/;"	p
+params	verifyCoupon/v1000/VerifyCoupon.php	/^            $params[$value] = $inputs[$key];$/;"	p
+params	verifyCoupon/v1000/VerifyCoupon.php	/^        $params = array();$/;"	p
+parseXML	old_trial/soapAndRest_sp.php	/^function parseXML() $/;"	f
+parse_couponList	module/Coupon.php	/^    private function parse_couponList($result)$/;"	f
+parse_laiquResult	old_trial/VerifyCoupon_laiqu.php	/^function parse_laiquResult($result)$/;"	f
+parse_platform_confs	old_trial/test_RestClient.php	/^function parse_platform_confs($platform)$/;"	f
+parse_platform_confs	verifyCoupon/VerifyCoupon_funcs.php	/^function parse_platform_confs($platform)$/;"	f
+parse_platform_response	old_trial/test_RestClient.php	/^function parse_platform_response($response, $method,  $requestType, $resultTag, $codeSuccess)$/;"	f
+parse_platform_response	verifyCoupon/VerifyCoupon_funcs.php	/^function parse_platform_response($response, $requestMethod,  $responseType, $codeTag, $codeSuccess)$/;"	f
+parse_teamList	module/Team.php	/^    private function parse_teamList($result)$/;"	f
+pass	verifyLogin/VerifyLogin.php	/^        $pass = $this->crypt_pass($pass);$/;"	p
+pass	verifyLogin/VerifyLogin.php	/^        $pass = mysql_real_escape_string($password);$/;"	p
+password	common/RESTclient.php	/^    private $password = "";$/;"	p
+query	verifyLogin/VerifyLogin.php	/^        $query = sprintf("SELECT * FROM %s WHERE username='%s' AND password='%s' LIMIT 1",$/;"	p
+redirect	common/common.php	/^function redirect($url) {$/;"	f
+req	common/RESTclient.php	/^    private $req = null;$/;"	p
+request	old_trial/soapAndRest_sp.php	/^        $request = array ('Service' => $this->Service,$/;"	p
+requestParams	old_trial/test_RestClient.php	/^   $requestParams = $$targetApi->requestParams;$/;"	p
+requestParams	verifyCoupon/VerifyCoupon_funcs.php	/^   $requestParams = $$targetApi->requestParams;$/;"	p
+requestParamsStatic	old_trial/test_RestClient.php	/^   $requestParamsStatic = $$targetApi->requestParamsStatic;$/;"	p
+requestParamsStatic	verifyCoupon/VerifyCoupon_funcs.php	/^   $requestParamsStatic = $$targetApi->requestParamsStatic;$/;"	p
+response	common/RESTclient.php	/^    private $response = "";$/;"	p
+response	common/utilities.php	/^    $response['code'] = $code;$/;"	p
+response	common/utilities.php	/^    $response['dateTime'] = date("Y-m-d, h:i:s");$/;"	p
+response	common/utilities.php	/^    $response['msg']  = $msg;$/;"	p
+response	verifyCoupon/VerifyCoupon.php	/^        $response['code'] = $code;$/;"	p
+response	verifyCoupon/VerifyCoupon.php	/^        $response['dateTime'] = date("Y-m-d, h:i:s");$/;"	p
+response	verifyCoupon/VerifyCoupon.php	/^        $response['msg']  = $msg;$/;"	p
+response	verifyCoupon/VerifyCoupon_funcs.php	/^    $response = array();$/;"	p
+response	verifyCoupon/VerifyCoupon_funcs.php	/^    $response['code'] = $result;$/;"	p
+response	verifyCoupon/VerifyCoupon_funcs.php	/^    $response['dateTime'] = date("Y-m-d, h:i:s");$/;"	p
+response	verifyCoupon/VerifyCoupon_funcs.php	/^    $response['msg']  = $codeMessages[$result];$/;"	p
+response	verifyCoupon/v1000/VerifyCoupon.php	/^        $response['code'] = $result;$/;"	p
+response	verifyCoupon/v1000/VerifyCoupon.php	/^        $response['dateTime'] = date("Y-m-d, h:i:s");$/;"	p
+response	verifyCoupon/v1000/VerifyCoupon.php	/^        $response['msg']  = self::$_codeMessages[$result];$/;"	p
+response	verifyLogin/VerifyLogin.php	/^        $response['code'] = $code;$/;"	p
+response	verifyLogin/VerifyLogin.php	/^        $response['dateTime'] = date("Y-m-d, h:i:s");$/;"	p
+response	verifyLogin/VerifyLogin.php	/^        $response['msg']  = $msg;$/;"	p
+responseBody	common/RESTclient.php	/^    private $responseBody = "";$/;"	p
+responseCode	acctManager/do_changePass.php	/^    $responseCode = ChangePassCodeMsg::CHANGE_PASS_FAILED; $/;"	p
+responseCode	acctManager/do_changePass.php	/^    $responseCode = ChangePassCodeMsg::CHANGE_PASS_SUCCESS;$/;"	p
+responseCode	verifyCoupon/VerifyCoupon.php	/^                    $responseCode = $val[3];$/;"	p
+responseCode	verifyCoupon/VerifyCoupon.php	/^            $responseCode = $xmlResponse->$code;$/;"	p
+responseCode	verifyCoupon/VerifyCoupon.php	/^        $responseCode = "";    \/\/验证结果编码$/;"	p
+responseCode	verifyCoupon/VerifyCoupon_funcs.php	/^                $responseCode = $val[3];$/;"	p
+responseCode	verifyCoupon/VerifyCoupon_funcs.php	/^        $responseCode = $xmlResponse->$code;$/;"	p
+responseCode	verifyCoupon/VerifyCoupon_funcs.php	/^    $responseCode = "";    \/\/验证结果编码$/;"	p
+responseCode	verifyCoupon/v1000/VerifyCoupon.php	/^                    $responseCode = $val[3];$/;"	p
+responseCode	verifyCoupon/v1000/VerifyCoupon.php	/^            $responseCode = $xmlResponse->$code;$/;"	p
+responseCode	verifyCoupon/v1000/VerifyCoupon.php	/^        $responseCode = "";    \/\/验证结果编码$/;"	p
+rest	old_trial/test_360buyRest.php	/^    $rest->createRequest("$urlAddr", "POST", $inputs);$/;"	p
+rest	old_trial/test_360buyRest.php	/^    $rest->createRequest($urlAddr);$/;"	p
+rest	old_trial/test_RestClient.php	/^    $rest->createRequest($apiUrl);$/;"	p
+rest	old_trial/test_RestClient.php	/^    $rest->createRequest($apiUrl, "POST", $params);$/;"	p
+rest	verifyCoupon/doVerifyCoupon.php	/^    $rest->createRequest($verifyCoupon->get_apiUrl());$/;"	p
+rest	verifyCoupon/doVerifyCoupon.php	/^    $rest->createRequest($verifyCoupon->get_apiUrl(), 'POST', $params);$/;"	p
+rest	verifyCoupon/v1000/doVerifyCoupon.php	/^    $rest->createRequest($verifyCoupon->get_apiUrl());$/;"	p
+rest	verifyCoupon/v1000/doVerifyCoupon.php	/^    $rest->createRequest($verifyCoupon->get_apiUrl(), 'POST', $params);$/;"	p
+result	module/Coupon.php	/^        $result = mysql_query($sql);$/;"	p
+result	module/Partner.php	/^            $result = mysql_query($selectSql);$/;"	p
+result	module/Team.php	/^        $result = mysql_query($sql);$/;"	p
+result	old_trial/VerifyCoupon_laiqu.php	/^    $result = @file_get_content($url);$/;"	p
+result	old_trial/soapAndRest_sp.php	/^        $result = $soap_proxy->ItemSearch($parameters);$/;"	p
+result	old_trial/test_RestClient.php	/^        $result = get_responseCode_laiqu($response, $resultTag, $codeSuccess);$/;"	p
+result	verifyCoupon/VerifyCoupon_funcs.php	/^       $result =  CODE_ERROR_UNKNOWN;$/;"	p
+result	verifyLogin/VerifyLogin.php	/^        $result = mysql_query($query);$/;"	p
+resultTag	old_trial/test_RestClient.php	/^   $resultTag = $$targetApi->responseResult->resultTag;$/;"	p
+rootDir	old_trial/VerifyFunction_def.php	/^    $rootDir = '.\/groupon_apis_confs\/' . $aGrouponDirList[$iPlatform];$/;"	p
+row	verifyLogin/VerifyLogin.php	/^            $row = mysql_fetch_array($result);$/;"	p
+runtimeErrorHandler	acctManager/do_changePass.php	/^function runtimeErrorHandler($errno, $errstr, $errfile, $errline)$/;"	f
+runtimeErrorHandler	common/include/errorCatcher.php	/^function runtimeErrorHandler($errno, $errstr, $errfile, $errline)$/;"	f
+runtimeErrorHandler	verifyCoupon/doVerifyCoupon.php	/^function runtimeErrorHandler($errno, $errstr, $errfile, $errline)$/;"	f
+runtimeErrorHandler	verifyLogin/doVerifyLogin.php	/^function runtimeErrorHandler($errno, $errstr, $errfile, $errline)$/;"	f
+salt	common/common.php	/^    $salt = substr(md5($pass), 0, 2); $/;"	p
+salt	verifyLogin/VerifyLogin.php	/^        $salt = substr(md5($pass), 0, 2);$/;"	p
+select	module/Coupon.php	/^        $select .= "u.username as username, u.email as email, o.subbranch as subbranch, c.consume_time as consumeTime";$/;"	p
+select	module/Coupon.php	/^        $select .= ' from '.self::DBDATABASE.'.'.self::COUPON_TABLE.' c,'.self::DBDATABASE.'.'.self::TEAM_TABLE.' t,'.self::DBDATABASE.'.'.self::USER_TABLE.' u,'.self::DBDATABASE.'.'.self::ORDER_TABLE.' o ';$/;"	p
+select	module/Coupon.php	/^        $select = "select c.order_id as orderId, t.title as teamTitle, c.id as couponId,";$/;"	p
+select	module/Team.php	/^        $select .= "t.end_time as endTime, t.now_num as nowNum, t.min_num as minNum, t.team_price as teamPrice,";$/;"	p
+select	module/Team.php	/^        $select .= "t.expire_time as expireTime, t.state";$/;"	p
+select	module/Team.php	/^        $select .= "t.market_price as marketPrice, t.platform_key as platformKey,";$/;"	p
+select	module/Team.php	/^        $select .= ' from '.self::DBDATABASE.'.'.self::TEAM_TABLE.' t,'.self::DBDATABASE.'.'.self::PLATFORM_TABLE.' p';$/;"	p
+select	module/Team.php	/^        $select = "select t.id as teamId, t.title as teamTitle, p.title as platformTitle, t.begin_time as beginTime,";$/;"	p
+selectSql	module/Partner.php	/^            $selectSql = "SELECT * FROM ".$this->get_dbTableName(self::PARTNER_TABLE)." WHERE id=".$partnerId.$/;"	p
+sendRequest	common/RESTclient.php	/^    public function sendRequest() {$/;"	f
+send_verifyRequest	old_trial/VerifyFunction_def.php	/^function send_verifyRequest($/;"	f
+setHeader	common/RESTclient.php	/^    public function setHeader($header)$/;"	f
+setUrl	common/RESTclient.php	/^    public function setUrl($url) {$/;"	f
+showPageNums	statistics/consumedCoupons.php	/^                    $showPageNums = 11;$/;"	p
+showPageNums	statistics/teamList.php	/^                        $showPageNums = 11;$/;"	p
+sideShowPages	common/common.php	/^    $sideShowPages = floor($showPagesNums\/2);$/;"	p
+soap_proxy	old_trial/soapAndRest_sp.php	/^        $soap_proxy = $soapclient->getProxy();$/;"	p
+soapclient	old_trial/soapAndRest_sp.php	/^        $soapclient = new nusoap_client( 'http:\/\/ecs.amazonaws.com\/AWSECommerceService\/AWSECommerceService.wsdl', 'wsdl');$/;"	p
+sql	module/Coupon.php	/^                $sql .= " AND c.id=$couponId";$/;"	p
+sql	module/Coupon.php	/^                $sql .= " AND c.order_id=$orderId";$/;"	p
+sql	module/Coupon.php	/^                $sql .= " AND c.partner_id=$partnerId";$/;"	p
+sql	module/Coupon.php	/^                $sql .= " AND c.platform_key='$platform'";$/;"	p
+sql	module/Coupon.php	/^                $sql .= " AND c.team_id=$teamId ";$/;"	p
+sql	module/Coupon.php	/^                $sql .= " AND u.username='$username'";$/;"	p
+sql	module/Coupon.php	/^            $sql .= !empty($platform)? " AND c.platform_key='$platform'" : "";$/;"	p
+sql	module/Coupon.php	/^            $sql .= !empty($username) ? " AND u.username='$username'" : "";$/;"	p
+sql	module/Coupon.php	/^            $sql .= $couponId>0 ? " AND c.coupon_id=".$couponId : "";$/;"	p
+sql	module/Coupon.php	/^            $sql .= $orderId>0 ? " AND c.order_id=".$orderId : "";$/;"	p
+sql	module/Coupon.php	/^            $sql .= $partnerId>0 ? " AND c.partner_id=".$partnerId : "";$/;"	p
+sql	module/Coupon.php	/^            $sql .= $teamId>0 ? " AND c.team_id=".$teamId : "";$/;"	p
+sql	module/Coupon.php	/^        $sql .= " AND t.id=c.team_id AND o.id=c.order_id AND u.id=c.user_id";$/;"	p
+sql	module/Coupon.php	/^        $sql .= " LIMIT $start,$offset";$/;"	p
+sql	module/Coupon.php	/^        $sql .= " WHERE consume='Y'";$/;"	p
+sql	module/Coupon.php	/^        $sql .= " order by c.consume_time desc";$/;"	p
+sql	module/Coupon.php	/^        $sql .= $this->get_dbTableName(self::USER_TABLE).' as u';$/;"	p
+sql	module/Coupon.php	/^        $sql = "SELECT count(*) as couponNums FROM ".$this->get_dbTableName(self::COUPON_TABLE).' as c,';$/;"	p
+sql	module/Coupon.php	/^        $sql = $select." WHERE c.consume='Y' ";$/;"	p
+sql	module/Coupon.php	/^        $sql = $update.$where;$/;"	p
+sql	module/Team.php	/^        $sql .= " WHERE partner_id=$partnerId";$/;"	p
+sql	module/Team.php	/^        $sql .= "LIMIT $start,$offset ";$/;"	p
+sql	module/Team.php	/^        $sql .= "order by t.state desc,t.expire_time desc,t.id desc ";$/;"	p
+sql	module/Team.php	/^        $sql = "SELECT count(*) as teamNums FROM ".$this->get_dbTableName(self::TEAM_TABLE);$/;"	p
+sql	module/Team.php	/^        $sql = $select." WHERE t.partner_id=$partnerId AND t.platform_key=p.key ";$/;"	p
+start	common/common.php	/^    $start = ($page - $sideShowPages) > 1? $page-$sideShowPages : 1;$/;"	p
+strVerifyCouponRequestConf	old_trial/VerifyFunction_def.php	/^                                        $strVerifyCouponRequestConf);$/;"	p
+strVerifyCouponRequestConf	old_trial/VerifyFunction_def.php	/^    $strVerifyCouponRequestConf = "";$/;"	p
+strVerifyCouponRequestConf	old_trial/VerifyFunction_def.php	/^    $strVerifyCouponRequestConf = $rootDir . '\/confs\/verifyCouponRequest.conf';  $/;"	p
+strVerifyCouponRequestConf	old_trial/VerifyFunction_def.php	/^    $strVerifyCouponRequestConf)$/;"	p
+strVerifyCouponRequestConf	old_trial/VerifyFunction_def.php	/^    $strVerifyCouponRequestConf,$/;"	p
+strVerifyCouponRequestXml	old_trial/VerifyFunction_def.php	/^                                        $strVerifyCouponRequestXml, $/;"	p
+strVerifyCouponRequestXml	old_trial/VerifyFunction_def.php	/^    $strVerifyCouponRequestXml = "";$/;"	p
+strVerifyCouponRequestXml	old_trial/VerifyFunction_def.php	/^    $strVerifyCouponRequestXml = $rootDir . '\/apis\/verifyCouponRequest.xml';  $/;"	p
+strVerifyCouponRequestXml	old_trial/VerifyFunction_def.php	/^    $strVerifyCouponRequestXml, $/;"	p
+strVerifyCouponRequestXml	old_trial/VerifyFunction_def.php	/^    $strVerifyCouponRequestXml,$/;"	p
+strVerifyCouponResponseConf	old_trial/VerifyFunction_def.php	/^    $strVerifyCouponResponseConf )$/;"	p
+strVerifyCouponResponseConf	old_trial/VerifyFunction_def.php	/^    $strVerifyCouponResponseConf = "";$/;"	p
+strVerifyCouponResponseConf	old_trial/VerifyFunction_def.php	/^    $strVerifyCouponResponseConf = $rootDir . '\/confs\/verifyCouponResponse.conf';  $/;"	p
+tableName	common/class/MyTable.php	/^            $tableName = self::DBDATABASE.".".$tableName;$/;"	p
+targetApi	verifyCoupon/VerifyCoupon.php	/^        $targetApi = self::TARGET_API;$/;"	p
+targetApi	verifyCoupon/v1000/VerifyCoupon.php	/^        $targetApi = self::TARGET_API;$/;"	p
+targetApiConfs	verifyCoupon/VerifyCoupon.php	/^        $targetApiConfs = $configs->$targetApi;$/;"	p
+targetApiConfs	verifyCoupon/v1000/VerifyCoupon.php	/^        $targetApiConfs = $configs->$targetApi;$/;"	p
+teamList	module/Team.php	/^        $teamList = array();$/;"	p
+teamNums	module/Team.php	/^            $teamNums = $teamRow['teamNums'];$/;"	p
+teamNums	module/Team.php	/^        $teamNums = 0;$/;"	p
+teamNums	module/Team.php	/^        $teamNums = mysql_num_rows($result);$/;"	p
+teamRow	module/Team.php	/^            $teamRow = mysql_fetch_array($result);$/;"	p
+this	common/RESTclient.php	/^                $this->addPostParameter($arr);$/;"	p
+this	common/RESTclient.php	/^                $this->req->setMethod(HTTP_Request2::METHOD_DELETE);$/;"	p
+this	common/RESTclient.php	/^                $this->req->setMethod(HTTP_Request2::METHOD_GET);$/;"	p
+this	common/RESTclient.php	/^                $this->req->setMethod(HTTP_Request2::METHOD_POST);$/;"	p
+this	common/RESTclient.php	/^                $this->req->setMethod(HTTP_Request2::METHOD_PUT);$/;"	p
+this	common/RESTclient.php	/^            $this->createRequest($url, "GET");$/;"	p
+this	common/RESTclient.php	/^            $this->req->addPostParameter($arr);$/;"	p
+this	common/RESTclient.php	/^            $this->req->setHeader($header);$/;"	p
+this	common/RESTclient.php	/^            $this->sendRequest();$/;"	p
+this	common/RESTclient.php	/^           $this->req->setAuth($this->user_name, $this->password);$/;"	p
+this	common/RESTclient.php	/^        $this->curr_url = $this->req->getUrl();$/;"	p
+this	common/RESTclient.php	/^        $this->password = $password;$/;"	p
+this	common/RESTclient.php	/^        $this->req =& new HTTP_Request2($url);$/;"	p
+this	common/RESTclient.php	/^        $this->req->setUrl($url);$/;"	p
+this	common/RESTclient.php	/^        $this->response = $this->req->send();$/;"	p
+this	common/RESTclient.php	/^        $this->responseBody = $this->response->getBody();$/;"	p
+this	common/RESTclient.php	/^        $this->user_name = $user_name;$/;"	p
+this	common/class/Database.php	/^        $this->_dbconn = mysql_connect(self::DBHOST, self::DBUSER, self::DBPASS);$/;"	p
+this	common/class/MyTable.php	/^        $this->_dbconn = mysql_connect(self::DBHOST, self::DBUSER, self::DBPASS);$/;"	p
+this	common/class/MyTable.php	/^        $this->assure_dbConnection();$/;"	p
+this	module/Coupon.php	/^        $this->assure_dbConnection();$/;"	p
+this	module/Partner.php	/^        $this->assure_dbConnection();$/;"	p
+this	module/Team.php	/^        $this->assure_dbConnection();$/;"	p
+this	old_trial/soapAndRest_sp.php	/^            $this->products[] = new Product($product);$/;"	p
+this	old_trial/soapAndRest_sp.php	/^        $this->parseXML();$/;"	p
+this	old_trial/soapAndRest_sp.php	/^        $this->products[] = new Product($productXML); $/;"	p
+this	old_trial/soapAndRest_sp.php	/^        $this->totalResults = $result['TotalResults'];$/;"	p
+this	old_trial/soapAndRest_sp.php	/^    $this->AssociateTag = ASSOCIATEID;$/;"	p
+this	old_trial/soapAndRest_sp.php	/^    $this->BrowseNode = $browseNode; $this->ResponseGroup = "Large";$/;"	p
+this	old_trial/soapAndRest_sp.php	/^    $this->Operation = "ItemSearch"; $this->AWSAccessKeyId = DEVTAG;$/;"	p
+this	old_trial/soapAndRest_sp.php	/^    $this->SearchIndex= $mode;$/;"	p
+this	old_trial/soapAndRest_sp.php	/^    $this->Service = "AWSECommerceService"; $/;"	p
+this	old_trial/soapAndRest_sp.php	/^    $this->Sort= "salesrank";$/;"	p
+this	old_trial/soapAndRest_sp.php	/^    $this->TotalPages= $page;$/;"	p
+this	old_trial/soapAndRest_sp.php	/^    $this->totalResults = (integer)$xml->TotalResults; $/;"	p
+this	verifyCoupon/VerifyCoupon.php	/^            $this->_codeTag == ""  || $this->_codeSuccess == "")$/;"	p
+this	verifyCoupon/VerifyCoupon.php	/^        $this->_apiUrl = $targetApiConfs->apiUrl;$/;"	p
+this	verifyCoupon/VerifyCoupon.php	/^        $this->_codeSuccess = $targetApiConfs->responseResultStatic->codeSuccess;$/;"	p
+this	verifyCoupon/VerifyCoupon.php	/^        $this->_codeTag = $targetApiConfs->responseResult->codeTag;$/;"	p
+this	verifyCoupon/VerifyCoupon.php	/^        $this->_httpMethod = $configs->httpMethod;$/;"	p
+this	verifyCoupon/VerifyCoupon.php	/^        $this->_platform = $platform;$/;"	p
+this	verifyCoupon/VerifyCoupon.php	/^        $this->_requestMethod = $configs->requestMethod;$/;"	p
+this	verifyCoupon/VerifyCoupon.php	/^        $this->_requestParams = $targetApiConfs->requestParams;$/;"	p
+this	verifyCoupon/VerifyCoupon.php	/^        $this->_requestParamsStatic = $targetApiConfs->requestParamsStatic;$/;"	p
+this	verifyCoupon/VerifyCoupon.php	/^        $this->_responseType = $configs->responseType;$/;"	p
+this	verifyCoupon/v1000/VerifyCoupon.php	/^            $this->_codeTag == ""  || $this->_codeSuccess == "")$/;"	p
+this	verifyCoupon/v1000/VerifyCoupon.php	/^        $this->_apiUrl = $targetApiConfs->apiUrl;$/;"	p
+this	verifyCoupon/v1000/VerifyCoupon.php	/^        $this->_codeSuccess = $targetApiConfs->responseResultStatic->codeSuccess;$/;"	p
+this	verifyCoupon/v1000/VerifyCoupon.php	/^        $this->_codeTag = $targetApiConfs->responseResult->codeTag;$/;"	p
+this	verifyCoupon/v1000/VerifyCoupon.php	/^        $this->_httpMethod = $configs->httpMethod;$/;"	p
+this	verifyCoupon/v1000/VerifyCoupon.php	/^        $this->_platform = $platform;$/;"	p
+this	verifyCoupon/v1000/VerifyCoupon.php	/^        $this->_requestMethod = $configs->requestMethod;$/;"	p
+this	verifyCoupon/v1000/VerifyCoupon.php	/^        $this->_requestParams = $targetApiConfs->requestParams;$/;"	p
+this	verifyCoupon/v1000/VerifyCoupon.php	/^        $this->_requestParamsStatic = $targetApiConfs->requestParamsStatic;$/;"	p
+this	verifyCoupon/v1000/VerifyCoupon.php	/^        $this->_responseType = $configs->responseType;$/;"	p
+this	verifyLogin/VerifyLogin.php	/^        $this->_dbconn = mysql_connect(self::DBHOST, self::DBUSER, self::DBPASS);$/;"	p
+to	verifyLogin/VerifyLogin.php	/^ * VerifyLogin class to check login$/;"	c
+totalPages	common/utilities.php	/^        $totalPages = 0;$/;"	p
+totalPages	common/utilities.php	/^        $totalPages = ceil($rowNums\/$rowNumsEachPage);$/;"	p
+update	module/Coupon.php	/^        $update .= " set consume='Y',consume_time=UNIX_TIMESTAMP() ";$/;"	p
+update	module/Coupon.php	/^        $update = 'UPDATE '.self::DBDATABASE.'.'.self::COUPON_TABLE;$/;"	p
+updateSql	module/Partner.php	/^                $updateSql .= " password='".crypt_pass($newPasswd)."'"." WHERE id=".$partnerId;$/;"	p
+updateSql	module/Partner.php	/^                $updateSql = "UPDATE ".$this->get_dbTableName(self::PARTNER_TABLE)." SET";$/;"	p
+url	old_trial/test_360buyRest.php	/^    $url = $rest->getUrl();$/;"	p
+url	old_trial/test_360buyRest.php	/^    $url->setQueryVariables($inputs);$/;"	p
+url	old_trial/test_RestClient.php	/^    $url = $rest->getUrl();$/;"	p
+url	old_trial/test_RestClient.php	/^    $url->setQueryVariables($params);$/;"	p
+url	verifyCoupon/doVerifyCoupon.php	/^    $url = $rest->getUrl();$/;"	p
+url	verifyCoupon/doVerifyCoupon.php	/^    $url->setQueryVariables($params);$/;"	p
+url	verifyCoupon/v1000/doVerifyCoupon.php	/^    $url = $rest->getUrl();$/;"	p
+url	verifyCoupon/v1000/doVerifyCoupon.php	/^    $url->setQueryVariables($params);$/;"	p
+urlPrefix	statistics/consumedCoupons.php	/^                    $urlPrefix .= "&";$/;"	p
+urlPrefix	statistics/consumedCoupons.php	/^                    $urlPrefix = "consumedCoupons.php?action=search";$/;"	p
+urlPrefix	statistics/teamList.php	/^                        $urlPrefix = "teamList.php?";$/;"	p
+user	verifyLogin/VerifyLogin.php	/^        $user = mysql_real_escape_string($username);$/;"	p
+user_name	common/RESTclient.php	/^    private $user_name = "";$/;"	p
+verifyMsg	acctManager/do_changePass.php	/^    $verifyMsg = ChangePassCodeMsg::get_message($code); $/;"	p
+verifyMsg	verifyCoupon/doVerifyCoupon.php	/^    $verifyMsg = VerifyCouponCodeMsg::get_message($code); $/;"	p
+verifyMsg	verifyLogin/doVerifyLogin.php	/^    $verifyMsg = VerifyLoginCodeMsg::get_message($code); $/;"	p
+verifyResult	old_trial/VerifyFunction_def.php	/^    $verifyResult  = send_verifyRequest($verifyData,$/;"	p
+verify_coupon	old_trial/VerifyFunction_def.php	/^function verify_coupon($verifyData)$/;"	f
+verify_login	verifyLogin/VerifyLogin.php	/^    public function verify_login($username, $password)$/;"	f
+where	module/Coupon.php	/^        $where = "WHERE id=".$couponId." AND platform_key='".$platformKey."' AND consume='N'";$/;"	p
+xml	old_trial/VerifyFunction_def.php	/^        $xml = @simplexml_load_file($strVerifyCouponRequestXml);$/;"	p
+xml	old_trial/VerifyFunction_def.php	/^        $xml->CouponId[0]->node_value = $aVerifyData[$input];$/;"	p
+xml	old_trial/VerifyFunction_def.php	/^    $xml = @simplexml_load_file($strVerifyCouponRequestXml);$/;"	p
+xml	old_trial/soapAndRest_sp.php	/^        $xml = @simplexml_load_file($this->url); $/;"	p
+xml	old_trial/soapAndRest_sp.php	/^    $xml = @simplexml_load_file($this->url);$/;"	p
+xmlResponse	verifyCoupon/VerifyCoupon.php	/^            $xmlResponse = simplexml_load_string($response);$/;"	p
+xmlResponse	verifyCoupon/VerifyCoupon_funcs.php	/^        $xmlResponse = simplexml_load_string($response);$/;"	p
+xmlResponse	verifyCoupon/v1000/VerifyCoupon.php	/^            $xmlResponse = simplexml_load_string($response);$/;"	p
