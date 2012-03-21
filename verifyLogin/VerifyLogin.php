@@ -14,17 +14,18 @@
  */
 require_once('../common/CodeMessages.php');
 require_once('../common/Exception.php');
+require_once('../common/class/MyTable.php');
 
-class VerifyLogin
+class VerifyLogin extends MyTable
 {
     /* constants for database */
-    const DBHOST = 'localhost';
-    const DBUSER = 'root';
-    const DBPASS = 'ghz86377328';
-    const DBDATABASE = 'lq_verify';
+//    const DBHOST = 'localhost';
+//    const DBUSER = 'root';
+//    const DBPASS = 'ghz86377328';
+//    const DBDATABASE = 'lq_verify';
     const USERTABLE = 'partner';
 
-    private $_dbconn = null;
+  //  private $_dbconn = null;
     /**
      * Constructor.
      *
