@@ -66,7 +66,11 @@ class VerifyCouponCodeMsg
     const MARK_COUPON_CONSUMED_ERROR = 21107;
     const INVALID_COUPONID_ARG_ERROR = 21108;
     const INVALID_COUPONPWD_ARG_ERROR = 21109;
-
+    const VALIDATECODE_NOT_MATCH_ERROR = 21110;
+    const MALFORMED_COUNT_NUMBER = 211111;
+    const JUHUASUAN_LOGIN_EXPIRED = 211112;
+    const PLATFORM_ACCT_NOT_BIND_ERROR = 211113;
+    const RECORD_COUPON_FAILED_ERROR = 211114;
     
     // response message according to the code
     static private $_codeMessages = array (
@@ -80,7 +84,12 @@ class VerifyCouponCodeMsg
         self::UNKNOWN_EXCEPTION => "未知异常",
         self::MARK_COUPON_CONSUMED_ERROR => "标记团购券已消费错误",
         self::INVALID_COUPONID_ARG_ERROR => "团购券ID参数无效",
-        self::INVALID_COUPONPWD_ARG_ERROR => "团购券密码参数无效"
+        self::INVALID_COUPONPWD_ARG_ERROR => "团购券密码参数无效",
+        self::VALIDATECODE_NOT_MATCH_ERROR => "验证码错误",
+        self::MALFORMED_COUNT_NUMBER => "销券次数格式错误",
+        self::JUHUASUAN_LOGIN_EXPIRED => "聚划算登陆超期",
+        self::PLATFORM_ACCT_NOT_BIND_ERROR => "商家平台账户没有绑定",
+        self::RECORD_COUPON_FAILED_ERROR => "服务端登记团购券已消费相关信息失败"
     );
 
     /**

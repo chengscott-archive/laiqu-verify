@@ -7,8 +7,8 @@
 .platform_b{ width:259px; height:54px; background-image:url(../../images/bg_select.jpg);}
 .platform{ width:200px; height:20px; border:none; margin-top:15px; margin-left:38px;}
 .couponId_b{ width:259px; height:54px; background-image:url(../../images/bg_input_num.jpg); margin-top:8px;}
-.couponId{width:200px; height:20px; border:none; margin-top:15px; margin-left:38px;}
-.couponPwd_b{width:259px; height:55px; background-image:url(../../images/bg_input_code.jpg); margin-top:8px; margin-bottom:8px;}
+.consumeCount,.couponId{width:200px; height:20px; border:none; margin-top:15px; margin-left:38px;}
+.consumeCount_b,.couponPwd_b{width:259px; height:55px; background-image:url(../../images/bg_input_code.jpg); margin-top:8px; margin-bottom:8px;}
 .couponPwd{width:200px; height:20px; border:none; margin-top:15px; margin-left:38px;}
 .reset{ float:left; width:121px; height:50px; border:none; }
 /*.submit{ width:121px; height:50px; float:right; background-image:url(../../images/submit_1.jpg); border:none;}*/

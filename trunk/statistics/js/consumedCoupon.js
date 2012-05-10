@@ -38,17 +38,17 @@
       return false;
     });
     $("#searchCoupon").click(function() {
-      var couponIdSearch, orderIdSearch, searchUrl, usernameSearch;
+      var couponIdSearch, orderIdSearch, searchUrl, mobileSearch;
       orderIdSearch = $("#orderIdSearch").val();
       couponIdSearch = $("#couponIdSearch").val();
-      usernameSearch = $("#usernameSearch").val();
-      if (orderIdSearch === "" && couponIdSearch === "" && usernameSearch === "") {
+      mobileSearch = $("#mobileSearch").val();
+      if (orderIdSearch === "" && couponIdSearch === "" && mobileSearch === "") {
         window.location = url;
       }
       searchUrl = url + '?action=search';
       if (orderIdSearch !== "") searchUrl += '&orderId=' + orderIdSearch;
       if (couponIdSearch !== "") searchUrl += '&couponId=' + couponIdSearch;
-      if (usernameSearch !== "") searchUrl += '&username=' + usernameSearch;
+      if (mobileSearch !== "") searchUrl += '&mobile=' + mobileSearch;
       window.location = searchUrl;
       return false;
     });

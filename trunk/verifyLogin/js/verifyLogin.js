@@ -1,5 +1,4 @@
 (function() {
-
   $(function() {
     var afterLoginUrl, check_input, codeSuccess, do_login, msgBadNamePass, msgMissingName, msgMissingPass, parse_verifyResponse, triggerKeyCode, verifyLoginUrl,
       _this = this;
@@ -8,7 +7,7 @@
     msgMissingName = "请输入的用户名!";
     msgMissingPass = "请输入的密码!";
     verifyLoginUrl = "doVerifyLogin.php";
-    afterLoginUrl = "../VerifyCoupon/index.php";
+    afterLoginUrl = "../verifyCoupon/index.php";
     triggerKeyCode = 13;
     do_login = function(name, passwd) {
       return $.ajax({
@@ -48,11 +47,19 @@
       if (check_input()) do_login(name, pass);
       return false;
     });
-    return $(document).keydown(function(event) {
+
+    $(document).keydown(function(event) {
       if (event.type === 'keydown' && event.keyCode === triggerKeyCode) {
         return $("#login_btn").trigger('click');
       }
     });
+
+    function login_page_init()
+    {
+        $("#username").focus();
+    }
+
+    login_page_init();
   });
 
 }).call(this);

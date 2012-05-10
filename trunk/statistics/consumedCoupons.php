@@ -29,7 +29,7 @@ $platform = isset($_SESSION['platform'])? $_SESSION['platform']: '';
 
 $orderId = isset($_GET['orderId'])? $_GET['orderId']: 0;
 $couponId = isset($_GET['couponId'])? $_GET['couponId']: 0;
-$username = isset($_GET['username'])? $_GET['username']: '';
+$mobile = isset($_GET['mobile'])? $_GET['mobile']: '';
 
 $page = 1;
 if (isset($_GET['page']) && $_GET['page'] > 0)
@@ -44,7 +44,7 @@ $searchFields = array(
     'platform' => $platform,
     'orderId' => $orderId,
     'couponId' => $couponId,
-    'username' => $username);
+    'mobile' => $mobile);
 $couponList = $coupon->get_consumedCoupons($searchFields, $start, TABLE_ROW_NUMS);
 $couponTotalNums = $coupon->get_consumedCouponNums($searchFields);
 $totalPages = cal_totalPages($couponTotalNums, TABLE_ROW_NUMS);
@@ -113,8 +113,8 @@ $totalPages = cal_totalPages($couponTotalNums, TABLE_ROW_NUMS);
             <p class="search_text fl">券号</p>            
             <input class="couponId fl" name="" id="couponIdSearch" value=""/>
             
-            <p class="search_text fl">用户名</p>            
-            <input class="Username fl" name="" id="usernameSearch" value=""/>    
+            <p class="search_text fl">手机号</p>            
+            <input class="Username fl" name="" id="mobileSearch" value=""/>    
             
             <a class="search_button fl" type="" value="" name="" id="searchCoupon" href="javascript:void(0);"><img src="../images/search.jpg" /></a>        
             
@@ -135,10 +135,10 @@ $totalPages = cal_totalPages($couponTotalNums, TABLE_ROW_NUMS);
                 <p class="table_title_text">券号</p>
                 </div>
                 <div class="t4 fl">
-                <p class="table_title_text">购买者</p>
+                <p class="table_title_text">购买者手机号</p>
                 </div>
                 <div class="t1 fl">
-                <p class="table_title_text">分店名</p>
+                <p class="table_title_text">销券次数</p>
                 </div>
                 <div class="t5 fl">
                 <p class="table_title_text">消费时间</p>
@@ -162,13 +162,13 @@ $totalPages = cal_totalPages($couponTotalNums, TABLE_ROW_NUMS);
                             <a class='table_item_text' >{$consumeCoupon['teamTitle']}</a>
                             </div>
                             <div class='item3 fl$oddClass'>
-                            <a class='table_item_text' >{$consumeCoupon['couponId']}</a>
+                            <a class='table_item_text' >{$consumeCoupon['platformCouponId']}</a>
                             </div>
                             <div class='item4 fl$oddClass'>
-                                <a class='table_item_text' >{$consumeCoupon['username']}<br />{$consumeCoupon['email']}</a>
+                                <a class='table_item_text' >{$consumeCoupon['consumerMobile']}</a>
                             </div>
                             <div class='item1 fl$oddClass'>
-                            <a class='table_item_text' >{$consumeCoupon['subbranch']}</a>
+                            <a class='table_item_text' >{$consumeCoupon['consumeTimes']}</a>
                             </div>
                             <div class='item6 fl$oddClass'>
                             <a class='table_item_text' >";
@@ -182,7 +182,7 @@ $totalPages = cal_totalPages($couponTotalNums, TABLE_ROW_NUMS);
             <input type='hidden' id='page' <?php echo "value=".$page; ?> />
             <input type='hidden' id='orderId' <?php if ($orderId >0) echo "value=".$orderId; ?> />
             <input type='hidden' id='couponId' <?php if ($couponId >0) echo "value=".$couponId; ?> />
-            <input type='hidden' id='username' <?php if ($username !=='') echo "value='".$username."'"; ?> />
+            <input type='hidden' id='mobile' <?php if ($mobile !=='') echo "value='".$mobile."'"; ?> />
             <input type='hidden' id='consumedCouponNums' <?php echo "value=".$consumedCouponNums; ?> />
             
         <div class="page_turn">
@@ -194,7 +194,7 @@ $totalPages = cal_totalPages($couponTotalNums, TABLE_ROW_NUMS);
                     $urlPrefix = "consumedCoupons.php?action=search";
                     if ($orderId > 0) $urlPrefix .= "&orderId=$orderId";
                     if ($couponId > 0) $urlPrefix .= "&couponId=$couponId";
-                    if ($username !== "") $urlPrefix .= "&username=$username";
+                    if ($mobile !== "") $urlPrefix .= "&mobile=$mobile";
                     $urlPrefix .= "&";
                     echo get_pageNavHtml($page, $totalPages, $urlPrefix, $showPageNums);
                 ?>

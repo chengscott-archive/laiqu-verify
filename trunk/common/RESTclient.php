@@ -10,6 +10,7 @@ class RESTClient
     private $password = "";
     private $response = "";
     private $responseBody = "";
+    private $responseHeader = "";
     private $req = null;
     private $curr_url = null;
 
@@ -65,12 +66,23 @@ class RESTClient
             //die();
         //} else {
         $this->responseBody = $this->response->getBody();
+        $this->responseHeader = $this->response->getHeader();
     }
 
     public function getResponse() {
         return $this->responseBody;
     }
+    public function getResponseHeader() {
+        return $this->responseHeader;
+    }
 
+    public function getResponseObj() {
+        return $this->response;
+    }
+    
+    public function getRequestHeader() { 
+        return $this->req->getHeaders(); 
+    }
     public function getUrl() {
         return $this->curr_url;
     }
@@ -86,5 +98,10 @@ class RESTClient
         if($this->req)
             $this->req->setHeader($header);
     }
+
+    public function getHttpRequest()
+    {
+        return $this->req;
+    }       
 }
 ?>
