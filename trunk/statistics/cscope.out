@@ -1,0 +1,1961 @@
+cscope 15 $HOME/work/host/laiqu/statistics -q 0000000092 0000012907
+	@consumedCoupons.php
+
+1 ï»¿<?
+php
+
+
+2 
+»quœe_Úû
+('../common/checkAuthority.php');
+
+3 
+»quœe_Úû
+('../common/include/errorCatcher.php');
+
+4 
+»quœe_Úû
+('../module/Coupon.php');
+
+5 
+»quœe_Úû
+('../common/common.php');
+
+7 
+defše
+("TABLE_ROW_NUMS", 6);
+
+9 
+	g$®lowPageShowNums
+ = 6;
+
+10 
+	g$·¹ÃrId
+ = 
+$_SESSION
+['partnerId'];
+
+11 
+	g$Üd”Id
+ = 0;
+
+14 if(
+is£t
+(
+$_GET
+['fromTeamPage']))
+
+16 
+	g$_SESSION
+['äomT—mPage'] = 
+$_GET
+['fromTeamPage'];
+
+18 
+	g$äomT—mPage
+ = 
+is£t
+(
+$_SESSION
+['fromTeamPage'])? $_SESSION['fromTeamPage'] : 1;
+
+19 if(
+is£t
+(
+$_GET
+['teamId']))
+
+21 
+	g$_SESSION
+['‹amId'] = 
+$_GET
+['teamId'];
+
+23 
+	g$‹amId
+ = 
+is£t
+(
+$_SESSION
+['teamId'])? $_SESSION['teamId']: 0;
+
+24 if(
+is£t
+(
+$_GET
+['platform']))
+
+26 
+	g$_SESSION
+['¶©fÜm'] = 
+$_GET
+['platform'];
+
+28 
+	g$¶©fÜm
+ = 
+is£t
+(
+$_SESSION
+['platform'])? $_SESSION['platform']: '';
+
+30 
+	g$Üd”Id
+ = 
+is£t
+(
+$_GET
+['orderId'])? $_GET['orderId']: 0;
+
+31 
+	g$coupÚId
+ = 
+is£t
+(
+$_GET
+['couponId'])? $_GET['couponId']: 0;
+
+32 
+	g$mobe
+ = 
+is£t
+(
+$_GET
+['mobile'])? $_GET['mobile']: '';
+
+34 
+	g$·ge
+ = 1;
+
+35 ià(
+is£t
+(
+$_GET
+['·ge']è&& 
+	g$_GET
+['page'] > 0)
+
+36 
+	g$·ge
+ = 
+$_GET
+['page'];
+
+37 
+	g$¡¬t
+ = (
+$·ge
+-1)*
+TABLE_ROW_NUMS
+;
+
+39 
+	g$coupÚ
+ = 
+Ãw
+ 
+CoupÚ
+();
+
+41 
+	g$£¬chF›lds
+ = 
+¬¿y
+(
+
+42 '·¹ÃrId' => 
+$·¹ÃrId
+,
+
+43 '‹amId' => 
+$‹amId
+,
+
+44 '¶©fÜm' => 
+$¶©fÜm
+,
+
+45 'Üd”Id' => 
+$Üd”Id
+,
+
+46 'coupÚId' => 
+$coupÚId
+,
+
+47 'mobe' => 
+$mobe
+);
+
+48 
+	g$coupÚLi¡
+ = 
+$coupÚ
+->
+g‘_cÚsumedCoupÚs
+(
+$£¬chF›lds
+, 
+$¡¬t
+, 
+TABLE_ROW_NUMS
+);
+
+49 
+	g$coupÚTÙ®Nums
+ = 
+$coupÚ
+->
+g‘_cÚsumedCoupÚNums
+(
+$£¬chF›lds
+);
+
+50 
+	g$tÙ®Pages
+ = 
+ÿl_tÙ®Pages
+(
+$coupÚTÙ®Nums
+, 
+TABLE_ROW_NUMS
+);
+
+53 <
+html
+ 
+	gxmÊs
+="http://www.w3.org/1999/xhtml">
+
+54 <
+h—d
+>
+
+55 <
+t™Ë
+>éªŒè¯å¹³å°</title>
+
+56 <
+m‘a
+ 
+h‰p
+-
+equiv
+="CÚ‹Á-Ty³" 
+cÚ‹Á
+="text/html; charset=utf-8">
+
+58 <
+lšk
+ 
+h»f
+="../css/com_css.css" 
+»l
+="¡yËsh“t" 
+ty³
+="text/css" />
+
+59 <
+lšk
+ 
+h»f
+="css/coupÚ_css.css" 
+»l
+="¡yËsh“t" 
+ty³
+="text/css" />
+
+60 <
+süt
+ 
+¤c
+='../js/jquery.min.js'></script>
+
+61 <
+süt
+ 
+¤c
+='js/consumedCoupon.js'></script>
+
+62 </
+h—d
+>
+
+63 <
+body
+>
+
+66 <
+div
+ 
+şass
+="maš" 
+id
+="main">
+
+70 <
+div
+ 
+şass
+="top_blank">
+
+71 </
+div
+>
+
+73 <
+div
+ 
+şass
+="top">
+
+74 <
+img
+ 
+¤c
+="../images/logo.jpg" />
+
+75 </
+div
+>
+
+77 <
+div
+ 
+şass
+="body">
+
+79 <
+div
+ 
+şass
+="body_l">
+
+80 <
+div
+ 
+şass
+="nav">
+
+83 <
+p
+ 
+şass
+="nav_title">å•† æˆ· ç®¡ ç†</p>
+
+84 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="../v”ifyCoupÚ/šdex.php">æ¶ˆ è´¹ ç™» è®°</a><
+br
+ />
+
+85 <
+div
+ 
+şass
+="nav_bg">
+
+86 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="‹amLi¡.php">é¡¹ ç›® ç»Ÿ è®¡</a><
+br
+ />
+
+87 </
+div
+>
+
+88 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="javasüt:void(0);">æ¶ˆ è´¹ è¯„ ä»·</a><
+br
+ />
+
+89 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="../acùMªag”/chªgePass.php">ä¿® æ”¹ å¯† ç </a><
+br
+ />
+
+90 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="../V”ifyLogš/logšOut.php">é€€ å‡º ç™» å½•</a><
+br
+ />
+
+91 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="javascript:void(0);">å¸® åŠ©</a>
+
+94 </
+div
+>
+
+96 <
+div
+ 
+şass
+="serv">
+
+97 <
+div
+ 
+şass
+="‹l" 
+h»f
+="javascript:void(0);"> </div>
+
+98 <
+a
+ 
+şass
+="online_qq"></a>
+
+99 </
+div
+>
+
+101 </
+div
+>
+
+103 <
+div
+ 
+şass
+="body_r fl">
+
+104 <
+p
+ 
+şass
+="t™Ë_r"
+i
+>><
+a
+ 
+h»f
+="‹amLi¡.php" 
+¡yË
+="cŞÜ:#çad08;">é¡¹ç›®åˆ—è¡¨</a>&
+nb¥
+>å·²æ¶ˆè´¹åˆ¸åˆ—è¡¨</p>
+
+106 <
+div
+ 
+şass
+="title_line"></div>
+
+108 <
+div
+ 
+şass
+="search" >
+
+109 <
+a
+ 
+şass
+="back_‹xˆæ" 
+h»f
+="teamList.php?page=<?phpƒcho $fromTeamPage; ?>">è¿”å›</a>
+
+110 <
+p
+ 
+şass
+="search_text fl">è®¢å•å·</p>
+
+111 <
+šput
+ 
+şass
+="Üd”Id fl" 
+Çme
+="" 
+id
+="Üd”IdS—rch" 
+v®ue
+=""/>
+
+113 <
+p
+ 
+şass
+="search_text fl">åˆ¸å·</p>
+
+114 <
+šput
+ 
+şass
+="coupÚId fl" 
+Çme
+="" 
+id
+="coupÚIdS—rch" 
+v®ue
+=""/>
+
+116 <
+p
+ 
+şass
+="search_text fl">æ‰‹æœºå·</p>
+
+117 <
+šput
+ 
+şass
+="U£ºamæ" 
+Çme
+="" 
+id
+="mobeS—rch" 
+v®ue
+=""/>
+
+119 <
+a
+ 
+şass
+="£¬ch_bu‰Ú fl" 
+ty³
+="" 
+v®ue
+="" 
+Çme
+="" 
+id
+="£¬chCoupÚ" 
+h»f
+="javasüt:void(0);"><
+img
+ 
+¤c
+="../images/search.jpg" /></a>
+
+121 </
+div
+>
+
+126 <
+div
+ 
+şass
+="table">
+
+127 <
+div
+ 
+şass
+="table_title">
+
+128 <
+div
+ 
+şass
+="1 fl">
+
+129 <
+p
+ 
+şass
+="table_title_text">è®¢å•å·</p>
+
+130 </
+div
+>
+
+131 <
+div
+ 
+şass
+="t2 fl">
+
+132 <
+p
+ 
+şass
+="table_title_text">é¡¹ç›®åç§°</p>
+
+133 </
+div
+>
+
+134 <
+div
+ 
+şass
+="t3 fl">
+
+135 <
+p
+ 
+şass
+="table_title_text">åˆ¸å·</p>
+
+136 </
+div
+>
+
+137 <
+div
+ 
+şass
+="t4 fl">
+
+138 <
+p
+ 
+şass
+="table_title_text">è´­ä¹°è€…æ‰‹æœºå·</p>
+
+139 </
+div
+>
+
+140 <
+div
+ 
+şass
+="t1 fl">
+
+141 <
+p
+ 
+şass
+="table_title_text">é”€åˆ¸æ¬¡æ•°</p>
+
+142 </
+div
+>
+
+143 <
+div
+ 
+şass
+="t5 fl">
+
+144 <
+p
+ 
+şass
+="table_title_text">æ¶ˆè´¹æ—¶é—´</p>
+
+145 </
+div
+>
+
+146 </
+div
+>
+
+148 <?
+php
+
+
+149 
+$htmlCoupÚLi¡
+ = '';
+
+150 
+	g$i
+=0; $˜< 
+couÁ
+(
+$coupÚLi¡
+); $i++)
+
+152 
+	g$cÚsumeCoupÚ
+ = 
+$coupÚLi¡
+[
+$i
+];
+
+153 ià(
+	g$i
+%2 == 0)
+
+154 
+$oddCÏss
+ = " item_bg";
+
+156 
+	g$oddCÏss
+ = "";
+
+157 
+	g$htmlCoupÚLi¡
+ .= "<div class='table_item_1' id='couponRowWrap_{$i}'>
+
+158 <
+div
+ 
+şass
+='item1 fl$oddClass'>
+
+159 <
+a
+ 
+şass
+='bË_™em_‹xˆ'>{
+$cÚsumeCoupÚ
+['orderId']}</a>
+
+160 </
+div
+>
+
+161 <
+div
+ 
+şass
+='item2 fl$oddClass'>
+
+162 <
+a
+ 
+şass
+='bË_™em_‹xt' >{
+$cÚsumeCoupÚ
+['teamTitle']}</a>
+
+163 </
+div
+>
+
+164 <
+div
+ 
+şass
+='item3 fl$oddClass'>
+
+165 <
+a
+ 
+şass
+='bË_™em_‹xt' >{
+$cÚsumeCoupÚ
+['platformCouponId']}</a>
+
+166 </
+div
+>
+
+167 <
+div
+ 
+şass
+='item4 fl$oddClass'>
+
+168 <
+a
+ 
+şass
+='bË_™em_‹xt' >{
+$cÚsumeCoupÚ
+['consumerMobile']}</a>
+
+169 </
+div
+>
+
+170 <
+div
+ 
+şass
+='item1 fl$oddClass'>
+
+171 <
+a
+ 
+şass
+='bË_™em_‹xt' >{
+$cÚsumeCoupÚ
+['consumeTimes']}</a>
+
+172 </
+div
+>
+
+173 <
+div
+ 
+şass
+='item6 fl$oddClass'>
+
+174 <
+a
+ 
+şass
+='table_item_text' >";
+
+175 
+$htmlCoupÚLi¡
+ .ğ
+d©e
+('Y-m-d',
+$cÚsumeCoupÚ
+['consumeTime']).
+
+176 "<b¸/>".
+d©e
+('h:i:s',
+$cÚsumeCoupÚ
+['consumeTime'])."</a> </div> </div>";
+
+178 
+echo
+ 
+	g$htmlCoupÚLi¡
+;
+
+181 </
+	gdiv
+>
+
+182 <
+šput
+ 
+	gty³
+='hidd’' 
+id
+='·ge' <?
+php
+ 
+echo
+ "v®ue=".
+$·ge
+; ?> />
+
+183 <
+šput
+ 
+	gty³
+='hidd’' 
+id
+='Üd”Id' <?
+php
+ ià(
+$Üd”Id
+ >0è
+echo
+ "value=".$orderId; ?> />
+
+184 <
+šput
+ 
+	gty³
+='hidd’' 
+id
+='coupÚId' <?
+php
+ ià(
+$coupÚId
+ >0è
+echo
+ "value=".$couponId; ?> />
+
+185 <
+šput
+ 
+	gty³
+='hidd’' 
+id
+='mobe' <?
+php
+ ià(
+$mobe
+ !==''è
+echo
+ "value='".$mobile."'"; ?> />
+
+186 <
+šput
+ 
+	gty³
+='hidd’' 
+id
+='cÚsumedCoupÚNums' <?
+php
+ 
+echo
+ "v®ue=".
+$cÚsumedCoupÚNums
+; ?> />
+
+188 <
+div
+ 
+	gşass
+="page_turn">
+
+189 <
+a
+ 
+şass
+="tuº_‹xˆæ" 
+h»f
+="javasüt:void(0);" 
+id
+='goPrevPage'> ä¸Šä¸€é¡µ </a>
+
+190 <
+div
+ 
+şass
+="page fl">
+
+191 <
+p
+ 
+şass
+="tuº_‹xt" 
+id
+='·geG­'>&
+nb¥
+
+
+192 <?
+php
+
+
+193 
+$showPageNums
+ = 11;
+
+194 
+	g$u¾P»fix
+ = "consumedCoupons.php?action=search";
+
+195 ià(
+	g$Üd”Id
+ > 0è
+	g$u¾P»fix
+ .= "&orderId=$orderId";
+
+196 ià(
+	g$coupÚId
+ > 0è
+	g$u¾P»fix
+ .= "&couponId=$couponId";
+
+197 ià(
+	g$mobe
+ !=ğ""è
+$u¾P»fix
+ .= "&mobile=$mobile";
+
+198 
+	g$u¾P»fix
+ .= "&";
+
+199 
+echo
+ 
+g‘_·geNavHtml
+(
+$·ge
+, 
+$tÙ®Pages
+, 
+$u¾P»fix
+, 
+$showPageNums
+);
+
+201 &
+	gnb¥
+</
+	gp
+>
+
+202 </
+	gdiv
+>
+
+203 <
+a
+ 
+	gşass
+="tuºexˆæ" 
+h»f
+="javasüt:void(0);" 
+id
+='goNextPage'> ä¸‹ä¸€é¡µ </a>
+
+204 </
+div
+>
+
+206 </
+div
+>
+
+212 </
+div
+>
+
+214 <
+div
+ 
+şass
+="footer">
+
+218 <
+div
+ 
+şass
+="bottom_line ">
+
+219 </
+div
+>
+
+221 <
+p
+ 
+şass
+="footer_text">æ¥ è¶£ ç½‘ ç»œ ç§‘ æŠ€ æœ‰ é™ å…¬ å¸</p>
+
+223 </
+div
+>
+
+225 </
+div
+>
+
+237 </
+body
+>
+
+238 </
+html
+>
+
+	@teamList.php
+
+1 ï»¿<?
+php
+
+
+2 
+»quœe_Úû
+('../common/checkAuthority.php');
+
+3 
+»quœe_Úû
+('../common/include/errorCatcher.php');
+
+4 
+»quœe_Úû
+('../module/Team.php');
+
+5 
+»quœe_Úû
+('../common/common.php');
+
+7 
+defše
+("TABLE_ROW_NUMS", 4);
+
+9 
+	g$·¹ÃrId
+ = 
+$_SESSION
+['partnerId'];
+
+10 
+	g$Üd”Id
+ = 0;
+
+11 
+	g$®lowPageShowNums
+ = 6;
+
+13 
+	g$·ge
+ = 1;
+
+14 ià(
+is£t
+(
+$_GET
+['·ge']è&& 
+	g$_GET
+['page'] > 0)
+
+15 
+	g$·ge
+ = 
+$_GET
+['page'];
+
+16 
+	g$¡¬t
+ = (
+$·ge
+-1)*
+TABLE_ROW_NUMS
+;
+
+18 
+	g$‹am
+ = 
+Ãw
+ 
+T—m
+();
+
+20 
+	g$£¬chF›lds
+ = 
+¬¿y
+(
+
+21 '·¹ÃrId' => 
+$·¹ÃrId
+);
+
+22 
+	g$‹amLi¡
+ = 
+$‹am
+->
+g‘_‹ams
+(
+$£¬chF›lds
+, 
+$¡¬t
+, 
+TABLE_ROW_NUMS
+);
+
+23 
+	g$‹amNums
+ = 
+$‹am
+->
+g‘_‹amNums
+(
+$£¬chF›lds
+);
+
+24 
+	g$tÙ®Pages
+ = 
+ÿl_tÙ®Pages
+(
+$‹amNums
+, 
+TABLE_ROW_NUMS
+);
+
+27 <
+html
+ 
+	gxmÊs
+="http://www.w3.org/1999/xhtml">
+
+28 <
+h—d
+>
+
+29 <
+t™Ë
+>éªŒè¯å¹³å°</title>
+
+30 <
+m‘a
+ 
+h‰p
+-
+equiv
+="CÚ‹Á-Ty³" 
+cÚ‹Á
+="text/html; charset=utf-8">
+
+32 <
+lšk
+ 
+h»f
+="../css/com_css.css" 
+»l
+="¡yËsh“t" 
+ty³
+="text/css" />
+
+33 <
+lšk
+ 
+h»f
+="css/couÁ_css.css" 
+»l
+="¡yËsh“t" 
+ty³
+="text/css" />
+
+35 <
+süt
+ 
+¤c
+='../js/jquery.min.js'></script>
+
+36 <
+süt
+ 
+¤c
+='js/teamList.js'></script>
+
+37 </
+h—d
+>
+
+38 <
+body
+>
+
+41 <
+div
+ 
+şass
+="maš" 
+id
+="main">
+
+45 <
+div
+ 
+şass
+="top_blank">
+
+46 </
+div
+>
+
+48 <
+div
+ 
+şass
+="top">
+
+49 <
+img
+ 
+¤c
+="../images/logo.jpg" />
+
+50 </
+div
+>
+
+52 <
+div
+ 
+şass
+="body">
+
+54 <
+div
+ 
+şass
+="body_l">
+
+55 <
+div
+ 
+şass
+="nav">
+
+58 <
+p
+ 
+şass
+="nav_title">å•† æˆ· ç®¡ ç†</p>
+
+59 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="../v”ifyCoupÚ/šdex.php">æ¶ˆ è´¹ ç™» è®°</a><
+br
+ />
+
+60 <
+div
+ 
+şass
+="nav_bg">
+
+61 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="javasüt:void(0);">é¡¹ ç›® ç»Ÿ è®¡</a><
+br
+ />
+
+62 </
+div
+>
+
+63 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="javasüt:void(0);">æ¶ˆ è´¹ è¯„ ä»·</a><
+br
+ />
+
+64 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="../acùMªag”/chªgePass.php">ä¿® æ”¹ å¯† ç </a><
+br
+ />
+
+65 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="../V”ifyLogš/logšOut.php">é€€ å‡º ç™» å½•</a><
+br
+ />
+
+66 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="javascript:void(0);">å¸® åŠ©</a>
+
+69 </
+div
+>
+
+71 <
+div
+ 
+şass
+="serv">
+
+72 <
+div
+ 
+şass
+="‹l" 
+h»f
+="javascript:void(0);"> </div>
+
+73 <
+a
+ 
+şass
+="online_qq"></a>
+
+74 </
+div
+>
+
+76 </
+div
+>
+
+78 <
+div
+ 
+şass
+="body_r fr">
+
+79 <
+p
+ 
+şass
+="title_r">>é¡¹ç›®åˆ—è¡¨</p>
+
+81 <
+div
+ 
+şass
+="title_line"></div>
+
+83 <
+div
+ 
+şass
+="table">
+
+84 <
+div
+ 
+şass
+="table_title">
+
+85 <
+div
+ 
+şass
+="1 fl">
+
+86 <
+p
+ 
+şass
+="bË_t™Ë_‹xt">é¡¹ç›®
+ID
+</p>
+
+87 </
+div
+>
+
+88 <
+div
+ 
+şass
+="t2 fl">
+
+89 <
+p
+ 
+şass
+="table_title_text">é¡¹ç›®åç§°</p>
+
+90 </
+div
+>
+
+91 <
+div
+ 
+şass
+="t3 fl">
+
+92 <
+p
+ 
+şass
+="table_title_text">å¹³å°</p>
+
+93 </
+div
+>
+
+94 <
+div
+ 
+şass
+="t3 fl">
+
+95 <
+p
+ 
+şass
+="table_title_text">æ—¥æœŸ</p>
+
+96 </
+div
+>
+
+97 <
+div
+ 
+şass
+="t1 fl">
+
+98 <
+p
+ 
+şass
+="table_title_text">æˆäº¤</p>
+
+99 </
+div
+>
+
+100 <
+div
+ 
+şass
+="t1 fl">
+
+101 <
+p
+ 
+şass
+="table_title_text">å›¢è´­ä»·</p>
+
+102 </
+div
+>
+
+103 <
+div
+ 
+şass
+="t4 fl">
+
+104 <
+p
+ 
+şass
+="table_title_text">æ“ä½œ</p>
+
+105 </
+div
+>
+
+106 </
+div
+>
+
+108 <!--<
+div
+ 
+şass
+="table_item">-->
+
+109 <?
+php
+
+
+110 
+$htmlT—mLi¡
+ = '';
+
+111 
+	g$i
+ = 0; $˜< 
+couÁ
+(
+$‹amLi¡
+); $i++)
+
+113 
+fÜ—ch
+ (
+$‹amLi¡
+[
+$i
+] 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+115 
+$$key
+ = 
+$v®ue
+;
+
+117 ià(
+	g$i
+%2 != 0)
+
+118 
+$oddEv’CÏss
+ = ' item_bg';
+
+120 
+	g$oddEv’CÏss
+ = '';
+
+122 
+	g$htmlT—mLi¡
+ .= "<div class='table_item_1' id='teamRowWrap_{$i}'>
+
+123 <
+div
+ 
+şass
+='item1 fl{$oddEvenClass}'>";
+
+124 ià(
+time
+()< 
+$expœeTime
+ && 
+$¡©e
+ == 'undone')
+
+125 
+$htmlT—mLi¡
+ .= "<div class='new_ico '></div>";
+
+126 
+	g$htmlT—mLi¡
+ .="<a class='table_item_id ' >{$teamId}</a>
+
+127 </
+div
+>
+
+128 <
+div
+ 
+şass
+='item2 fl{$oddEvenClass}'>
+
+129 <
+a
+ 
+şass
+='bË_™em_‹xt' >{
+$‹amT™Ë
+}</a>
+
+130 </
+div
+>
+
+131 <
+div
+ 
+şass
+='item3 fl{$oddEvenClass}'>
+
+132 <
+a
+ 
+şass
+='bË_™em_icØæ' ><
+img
+ 
+¤c
+='../images/logo_‹am_{$¶©fÜmKey}.jpg' 
+®t
+='$¶©fÜmT™Ë' 
+t™Ë
+='$platformTitle'/></a>
+
+133 </
+div
+> <div 
+şass
+='item4 fl{$oddEvenClass}'>
+
+134 <
+a
+ 
+şass
+='table_item_text' >";
+
+135 
+$htmlT—mLi¡
+ .ğ
+d©e
+('Y-m-d',
+$begšTime
+).'<b¸/>'.d©e('Y-m-d',
+$’dTime
+);
+
+136 
+	g$htmlT—mLi¡
+ .="</a></div>
+
+137 <
+div
+ 
+şass
+='item1 fl{$oddEvenClass}'>
+
+138 <
+a
+ 
+şass
+='bË_™em_‹xt' >{
+$nowNum
+}/{
+$mšNum
+}</a>
+
+139 </
+div
+>
+
+140 <
+div
+ 
+şass
+='item6 fl{$oddEvenClass}'>
+
+141 <
+a
+ 
+şass
+='bË_™em_‹xt' >ï¿¥{
+$‹amPriû
+}<
+br
+ />ï¿¥{
+$m¬k‘Priû
+}</a>
+
+142 </
+div
+>
+
+143 <
+div
+ 
+şass
+='item7 fl{$oddEvenClass}'>
+
+144 <
+div
+ 
+şass
+='n_1'>
+
+145 <
+a
+ 
+şass
+='bË_™em_‹xˆxf' 
+h»f
+='cÚsumedCoupÚs.php?‹amId={$‹amId}&¶©fÜm={$¶©fÜmKey}&äomT—mPage={$·ge}'>å·²æ¶ˆè´¹</a><
+p
+ class='table_item_text fl_line'> | </p><a class='table_item_text xz' href='javascript:void(0);'>ä¸‹è½½</a>
+
+146 </
+div
+>
+
+147 <
+br
+/><
+div
+ 
+şass
+='n_2'>
+
+148 <
+a
+ 
+şass
+='bË_™em_‹xt' 
+h»f
+='javascript:void(0);'>ç»Ÿè®¡</a>
+
+149 </
+div
+></div></div>";
+
+151 
+echo
+ 
+	g$htmlT—mLi¡
+;
+
+155 </
+	gdiv
+>
+
+156 <
+šput
+ 
+	gty³
+='hidd’' 
+id
+='·ge' <?
+php
+ 
+echo
+ "v®ue=".
+$·ge
+; ?> />
+
+157 <
+šput
+ 
+	gty³
+='hidd’' 
+id
+='‹amNums' <?
+php
+ 
+echo
+ "v®ue=".
+$‹amNums
+; ?> />
+
+159 <
+div
+ 
+	gşass
+="page_turn">
+
+160 <
+a
+ 
+şass
+="tuº_‹xˆæ" 
+h»f
+="javasüt:void(0);" 
+id
+='goPrevPage'> ä¸Šä¸€é¡µ </a>
+
+161 <
+div
+ 
+şass
+="page fl">
+
+162 <
+p
+ 
+şass
+="tuº_‹xt" 
+id
+='·geG­'>&
+nb¥
+
+
+163 <?
+php
+
+
+164 
+$showPageNums
+ = 11;
+
+165 
+	g$u¾P»fix
+ = "teamList.php?";
+
+166 
+echo
+ 
+g‘_·geNavHtml
+(
+$·ge
+, 
+$tÙ®Pages
+, 
+$u¾P»fix
+, 
+$showPageNums
+);
+
+169 &
+	gnb¥
+</
+	gp
+>
+
+170 </
+	gdiv
+>
+
+171 <
+a
+ 
+	gşass
+="tuºexˆæ" 
+h»f
+="javasüt:void(0);" 
+id
+='goNextPage'> ä¸‹ä¸€é¡µ </a>
+
+172 </
+div
+>
+
+174 </
+div
+>
+
+180 </
+div
+>
+
+182 <
+div
+ 
+şass
+="footer">
+
+186 <
+div
+ 
+şass
+="bottom_line ">
+
+187 </
+div
+>
+
+189 <
+p
+ 
+şass
+="footer_text">æ¥ è¶£ ç½‘ ç»œ ç§‘ æŠ€ æœ‰ é™ å…¬ å¸</p>
+
+191 </
+div
+>
+
+193 </
+div
+>
+
+205 </
+body
+>
+
+206 </
+html
+>
+
+	@
+1
+.
+0
+2
+33
+consumedCoupons.php
+teamList.php

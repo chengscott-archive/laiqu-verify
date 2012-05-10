@@ -1,0 +1,136 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+COUPON_TABLE	Coupon.php	/^    const COUPON_TABLE = 'coupon';    $/;"	d
+COUPON_TABLE	Order.php	/^    const COUPON_TABLE = 'coupon';    $/;"	d
+Coupon	Coupon.php	/^class Coupon extends MyTable$/;"	c
+ORDER_TABLE	Coupon.php	/^    const ORDER_TABLE  = 'order';$/;"	d
+ORDER_TABLE	Order.php	/^    const ORDER_TABLE  = 'order';$/;"	d
+Order	Order.php	/^class Order extends MyTable$/;"	c
+PARTNER_TABLE	Partner.php	/^    const PARTNER_TABLE = 'partner';$/;"	d
+PARTNET_PLATFORMS_TABLE	PartnerPlatforms.php	/^    const PARTNET_PLATFORMS_TABLE = 'partner_platforms';$/;"	d
+PLATFORM_TABLE	Team.php	/^    const PLATFORM_TABLE  = 'platform';$/;"	d
+Partner	Partner.php	/^class Partner extends MyTable$/;"	c
+PartnerPlatforms	PartnerPlatforms.php	/^class PartnerPlatforms extends MyTable$/;"	c
+TEAM_TABLE	Coupon.php	/^    const TEAM_TABLE  = 'team';$/;"	d
+TEAM_TABLE	Order.php	/^    const TEAM_TABLE  = 'team';$/;"	d
+TEAM_TABLE	Team.php	/^    const TEAM_TABLE  = 'team';$/;"	d
+Team	Team.php	/^class Team extends MyTable$/;"	c
+USER_TABLE	Coupon.php	/^    const USER_TABLE  = 'user';$/;"	d
+USER_TABLE	Order.php	/^    const USER_TABLE  = 'user';$/;"	d
+__construct	Coupon.php	/^    public function __construct()$/;"	f
+__construct	Order.php	/^    public function __construct()$/;"	f
+__construct	Partner.php	/^    public function __construct()$/;"	f
+__construct	PartnerPlatforms.php	/^    public function __construct()$/;"	f
+__construct	Team.php	/^    public function __construct()$/;"	f
+changePass	Partner.php	/^    public function changePass($partnerId, $originPasswd, $newPasswd)$/;"	f
+consume_coupon	Coupon.php	/^    public function consume_coupon($couponId, $consumed_times = 1)$/;"	f
+consumedCouponList	Coupon.php	/^        $consumedCouponList = array();$/;"	p
+countRow	Coupon.php	/^            $countRow = mysql_fetch_array($result);$/;"	p
+couponInfo	Coupon.php	/^        $couponInfo['id'] = $insertedcouponId;$/;"	p
+couponNums	Coupon.php	/^            $couponNums = $countRow['couponNums'];$/;"	p
+couponNums	Coupon.php	/^        $couponNums = 0;$/;"	p
+couponNums	Coupon.php	/^        $couponNums = mysql_num_rows($result);$/;"	p
+for	Partner.php	/^ * Partner.php  class for handling table partner$/;"	c
+for	PartnerPlatforms.php	/^ * PartnerPlatforms.php  class for handling table partner_platforms$/;"	c
+get_consumedCouponNums	Coupon.php	/^    public function get_consumedCouponNums($searchFields)$/;"	f
+get_consumedCoupons	Coupon.php	/^    public function get_consumedCoupons($searchFields, $start, $offset)$/;"	f
+get_teamNums	Team.php	/^    public function get_teamNums($searchFields)$/;"	f
+get_teams	Team.php	/^    public function get_teams($searchFields, $start, $offset)$/;"	f
+insertSql	Coupon.php	/^        $insertSql .= $keys . $values;$/;"	p
+insertSql	Coupon.php	/^        $insertSql = "INSERT INTO ".$this->get_dbTableName(self::COUPON_TABLE);$/;"	p
+insertSql	Order.php	/^        $insertSql .= $keys . $values;$/;"	p
+insertSql	Order.php	/^        $insertSql = "INSERT INTO ".$this->get_dbTableName(self::ORDER_TABLE);$/;"	p
+insertSql	Team.php	/^        $insertSql .= $keys . $values;$/;"	p
+insertSql	Team.php	/^        $insertSql = "INSERT INTO ".$this->get_dbTableName(self::TEAM_TABLE);$/;"	p
+insertTeamId	Team.php	/^        $insertTeamId = mysql_insert_id();$/;"	p
+insert_coupon	Coupon.php	/^    public function insert_coupon($couponInfo)$/;"	f
+insert_order	Order.php	/^    public function insert_order($orderInfo)$/;"	f
+insert_team	Team.php	/^    public function insert_team($teamInfo)$/;"	f
+insertedOrderId	Order.php	/^        $insertedOrderId = mysql_insert_id();$/;"	p
+insertedcouponId	Coupon.php	/^        $insertedcouponId = mysql_insert_id();$/;"	p
+keys	Coupon.php	/^            $keys .= $key . ",";$/;"	p
+keys	Coupon.php	/^        $keys = "(";$/;"	p
+keys	Coupon.php	/^        $keys = substr($keys, 0, -1) . ")";$/;"	p
+keys	Order.php	/^            $keys .= $key . ",";$/;"	p
+keys	Order.php	/^        $keys = "(";$/;"	p
+keys	Order.php	/^        $keys = substr($keys, 0, -1) . ")";$/;"	p
+keys	Team.php	/^            $keys .= $key . ",";$/;"	p
+keys	Team.php	/^        $keys = "(";$/;"	p
+keys	Team.php	/^        $keys = substr($keys, 0, -1) . ")";$/;"	p
+newPasswd	Partner.php	/^        $newPasswd = mysql_real_escape_string($newPasswd);$/;"	p
+orderInfo	Order.php	/^        $orderInfo['id'] = $insertedOrderId;$/;"	p
+originPasswd	Partner.php	/^            $originPasswd = crypt_pass($originPasswd);$/;"	p
+originPasswd	Partner.php	/^        $originPasswd = mysql_real_escape_string($originPasswd);$/;"	p
+parse_couponList	Coupon.php	/^    private function parse_couponList($result)$/;"	f
+parse_teamList	Team.php	/^    private function parse_teamList($result)$/;"	f
+result	Coupon.php	/^        $result = mysql_query($insertSql);$/;"	p
+result	Coupon.php	/^        $result = mysql_query($sql);$/;"	p
+result	Order.php	/^        $result = mysql_query($insertSql);$/;"	p
+result	Partner.php	/^            $result = mysql_query($selectSql);$/;"	p
+result	Team.php	/^        $result = mysql_query($insertSql);$/;"	p
+result	Team.php	/^        $result = mysql_query($sql);$/;"	p
+select	Coupon.php	/^        $select .= "u.username as username, u.email as email, o.subbranch as subbranch, c.consume_time as consumeTime";$/;"	p
+select	Coupon.php	/^        $select .= ' from '.self::DBDATABASE.'.'.self::COUPON_TABLE.' c,'.self::DBDATABASE.'.'.self::TEAM_TABLE.' t,'.self::DBDATABASE.'.'.self::USER_TABLE.' u,'.self::DBDATABASE.'.'.self::ORDER_TABLE.' o ';$/;"	p
+select	Coupon.php	/^        $select = "select c.order_id as orderId, t.title as teamTitle, c.id as couponId,";$/;"	p
+select	Team.php	/^        $select .= "t.end_time as endTime, t.now_num as nowNum, t.min_num as minNum, t.team_price as teamPrice,";$/;"	p
+select	Team.php	/^        $select .= "t.expire_time as expireTime, t.state";$/;"	p
+select	Team.php	/^        $select .= "t.market_price as marketPrice, t.platform_key as platformKey,";$/;"	p
+select	Team.php	/^        $select .= ' from '.self::DBDATABASE.'.'.self::TEAM_TABLE.' t,'.self::DBDATABASE.'.'.self::PLATFORM_TABLE.' p';$/;"	p
+select	Team.php	/^        $select = "select t.id as teamId, t.title as teamTitle, p.title as platformTitle, t.begin_time as beginTime,";$/;"	p
+selectSql	Partner.php	/^            $selectSql = "SELECT * FROM ".$this->get_dbTableName(self::PARTNER_TABLE)." WHERE id=".$partnerId.$/;"	p
+sql	Coupon.php	/^                $sql .= " AND c.id=$couponId";$/;"	p
+sql	Coupon.php	/^                $sql .= " AND c.order_id=$orderId";$/;"	p
+sql	Coupon.php	/^                $sql .= " AND c.partner_id=$partnerId";$/;"	p
+sql	Coupon.php	/^                $sql .= " AND c.platform_key='$platform'";$/;"	p
+sql	Coupon.php	/^                $sql .= " AND c.team_id=$teamId ";$/;"	p
+sql	Coupon.php	/^                $sql .= " AND u.username='$username'";$/;"	p
+sql	Coupon.php	/^            $sql .= !empty($platform)? " AND c.platform_key='$platform'" : "";$/;"	p
+sql	Coupon.php	/^            $sql .= !empty($username) ? " AND u.username='$username'" : "";$/;"	p
+sql	Coupon.php	/^            $sql .= $couponId>0 ? " AND c.coupon_id=".$couponId : "";$/;"	p
+sql	Coupon.php	/^            $sql .= $orderId>0 ? " AND c.order_id=".$orderId : "";$/;"	p
+sql	Coupon.php	/^            $sql .= $partnerId>0 ? " AND c.partner_id=".$partnerId : "";$/;"	p
+sql	Coupon.php	/^            $sql .= $teamId>0 ? " AND c.team_id=".$teamId : "";$/;"	p
+sql	Coupon.php	/^        $sql .= " AND t.id=c.team_id AND o.id=c.order_id AND u.id=c.user_id";$/;"	p
+sql	Coupon.php	/^        $sql .= " LIMIT $start,$offset";$/;"	p
+sql	Coupon.php	/^        $sql .= " WHERE consume='Y'";$/;"	p
+sql	Coupon.php	/^        $sql .= " order by c.consume_time desc";$/;"	p
+sql	Coupon.php	/^        $sql .= $this->get_dbTableName(self::USER_TABLE).' as u';$/;"	p
+sql	Coupon.php	/^        $sql = "SELECT count(*) as couponNums FROM ".$this->get_dbTableName(self::COUPON_TABLE).' as c,';$/;"	p
+sql	Coupon.php	/^        $sql = $select." WHERE c.consume='Y' ";$/;"	p
+sql	Coupon.php	/^        $sql = $update.$where;$/;"	p
+sql	Team.php	/^        $sql .= " WHERE partner_id=$partnerId";$/;"	p
+sql	Team.php	/^        $sql .= "LIMIT $start,$offset ";$/;"	p
+sql	Team.php	/^        $sql .= "order by t.state desc,t.expire_time desc,t.id desc ";$/;"	p
+sql	Team.php	/^        $sql = "SELECT count(*) as teamNums FROM ".$this->get_dbTableName(self::TEAM_TABLE);$/;"	p
+sql	Team.php	/^        $sql = $select." WHERE t.partner_id=$partnerId AND t.platform_key=p.key ";$/;"	p
+teamInfo	Team.php	/^        $teamInfo['id'] = $insertTeamId;$/;"	p
+teamList	Team.php	/^        $teamList = array();$/;"	p
+teamNums	Team.php	/^            $teamNums = $teamRow['teamNums'];$/;"	p
+teamNums	Team.php	/^        $teamNums = 0;$/;"	p
+teamNums	Team.php	/^        $teamNums = mysql_num_rows($result);$/;"	p
+teamRow	Team.php	/^            $teamRow = mysql_fetch_array($result);$/;"	p
+this	Coupon.php	/^        $this->assure_dbConnection();$/;"	p
+this	Order.php	/^        $this->assure_dbConnection();$/;"	p
+this	Partner.php	/^        $this->assure_dbConnection();$/;"	p
+this	Team.php	/^        $this->assure_dbConnection();$/;"	p
+update	Coupon.php	/^        $update .= " set consume='Y',consume_time=UNIX_TIMESTAMP(),consume_times=consume_times+".$consumed_times;$/;"	p
+update	Coupon.php	/^        $update = 'UPDATE '.$this->get_dbTableName(self::COUPON_TABLE);$/;"	p
+updateSql	Partner.php	/^                $updateSql .= " password='".crypt_pass($newPasswd)."'"." WHERE id=".$partnerId;$/;"	p
+updateSql	Partner.php	/^                $updateSql = "UPDATE ".$this->get_dbTableName(self::PARTNER_TABLE)." SET";$/;"	p
+values	Coupon.php	/^                $values .=  $value. ",";$/;"	p
+values	Coupon.php	/^                $values .= "'" . $value . "'" . ",";$/;"	p
+values	Coupon.php	/^        $values = " VALUES(";$/;"	p
+values	Coupon.php	/^        $values = substr($values, 0, -1) . ")";$/;"	p
+values	Order.php	/^                $values .=  $value. ",";$/;"	p
+values	Order.php	/^                $values .= "'" . $value . "'" . ",";$/;"	p
+values	Order.php	/^        $values = " VALUES(";$/;"	p
+values	Order.php	/^        $values = substr($values, 0, -1) . ")";$/;"	p
+values	Team.php	/^                $values .=  $value. ",";$/;"	p
+values	Team.php	/^                $values .= "'" . $value . "'" . ",";$/;"	p
+values	Team.php	/^        $values = " VALUES(";$/;"	p
+values	Team.php	/^        $values = substr($values, 0, -1) . ")";$/;"	p
+where	Coupon.php	/^        $where = " WHERE id=".$couponId;$/;"	p

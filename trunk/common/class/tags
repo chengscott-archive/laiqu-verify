@@ -1,0 +1,119 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+B	Valite.php	/^                                        $B=$this->freadbyte($f);$/;"	p
+B	Valite.php	/^                                $B=$this->freadbyte($f);$/;"	p
+C	Valite.php	/^                                                $C=freadbits($f,$biBitCount);$/;"	p
+Colors	Valite.php	/^                        $Colors=pow(2,$biBitCount);$/;"	p
+CurrentBit	Valite.php	/^                                                $CurrentBit=0;$/;"	p
+CurrentBit	Valite.php	/^                                        $CurrentBit=0;$/;"	p
+DBDATABASE	Database.php	/^    const DBDATABASE = 'lq_verify';$/;"	d
+DBDATABASE	MyTable.php	/^    const DBDATABASE = 'lq_verify';$/;"	d
+DBHOST	Database.php	/^    const DBHOST = 'localhost';$/;"	d
+DBHOST	MyTable.php	/^    const DBHOST = 'localhost';$/;"	d
+DBPASS	Database.php	/^    const DBPASS = 'ghz86377328';$/;"	d
+DBPASS	MyTable.php	/^    const DBPASS = 'ghz86377328';$/;"	d
+DBUSER	Database.php	/^    const DBUSER = 'root';$/;"	d
+DBUSER	MyTable.php	/^    const DBUSER = 'root';$/;"	d
+Data	Valite.php	/^                                                                $Data.=chr($suffix%16);$/;"	p
+Data	Valite.php	/^                                                                $Data.=chr(floor($suffix\/16));$/;"	p
+Data	Valite.php	/^                                                $Data.=chr($suffix);$/;"	p
+Data	Valite.php	/^                                                $Data.=chr(freadbits($f,4));$/;"	p
+Data	Valite.php	/^                                                $Data.=fread($f,$pocet);$/;"	p
+Data	Valite.php	/^                                $Data="";$/;"	p
+Draw	Valite.php	/^	public function Draw()$/;"	f
+FirstByteOfImage	Valite.php	/^                $FirstByteOfImage=$this->freaddword($f);$/;"	p
+G	Valite.php	/^                                        $G=$this->freadbyte($f);$/;"	p
+G	Valite.php	/^                                $G=$this->freadbyte($f);$/;"	p
+Header	Valite.php	/^        $Header=fread($f,2);$/;"	p
+Height	Valite.php	/^                $Height=$this->freaddword($f);$/;"	p
+MyTable	Database.php	/^class MyTable$/;"	c
+MyTable	MyTable.php	/^class MyTable$/;"	c
+NumberOfImportantColors	Valite.php	/^                $NumberOfImportantColors=$this->freaddword($f);$/;"	p
+NumberOfPalettesUsed	Valite.php	/^                $NumberOfPalettesUsed=$this->freaddword($f);$/;"	p
+Palette	Valite.php	/^                                $Palette[]=imagecolorallocate($img,$R,$G,$B);$/;"	p
+R	Valite.php	/^                                        $R=$this->freadbyte($f);$/;"	p
+R	Valite.php	/^                                $R=$this->freadbyte($f);$/;"	p
+RLECompression	Valite.php	/^                $RLECompression=$this->freaddword($f);$/;"	p
+Reserved	Valite.php	/^                                $Reserved=$this->freadbyte($f);$/;"	p
+Reserved1	Valite.php	/^                $Reserved1=$this->freadword($f);$/;"	p
+Reserved2	Valite.php	/^                $Reserved2=$this->freadword($f);$/;"	p
+Size	Valite.php	/^                $Size=$this->freaddword($f);$/;"	p
+SizeBITMAPINFOHEADER	Valite.php	/^                $SizeBITMAPINFOHEADER=$this->freaddword($f);$/;"	p
+Width	Valite.php	/^                $Width=$this->freaddword($f);$/;"	p
+WidthxHeight	Valite.php	/^                $WidthxHeight=$this->freaddword($f);$/;"	p
+Zbytek	Valite.php	/^                                $Zbytek=(4-ceil(($Width\/(8\/$biBitCount)))%4)%4;$/;"	p
+Zbytek	Valite.php	/^                        $Zbytek=$Width%4;$/;"	p
+__construct	Database.php	/^    public function __construct()$/;"	f
+__construct	MyTable.php	/^    public function __construct($tableName = "")$/;"	f
+__construct	Valite.php	/^	public function __construct()$/;"	f
+__construct	files.php	/^	public function __construct()$/;"	f
+__destruct	Valite.php	/^	public function __destruct()$/;"	f
+assure_dbConnection	MyTable.php	/^    protected function assure_dbConnection()$/;"	f
+b1	Valite.php	/^        $b1=$this->freadbyte($f);$/;"	p
+b1	Valite.php	/^        $b1=$this->freadword($f);$/;"	p
+b2	Valite.php	/^        $b2=$this->freadbyte($f);$/;"	p
+b2	Valite.php	/^        $b2=$this->freadword($f);$/;"	p
+biBitCount	Valite.php	/^                $biBitCount=$this->freadword($f);$/;"	p
+biPlanes	Valite.php	/^                $biPlanes=$this->freadword($f);$/;"	p
+biXPelsPerMeter	Valite.php	/^                $biXPelsPerMeter=$this->freaddword($f);$/;"	p
+biYPelsPerMeter	Valite.php	/^                $biYPelsPerMeter=$this->freaddword($f);$/;"	p
+bmp2jpeg	Valite.php	/^	public function bmp2jpeg($file){$/;"	f
+color	Valite.php	/^                                        $color=imagecolorexact($img,$R,$G,$B);$/;"	p
+echoit	Valite.php	/^                                $echoit=false;$/;"	p
+f	Valite.php	/^        $f=fopen($file,"r");$/;"	p
+files	files.php	/^class files$/;"	c
+filterInfo	Valite.php	/^	public function filterInfo()$/;"	f
+for	Database.php	/^ * MyTable.php base class for table manipulation$/;"	c
+for	MyTable.php	/^ * MyTable.php base class for table manipulation$/;"	c
+freadbyte	Valite.php	/^	public function freadbyte($f)$/;"	f
+freaddword	Valite.php	/^	public function freaddword($f)$/;"	f
+freadword	Valite.php	/^	public function freadword($f)$/;"	f
+fserialize	files.php	/^	public function fserialize($data)$/;"	f
+funserialize	files.php	/^	public function funserialize()$/;"	f
+getData	Valite.php	/^	public function getData()$/;"	f
+getHec	Valite.php	/^	public function getHec()$/;"	f
+getResult	Valite.php	/^	public function getResult()$/;"	f
+get_dbTableName	MyTable.php	/^    protected function get_dbTableName($tableName)$/;"	f
+get_row	MyTable.php	/^    public function get_row($conditions)$/;"	f
+i	Valite.php	/^                                                        $i++;$/;"	p
+i	Valite.php	/^                                                $i=0;$/;"	p
+imagecreatefrombmp	Valite.php	/^	public function imagecreatefrombmp($file)$/;"	f
+img	Valite.php	/^                        $img=imagecreate($Width,$Height);$/;"	p
+img	Valite.php	/^                        $img=imagecreatetruecolor($Width,$Height);$/;"	p
+key	MyTable.php	/^            $key = mysql_real_escape_string($key);$/;"	p
+maxfontwith	Valite.php	/^	public $maxfontwith = 16;$/;"	p
+pocet	Valite.php	/^                                                $pocet=$prefix;$/;"	p
+pocet	Valite.php	/^                                                $pocet=$suffix;$/;"	p
+pocetb	Valite.php	/^                                                $pocetb+=$pocet;$/;"	p
+pocetb	Valite.php	/^                                                $pocetb+=ceil(($pocet\/2));$/;"	p
+pocetb	Valite.php	/^                                        $pocetb+=2;$/;"	p
+pocetb	Valite.php	/^                                $pocetb+=2;$/;"	p
+pocetb	Valite.php	/^                        $pocetb=0;$/;"	p
+prefix	Valite.php	/^                                        $prefix=$this->freadbyte($f);$/;"	p
+prefix	Valite.php	/^                                $prefix=$this->freadbyte($f);$/;"	p
+result	MyTable.php	/^        $result = mysql_query($selectSql);$/;"	p
+rgbarray	Valite.php	/^				|| $rgbarray['blue'] < 80))$/;"	p
+run	Valite.php	/^	public function run()$/;"	f
+selectSql	MyTable.php	/^            $selectSql .= "AND ".$key."=".$value;$/;"	p
+selectSql	MyTable.php	/^        $selectSql = "SELECT * FROM ".$this->get_dbTableName($this->_tablename)." WHERE 1=1 ";$/;"	p
+setFileName	files.php	/^	public function setFileName($filename)$/;"	f
+setImage	Valite.php	/^	public function setImage($Image)$/;"	f
+study	Valite.php	/^	public function study($info)$/;"	f
+suffix	Valite.php	/^                                        $suffix=$this->freadbyte($f);$/;"	p
+suffix	Valite.php	/^                                $suffix=$this->freadbyte($f);$/;"	p
+tableName	MyTable.php	/^            $tableName = self::DBDATABASE.".".$tableName;$/;"	p
+this	Database.php	/^        $this->_dbconn = mysql_connect(self::DBHOST, self::DBUSER, self::DBPASS);$/;"	p
+this	MyTable.php	/^            $this->_tablename = $tableName;$/;"	p
+this	MyTable.php	/^        $this->_dbconn = mysql_connect(self::DBHOST, self::DBUSER, self::DBPASS);$/;"	p
+this	MyTable.php	/^        $this->assure_dbConnection();$/;"	p
+this	Valite.php	/^                                        $this->freadbyte($f);$/;"	p
+this	Valite.php	/^                                $this->freadbyte($f);$/;"	p
+valite	Valite.php	/^class valite$/;"	c
+value	MyTable.php	/^                $value = "'".$value."'";$/;"	p
+value	MyTable.php	/^            $value = mysql_real_escape_string($value);$/;"	p
+y	Valite.php	/^                                $y--;$/;"	p
+y	Valite.php	/^                        $y=$Height;$/;"	p
