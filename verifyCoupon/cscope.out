@@ -1,0 +1,3701 @@
+cscope 15 $HOME/work/host/laiqu/VerifyCoupon -q 0000000222 0000022417
+	@VerifyCoupon.php
+
+1 <?
+php
+
+
+13 
+»quœe_Úû
+('../common/Exception.php');
+
+14 
+»quœe_Úû
+('../common/CodeMessages.php');
+
+19 şas 
+	cV”ifyCoupÚ
+
+
+25 cÚ¡ 
+	mTARGET_API
+ = 'verifyCoupon';
+
+29 
+´iv©e
+ 
+	m$_suµÜtPÏtfÜms
+ = 
+¬¿y
+("laiqu", "juhuasuan");
+
+31 
+´iv©e
+ 
+	m$_¶©fÜm
+ = '';
+
+32 
+´iv©e
+ 
+	m$_»que¡M‘hod
+ = '';
+
+33 
+´iv©e
+ 
+	m$_h‰pM‘hod
+ = '';
+
+34 
+´iv©e
+ 
+	m$_»¥Ú£Ty³
+ = '';
+
+35 
+´iv©e
+ 
+	m$_­iU¾
+ = '';
+
+36 
+´iv©e
+ 
+	m$_»que¡P¬ams
+ = 
+¬¿y
+();
+
+37 
+´iv©e
+ 
+	m$_»que¡P¬amsStic
+ = 
+¬¿y
+();
+
+38 
+´iv©e
+ 
+	m$_codeTag
+ = '';
+
+39 
+´iv©e
+ 
+	m$_codeSucûss
+ = '';
+
+40 
+´iv©e
+ 
+	m$_coupÚId
+ = 0;
+
+54 
+public
+ 
+funùiÚ
+ 
+	$š™
+(
+$¶©fÜm
+)
+
+56 iàĞ!
+$this
+->
+	`is_suµÜ‹d
+(
+$¶©fÜm
+) )
+
+58 
+throw
+ 
+Ãw
+ 
+	`V”ifyCoupÚ_Reque¡Exû±iÚ
+(
+
+59 
+V”ifyCoupÚCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyCoupÚCodeMsg::
+UNKNOWN_PLATFORM_ERROR
+),
+
+60 
+V”ifyCoupÚCodeMsg
+::
+UNKNOWN_PLATFORM_ERROR
+);
+
+62 
+$this
+->
+_¶©fÜm
+ = 
+$¶©fÜm
+;
+
+64 
+$cÚfigFeName
+ = "../¶©fÜm_­i_cÚfs/" . 
+$this
+->
+_¶©fÜm
+ . ".conf";
+
+65 
+$cÚ‹Á
+ = 
+	`fe_g‘_cÚ‹Ás
+(
+$cÚfigFeName
+);
+
+66 
+$cÚfigs
+ = 
+	`jsÚ_decode
+(
+$cÚ‹Á
+);
+
+68 ià(
+$cÚfigs
+ =ğ
+nuÎ
+)
+
+70 
+throw
+ 
+Ãw
+ 
+	`V”ifyCoupÚ_P¬£CÚfigFeExû±iÚ
+(
+
+71 
+V”ifyCoupÚCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyCoupÚCodeMsg::
+PARSE_CONFIG_FILE_ERROR
+),
+
+72 
+V”ifyCoupÚCodeMsg
+::
+PARSE_CONFIG_FILE_ERROR
+);
+
+75 
+$this
+->
+_»que¡M‘hod
+ = 
+$cÚfigs
+->
+»que¡M‘hod
+;
+
+76 
+$this
+->
+_h‰pM‘hod
+ = 
+$cÚfigs
+->
+h‰pM‘hod
+;
+
+77 
+$this
+->
+_»¥Ú£Ty³
+ = 
+$cÚfigs
+->
+»¥Ú£Ty³
+;
+
+78 
+$rg‘Api
+ = 
+£lf
+::
+TARGET_API
+;
+
+79 
+$rg‘ApiCÚfs
+ = 
+$cÚfigs
+->
+$rg‘Api
+;
+
+81 
+$this
+->
+_­iU¾
+ = 
+$rg‘ApiCÚfs
+->
+­iU¾
+;
+
+82 
+$this
+->
+_»que¡P¬ams
+ = 
+$rg‘ApiCÚfs
+->
+»que¡P¬ams
+;
+
+83 
+$this
+->
+_»que¡P¬amsStic
+ = 
+$rg‘ApiCÚfs
+->
+»que¡P¬amsStic
+;
+
+84 
+$this
+->
+_codeTag
+ = 
+$rg‘ApiCÚfs
+->
+»¥Ú£ResuÉ
+->
+codeTag
+;
+
+85 
+$this
+->
+_codeSucûss
+ = 
+$rg‘ApiCÚfs
+->
+»¥Ú£ResuÉStic
+->
+codeSucûss
+;
+
+87  
+Œue
+;
+
+99 
+public
+ 
+funùiÚ
+ 
+	$is_suµÜ‹d
+(
+$¶©fÜm
+)
+
+101 ià(
+$¶©fÜm
+ == '')
+
+102  
+çl£
+;
+
+103 
+	`fÜ—ch
+ (
+$this
+->
+_suµÜtPÏtfÜms
+ 
+as
+ 
+$suµÜt
+)
+
+105 ià(
+$¶©fÜm
+ =ğ
+$suµÜt
+)
+
+106  
+Œue
+;
+
+109  
+çl£
+;
+
+110 
+	}
+}
+
+122 
+public
+ 
+funùiÚ
+ 
+	$š™_v”ifyIÅuts
+(
+$»que¡
+)
+
+124 ià(!
+	`is£t
+(
+$»que¡
+['couponId']) || $request['couponId'] == '')
+
+126 
+throw
+ 
+Ãw
+ 
+	`V”ifyCoupÚ_Reque¡Exû±iÚ
+(
+
+127 
+V”ifyCoupÚCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyCoupÚCodeMsg::
+INVALID_COUPONID_ARG_ERROR
+),
+
+128 
+V”ifyCoupÚCodeMsg
+::
+INVALID_COUPON_ARG_ERROR
+);
+
+130 
+$šputs
+['coupÚId'] = 
+$»que¡
+['couponId'];
+
+132 ià(
+	`is£t
+(
+$this
+->
+_»que¡P¬ams
+->
+coupÚPwd
+))
+
+134 ià(
+$»que¡
+['couponPwd'] == '')
+
+136 
+throw
+ 
+Ãw
+ 
+	`V”ifyCoupÚ_Reque¡Exû±iÚ
+(
+
+137 
+V”ifyCoupÚCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyCoupÚCodeMsg::
+INVALID_COUPONPWD_ARG_ERROR
+),
+
+138 
+V”ifyCoupÚCodeMsg
+::
+INVALID_COUPONPWD_ARG_ERROR
+);
+
+141 
+$šputs
+['coupÚPwd'] = 
+$»que¡
+['couponPwd'];
+
+144  
+$šputs
+;
+
+145 
+	}
+}
+
+157 
+public
+ 
+funùiÚ
+ 
+	$g‘_»¥Ú£Code
+(
+$»¥Ú£
+)
+
+159 
+$»¥Ú£Code
+ = "";
+
+160 ià(
+$»¥Ú£
+ =ğ"" || 
+$this
+->
+_»¥Ú£Ty³
+ == "" ||
+
+161 
+$this
+->
+_codeTag
+ =ğ"" || $this->
+_codeSucûss
+ == "")
+
+163 
+throw
+ 
+Ãw
+ 
+	`V”ifyCoupÚ_P¬£Re¥Ú£Exû±iÚ
+(
+
+164 
+V”ifyCoupÚCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyCoupÚCodeMsg::
+PARSE_RESPONSE_EXCEPTION
+),
+
+165 
+V”ifyCoupÚCodeMsg
+::
+PARSE_RESPONSE_EXCEPTION
+);
+
+168 
+$codeTag
+ = 
+$this
+->
+_codeTag
+;
+
+169 ià(
+$this
+->
+_»¥Ú£Ty³
+ == "LAIQU")
+
+171 
+	`´eg_m©ch_®l
+("/(<([\w]+)[^>]*>)(.*?)(<\/\\2>)/", 
+$»¥Ú£
+, 
+$m©ches
+, 
+PREG_SET_ORDER
+);
+
+172 
+	`fÜ—ch
+ (
+$m©ches
+ 
+as
+ 
+$v®
+) {
+
+173 ià(
+$v®
+[2] =ğ
+$this
+->
+_codeTag
+)
+
+175 
+$»¥Ú£Code
+ = 
+$v®
+[3];
+
+178 } ià(
+$this
+->
+_»¥Ú£Ty³
+ == "XML")
+
+180 
+$xmlRe¥Ú£
+ = 
+	`sim¶exml_lßd_¡ršg
+(
+$»¥Ú£
+);
+
+181 
+$»¥Ú£Code
+ = 
+$xmlRe¥Ú£
+->
+$codeTag
+;
+
+184 ià(
+$»¥Ú£Code
+ == '')
+
+186 
+throw
+ 
+Ãw
+ 
+	`V”ifyCoupÚ_P¬£Re¥Ú£Exû±iÚ
+(
+
+187 
+V”ifyCoupÚCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyCoupÚCodeMsg::
+PARSE_RESPONSE_EXCEPTION
+),
+
+188 
+V”ifyCoupÚCodeMsg
+::
+PARSE_RESPONSE_EXCEPTION
+);
+
+190 ià(
+$»¥Ú£Code
+ =ğ
+$this
+->
+_codeSucûss
+)
+
+192  
+V”ifyCoupÚCodeMsg
+::
+VERIFY_COUPON_SUCCESS
+;
+
+195  
+V”ifyCoupÚCodeMsg
+::
+VERIFY_COUPON_FAIL
+;
+
+196 
+	}
+}
+
+208 
+public
+ 
+funùiÚ
+ 
+	$g‘_»que¡P¬ams
+(
+$šputs
+)
+
+210 ià(!
+	`is_¬¿y
+(
+$šputs
+))
+
+212 
+throw
+ 
+Ãw
+ 
+	`V”ifyCoupÚ_Reque¡Exû±iÚ
+(
+
+213 
+V”ifyCoupÚCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyCoupÚCodeMsg::
+TRANSFER_REQUEST_PARAM_ERROR
+),
+
+214 
+V”ifyCoupÚCodeMsg
+::
+TRANSFER_REQUEST_PARAM_ERROR
+);
+
+217 
+$·¿ms
+ = 
+	`¬¿y
+();
+
+218 
+	`fÜ—ch
+ (
+$this
+->
+_»que¡P¬ams
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+221 ià(!
+	`is£t
+(
+$šputs
+[
+$key
+]))
+
+223 
+throw
+ 
+Ãw
+ 
+	`V”ifyCoupÚ_Reque¡Exû±iÚ
+(
+
+224 
+V”ifyCoupÚCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyCoupÚCodeMsg::
+TRANSFER_REQUEST_PARAM_ERROR
+),
+
+225 
+V”ifyCoupÚCodeMsg
+::
+TRANSFER_REQUEST_PARAM_ERROR
+);
+
+228 
+$·¿ms
+[
+$v®ue
+] = 
+$šputs
+[
+$key
+];
+
+230 ià(
+$this
+->
+_»que¡P¬amsStic
+ !ğ
+nuÎ
+)
+
+233 
+	`fÜ—ch
+ (
+$this
+->
+_»que¡P¬amsStic
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+235 
+$·¿ms
+[
+$key
+] = 
+$v®ue
+;
+
+238  
+$·¿ms
+;
+
+239 
+	}
+}
+
+250 
+public
+ 
+funùiÚ
+ 
+g’_»¥Ú£_jsÚ
+(
+$»suÉ
+, 
+$msg
+ = "")
+
+253 
+$code
+ = 
+$»suÉ
+;
+
+254 ià(
+	g$msg
+ == "")
+
+257 
+$msg
+ = 
+V”ifyCoupÚCodeMsg
+::
+g‘_mes§ge
+(
+$code
+);
+
+260 ià(
+em±y
+(
+$msg
+))
+
+262 
+	g$code
+ = 
+CommÚCodeMsg
+::
+INVALID_ARGUMENT_ERROR
+;
+
+263 
+	g$msg
+ = 
+CommÚCodeMsg
+::
+g‘_mes§ge
+(
+$code
+);
+
+267 
+	g$»¥Ú£
+['code'] = 
+$code
+;
+
+268 
+	g$»¥Ú£
+['msg'] = 
+$msg
+;
+
+269 
+	g$»¥Ú£
+['d©eTime'] = 
+d©e
+("Y-m-d, h:i:s");
+
+271  
+jsÚ_’code
+(
+$»¥Ú£
+);
+
+276 
+public
+ 
+funùiÚ
+ 
+	$g‘_¶©fÜm
+()
+
+278  
+$this
+->
+_¶©fÜm
+;
+
+279 
+	}
+}
+
+283 
+public
+ 
+funùiÚ
+ 
+	$g‘_»que¡M‘hod
+()
+
+285  
+$this
+->
+_»que¡M‘hod
+;
+
+286 
+	}
+}
+
+290 
+public
+ 
+funùiÚ
+ 
+	$g‘_h‰pM‘hod
+()
+
+292  
+$this
+->
+_h‰pM‘hod
+;
+
+293 
+	}
+}
+
+297 
+public
+ 
+funùiÚ
+ 
+	$g‘_»¥Ú£Ty³
+()
+
+299  
+$this
+->
+_»¥Ú£Ty³
+;
+
+300 
+	}
+}
+
+304 
+public
+ 
+funùiÚ
+ 
+	$g‘_­iU¾
+()
+
+306  
+$this
+->
+_­iU¾
+;
+
+307 
+	}
+}
+
+311 
+public
+ 
+funùiÚ
+ 
+	$g‘_codeTag
+()
+
+313  
+$this
+->
+_codeTag
+;
+
+314 
+	}
+}
+
+318 
+public
+ 
+funùiÚ
+ 
+	$g‘_codeSucûss
+()
+
+320  
+$this
+->
+_codeSucûss
+;
+
+321 
+	}
+}
+
+	@VerifyCoupon_funcs.php
+
+1 <?
+php
+
+
+9 
+funùiÚ
+ 
+	$š™_v”ifyIÅuts
+(
+$»que¡
+)
+
+11 
+$šputs
+ = 
+	`¬¿y
+();
+
+14 
+$šputs
+['coupÚId'] = 
+$»que¡
+['couponId'];
+
+15 ià(
+$»que¡
+['couponPwd'] != '')
+
+16 
+$šputs
+['coupÚPwd'] = 
+$»que¡
+['couponPwd'];
+
+17  
+$šputs
+;
+
+18 
+	}
+}
+
+30 
+funùiÚ
+ 
+	$·r£_¶©fÜm_»¥Ú£
+(
+$»¥Ú£
+, 
+$»que¡M‘hod
+, 
+$»¥Ú£Ty³
+, 
+$codeTag
+, 
+$codeSucûss
+)
+
+32 ià(
+$»que¡M‘hod
+ != 'REST')
+
+33  
+CODE_ERROR_ONLY_SUPPORT_REST
+;
+
+34  
+	`g‘_»¥Ú£Code
+(
+$»¥Ú£
+, 
+$»¥Ú£Ty³
+, 
+$codeTag
+, 
+$codeSucûss
+);
+
+35 
+	}
+}
+
+37 
+funùiÚ
+ 
+	$g‘_»¥Ú£Code
+(
+$»¥Ú£
+, 
+$»¥Ú£Ty³
+, 
+$codeTag
+, 
+$codeSucûss
+)
+
+39 
+$»¥Ú£Code
+ = "";
+
+40 ià(
+$»¥Ú£
+ =ğ"" || 
+$»¥Ú£Ty³
+ == "" ||
+
+41 
+$codeTag
+ =ğ"" || 
+$codeSucûss
+ == "")
+
+42  
+CODE_ERROR_API_CALL
+;
+
+44 ià(
+$»¥Ú£Ty³
+ == "LAIQU")
+
+46 
+	`´eg_m©ch_®l
+("/(<([\w]+)[^>]*>)(.*?)(<\/\\2>)/", 
+$»¥Ú£
+, 
+$m©ches
+, 
+PREG_SET_ORDER
+);
+
+47 
+	`fÜ—ch
+ (
+$m©ches
+ 
+as
+ 
+$v®
+) {
+
+48 ià(
+$v®
+[2] =ğ
+$codeTag
+)
+
+50 
+$»¥Ú£Code
+ = 
+$v®
+[3];
+
+53 } ià(
+$»¥Ú£Ty³
+ == "XML")
+
+55 
+$xmlRe¥Ú£
+ = 
+	`sim¶exml_lßd_¡ršg
+(
+$»¥Ú£
+);
+
+56 
+$»¥Ú£Code
+ = 
+$xmlRe¥Ú£
+->
+$code
+;
+
+59 ià(
+$»¥Ú£Code
+ == '')
+
+60  
+CODE_ERROR_API_CALL
+;
+
+62  
+$»¥Ú£Code
+ =ğ
+$codeSucûss
+ ? 
+CODE_SUCCESS_VERIFY_COUPON
+:
+CODE_FAIL_VERIFY_COUPON
+;
+
+63 
+	}
+}
+
+72 
+funùiÚ
+ 
+	$·r£_¶©fÜm_cÚfs
+(
+$¶©fÜm
+)
+
+74 
+glob®
+ 
+$»que¡M‘hod
+;
+
+75 
+glob®
+ 
+$h‰pM‘hod
+;
+
+76 
+glob®
+ 
+$»¥Ú£Ty³
+;
+
+77 
+glob®
+ 
+$­iU¾
+;
+
+78 
+glob®
+ 
+$»que¡P¬ams
+;
+
+79 
+glob®
+ 
+$»que¡P¬amsStic
+;
+
+80 
+glob®
+ 
+$codeTag
+;
+
+81 
+glob®
+ 
+$codeSucûss
+;
+
+83 
+$cÚfigFeName
+ = "¶©fÜm_­i_cÚfs/" . 
+$¶©fÜm
+ . ".conf";
+
+84 
+$cÚ‹Á
+ = 
+	`fe_g‘_cÚ‹Ás
+(
+$cÚfigFeName
+);
+
+85 
+$cÚfigs
+ = 
+	`jsÚ_decode
+(
+$cÚ‹Á
+);
+
+86 
+	`fÜ—ch
+ (
+$cÚfigs
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+88 
+glob®
+ 
+$$key
+;
+
+89 
+$$key
+ = 
+$v®ue
+;
+
+91 
+$­iU¾
+ = 
+$$rg‘Api
+->
+­iU¾
+;
+
+92 
+$»que¡P¬ams
+ = 
+$$rg‘Api
+->
+»que¡P¬ams
+;
+
+93 
+$»que¡P¬amsStic
+ = 
+$$rg‘Api
+->
+»que¡P¬amsStic
+;
+
+94 
+$codeTag
+ = 
+$$rg‘Api
+->
+»¥Ú£ResuÉ
+->
+codeTag
+;
+
+95 
+$codeSucûss
+ = 
+$$rg‘Api
+->
+»¥Ú£ResuÉStic
+->
+codeSucûss
+;
+
+96 
+	}
+}
+
+105 
+funùiÚ
+ 
+	$g‘_»que¡P¬ams
+(
+$šputs
+)
+
+107 
+$·¿ms
+ = 
+	`¬¿y
+();
+
+108 
+glob®
+ 
+$»que¡P¬ams
+;
+
+109 
+glob®
+ 
+$»que¡P¬amsStic
+;
+
+110 
+	`fÜ—ch
+ (
+$»que¡P¬ams
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+113 
+$·¿ms
+[
+$v®ue
+] = 
+$šputs
+[
+$key
+];
+
+115 ià(
+$»que¡P¬amsStic
+ !ğ
+nuÎ
+)
+
+118 
+	`fÜ—ch
+ (
+$»que¡P¬amsStic
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+120 
+$·¿ms
+[
+$key
+] = 
+$v®ue
+;
+
+123  
+$·¿ms
+;
+
+124 
+	}
+}
+
+133 
+funùiÚ
+ 
+	$g’_»¥Ú£_jsÚ
+(
+$»suÉ
+)
+
+135 
+glob®
+ 
+$codeMes§ges
+;
+
+136 
+$»¥Ú£
+ = 
+	`¬¿y
+();
+
+138 ià(!
+$»suÉ
+ || 
+$codeMes§ges
+[$result] == '')
+
+139 
+$»suÉ
+ = 
+CODE_ERROR_UNKNOWN
+;
+
+141 
+$»¥Ú£
+['code'] = 
+$»suÉ
+;
+
+142 
+$»¥Ú£
+['msg'] = 
+$codeMes§ges
+[
+$»suÉ
+];
+
+143 
+$»¥Ú£
+['d©eTime'] = 
+	`d©e
+("Y-m-d, h:i:s");
+
+145  
+	`jsÚ_’code
+(
+$»¥Ú£
+);
+
+146 
+	}
+}
+
+	@doVerifyCoupon.php
+
+1 <?
+php
+
+
+10 
+	g»quœe_Úû
+ '../common/checkAuthority.php';
+
+11 
+	g»quœe_Úû
+ '../common/RESTclient.php';
+
+12 
+	g»quœe_Úû
+ 'VerifyCoupon.php';
+
+13 
+	g»quœe_Úû
+ '../module/Coupon.php';
+
+14 
+»quœe_Úû
+('../common/CodeMessages.php');
+
+16 
+funùiÚ
+ 
+	$ruÁimeE¼ÜHªdËr
+(
+$”ºo
+, 
+$”r¡r
+, 
+$”rfe
+, 
+$”¾še
+)
+
+19 
+$code
+ = 
+CommÚCodeMsg
+::
+SYSTEM_RUNTIME_ERROR
+;
+
+21 
+	`”rÜ_log
+(
+$”r¡r
+);
+
+22 
+	`d›
+(
+V”ifyCoupÚ
+::
+	`g’_»¥Ú£_jsÚ
+(
+$code
+));
+
+24 
+	}
+}
+
+25 
+funùiÚ
+ 
+	$exû±iÚHªdËr
+(
+$exû±iÚ
+)
+
+27 
+$code
+ = 
+$exû±iÚ
+->
+	`g‘Code
+();
+
+28 
+$v”ifyMsg
+ = 
+V”ifyCoupÚCodeMsg
+::
+	`g‘_mes§ge
+(
+$code
+);
+
+29 ià(
+	`em±y
+(
+$v”ifyMsg
+))
+
+31 
+$code
+ = 
+CommÚCodeMsg
+::
+UNCAUGHT_FATAL_ERROR
+;
+
+32 
+$”r¡r
+ = 
+$exû±iÚ
+->
+	`g‘Mes§ge
+();
+
+34 
+	`”rÜ_log
+(
+$”r¡r
+);
+
+36 
+	`d›
+(
+V”ifyCoupÚ
+::
+	`g’_»¥Ú£_jsÚ
+(
+$code
+));
+
+37 
+	}
+}
+
+38 
+£t_”rÜ_hªdËr
+('ruÁimeE¼ÜHªdËr', 
+E_ERROR
+);
+
+39 
+£t_exû±iÚ_hªdËr
+('exceptionHandler');
+
+41 
+	g$¶©fÜm
+ = 
+$_REQUEST
+['platform'];
+
+44 ià(
+	g$_REQUEST
+['aùiÚ'] ==ğ'v®id©eCode' && 
+$¶©fÜm
+ === 'juhuasuan')
+
+46 
+$»¡
+ = 
+Ãw
+ 
+RESTş›Á
+();
+
+47 
+	g$»¡
+->
+ü—‹Reque¡
+('h‰p://59.151.29.121/v®id©eCode.do?'.
+d©e
+(
+mktime
+()), 'GET');
+
+48 
+	g$»q
+ = 
+$»¡
+->
+g‘H‰pReque¡
+();
+
+49 
+	g$»q
+->
+£tH—d”
+("Accept-Encoding", "gzip,deflate,sdch");
+
+50 
+	g$»q
+->
+£tH—d”
+("Connection", "keep-alive");
+
+51 
+	g$»q
+->
+£tH—d”
+("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/535.19 (KHTML,†ike Gecko) Chrome/18.0.1025.168 Safari/535.19");
+
+52 
+	g$»q
+->
+£tH—d”
+("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
+
+53 
+	g$»q
+->
+£tH—d”
+("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
+
+54 
+	g$»q
+->
+£tH—d”
+("Accept-Charset", "GBK,utf-8;q=0.7,*;q=0.3");
+
+55 
+	g$»q
+->
+£tH—d”
+("Accept-Language", "zh-CN,zh;q=0.8");
+
+56 
+	g$»q
+->
+£tH—d”
+("Cache-Control", "max-age=0");
+
+58 
+	g$»¡
+->
+£ndReque¡
+();
+
+61 
+	g$»¥Ú£Obj
+ = 
+$»¡
+->
+g‘Re¥Ú£Obj
+();
+
+62 
+v¬_dump
+(
+$»¥Ú£Obj
+->
+g‘Cook›s
+());
+
+65 
+	gex™
+;
+
+68 
+	g$v”ifyCoupÚ
+ = 
+Ãw
+ 
+V”ifyCoupÚ
+();
+
+70 
+	g$v”ifyCoupÚ
+->
+š™
+(
+$¶©fÜm
+);
+
+72 
+	g$šputs
+ = 
+$v”ifyCoupÚ
+->
+š™_v”ifyIÅuts
+(
+$_REQUEST
+);
+
+74 
+	g$»¡
+ = 
+Ãw
+ 
+RESTş›Á
+();
+
+75 
+	g$·¿ms
+ = 
+$v”ifyCoupÚ
+->
+g‘_»que¡P¬ams
+(
+$šputs
+);
+
+77 ià(
+	g$v”ifyCoupÚ
+->
+g‘_h‰pM‘hod
+() == 'POST') {
+
+78 
+$»¡
+->
+ü—‹Reque¡
+(
+$v”ifyCoupÚ
+->
+g‘_­iU¾
+(), 'POST', 
+$·¿ms
+);
+
+80 
+	g$»¡
+->
+ü—‹Reque¡
+(
+$v”ifyCoupÚ
+->
+g‘_­iU¾
+());
+
+81 
+	g$u¾
+ = 
+$»¡
+->
+g‘U¾
+();
+
+82 
+	g$u¾
+->
+£tQu”yV¬ŸbËs
+(
+$·¿ms
+);
+
+84 
+	g$»¥Ú£
+ = '';
+
+85 
+	g$»¡
+->
+£ndReque¡
+();
+
+86 
+	g$»¥Ú£
+ = 
+$»¡
+->
+g‘Re¥Ú£
+();
+
+87 
+	g$»¥Ú£Code
+ = 
+$v”ifyCoupÚ
+->
+g‘_»¥Ú£Code
+(
+$»¥Ú£
+);
+
+88 ià(
+	g$»¥Ú£Code
+ ==ğ
+V”ifyCoupÚCodeMsg
+::
+VERIFY_COUPON_SUCCESS
+)
+
+90 
+$coupÚId
+ = 
+$šputs
+['couponId'];
+
+91 
+	g$coupÚ
+ = 
+Ãw
+ 
+CoupÚ
+();
+
+93 ià(!
+	g$coupÚ
+->
+cÚsume_coupÚ
+(
+$coupÚId
+, 
+$¶©fÜm
+))
+
+95 
+d›
+(
+V”ifyCoupÚ
+::
+g’_»¥Ú£_jsÚ
+(
+
+96 
+V”ifyCoupÚCodeMsg
+::
+MARK_COUPON_CONSUMED_ERROR
+,
+
+97 "E¼ÜCode: ".
+V”ifyCoupÚCodeMsg
+::
+MARK_COUPON_CONSUMED_ERROR
+." å¹³å°:".
+$¶©fÜm
+."ç¼–å·ä¸º".
+$coupÚId
+."çš„å·²æ¶ˆè´¹çš„å›¢è´­åˆ¸åœ¨æœ¬åœ°æ ‡è®°å¤±è´¥!"));
+
+100 
+echo
+ 
+	gV”ifyCoupÚ
+::
+g’_»¥Ú£_jsÚ
+(
+$»¥Ú£Code
+);
+
+	@functions.php
+
+1 <?
+php
+
+
+13 
+funùiÚ
+ 
+	$fšdCook›
+(
+$Çme
+, 
+$cook›s
+)
+
+15 
+	`fÜ—ch
+ (
+$cook›s
+ 
+as
+ 
+$cook›
+)
+
+17 ià(
+$cook›
+['Çme'] ==ğ
+$Çme
+)
+
+19  
+$cook›
+;
+
+23 
+	}
+}
+
+	@index.php
+
+1 ï»¿<?
+php
+ 
+»quœe_Úû
+('../common/checkAuthority.php'); ?>
+
+2 <
+html
+ 
+	gxmÊs
+="http://www.w3.org/1999/xhtml">
+
+3 <
+h—d
+>
+
+4 <
+t™Ë
+>éªŒè¯å¹³å°</title>
+
+5 <
+m‘a
+ 
+h‰p
+-
+equiv
+="CÚ‹Á-Ty³" 
+cÚ‹Á
+="text/html; charset=utf-8">
+
+6 <
+lšk
+ 
+h»f
+="css/check_css.css" 
+»l
+="¡yËsh“t" 
+ty³
+="text/css" />
+
+8 <
+lšk
+ 
+h»f
+="../css/com_css.css" 
+»l
+="¡yËsh“t" 
+ty³
+="text/css" />
+
+9 </
+h—d
+>
+
+10 <
+body
+>
+
+11 <
+süt
+ 
+¤c
+="js/jquery.min.js"></script>
+
+12 <
+süt
+ 
+¤c
+="js/verifyCoupon.js"></script>
+
+14 <
+div
+ 
+şass
+="maš" 
+id
+="main">
+
+18 <
+div
+ 
+şass
+="top_blank">
+
+19 </
+div
+>
+
+21 <
+div
+ 
+şass
+="top">
+
+22 <
+img
+ 
+¤c
+="../images/logo.jpg" />
+
+23 </
+div
+>
+
+25 <
+div
+ 
+şass
+="body">
+
+27 <
+div
+ 
+şass
+="body_l">
+
+28 <
+div
+ 
+şass
+="nav">
+
+31 <
+p
+ 
+şass
+="nav_title">å•† æˆ· ç®¡ ç†</p>
+
+32 <
+div
+ 
+şass
+="nav_bg">
+
+33 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="javasüt:void(0);">æ¶ˆ è´¹ ç™» è®°</a><
+br
+ />
+
+34 </
+div
+>
+
+35 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="../¡©i¡ics/‹amLi¡.php">é¡¹ ç›® ç»Ÿ è®¡</a><
+br
+ />
+
+36 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="#">æ¶ˆ è´¹ è¯„ ä»·</a><
+br
+ />
+
+37 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="../acùMªag”/chªgePass.php">ä¿® æ”¹ å¯† ç </a><
+br
+ />
+
+38 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="../V”ifyLogš/logšOut.php">é€€ å‡º ç™» å½•</a><
+br
+ />
+
+39 <
+a
+ 
+şass
+="Çv_‹xt" 
+h»f
+="#">å¸® åŠ©</a>
+
+42 </
+div
+>
+
+44 <
+div
+ 
+şass
+="serv">
+
+45 <
+div
+ 
+şass
+="‹l" 
+h»f
+="#"> </div>
+
+46 <
+a
+ 
+şass
+="online_qq"></a>
+
+47 </
+div
+>
+
+49 </
+div
+>
+
+51 <
+div
+ 
+şass
+="body_r" > <!--è¿™é‡Œçš„
+body_r
+ æ˜¯åŸæ¥çš„
+body
+ -->
+
+53 <
+div
+ 
+şass
+="fl fl_1">
+
+54 <
+fÜm
+ 
+aùiÚ
+="V”ifyCoupÚ.php" 
+m‘hod
+="g‘" 
+acû±
+-
+ch¬£t
+="utf-8">
+
+56 <
+div
+ 
+şass
+="platform_b">
+
+57 <
+£Ëù
+ 
+şass
+="¶©fÜm" 
+Çme
+="¶©fÜm" 
+id
+="platform">
+
+58 <
+İtiÚ
+ 
+v®ue
+="laiqu">æ¥è¶£</option>
+
+59 <!-- <
+İtiÚ
+ 
+v®ue
+="360buy">äº¬ä¸œ</option> -->
+
+60 <
+İtiÚ
+ 
+v®ue
+="juhuasuan">èšåˆ’ç®—</option>
+
+61 </
+£Ëù
+>
+
+62 </
+div
+>
+
+64 <
+div
+ 
+şass
+="coupÚId_b" 
+Çme
+="coupÚIdW¿µ”" 
+id
+="couponIdWrapper">
+
+65 <
+šput
+ 
+şass
+="coupÚId" 
+Çme
+="coupÚId" 
+id
+="coupÚId" 
+v®ue
+="åˆ¸å·"/>
+
+66 </
+div
+>
+
+68 <
+div
+ 
+şass
+="coupÚPwd_b" 
+Çme
+="coupÚPwdW¿µ”" 
+id
+="couponPwdWrapper">
+
+69 <
+šput
+ 
+şass
+="coupÚPwd" 
+Çme
+="coupÚPwd" 
+id
+="coupÚPwd" 
+v®ue
+="å¯†ç "/>
+
+70 </
+div
+>
+
+72 <
+div
+ 
+şass
+="button">
+
+73 <
+a
+ 
+şass
+="»£t" 
+ty³
+="»£t" 
+v®ue
+="" 
+Çme
+="»£t" 
+id
+="»£t" 
+h»f
+="#"></a>
+
+74 <
+a
+ 
+şass
+="subm™" 
+ty³
+="subm™" 
+v®ue
+="" 
+Çme
+="subm™" 
+id
+="subm™" 
+h»f
+="#"></a>
+
+75 </
+div
+>
+
+76 </
+fÜm
+>
+
+77 </
+div
+>
+
+79 <
+div
+ 
+şass
+="mid">
+
+80 </
+div
+>
+
+83 <
+div
+ 
+şass
+="fr fr_1">
+
+85 <
+p
+ 
+şass
+="‹xt_1"><
+b
+>éªŒè¯ç»“æœï¼š</b></p>
+
+87 <
+div
+ 
+Çme
+="imageRe¥Ú£" 
+id
+="imageRe¥Ú£" 
+şass
+="imageResponse" ></div>
+
+88 <
+div
+ 
+şass
+="line"></div>
+
+89 <
+p
+ 
+şass
+="‹xt_2_2" 
+Çme
+="msgRe¥Ú£" 
+id
+="msgResponse">è¯·åœ¨å·¦è¾¹è¾“å…¥æ¡†ä¸­è¾“å…¥ç›¸åº”çš„åˆ¸å·åŠå¯†ç ã€‚</p>
+
+92 </
+div
+>
+
+95 </
+div
+>
+
+98 </
+div
+>
+
+101 <
+div
+ 
+şass
+="footer">
+
+103 <
+div
+ 
+şass
+="bottom_1">
+
+104 </
+div
+>
+
+106 <
+div
+ 
+şass
+="bottom_line">
+
+108 </
+div
+>
+
+110 <
+p
+ 
+şass
+="footer_text">æ¥ è¶£ ç½‘ ç»œ ç§‘ æŠ€ æœ‰ é™ å…¬ å¸</p>
+
+112 </
+div
+>
+
+114 </
+div
+>
+
+116 </
+body
+>
+
+117 </
+html
+>
+
+	@v1000/Exception.php
+
+1 <?
+php
+
+
+18 şas 
+	cV”ifyCoupÚ_Exû±iÚ
+ 
+ex‹nds
+ 
+	mPEAR_Exû±iÚ
+
+
+22 cÚ¡ 
+	mCODE_SUCCESS_VERIFY_COUPON
+ = 200;
+
+25 cÚ¡ 
+	mCODE_FAIL_VERIFY_COUPON
+ = 300;
+
+28 cÚ¡ 
+	mCODE_ERROR_API_CALL
+ = 400;
+
+29 cÚ¡ 
+	mCODE_ERROR_PARSE_RESPONSR
+ = 401;
+
+30 cÚ¡ 
+	mCODE_ERROR_ONLY_SUPPORT_REST
+ = 402;
+
+31 cÚ¡ 
+	mCODE_ERROR_UNIVERSAL_SERVER
+ = 403;
+
+32 cÚ¡ 
+	mCODE_ERROR_UNKNOWN
+ = 404;
+
+33 cÚ¡ 
+	mCODE_ERROR_INVALID_ARG
+ = 405;
+
+36 
+´iv©e
+ 
+	m$_codeMes§ges
+ = 
+¬¿y
+ (
+
+37 
+£lf
+::
+CODE_SUCCESS_VERIFY_COUPON
+ => "éªŒè¯æˆåŠŸ",
+
+38 
+£lf
+::
+CODE_FAIL_VERIFY_COUPON
+ => "éªŒè¯å¤±è´¥",
+
+39 
+£lf
+::
+CODE_ERROR_API_CALL
+ => "æ¥å£è°ƒç”¨å‡ºé”™",
+
+40 
+£lf
+::
+CODE_ERROR_PARSE_RESPONSE
+ => "è§£ææ¥å£è¿”å›å‡ºé”™",
+
+41 
+£lf
+::
+CODE_ERROR_ONLY_SUPPORT_REST
+ => "å¹³å°ç›®å‰åªæ”¯æŒRESTfulæ¥å£çš„å¹³å°",
+
+42 
+£lf
+::
+CODE_ERROR_UNIVERSAL_SERVER
+ => "éªŒè¯å¹³å°åç«¯é€šç”¨é”™è¯¯",
+
+43 
+£lf
+::
+CODE_ERROR_UNKNOWN
+ => "æœªçŸ¥é”™è¯¯",
+
+44 
+£lf
+::
+CODE_ERROR_INVALID_ARG
+ => "æ— æ•ˆçš„å‚æ•°"
+
+55 
+public
+ 
+funùiÚ
+ 
+	$__cÚ¡ruù
+(
+$mes§ge
+ = 
+nuÎ
+, 
+$code
+ =‚ull)
+
+57 ià(
+$mes§ge
+ !ğ
+nuÎ
+ && 
+$code
+ ==‚ull)
+
+59 
+Œy
+ {
+
+60 
+$mes§ge
+ = 
+£lf
+::
+	`g‘_mes§ge
+(
+$code
+);
+
+61 
+·»Á
+::
+	`__cÚ¡ruù
+(
+$mes§ge
+, 
+$code
+);
+
+63 
+	`ÿtch
+ (
+PEAR_Exû±iÚ
+ 
+$´
+)
+
+65 
+throw
+ 
+$´
+;
+
+68 
+·»Á
+::
+	`__cÚ¡ruù
+(
+$mes§ge
+, 
+$code
+);
+
+81 
+public
+ 
+funùiÚ
+ 
+	$g‘_mes§ge
+(
+$code
+ = 
+nuÎ
+)
+
+83 ià(
+$code
+ =ğ
+nuÎ
+)
+
+84  
+£lf
+::
+$_codeMes§ges
+;
+
+86 ià(! 
+	`is£t
+(
+£lf
+::
+$_codeMes§ges
+[
+$code
+]))
+
+87 
+throw
+ 
+Ãw
+ 
+	`PEAR_Exû±iÚ
+(
+£lf
+::
+	`$_codeMes§ge
+(£lf::
+CODE_ERROR_INVALID_ARG
+),
+
+88 
+£lf
+::
+CODE_ERROR_INVALID_ARG
+);
+
+90  
+£lf
+::
+$_codeMes§ges
+[
+$code
+];
+
+91 
+	}
+}
+
+	@v1000/VerifyCoupon.php
+
+1 <?
+php
+
+
+10 şas 
+	cV”ifyCoupÚ
+
+
+14 cÚ¡ 
+	mCODE_SUCCESS_VERIFY_COUPON
+ = 200;
+
+17 cÚ¡ 
+	mCODE_FAIL_VERIFY_COUPON
+ = 300;
+
+20 cÚ¡ 
+	mCODE_ERROR_API_CALL
+ = 400;
+
+21 cÚ¡ 
+	mCODE_ERROR_PARSE_RESPONSR
+ = 401;
+
+22 cÚ¡ 
+	mCODE_ERROR_ONLY_SUPPORT_REST
+ = 402;
+
+23 cÚ¡ 
+	mCODE_ERROR_UNIVERSAL_SERVER
+ = 403;
+
+24 cÚ¡ 
+	mCODE_ERROR_UNKNOWN
+ = 404;
+
+27 cÚ¡ 
+	mTARGET_API
+ = 'verifyCoupon';
+
+30 
+´iv©e
+ 
+	m$_codeMes§ges
+ = 
+¬¿y
+ (
+
+31 
+£lf
+::
+CODE_SUCCESS_VERIFY_COUPON
+ => "éªŒè¯æˆåŠŸ",
+
+32 
+£lf
+::
+CODE_FAIL_VERIFY_COUPON
+ => "éªŒè¯å¤±è´¥",
+
+33 
+£lf
+::
+CODE_ERROR_API_CALL
+ => "æ¥å£è°ƒç”¨å‡ºé”™",
+
+34 
+£lf
+::
+CODE_ERROR_PARSE_RESPONSE
+ => "è§£ææ¥å£è¿”å›å‡ºé”™",
+
+35 
+£lf
+::
+CODE_ERROR_ONLY_SUPPORT_REST
+ => "å¹³å°ç›®å‰åªæ”¯æŒRESTfulæ¥å£çš„å¹³å°",
+
+36 
+£lf
+::
+CODE_ERROR_UNIVERSAL_SERVER
+ => "éªŒè¯å¹³å°åç«¯é€šç”¨é”™è¯¯",
+
+37 
+£lf
+::
+CODE_ERROR_UNKNOWN
+ => "æœªçŸ¥é”™è¯¯");
+
+40 
+´iv©e
+ 
+	m$_suµÜtPÏtfÜms
+ = 
+¬¿y
+("laiqu", "360buy");
+
+42 
+´iv©e
+ 
+	m$_¶©fÜm
+ = '';
+
+43 
+´iv©e
+ 
+	m$_»que¡M‘hod
+ = '';
+
+44 
+´iv©e
+ 
+	m$_h‰pM‘hod
+ = '';
+
+45 
+´iv©e
+ 
+	m$_»¥Ú£Ty³
+ = '';
+
+46 
+´iv©e
+ 
+	m$_­iU¾
+ = '';
+
+47 
+´iv©e
+ 
+	m$_»que¡P¬ams
+ = 
+¬¿y
+();
+
+48 
+´iv©e
+ 
+	m$_»que¡P¬amsStic
+ = 
+¬¿y
+();
+
+49 
+´iv©e
+ 
+	m$_codeTag
+ = '';
+
+50 
+´iv©e
+ 
+	m$_codeSucûss
+ = '';
+
+63 
+public
+ 
+funùiÚ
+ 
+	$š™
+(
+$¶©fÜm
+)
+
+65 iàĞ!
+$this
+->
+	`is_suµÜ‹d
+(
+$¶©fÜm
+) )
+
+66  
+çl£
+;
+
+67 
+$this
+->
+_¶©fÜm
+ = 
+$¶©fÜm
+;
+
+69 
+$cÚfigFeName
+ = "¶©fÜm_­i_cÚfs/" . 
+$this
+->
+_¶©fÜm
+ . ".conf";
+
+70 
+$cÚ‹Á
+ = 
+	`fe_g‘_cÚ‹Ás
+(
+$cÚfigFeName
+);
+
+71 
+$cÚfigs
+ = 
+	`jsÚ_decode
+(
+$cÚ‹Á
+);
+
+73 ià(!
+	`is£t
+(
+$cÚfigs
+))
+
+74  
+çl£
+;
+
+76 
+$this
+->
+_»que¡M‘hod
+ = 
+$cÚfigs
+->
+»que¡M‘hod
+;
+
+77 
+$this
+->
+_h‰pM‘hod
+ = 
+$cÚfigs
+->
+h‰pM‘hod
+;
+
+78 
+$this
+->
+_»¥Ú£Ty³
+ = 
+$cÚfigs
+->
+»¥Ú£Ty³
+;
+
+79 
+$rg‘Api
+ = 
+£lf
+::
+TARGET_API
+;
+
+80 
+$rg‘ApiCÚfs
+ = 
+$cÚfigs
+->
+$rg‘Api
+;
+
+82 
+$this
+->
+_­iU¾
+ = 
+$rg‘ApiCÚfs
+->
+­iU¾
+;
+
+83 
+$this
+->
+_»que¡P¬ams
+ = 
+$rg‘ApiCÚfs
+->
+»que¡P¬ams
+;
+
+84 
+$this
+->
+_»que¡P¬amsStic
+ = 
+$rg‘ApiCÚfs
+->
+»que¡P¬amsStic
+;
+
+85 
+$this
+->
+_codeTag
+ = 
+$rg‘ApiCÚfs
+->
+»¥Ú£ResuÉ
+->
+codeTag
+;
+
+86 
+$this
+->
+_codeSucûss
+ = 
+$rg‘ApiCÚfs
+->
+»¥Ú£ResuÉStic
+->
+codeSucûss
+;
+
+88  
+Œue
+;
+
+100 
+public
+ 
+funùiÚ
+ 
+	$is_suµÜ‹d
+(
+$¶©fÜm
+)
+
+102 ià(
+$¶©fÜm
+ == '')
+
+103  
+çl£
+;
+
+104 
+	`fÜ—ch
+ (
+$this
+->
+_suµÜtPÏtfÜms
+ 
+as
+ 
+$suµÜt
+)
+
+106 ià(
+$¶©fÜm
+ =ğ
+$suµÜt
+)
+
+107  
+Œue
+;
+
+110  
+çl£
+;
+
+111 
+	}
+}
+
+123 
+public
+ 
+funùiÚ
+ 
+	$š™_v”ifyIÅuts
+(
+$»que¡
+)
+
+125 ià(!
+	`is£t
+(
+$»que¡
+['couponId']) || $request['couponId'] == '')
+
+126  
+çl£
+;
+
+127 
+$šputs
+['coupÚId'] = 
+$»que¡
+['couponId'];
+
+129 ià(
+	`is£t
+(
+$this
+->
+_»que¡P¬ams
+->
+coupÚPwd
+))
+
+131 ià(
+$»que¡
+['couponPwd'] == '')
+
+132  
+çl£
+;
+
+134 
+$šputs
+['coupÚPwd'] = 
+$»que¡
+['couponPwd'];
+
+137  
+$šputs
+;
+
+138 
+	}
+}
+
+149 
+public
+ 
+funùiÚ
+ 
+	$g‘_»¥Ú£Code
+(
+$»¥Ú£
+)
+
+151 
+$»¥Ú£Code
+ = "";
+
+152 ià(
+$»¥Ú£
+ =ğ"" || 
+$this
+->
+_»¥Ú£Ty³
+ == "" ||
+
+153 
+$this
+->
+_codeTag
+ =ğ"" || $this->
+_codeSucûss
+ == "")
+
+154  
+£lf
+::
+CODE_ERROR_PARSE_RESPONSE
+;
+
+156 ià(
+$this
+->
+_»¥Ú£Ty³
+ == "LAIQU")
+
+158 
+	`´eg_m©ch_®l
+("/(<([\w]+)[^>]*>)(.*?)(<\/\\2>)/", 
+$»¥Ú£
+, 
+$m©ches
+, 
+PREG_SET_ORDER
+);
+
+159 
+	`fÜ—ch
+ (
+$m©ches
+ 
+as
+ 
+$v®
+) {
+
+160 ià(
+$v®
+[2] =ğ
+$this
+->
+_codeTag
+)
+
+162 
+$»¥Ú£Code
+ = 
+$v®
+[3];
+
+165 } ià(
+$this
+->
+_»¥Ú£Ty³
+ == "XML")
+
+167 
+$xmlRe¥Ú£
+ = 
+	`sim¶exml_lßd_¡ršg
+(
+$»¥Ú£
+);
+
+168 
+$»¥Ú£Code
+ = 
+$xmlRe¥Ú£
+->
+$code
+;
+
+171 ià(
+$»¥Ú£Code
+ == '')
+
+172  
+£lf
+::
+CODE_ERROR_PARSE_RESPONSE
+;
+
+174  
+$»¥Ú£Code
+ =ğ
+$this
+->
+_codeSucûss
+ ? 
+£lf
+::
+CODE_SUCCESS_VERIFY_COUPON
+ : s–f::
+CODE_FAIL_VERIFY_COUPON
+;
+
+175 
+	}
+}
+
+186 
+public
+ 
+funùiÚ
+ 
+	$g‘_»que¡P¬ams
+(
+$šputs
+)
+
+188 
+$·¿ms
+ = 
+	`¬¿y
+();
+
+189 
+	`fÜ—ch
+ (
+$this
+->
+_»que¡P¬ams
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+192 
+$·¿ms
+[
+$v®ue
+] = 
+$šputs
+[
+$key
+];
+
+194 ià(
+$this
+->
+_»que¡P¬amsStic
+ !ğ
+nuÎ
+)
+
+197 
+	`fÜ—ch
+ (
+$this
+->
+_»que¡P¬amsStic
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+199 
+$·¿ms
+[
+$key
+] = 
+$v®ue
+;
+
+202  
+$·¿ms
+;
+
+203 
+	}
+}
+
+214 
+public
+ 
+funùiÚ
+ 
+	$g’_»¥Ú£_jsÚ
+(
+$»suÉ
+)
+
+216 ià(!
+$»suÉ
+ || 
+£lf
+::
+$_codeMes§ges
+[$result] == '')
+
+217  
+çl£
+;
+
+219 
+$»¥Ú£
+['code'] = 
+$»suÉ
+;
+
+220 
+$»¥Ú£
+['msg'] = 
+£lf
+::
+$_codeMes§ges
+[
+$»suÉ
+];
+
+221 
+$»¥Ú£
+['d©eTime'] = 
+	`d©e
+("Y-m-d, h:i:s");
+
+223  
+	`jsÚ_’code
+(
+$»¥Ú£
+);
+
+224 
+	}
+}
+
+234 
+public
+ 
+funùiÚ
+ 
+	$g‘_mes§ge
+(
+$code
+ = 
+nuÎ
+)
+
+236 ià(
+$code
+ =ğ
+nuÎ
+)
+
+237  
+£lf
+::
+$_codeMes§ges
+;
+
+239  
+	`is£t
+(
+£lf
+::
+$_codeMes§ges
+[
+$code
+]è? s–f::$_codeMes§ges[$code] : 
+nuÎ
+;
+
+240 
+	}
+}
+
+244 
+public
+ 
+funùiÚ
+ 
+	$g‘_¶©fÜm
+()
+
+246  
+$this
+->
+_¶©fÜm
+;
+
+247 
+	}
+}
+
+251 
+public
+ 
+funùiÚ
+ 
+	$g‘_»que¡M‘hod
+()
+
+253  
+$this
+->
+_»que¡M‘hod
+;
+
+254 
+	}
+}
+
+258 
+public
+ 
+funùiÚ
+ 
+	$g‘_h‰pM‘hod
+()
+
+260  
+$this
+->
+_h‰pM‘hod
+;
+
+261 
+	}
+}
+
+265 
+public
+ 
+funùiÚ
+ 
+	$g‘_»¥Ú£Ty³
+()
+
+267  
+$this
+->
+_»¥Ú£Ty³
+;
+
+268 
+	}
+}
+
+272 
+public
+ 
+funùiÚ
+ 
+	$g‘_­iU¾
+()
+
+274  
+$this
+->
+_­iU¾
+;
+
+275 
+	}
+}
+
+279 
+public
+ 
+funùiÚ
+ 
+	$g‘_codeTag
+()
+
+281  
+$this
+->
+_codeTag
+;
+
+282 
+	}
+}
+
+286 
+public
+ 
+funùiÚ
+ 
+	$g‘_codeSucûss
+()
+
+288  
+$this
+->
+_codeSucûss
+;
+
+289 
+	}
+}
+
+	@v1000/doVerifyCoupon.php
+
+1 <?
+php
+
+
+2 
+	g»quœe_Úû
+ 'RESTclient.php';
+
+3 
+	g»quœe_Úû
+ 'VerifyCoupon.php';
+
+5 
+	g$¶©fÜm
+ = 
+$_REQUEST
+['platform'];
+
+6 
+	g$v”ifyCoupÚ
+ = 
+Ãw
+ 
+V”ifyCoupÚ
+();
+
+8 if(!
+	g$v”ifyCoupÚ
+->
+	$š™
+(
+$¶©fÜm
+))
+
+10 
+	`d›
+(
+V”ifyCoupÚ
+::
+	`g’_»¥Ú£_jsÚ
+(V”ifyCoupÚ::
+CODE_ERROR_UNIVERSAL_SERVER
+));
+
+11 
+	}
+}
+
+13 
+	g$šputs
+ = 
+$v”ifyCoupÚ
+->
+š™_v”ifyIÅuts
+(
+$_REQUEST
+);
+
+15 
+	g$»¡
+ = 
+Ãw
+ 
+RESTş›Á
+();
+
+17 
+	g$·¿ms
+ = 
+$v”ifyCoupÚ
+->
+g‘_»que¡P¬ams
+(
+$šputs
+);
+
+19 ià(
+	g$v”ifyCoupÚ
+->
+g‘_h‰pM‘hod
+() == 'POST') {
+
+20 
+$»¡
+->
+ü—‹Reque¡
+(
+$v”ifyCoupÚ
+->
+g‘_­iU¾
+(), 'POST', 
+$·¿ms
+);
+
+22 
+	g$»¡
+->
+ü—‹Reque¡
+(
+$v”ifyCoupÚ
+->
+g‘_­iU¾
+());
+
+23 
+	g$u¾
+ = 
+$»¡
+->
+g‘U¾
+();
+
+24 
+	g$u¾
+->
+£tQu”yV¬ŸbËs
+(
+$·¿ms
+);
+
+26 
+	g$»¡
+->
+£ndReque¡
+();
+
+27 
+	g$»¥Ú£
+ = 
+$»¡
+->
+g‘Re¥Ú£
+();
+
+28 
+	g$»suÉ
+ = 
+$v”ifyCoupÚ
+->
+g‘_»¥Ú£Code
+(
+$»¥Ú£
+);
+
+30 
+echo
+ 
+	gV”ifyCoupÚ
+::
+g’_»¥Ú£_jsÚ
+(
+$»suÉ
+);
+
+	@
+1
+.
+0
+8
+151
+VerifyCoupon.php
+VerifyCoupon_funcs.php
+doVerifyCoupon.php
+functions.php
+index.php
+v1000/Exception.php
+v1000/VerifyCoupon.php
+v1000/doVerifyCoupon.php

@@ -1,0 +1,32 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+TABLE_ROW_NUMS	consumedCoupons.php	/^define("TABLE_ROW_NUMS", 6);$/;"	d
+TABLE_ROW_NUMS	teamList.php	/^define("TABLE_ROW_NUMS", 4);$/;"	d
+_SESSION	consumedCoupons.php	/^    $_SESSION['fromTeamPage'] = $_GET['fromTeamPage'];$/;"	p
+_SESSION	consumedCoupons.php	/^    $_SESSION['platform'] = $_GET['platform'];$/;"	p
+_SESSION	consumedCoupons.php	/^    $_SESSION['teamId'] = $_GET['teamId'];$/;"	p
+consumeCoupon	consumedCoupons.php	/^                    $consumeCoupon = $couponList[$i];$/;"	p
+htmlCouponList	consumedCoupons.php	/^                    $htmlCouponList .= "<div class='table_item_1' id='couponRowWrap_{$i}'>$/;"	p
+htmlCouponList	consumedCoupons.php	/^                    $htmlCouponList .= date('Y-m-d',$consumeCoupon['consumeTime']).$/;"	p
+htmlCouponList	consumedCoupons.php	/^                $htmlCouponList = '';$/;"	p
+htmlTeamList	teamList.php	/^                        $htmlTeamList .= "<div class='new_ico '><\/div>";    \/\/add new mark$/;"	p
+htmlTeamList	teamList.php	/^                    $htmlTeamList .= "<div class='table_item_1' id='teamRowWrap_{$i}'>$/;"	p
+htmlTeamList	teamList.php	/^                    $htmlTeamList .= date('Y-m-d',$beginTime).'<br \/>'.date('Y-m-d',$endTime);$/;"	p
+htmlTeamList	teamList.php	/^                    $htmlTeamList .="<\/a><\/div>$/;"	p
+htmlTeamList	teamList.php	/^                    $htmlTeamList .="<a class='table_item_id ' >{$teamId}<\/a>$/;"	p
+htmlTeamList	teamList.php	/^                $htmlTeamList = '';$/;"	p
+oddClass	consumedCoupons.php	/^                        $oddClass = " item_bg";$/;"	p
+oddClass	consumedCoupons.php	/^                        $oddClass = "";$/;"	p
+oddEvenClass	teamList.php	/^                        $oddEvenClass = ' item_bg';$/;"	p
+oddEvenClass	teamList.php	/^                        $oddEvenClass = '';$/;"	p
+page	consumedCoupons.php	/^    $page = $_GET['page'];$/;"	p
+page	teamList.php	/^    $page = $_GET['page'];$/;"	p
+showPageNums	consumedCoupons.php	/^                    $showPageNums = 11;$/;"	p
+showPageNums	teamList.php	/^                        $showPageNums = 11;$/;"	p
+urlPrefix	consumedCoupons.php	/^                    $urlPrefix .= "&";$/;"	p
+urlPrefix	consumedCoupons.php	/^                    $urlPrefix = "consumedCoupons.php?action=search";$/;"	p
+urlPrefix	teamList.php	/^                        $urlPrefix = "teamList.php?";$/;"	p

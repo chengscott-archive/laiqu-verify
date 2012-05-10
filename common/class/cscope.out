@@ -1,0 +1,3236 @@
+cscope 15 $HOME/work/host/laiqu/common/class -q 0000000204 0000015639
+	@Database.php
+
+1 <?
+php
+
+
+11 
+»quœe_Úû
+('../../common/CodeMessages.php');
+
+12 
+»quœe_Úû
+('../../common/Exception.php');
+
+14 şas 
+	cMyTabË
+
+
+17 cÚ¡ 
+	mDBHOST
+ = 'localhost';
+
+18 cÚ¡ 
+	mDBUSER
+ = 'root';
+
+19 cÚ¡ 
+	mDBPASS
+ = 'ghz86377328';
+
+20 cÚ¡ 
+	mDBDATABASE
+ = 'lq_verify';
+
+22 
+´Ùeùed
+ 
+	m$_dbcÚn
+ = 
+nuÎ
+;
+
+29 
+public
+ 
+funùiÚ
+ 
+	$__cÚ¡ruù
+()
+
+31 
+$this
+->
+_dbcÚn
+ = 
+	`mysql_cÚÃù
+(
+£lf
+::
+DBHOST
+, s–f::
+DBUSER
+, s–f::
+DBPASS
+);
+
+32 ià(!
+$this
+->
+_dbcÚn
+)
+
+34 
+throw
+ 
+Ãw
+ 
+	`Exû±iÚ
+(
+
+35 
+V”ifyLogšCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyLogšCodeMsg::
+MYSQL_CONNECT_ERROR
+),
+
+36 
+V”ifyLogšCodeMsg
+::
+MYSQL_CONNECT_ERROR
+);
+
+38 ià(!
+	`mysql_£Ëù_db
+(
+£lf
+::
+DBDATABASE
+, 
+$this
+->
+_dbcÚn
+))
+
+40 
+throw
+ 
+Ãw
+ 
+	`Exû±iÚ
+(
+
+41 
+V”ifyLogšCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyLogšCodeMsg::
+MYSQL_SELECT_DB_ERROR
+),
+
+42 
+V”ifyLogšCodeMsg
+::
+MYSQL_SELECT_DB_ERROR
+);
+
+46 
+	}
+}
+
+	@MyTable.php
+
+1 <?
+php
+
+
+11 
+»quœe_Úû
+('../common/CodeMessages.php');
+
+12 
+»quœe_Úû
+('../common/Exception.php');
+
+14 şas 
+	cMyTabË
+
+
+17 cÚ¡ 
+	mDBHOST
+ = 'localhost';
+
+18 cÚ¡ 
+	mDBUSER
+ = 'root';
+
+19 cÚ¡ 
+	mDBPASS
+ = 'ghz86377328';
+
+20 cÚ¡ 
+	mDBDATABASE
+ = 'lq_verify';
+
+22 
+´Ùeùed
+ 
+	m$_bËÇme
+ = 
+nuÎ
+;
+
+23 
+´Ùeùed
+ 
+	m$_dbcÚn
+ = 
+nuÎ
+;
+
+30 
+public
+ 
+funùiÚ
+ 
+__cÚ¡ruù
+(
+$bËName
+ = "")
+
+32 ià(
+$bËName
+ !== "")
+
+33 
+$this
+->
+_bËÇme
+ = 
+$bËName
+;
+
+34 
+	m$this
+->
+assu»_dbCÚÃùiÚ
+();
+
+37 
+´Ùeùed
+ 
+funùiÚ
+ 
+	$assu»_dbCÚÃùiÚ
+()
+
+39 
+$this
+->
+_dbcÚn
+ = 
+	`mysql_cÚÃù
+(
+£lf
+::
+DBHOST
+, s–f::
+DBUSER
+, s–f::
+DBPASS
+);
+
+40 ià(!
+$this
+->
+_dbcÚn
+)
+
+42 
+throw
+ 
+Ãw
+ 
+	`Exû±iÚ
+(
+
+43 
+V”ifyLogšCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyLogšCodeMsg::
+MYSQL_CONNECT_ERROR
+),
+
+44 
+V”ifyLogšCodeMsg
+::
+MYSQL_CONNECT_ERROR
+);
+
+46 ià(!
+	`mysql_£Ëù_db
+(
+£lf
+::
+DBDATABASE
+, 
+$this
+->
+_dbcÚn
+))
+
+48 
+throw
+ 
+Ãw
+ 
+	`Exû±iÚ
+(
+
+49 
+V”ifyLogšCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyLogšCodeMsg::
+MYSQL_SELECT_DB_ERROR
+),
+
+50 
+V”ifyLogšCodeMsg
+::
+MYSQL_SELECT_DB_ERROR
+);
+
+52 
+	`mysql_qu”y
+("SET CHARACTER SET 'utf8'", 
+$this
+->
+_dbcÚn
+);
+
+53 
+	}
+}
+
+55 
+´Ùeùed
+ 
+funùiÚ
+ 
+	$g‘_dbTabËName
+(
+$bËName
+)
+
+57 ià(
+$bËName
+ !== "")
+
+58 
+$bËName
+ = 
+£lf
+::
+DBDATABASE
+.".".$tableName;
+
+60  
+$bËName
+;
+
+61 
+	}
+}
+
+67 
+public
+ 
+funùiÚ
+ 
+	$g‘_row
+(
+$cÚd™iÚs
+)
+
+69 
+$this
+->
+	`assu»_dbCÚÃùiÚ
+();
+
+71 
+$£ËùSql
+ = "SELECT * FROM ".
+$this
+->
+	`g‘_dbTabËName
+($this->
+_bËÇme
+)." WHERE 1=1 ";
+
+72 
+	`fÜ—ch
+ (
+$cÚd™iÚs
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+74 
+$key
+ = 
+	`mysql_»®_esÿ³_¡ršg
+($key);
+
+75 
+$v®ue
+ = 
+	`mysql_»®_esÿ³_¡ršg
+($value);
+
+77 ià(
+	`is_¡ršg
+(
+$v®ue
+))
+
+79 
+$v®ue
+ = "'".$value."'";
+
+81 
+$£ËùSql
+ .ğ"AND ".
+$key
+."=".
+$v®ue
+;
+
+83 
+$»suÉ
+ = 
+	`mysql_qu”y
+(
+$£ËùSql
+);
+
+84 ià(
+$»suÉ
+ && 
+	`mysql_num_rows
+($result) > 0)
+
+86  
+	`mysql_ãtch_¬¿y
+(
+$»suÉ
+);
+
+89  
+nuÎ
+;
+
+91 
+	}
+}
+
+	@Valite.php
+
+1 <?
+php
+
+
+7 
+šşude_Úû
+("files.php");
+
+9 şas 
+	cv®™e
+
+
+11 
+public
+ 
+funùiÚ
+ 
+	$£tImage
+(
+$Image
+)
+
+13 
+$this
+->
+ImageP©h
+ = 
+$Image
+;
+
+15 
+public
+ 
+funùiÚ
+ 
+	$g‘D©a
+()
+
+17  
+$this
+->
+d©a
+;
+
+18 
+	}
+}
+
+20 
+public
+ 
+funùiÚ
+ 
+	$¡udy
+(
+$šfo
+)
+
+23 
+$d©a
+ = 
+	`¬¿y
+();
+
+24 
+$i
+ = 0;
+
+25 
+	`fÜ—ch
+(
+$this
+->
+d©a
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+27 
+$d©a
+[
+$i
+] = "";
+
+28 
+	`fÜ—ch
+(
+$v®ue
+ 
+as
+ 
+$skey
+ => 
+$sv®ue
+)
+
+30 
+$d©a
+[
+$i
+] .ğ
+	`im¶ode
+("",
+$sv®ue
+);
+
+32 if(
+	`¡¾’
+(
+$d©a
+[
+$i
+]è> 
+$maxfÚtw™h
+)
+
+33 ++
+$i
+;
+
+36 if(
+	`couÁ
+(
+$d©a
+è!ğcouÁ(
+$šfo
+))
+
+41 
+echo
+ "ÉèÖÃÊı¾İ¿âÊı¾İ³ö´í";
+
+42 
+	`´št_r
+(
+$d©a
+);
+
+43  
+çl£
+;
+
+47 
+	`fÜ—ch
+(
+$šfo
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+49 if(
+	`is£t
+(
+$this
+->
+Keys
+[0][
+$v®ue
+])){
+
+51 
+$³rûÁ
+=0.0;
+
+52 
+	`sim¬_‹xt
+(
+$this
+->
+Keys
+[0][
+$v®ue
+], 
+$d©a
+[
+$key
+],
+$³rûÁ
+);
+
+55 if(
+	`štv®
+(
+$³rûÁ
+) < 96)
+
+57 
+$i
+=1;
+
+58 
+$OK
+ = 
+çl£
+;
+
+59 
+	`is£t
+(
+$this
+->
+Keys
+[
+$i
+][
+$v®ue
+]))
+
+61 
+$³rûÁ
+=0.0;
+
+63 
+	`sim¬_‹xt
+(
+$this
+->
+Keys
+[
+$i
+][
+$v®ue
+], 
+$d©a
+[
+$key
+],
+$³rûÁ
+);
+
+66 if(
+	`štv®
+(
+$³rûÁ
+) > 96){
+
+67 
+$OK
+ = 
+Œue
+;
+
+70 ++
+$i
+;
+
+72 if(!
+$OK
+){
+
+77 
+$this
+->
+Keys
+[
+$i
+][
+$v®ue
+] = 
+$d©a
+[
+$key
+];
+
+84 
+$this
+->
+Keys
+[0][
+$v®ue
+] = 
+$d©a
+[
+$key
+];
+
+88  
+Œue
+;
+
+90 
+	}
+}
+
+92 
+public
+ 
+funùiÚ
+ 
+	$g‘ResuÉ
+()
+
+94  
+$this
+->
+D©aA¼ay
+;
+
+95 
+	}
+}
+
+96 
+public
+ 
+funùiÚ
+ 
+	$g‘Hec
+()
+
+98 
+$»s
+ = 
+	`imageü—‹äomj³g
+(
+$this
+->
+ImageP©h
+);
+
+99 
+$size
+ = 
+	`g‘imagesize
+(
+$this
+->
+ImageP©h
+);
+
+100 
+$d©a
+ = 
+	`¬¿y
+();
+
+101 
+$i
+=0; $˜< 
+$size
+[1]; ++$i)
+
+104 
+$j
+=0; $j < 
+$size
+[0]; ++$j)
+
+106 
+$rgb
+ = 
+	`imagecŞÜ©
+(
+$»s
+,
+$j
+,
+$i
+);
+
+107 
+$rgb¬¿y
+ = 
+	`imagecŞÜsfÜšdex
+(
+$»s
+, 
+$rgb
+);
+
+112 if(
+$rgb¬¿y
+['red'] > 120 &&( $rgbarray['green']<80
+
+113 || 
+$rgb¬¿y
+['blue'] < 80))
+
+115 
+$d©a
+[
+$i
+][
+$j
+]=1;
+
+117 
+$d©a
+[
+$i
+][
+$j
+]=0;
+
+124 
+$i
+=0; $˜< 
+$size
+[1]; ++$i)
+
+126 
+$j
+=0; $j < 
+$size
+[0]; ++$j)
+
+128 
+$num
+ = 0;
+
+129 if(
+$d©a
+[
+$i
+][
+$j
+] == 1)
+
+132 if(
+	`is£t
+(
+$d©a
+[
+$i
+-1][
+$j
+])){
+
+133 
+$num
+ = $num + 
+$d©a
+[
+$i
+-1][
+$j
+];
+
+136 if(
+	`is£t
+(
+$d©a
+[
+$i
++1][
+$j
+])){
+
+137 
+$num
+ = $num + 
+$d©a
+[
+$i
++1][
+$j
+];
+
+140 if(
+	`is£t
+(
+$d©a
+[
+$i
+][
+$j
+-1])){
+
+141 
+$num
+ = $num + 
+$d©a
+[
+$i
+][
+$j
+-1];
+
+144 if(
+	`is£t
+(
+$d©a
+[
+$i
+][
+$j
++1])){
+
+145 
+$num
+ = $num + 
+$d©a
+[
+$i
+][
+$j
++1];
+
+148 if(
+	`is£t
+(
+$d©a
+[
+$i
+-1][
+$j
+-1])){
+
+149 
+$num
+ = $num + 
+$d©a
+[
+$i
+-1][
+$j
+-1];
+
+152 if(
+	`is£t
+(
+$d©a
+[
+$i
+-1][
+$j
++1])){
+
+153 
+$num
+ = $num + 
+$d©a
+[
+$i
+-1][
+$j
++1];
+
+156 if(
+	`is£t
+(
+$d©a
+[
+$i
++1][
+$j
+-1])){
+
+157 
+$num
+ = $num + 
+$d©a
+[
+$i
++1][
+$j
+-1];
+
+160 if(
+	`is£t
+(
+$d©a
+[
+$i
++1][
+$j
++1])){
+
+161 
+$num
+ = $num + 
+$d©a
+[
+$i
++1][
+$j
++1];
+
+164 if(
+$num
+ == 0){
+
+165 
+$d©a
+[
+$i
+][
+$j
+] = 0;
+
+171 
+$this
+->
+D©aA¼ay
+ = 
+$d©a
+;
+
+172 
+$this
+->
+ImageSize
+ = 
+$size
+;
+
+173 
+	}
+}
+
+175 
+public
+ 
+funùiÚ
+ 
+	$run
+()
+
+177 
+$»suÉ
+="";
+
+181 
+$d©a
+ = 
+	`¬¿y
+();
+
+182 
+$i
+ = 0;
+
+183 
+	`fÜ—ch
+(
+$this
+->
+d©a
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+185 
+$d©a
+[
+$i
+] = "";
+
+186 
+	`fÜ—ch
+(
+$v®ue
+ 
+as
+ 
+$skey
+ => 
+$sv®ue
+)
+
+188 
+$d©a
+[
+$i
+] .ğ
+	`im¶ode
+("",
+$sv®ue
+);
+
+190 if(
+	`¡¾’
+(
+$d©a
+[
+$i
+]è> 
+$maxfÚtw™h
+)
+
+191 ++
+$i
+;
+
+195 
+	`fÜ—ch
+(
+$d©a
+ 
+as
+ 
+$numKey
+ => 
+$numSŒšg
+)
+
+198 
+$max
+=0.0;
+
+199 
+$num
+ = 0;
+
+200 
+	`fÜ—ch
+(
+$this
+->
+Keys
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+202 
+$FšdOk
+ = 
+çl£
+;
+
+204 
+	`fÜ—ch
+(
+$v®ue
+ 
+as
+ 
+$skey
+ => 
+$sv®ue
+)
+
+207 
+$³rûÁ
+=0.0;
+
+208 
+	`sim¬_‹xt
+(
+$sv®ue
+, 
+$numSŒšg
+,
+$³rûÁ
+);
+
+211 if(
+	`štv®
+(
+$³rûÁ
+è> 
+$max
+)
+
+213 
+$max
+ = 
+$³rûÁ
+;
+
+214 
+$num
+ = 
+$skey
+;
+
+215 if(
+	`štv®
+(
+$³rûÁ
+) > 96){
+
+216 
+$FšdOk
+ = 
+Œue
+;
+
+221 if(
+$FšdOk
+)
+
+228 
+$»suÉ
+.=
+$num
+;
+
+232  
+$»suÉ
+;
+
+233 
+	}
+}
+
+234 
+public
+ 
+funùiÚ
+ 
+	$bmp2j³g
+(
+$fe
+){
+
+235 
+$»s
+ = 
+$this
+->
+	`imageü—‹äombmp
+(
+$fe
+);
+
+236 
+	`imagej³g
+(
+$»s
+,
+$fe
+.".jpeg");
+
+237 
+	}
+}
+
+239 
+public
+ 
+funùiÚ
+ 
+	$f‹rInfo
+()
+
+241 
+$d©a
+=
+	`¬¿y
+();
+
+242 
+$num
+ = 0;
+
+243 
+$b
+ = 
+çl£
+;
+
+244 
+$CÚtšue
+ = 0;
+
+245 
+$XS¹
+ = 0;
+
+247 
+$i
+=0; $i<
+$this
+->
+ImageSize
+[0]; ++$i)
+
+250 
+$j
+=0; $j<
+$this
+->
+ImageSize
+[1]; ++$j)
+
+252 if(
+$this
+->
+D©aA¼ay
+[
+$j
+][
+$i
+] == "1")
+
+254 
+$b
+ = 
+Œue
+;
+
+255 ++
+$CÚtšue
+;
+
+258 
+$b
+ = 
+çl£
+;
+
+261 if(
+$b
+ =ğ
+Œue
+)
+
+263 
+$jj
+ = 0; $jj < 
+$this
+->
+ImageSize
+[1]; ++$jj)
+
+265 
+$d©a
+[
+$num
+][
+$jj
+][
+$XS¹
+] = 
+$this
+->
+D©aA¼ay
+[$jj][
+$i
+];
+
+267 ++
+$XS¹
+;
+
+270 if(
+$CÚtšue
+ > 0){
+
+271 
+$XS¹
+ = 0;
+
+272 
+$CÚtšue
+ = 0;
+
+273 ++
+$num
+;
+
+279 
+$šum
+ = 0;
+
+280 
+$num
+ =0; $num < 
+	`couÁ
+(
+$d©a
+); ++$num)
+
+282 
+$™emp
+ = 5;
+
+283 
+$¡r
+ = 
+	`im¶ode
+("",
+$d©a
+[
+$num
+][
+$™emp
+]);
+
+285 if(
+	`¡¾’
+(
+$¡r
+è> 
+$this
+->
+maxfÚtw™h
+)
+
+287 
+$Ën
+ = (
+	`¡¾’
+(
+$¡r
+)+1)/2;
+
+288 
+$æ’
+ = 
+	`¡¾’
+(
+$¡r
+);
+
+289 
+$ih
+ = 0;
+
+291 
+	`fÜ—ch
+(
+$d©a
+[
+$num
+] 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+293 
+$ix
+ = 0;
+
+294 
+$ixx
+ = 0;
+
+295 
+	`fÜ—ch
+(
+$v®ue
+ 
+as
+ 
+$skey
+=>
+$sv®ue
+)
+
+297 if(
+$skey
+ < 
+$Ën
+)
+
+299 
+$this
+->
+d©a
+[
+$šum
+][
+$ih
+][
+$ix
+] = 
+$sv®ue
+;
+
+300 ++
+$ix
+;
+
+302 if(
+$skey
+ > (
+$æ’
+-
+$Ën
+-1))
+
+304 
+$this
+->
+d©a
+[
+$šum
++1][
+$ih
+][
+$ixx
+] = 
+$sv®ue
+;
+
+305 ++
+$ixx
+;
+
+308 ++
+$ih
+;
+
+310 ++
+$šum
+;
+
+312 
+$i
+ = 0;
+
+313 
+	`fÜ—ch
+(
+$d©a
+[
+$num
+] 
+as
+ 
+$key
+ => 
+$v®ue
+){
+
+314 
+$this
+->
+d©a
+[
+$šum
+][
+$i
+] = 
+$v®ue
+;
+
+315 ++
+$i
+;
+
+319 ++
+$šum
+;
+
+323 
+$num
+ = 0; $num < 
+	`couÁ
+(
+$this
+->
+d©a
+); ++$num)
+
+325 if(
+	`couÁ
+(
+$this
+->
+d©a
+[
+$num
+]è!ğ$this->
+ImageSize
+[1])
+
+327 
+echo
+ "·Ö¸î×Ö·û´íÎó";
+
+328 
+	`d›
+();
+
+331 
+$i
+=0; $˜< 
+$this
+->
+ImageSize
+[1]; ++$i)
+
+333 
+$¡r
+ = 
+	`im¶ode
+("",
+$this
+->
+d©a
+[
+$num
+][
+$i
+]);
+
+334 
+$pos
+ = 
+	`¡½os
+(
+$¡r
+, "1");
+
+335 if(
+$pos
+ ==ğ
+çl£
+)
+
+337 
+	`un£t
+(
+$this
+->
+d©a
+[
+$num
+][
+$i
+]);
+
+341 
+	}
+}
+
+343 
+public
+ 
+funùiÚ
+ 
+	$D¿w
+()
+
+345 
+$i
+=0; $i<
+$this
+->
+ImageSize
+[1]; ++$i)
+
+347 
+echo
+ 
+	`im¶ode
+("",
+$this
+->
+D©aA¼ay
+[
+$i
+]);
+
+348 
+echo
+ "\n";
+
+350 
+	}
+}
+
+351 
+public
+ 
+funùiÚ
+ 
+	$imageü—‹äombmp
+(
+$fe
+)
+
+353 
+glob®
+ 
+$Cu¼’tB™
+, 
+$echoMode
+;
+
+355 
+$f
+=
+	`fİ’
+(
+$fe
+,"r");
+
+356 
+$H—d”
+=
+	`ä—d
+(
+$f
+,2);
+
+358 if(
+$H—d”
+=="BM")
+
+360 
+$Size
+=
+$this
+->
+	`ä—ddwÜd
+(
+$f
+);
+
+361 
+$Re£rved1
+=
+$this
+->
+	`ä—dwÜd
+(
+$f
+);
+
+362 
+$Re£rved2
+=
+$this
+->
+	`ä—dwÜd
+(
+$f
+);
+
+363 
+$Fœ¡By‹OfImage
+=
+$this
+->
+	`ä—ddwÜd
+(
+$f
+);
+
+365 
+$SizeBITMAPINFOHEADER
+=
+$this
+->
+	`ä—ddwÜd
+(
+$f
+);
+
+366 
+$Width
+=
+$this
+->
+	`ä—ddwÜd
+(
+$f
+);
+
+367 
+$Height
+=
+$this
+->
+	`ä—ddwÜd
+(
+$f
+);
+
+368 
+$biPÏÃs
+=
+$this
+->
+	`ä—dwÜd
+(
+$f
+);
+
+369 
+$biB™CouÁ
+=
+$this
+->
+	`ä—dwÜd
+(
+$f
+);
+
+370 
+$RLECom´essiÚ
+=
+$this
+->
+	`ä—ddwÜd
+(
+$f
+);
+
+371 
+$WidthxHeight
+=
+$this
+->
+	`ä—ddwÜd
+(
+$f
+);
+
+372 
+$biXP–sP”M‘”
+=
+$this
+->
+	`ä—ddwÜd
+(
+$f
+);
+
+373 
+$biYP–sP”M‘”
+=
+$this
+->
+	`ä—ddwÜd
+(
+$f
+);
+
+374 
+$Numb”OfP®‘‹sU£d
+=
+$this
+->
+	`ä—ddwÜd
+(
+$f
+);
+
+375 
+$Numb”OfImpÜÁCŞÜs
+=
+$this
+->
+	`ä—ddwÜd
+(
+$f
+);
+
+377 if(
+$biB™CouÁ
+<24)
+
+379 
+$img
+=
+	`imageü—‹
+(
+$Width
+,
+$Height
+);
+
+380 
+$CŞÜs
+=
+	`pow
+(2,
+$biB™CouÁ
+);
+
+381 
+$p
+=0;$p<
+$CŞÜs
+;$p++)
+
+383 
+$B
+=
+$this
+->
+	`ä—dby‹
+(
+$f
+);
+
+384 
+$G
+=
+$this
+->
+	`ä—dby‹
+(
+$f
+);
+
+385 
+$R
+=
+$this
+->
+	`ä—dby‹
+(
+$f
+);
+
+386 
+$Re£rved
+=
+$this
+->
+	`ä—dby‹
+(
+$f
+);
+
+387 
+$P®‘‹
+[]=
+	`imagecŞÜ®loÿ‹
+(
+$img
+,
+$R
+,
+$G
+,
+$B
+);
+
+393 if(
+$RLECom´essiÚ
+==0)
+
+395 
+$Zby‹k
+=(4-
+	`û
+((
+$Width
+/(8/
+$biB™CouÁ
+)))%4)%4;
+
+397 
+$y
+=
+$Height
+-1;$y>=0;$y--)
+
+399 
+$Cu¼’tB™
+=0;
+
+400 
+$x
+=0;$x<
+$Width
+;$x++)
+
+402 
+$C
+=
+	`ä—db™s
+(
+$f
+,
+$biB™CouÁ
+);
+
+403 
+	`image£ix–
+(
+$img
+,
+$x
+,
+$y
+,
+$P®‘‹
+[
+$C
+]);
+
+405 if(
+$Cu¼’tB™
+!=0è{
+$this
+->
+	`ä—dby‹
+(
+$f
+);};
+
+406 
+$g
+=0;$g<
+$Zby‹k
+;$g++)
+
+407 
+$this
+->
+	`ä—dby‹
+(
+$f
+);
+
+414 if(
+$RLECom´essiÚ
+==1)
+
+416 
+$y
+=
+$Height
+;
+
+418 
+$poûtb
+=0;
+
+420 
+Œue
+)
+
+422 
+$y
+--;
+
+423 
+$´efix
+=
+$this
+->
+	`ä—dby‹
+(
+$f
+);
+
+424 
+$suffix
+=
+$this
+->
+	`ä—dby‹
+(
+$f
+);
+
+425 
+$poûtb
++=2;
+
+427 
+$echo™
+=
+çl£
+;
+
+429 if(
+$echo™
+)
+echo
+ "Prefix: $prefix Suffix: $suffix<BR>";
+
+430 if((
+$´efix
+==0)
+	`ªd
+(
+$suffix
+==1)) ;
+
+431 if(
+	`ãof
+(
+$f
+)) ;
+
+433 !((
+$´efix
+==0)
+	`ªd
+(
+$suffix
+==0)))
+
+435 if(
+$´efix
+==0)
+
+437 
+$poût
+=
+$suffix
+;
+
+438 
+$D©a
+.=
+	`ä—d
+(
+$f
+,
+$poût
+);
+
+439 
+$poûtb
++=
+$poût
+;
+
+440 if(
+$poûtb
+%2==1è{
+$this
+->
+	`ä—dby‹
+(
+$f
+); $pocetb++;};
+
+442 if(
+$´efix
+>0)
+
+444 
+$poût
+=
+$´efix
+;
+
+445 
+$r
+=0;$r<
+$poût
+;$r++)
+
+446 
+$D©a
+.=
+	`chr
+(
+$suffix
+);
+
+448 
+$´efix
+=
+$this
+->
+	`ä—dby‹
+(
+$f
+);
+
+449 
+$suffix
+=
+$this
+->
+	`ä—dby‹
+(
+$f
+);
+
+450 
+$poûtb
++=2;
+
+451 if(
+$echo™
+è
+echo
+ "Prefix: $prefix Suffix: $suffix<BR>";
+
+454 
+$x
+=0;$x<
+	`¡¾’
+(
+$D©a
+);$x++)
+
+456 
+	`image£ix–
+(
+$img
+,
+$x
+,
+$y
+,
+$P®‘‹
+[
+	`Üd
+(
+$D©a
+[$x])]);
+
+458 
+$D©a
+="";
+
+465 if(
+$RLECom´essiÚ
+==2)
+
+467 
+$y
+=
+$Height
+;
+
+468 
+$poûtb
+=0;
+
+472 
+Œue
+)
+
+475 
+$y
+--;
+
+476 
+$´efix
+=
+$this
+->
+	`ä—dby‹
+(
+$f
+);
+
+477 
+$suffix
+=
+$this
+->
+	`ä—dby‹
+(
+$f
+);
+
+478 
+$poûtb
++=2;
+
+480 
+$echo™
+=
+çl£
+;
+
+482 if(
+$echo™
+)
+echo
+ "Prefix: $prefix Suffix: $suffix<BR>";
+
+483 if((
+$´efix
+==0)
+	`ªd
+(
+$suffix
+==1)) ;
+
+484 if(
+	`ãof
+(
+$f
+)) ;
+
+486 !((
+$´efix
+==0)
+	`ªd
+(
+$suffix
+==0)))
+
+488 if(
+$´efix
+==0)
+
+490 
+$poût
+=
+$suffix
+;
+
+492 
+$Cu¼’tB™
+=0;
+
+493 
+$h
+=0;$h<
+$poût
+;$h++)
+
+494 
+$D©a
+.=
+	`chr
+(
+	`ä—db™s
+(
+$f
+,4));
+
+495 if(
+$Cu¼’tB™
+!=0è
+	`ä—db™s
+(
+$f
+,4);
+
+496 
+$poûtb
++=
+	`û
+((
+$poût
+/2));
+
+497 if(
+$poûtb
+%2==1è{
+$this
+->
+	`ä—dby‹
+(
+$f
+); $pocetb++;};
+
+499 if(
+$´efix
+>0)
+
+501 
+$poût
+=
+$´efix
+;
+
+502 
+$i
+=0;
+
+503 
+$r
+=0;$r<
+$poût
+;$r++)
+
+505 if(
+$i
+%2==0)
+
+507 
+$D©a
+.=
+	`chr
+(
+$suffix
+%16);
+
+511 
+$D©a
+.=
+	`chr
+(
+	`æoÜ
+(
+$suffix
+/16));
+
+513 
+$i
+++;
+
+516 
+$´efix
+=
+$this
+->
+	`ä—dby‹
+(
+$f
+);
+
+517 
+$suffix
+=
+$this
+->
+	`ä—dby‹
+(
+$f
+);
+
+518 
+$poûtb
++=2;
+
+519 if(
+$echo™
+è
+echo
+ "Prefix: $prefix Suffix: $suffix<BR>";
+
+522 
+$x
+=0;$x<
+	`¡¾’
+(
+$D©a
+);$x++)
+
+524 
+	`image£ix–
+(
+$img
+,
+$x
+,
+$y
+,
+$P®‘‹
+[
+	`Üd
+(
+$D©a
+[$x])]);
+
+526 
+$D©a
+="";
+
+533 if(
+$biB™CouÁ
+==24)
+
+535 
+$img
+=
+	`imageü—‹ŒuecŞÜ
+(
+$Width
+,
+$Height
+);
+
+536 
+$Zby‹k
+=
+$Width
+%4;
+
+538 
+$y
+=
+$Height
+-1;$y>=0;$y--)
+
+540 
+$x
+=0;$x<
+$Width
+;$x++)
+
+542 
+$B
+=
+$this
+->
+	`ä—dby‹
+(
+$f
+);
+
+543 
+$G
+=
+$this
+->
+	`ä—dby‹
+(
+$f
+);
+
+544 
+$R
+=
+$this
+->
+	`ä—dby‹
+(
+$f
+);
+
+545 
+$cŞÜ
+=
+	`imagecŞÜexaù
+(
+$img
+,
+$R
+,
+$G
+,
+$B
+);
+
+546 if(
+$cŞÜ
+==-1è$cŞÜ=
+	`imagecŞÜ®loÿ‹
+(
+$img
+,
+$R
+,
+$G
+,
+$B
+);
+
+547 
+	`image£ix–
+(
+$img
+,
+$x
+,
+$y
+,
+$cŞÜ
+);
+
+549 
+$z
+=0;$z<
+$Zby‹k
+;$z++)
+
+550 
+$this
+->
+	`ä—dby‹
+(
+$f
+);
+
+553  
+$img
+;
+
+558 
+	`fşo£
+(
+$f
+);
+
+559 
+	}
+}
+
+561 
+public
+ 
+funùiÚ
+ 
+	$ä—dby‹
+(
+$f
+)
+
+563  
+	`Üd
+(
+	`ä—d
+(
+$f
+,1));
+
+564 
+	}
+}
+
+566 
+public
+ 
+funùiÚ
+ 
+	$ä—dwÜd
+(
+$f
+)
+
+568 
+$b1
+=
+$this
+->
+	`ä—dby‹
+(
+$f
+);
+
+569 
+$b2
+=
+$this
+->
+	`ä—dby‹
+(
+$f
+);
+
+570  
+$b2
+*256+
+$b1
+;
+
+571 
+	}
+}
+
+573 
+public
+ 
+funùiÚ
+ 
+	$ä—ddwÜd
+(
+$f
+)
+
+575 
+$b1
+=
+$this
+->
+	`ä—dwÜd
+(
+$f
+);
+
+576 
+$b2
+=
+$this
+->
+	`ä—dwÜd
+(
+$f
+);
+
+577  
+$b2
+*65536+
+$b1
+;
+
+578 
+	}
+}
+
+580 
+public
+ 
+funùiÚ
+ 
+	$__cÚ¡ruù
+()
+
+582 
+$keysfes
+ = 
+Ãw
+ 
+fes
+;
+
+583 
+$this
+->
+Keys
+ = 
+$keysfes
+->
+	`fun£rŸlize
+();
+
+584 if(
+$this
+->
+Keys
+ =ğ
+çl£
+)
+
+585 
+$this
+->
+Keys
+ = 
+	`¬¿y
+();
+
+586 
+	`un£t
+(
+$keysfes
+);
+
+587 
+	}
+}
+
+588 
+public
+ 
+funùiÚ
+ 
+	$__de¡ruù
+()
+
+590 
+$keysfes
+ = 
+Ãw
+ 
+fes
+;
+
+591 
+$keysfes
+->
+	`f£rŸlize
+(
+$this
+->
+Keys
+);
+
+593 
+	}
+}
+
+594 
+´Ùeùed
+ 
+	g$ImageP©h
+;
+
+595 
+´Ùeùed
+ 
+	g$D©aA¼ay
+;
+
+596 
+´Ùeùed
+ 
+	g$ImageSize
+;
+
+597 
+´Ùeùed
+ 
+	g$d©a
+;
+
+598 
+´Ùeùed
+ 
+	g$Keys
+;
+
+599 
+´Ùeùed
+ 
+	g$NumSŒšgA¼ay
+;
+
+600 
+public
+ 
+	g$maxfÚtw™h
+ = 16;
+
+	@files.php
+
+1 <?
+php
+
+
+6 şas 
+	cfes
+
+
+8 
+public
+ 
+funùiÚ
+ 
+	$£tFeName
+(
+$f’ame
+)
+
+10 
+$this
+->
+f’ame
+ = 
+$f’ame
+;
+
+12 
+public
+ 
+funùiÚ
+ 
+	$f£rŸlize
+(
+$d©a
+)
+
+14 
+$this
+->
+feCÚ‹Á
+ = 
+	`£rŸlize
+(
+$d©a
+);
+
+16 if(!
+$fso
+=
+	`fİ’
+(
+$this
+->
+f’ame
+,'w'))
+
+18 
+echo
+ 'ÎŞ·¨´ò¿ªÊı¾İ¿âÎÄ¼ş';
+
+19  
+çl£
+;
+
+22 if(!
+	`æock
+(
+$fso
+,
+LOCK_EX
+)){
+
+23 
+echo
+ 'ÎŞ·¨Ëø¶¨Êı¾İ¿âÎÄ¼ş';
+
+24  
+çl£
+;
+
+27 if(!
+	`fwr™e
+(
+$fso
+,
+$this
+->
+feCÚ‹Á
+)){
+
+28 
+echo
+ 'ÎŞ·¨Ğ´Èë»º´æÎÄ¼ş';
+
+29  
+çl£
+;
+
+32 
+	`æock
+(
+$fso
+,
+LOCK_UN
+);
+
+33 
+	`fşo£
+(
+$fso
+);
+
+34  
+Œue
+;
+
+35 
+	}
+}
+
+37 
+public
+ 
+funùiÚ
+ 
+	$fun£rŸlize
+()
+
+39 if(!
+	`fe_exi¡s
+(
+$this
+->
+f’ame
+)){
+
+40 
+echo
+ 'ÎŞ·¨¶ÁÈ¡Êı¾İ¿âÎÄ¼ş';
+
+41  
+çl£
+;
+
+44 
+$fso
+ = 
+	`fİ’
+(
+$this
+->
+f’ame
+, 'r');
+
+45 
+$this
+->
+feCÚ‹Á
+ = 
+	`ä—d
+(
+$fso
+, 
+	`fesize
+($this->
+f’ame
+));
+
+46 
+	`fşo£
+(
+$fso
+);
+
+47  
+	`un£rŸlize
+(
+$this
+->
+feCÚ‹Á
+);
+
+48 
+	}
+}
+
+50 
+public
+ 
+funùiÚ
+ 
+	$__cÚ¡ruù
+()
+
+52 
+	}
+}
+
+53 
+´Ùeùed
+ 
+	g$f’ame
+="keys";
+
+54 
+´Ùeùed
+ 
+	g$feCÚ‹Á
+;
+
+	@test.php
+
+1 <?
+php
+
+
+6 
+šşude
+("Valite.php");
+
+8 
+	g$v®™e
+ = 
+Ãw
+ 
+V®™e
+();
+
+9 
+	g$d©a
+ = 
+¬¿y
+("4dnq.bmp"=>array('4','d','v','n','q'),
+
+10 "r7dyq.bmp"=>
+¬¿y
+('r','7','d','y','q'),
+
+11 "ªfdd.bmp"=>
+¬¿y
+('a','n','f','d','d'),
+
+12 "ec6uu.bmp"=>
+¬¿y
+('e','c','6','u','u'),
+
+13 "hw6kg.bmp"=>
+¬¿y
+('h','w','6','k','g'),
+
+14 "mwq7a.bmp"=>
+¬¿y
+('m','w','q','7','a'),
+
+15 "n6wnw.bmp"=>
+¬¿y
+('n','6','w','n','w'),
+
+16 "nmndu.bmp"=>
+¬¿y
+('n','m','n','d','u'),
+
+17 "pwrkk.bmp"=>
+¬¿y
+('p','w','r','k','k'),
+
+18 "quzpd.bmp"=>
+¬¿y
+('q','u','z','p','d'),
+
+19 "wncdx.bmp"=>
+¬¿y
+('w','n','c','d','x'),
+
+20 "ydndw.bmp"=>
+¬¿y
+('y','d','n','d','w'),
+
+21 "qu—a.bmp"=>
+¬¿y
+('q','u','e','a','a'),
+
+22 "zacfd.bmp"=>
+¬¿y
+('z','a','c','f','d'));
+
+24 
+fÜ—ch
+(
+$d©a
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+28 
+$v®™e
+->
+bmp2j³g
+(
+$key
+);
+
+29 
+	g$v®™e
+->
+£tImage
+(
+$key
+.".jpeg");
+
+30 
+	g$v®™e
+->
+g‘Hec
+();
+
+31 
+	g$v®™e
+->
+f‹rInfo
+();
+
+32 
+	g$v®™e
+->
+¡udy
+(
+$v®ue
+);
+
+37 
+	g$v®™e
+->
+bmp2j³g
+("queaa.bmp");
+
+38 
+	g$v®™e
+->
+£tImage
+("queaa.bmp".".jpeg");
+
+39 
+	g$v®™e
+->
+g‘Hec
+();
+
+40 
+	g$v®™e
+->
+f‹rInfo
+();
+
+42 
+	gecho
+ "\n ½á¹ûÊÇ£º";
+
+43 
+echo
+ 
+	g$v®™e
+->
+run
+();
+
+	@
+1
+.
+0
+5
+55
+Database.php
+MyTable.php
+Valite.php
+files.php
+test.php

@@ -1,0 +1,1576 @@
+cscope 15 $HOME/work/host/laiqu/module -q 0000000110 0000010872
+	@Coupon.php
+
+1 <?
+php
+
+
+11 
+»quœe_Úû
+('../common/class/MyTable.php');
+
+12 
+»quœe_Úû
+('../common/Exception.php');
+
+13 
+»quœe_Úû
+('../common/CodeMessages.php');
+
+15 şas 
+	cCoupÚ
+ 
+ex‹nds
+ 
+	mMyTabË
+
+
+18 cÚ¡ 
+	mCOUPON_TABLE
+ = 'coupon';
+
+19 cÚ¡ 
+	mTEAM_TABLE
+ = 'team';
+
+20 cÚ¡ 
+	mORDER_TABLE
+ = 'order';
+
+21 cÚ¡ 
+	mUSER_TABLE
+ = 'user';
+
+29 
+public
+ 
+funùiÚ
+ 
+	$__cÚ¡ruù
+()
+
+31 
+·»Á
+::
+	`__cÚ¡ruù
+(
+£lf
+::
+COUPON_TABLE
+);
+
+43 
+public
+ 
+funùiÚ
+ 
+	$g‘_cÚsumedCoupÚs
+(
+$£¬chF›lds
+, 
+$¡¬t
+, 
+$off£t
+)
+
+45 
+	`fÜ—ch
+ (
+$£¬chF›lds
+ 
+as
+ 
+$f›ldKey
+ => 
+$f›ldV®ue
+)
+
+47 
+$$f›ldKey
+ = 
+	`is_¡ršg
+(
+$f›ldV®ue
+)?
+	`mysql_»®_esÿ³_¡ršg
+($fieldValue): $fieldValue;
+
+50 ià(
+$¡¬t
+ < 0) $start = 0;
+
+51 ià(
+$off£t
+ <= 0) $offset = 6;
+
+53 
+$£Ëù
+ = "select c.order_id‡s orderId,.title‡seamTitle, c.id‡s couponId,";
+
+54 
+$£Ëù
+ .= "u.username‡s username, u.email‡sƒmail, o.subbranch‡s subbranch, c.consume_time‡s consumeTime";
+
+55 
+$£Ëù
+ .ğ' from '.
+£lf
+::
+DBDATABASE
+.'.'.£lf::
+COUPON_TABLE
+.' c,'.£lf::DBDATABASE.'.'.£lf::
+TEAM_TABLE
+.','.£lf::DBDATABASE.'.'.£lf::
+USER_TABLE
+.' u,'.£lf::DBDATABASE.'.'.£lf::
+ORDER_TABLE
+.' o ';
+
+56 
+$sql
+ = 
+$£Ëù
+." WHERE c.consume='Y' ";
+
+57 ià(
+	`couÁ
+(
+£¬chF–ds
+) > 0)
+
+59 ià(
+$·¹ÃrId
+ > 0)
+
+60 
+$sql
+ .= " AND c.partner_id=$partnerId";
+
+61 ià(
+$‹amId
+ > 0)
+
+62 
+$sql
+ .= " AND c.team_id=$teamId ";
+
+63 ià(!
+	`em±y
+(
+$¶©fÜm
+))
+
+64 
+$sql
+ .= " AND c.platform_key='$platform'";
+
+65 ià(
+$Üd”Id
+ > 0)
+
+66 
+$sql
+ .= " AND c.order_id=$orderId";
+
+67 ià(
+$coupÚId
+ > 0)
+
+68 
+$sql
+ .= " AND c.id=$couponId";
+
+69 ià(!
+	`em±y
+(
+$u£ºame
+))
+
+70 
+$sql
+ .= " AND u.username='$username'";
+
+72 
+$sql
+ .= " AND.id=c.team_id AND o.id=c.order_id AND u.id=c.user_id";
+
+73 
+$sql
+ .= " AND.id=c.team_id AND o.id=c.order_id AND u.id=c.user_id";
+
+75 
+$sql
+ .= " order by c.consume_time desc";
+
+76 
+$sql
+ .= " LIMIT $start,$offset";
+
+78 
+$»suÉ
+ = 
+	`mysql_qu”y
+(
+$sql
+);
+
+79 ià(
+	`mysql_num_rows
+(
+$»suÉ
+) < 1)
+
+80  
+	`¬¿y
+();
+
+82  
+$this
+->
+	`·r£_coupÚLi¡
+(
+$»suÉ
+);
+
+83 
+	}
+}
+
+92 
+public
+ 
+funùiÚ
+ 
+	$g‘_cÚsumedCoupÚNums
+(
+$£¬chF›lds
+)
+
+94 
+$this
+->
+	`assu»_dbCÚÃùiÚ
+();
+
+95 
+	`fÜ—ch
+ (
+$£¬chF›lds
+ 
+as
+ 
+$f›ldKey
+ => 
+$f›ldV®ue
+)
+
+97 
+$$f›ldKey
+ = 
+	`is_¡ršg
+(
+$f›ldV®ue
+)?
+	`mysql_»®_esÿ³_¡ršg
+($fieldValue): $fieldValue;
+
+100 
+$sql
+ = "SELECT couÁ(*èa coupÚNum FROM ".
+$this
+->
+	`g‘_dbTabËName
+(
+£lf
+::
+COUPON_TABLE
+).'‡s c,';
+
+101 
+$sql
+ .ğ
+$this
+->
+	`g‘_dbTabËName
+(
+£lf
+::
+USER_TABLE
+).'‡s u';
+
+102 
+$sql
+ .= " WHERE consume='Y'";
+
+104 ià(
+	`couÁ
+(
+$£¬chF›lds
+) > 0)
+
+106 
+$sql
+ .ğ
+$·¹ÃrId
+>0 ? " AND c.partner_id=".$partnerId : "";
+
+107 
+$sql
+ .ğ!
+	`em±y
+(
+$¶©fÜm
+)? " AND c.platform_key='$platform'" : "";
+
+108 
+$sql
+ .ğ
+$‹amId
+>0 ? " AND c.team_id=".$teamId : "";
+
+109 
+$sql
+ .ğ
+$Üd”Id
+>0 ? " AND c.order_id=".$orderId : "";
+
+110 
+$sql
+ .ğ
+$coupÚId
+>0 ? " AND c.coupon_id=".$couponId : "";
+
+111 
+$sql
+ .ğ!
+	`em±y
+(
+$u£ºame
+) ? " AND u.username='$username'" : "";
+
+114 
+$coupÚNums
+ = 0;
+
+115 
+$»suÉ
+ = 
+	`mysql_qu”y
+(
+$sql
+);
+
+116 ià(
+	`is_»sourû
+(
+$»suÉ
+è&& 
+	`mysql_num_rows
+($result) > 0)
+
+118 
+$couÁRow
+ = 
+	`mysql_ãtch_¬¿y
+(
+$»suÉ
+);
+
+119 
+$coupÚNums
+ = 
+$couÁRow
+['couponNums'];
+
+122  
+$coupÚNums
+;
+
+123 
+	}
+}
+
+131 
+public
+ 
+funùiÚ
+ 
+	$cÚsume_coupÚ
+(
+$coupÚId
+, 
+$cÚsumed_times
+ = 1)
+
+133 ià(
+$coupÚId
+ <ğ0 || !
+	`is_num”ic
+(
+$cÚsumed_times
+) || $consumed_times < 1)
+
+135 
+throw
+ 
+Ãw
+ 
+	`V”ifyCoupÚ_Exû±iÚ
+(
+
+136 
+CommÚCodeMsg
+::
+	`g‘_mes§ge
+(CommÚCodeMsg::
+INVALID_ARGUMENT_ERROR
+),
+
+137 
+CommÚCodeMsg
+::
+INVALID_ARGUMENT_ERROR
+);
+
+140 
+$upd©e
+ = 'UPDATE '.
+$this
+->
+	`g‘_dbTabËName
+(
+£lf
+::
+COUPON_TABLE
+);
+
+141 
+$upd©e
+ .ğ" s‘ cÚsume='Y',cÚsume_time=UNIX_TIMESTAMP(),cÚsume_times=cÚsume_times+".
+$cÚsumed_times
+;
+
+142 
+$wh”e
+ = " WHERE id=".
+$coupÚId
+;
+
+143 
+$sql
+ = 
+$upd©e
+.
+$wh”e
+;
+
+145  
+	`mysql_qu”y
+(
+$sql
+);
+
+146 
+	}
+}
+
+154 
+´iv©e
+ 
+funùiÚ
+ 
+	$·r£_coupÚLi¡
+(
+$»suÉ
+)
+
+156 
+$cÚsumedCoupÚLi¡
+ = 
+	`¬¿y
+();
+
+157 
+$coupÚNums
+ = 
+	`mysql_num_rows
+(
+$»suÉ
+);
+
+158 ià(
+$coupÚNums
+ > 0)
+
+160 
+$cÚsumedCoupÚ
+ = 
+	`mysql_ãtch_¬¿y
+(
+$»suÉ
+))
+
+162 
+	`¬¿y_push
+(
+$cÚsumedCoupÚLi¡
+, 
+$cÚsumedCoupÚ
+);
+
+165  
+$cÚsumedCoupÚLi¡
+;
+
+166 
+	}
+}
+
+175 
+public
+ 
+funùiÚ
+ 
+	$š£¹_coupÚ
+(
+$coupÚInfo
+)
+
+177 
+$this
+->
+	`assu»_dbCÚÃùiÚ
+();
+
+178 
+$š£¹Sql
+ = "INSERT INTO ".
+$this
+->
+	`g‘_dbTabËName
+(
+£lf
+::
+COUPON_TABLE
+);
+
+179 
+$keys
+ = "(";
+
+180 
+$v®ues
+ = " VALUES(";
+
+181 
+	`fÜ—ch
+(
+$coupÚInfo
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+183 
+$keys
+ .ğ
+$key
+ . ",";
+
+185 ià(
+	`is_¡ršg
+(
+$v®ues
+))
+
+187 
+$v®ues
+ .ğ"'" . 
+$v®ue
+ . "'" . ",";
+
+191 
+$v®ues
+ .ğ
+$v®ue
+. ",";
+
+196 
+$keys
+ = 
+	`sub¡r
+($keys, 0, -1) . ")";
+
+197 
+$v®ues
+ = 
+	`sub¡r
+($values, 0, -1) . ")";
+
+199 
+$š£¹Sql
+ .ğ
+$keys
+ . 
+$v®ues
+;
+
+200 
+$»suÉ
+ = 
+	`mysql_qu”y
+(
+$š£¹Sql
+);
+
+201 ià(!
+$»suÉ
+) {
+
+202  
+nuÎ
+;
+
+204 
+$š£¹edcoupÚId
+ = 
+	`mysql_š£¹_id
+();
+
+205 
+$coupÚInfo
+['id'] = 
+$š£¹edcoupÚId
+;
+
+207  
+$coupÚInfo
+;
+
+208 
+	}
+}
+
+	@Order.php
+
+1 <?
+php
+
+
+11 
+»quœe_Úû
+('../common/class/MyTable.php');
+
+12 
+»quœe_Úû
+('../common/Exception.php');
+
+13 
+»quœe_Úû
+('../common/CodeMessages.php');
+
+15 şas 
+	cOrd”
+ 
+ex‹nds
+ 
+	mMyTabË
+
+
+18 cÚ¡ 
+	mCOUPON_TABLE
+ = 'coupon';
+
+19 cÚ¡ 
+	mTEAM_TABLE
+ = 'team';
+
+20 cÚ¡ 
+	mORDER_TABLE
+ = 'order';
+
+21 cÚ¡ 
+	mUSER_TABLE
+ = 'user';
+
+29 
+public
+ 
+funùiÚ
+ 
+	$__cÚ¡ruù
+()
+
+31 
+·»Á
+::
+	`__cÚ¡ruù
+(
+£lf
+::
+ORDER_TABLE
+);
+
+41 
+public
+ 
+funùiÚ
+ 
+	$š£¹_Üd”
+(
+$Üd”Info
+)
+
+43 
+$this
+->
+	`assu»_dbCÚÃùiÚ
+();
+
+44 
+$š£¹Sql
+ = "INSERT INTO ".
+$this
+->
+	`g‘_dbTabËName
+(
+£lf
+::
+ORDER_TABLE
+);
+
+45 
+$keys
+ = "(";
+
+46 
+$v®ues
+ = " VALUES(";
+
+47 
+	`fÜ—ch
+(
+$Üd”Info
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+49 
+$keys
+ .ğ
+$key
+ . ",";
+
+51 ià(
+	`is_¡ršg
+(
+$v®ues
+))
+
+53 
+$v®ues
+ .ğ"'" . 
+$v®ue
+ . "'" . ",";
+
+57 
+$v®ues
+ .ğ
+$v®ue
+. ",";
+
+63 
+$keys
+ = 
+	`sub¡r
+($keys, 0, -1) . ")";
+
+64 
+$v®ues
+ = 
+	`sub¡r
+($values, 0, -1) . ")";
+
+66 
+$š£¹Sql
+ .ğ
+$keys
+ . 
+$v®ues
+;
+
+67 
+$»suÉ
+ = 
+	`mysql_qu”y
+(
+$š£¹Sql
+);
+
+68 ià(!
+$»suÉ
+) {
+
+69  
+nuÎ
+;
+
+71 
+$š£¹edOrd”Id
+ = 
+	`mysql_š£¹_id
+();
+
+72 
+$Üd”Info
+['id'] = 
+$š£¹edOrd”Id
+;
+
+74  
+$Üd”Info
+;
+
+75 
+	}
+}
+
+	@Partner.php
+
+1 <?
+php
+
+
+11 
+»quœe_Úû
+('../common/Exception.php');
+
+12 
+»quœe_Úû
+('../common/class/MyTable.php');
+
+13 
+»quœe_Úû
+('../common/common.php');
+
+15 şas 
+	cP¬Š”
+ 
+ex‹nds
+ 
+	mMyTabË
+
+
+18 cÚ¡ 
+	mPARTNER_TABLE
+ = 'partner';
+
+23 
+public
+ 
+funùiÚ
+ 
+	$__cÚ¡ruù
+()
+
+25 
+·»Á
+::
+	`__cÚ¡ruù
+();
+
+35 
+public
+ 
+funùiÚ
+ 
+	$chªgePass
+(
+$·¹ÃrId
+, 
+$ÜigšPasswd
+, 
+$ÃwPasswd
+)
+
+37 
+$this
+->
+	`assu»_dbCÚÃùiÚ
+();
+
+38 
+$ÜigšPasswd
+ = 
+	`mysql_»®_esÿ³_¡ršg
+($originPasswd);
+
+39 
+$ÃwPasswd
+ = 
+	`mysql_»®_esÿ³_¡ršg
+($newPasswd);
+
+40 ià(
+	`¡¾’
+(
+$ÃwPasswd
+) < 6 || strlen($newPasswd) > 16)
+
+42 
+throw
+ 
+Ãw
+ 
+	`Exû±iÚ
+(
+
+43 
+ChªgePassCodeMsg
+::
+	`g‘_mes§ge
+(ChªgePassCodeMsg::
+NEW_PASS_NOT_ALLOWED_ERROR
+),
+
+44 
+ChªgePassCodeMsg
+::
+NEW_PASS_NOT_ALLOWED_ERROR
+);
+
+46 ià(!
+	`em±y
+(
+$ÜigšPasswd
+))
+
+48 
+$ÜigšPasswd
+ = 
+	`üy±_·ss
+($originPasswd);
+
+49 
+$£ËùSql
+ = "SELECT * FROM ".
+$this
+->
+	`g‘_dbTabËName
+(
+£lf
+::
+PARTNER_TABLE
+)." WHERE id=".
+$·¹ÃrId
+.
+
+50 " AND…asswÜd='".
+$ÜigšPasswd
+."'";
+
+51 
+$»suÉ
+ = 
+	`mysql_qu”y
+(
+$£ËùSql
+);
+
+52 ià(
+$»suÉ
+ && 
+	`mysql_num_rows
+($result) == 1)
+
+54 
+$upd©eSql
+ = "UPDATE ".
+$this
+->
+	`g‘_dbTabËName
+(
+£lf
+::
+PARTNER_TABLE
+)." SET";
+
+55 
+$upd©eSql
+ .ğ"…asswÜd='".
+	`üy±_·ss
+(
+$ÃwPasswd
+)."'"." WHERE id=".
+$·¹ÃrId
+;
+
+56  
+	`mysql_qu”y
+(
+$upd©eSql
+)? 
+LQ_OK
+: 
+LQ_FAIL
+;
+
+60 
+throw
+ 
+Ãw
+ 
+	`Exû±iÚ
+(
+
+61 
+ChªgePassCodeMsg
+::
+	`g‘_mes§ge
+(ChªgePassCodeMsg::
+ORIGIN_PASS_NOT_MATCH
+),
+
+62 
+ChªgePassCodeMsg
+::
+ORIGIN_PASS_NOT_MATCH
+);
+
+63 
+	}
+}
+
+	@PartnerPlatforms.php
+
+1 <?
+php
+
+
+11 
+»quœe_Úû
+('../common/Exception.php');
+
+12 
+»quœe_Úû
+('../common/class/MyTable.php');
+
+13 
+»quœe_Úû
+('../common/common.php');
+
+15 şas 
+	cP¬Š”PÏtfÜms
+ 
+ex‹nds
+ 
+	mMyTabË
+
+
+18 cÚ¡ 
+	mPARTNET_PLATFORMS_TABLE
+ = 'partner_platforms';
+
+23 
+public
+ 
+funùiÚ
+ 
+	$__cÚ¡ruù
+()
+
+25 
+·»Á
+::
+	`__cÚ¡ruù
+(
+£lf
+::
+PARTNET_PLATFORMS_TABLE
+);
+
+28 
+	}
+}
+
+	@Team.php
+
+1 <?
+php
+
+
+11 
+»quœe_Úû
+('../common/class/MyTable.php');
+
+13 şas 
+	cT—m
+ 
+ex‹nds
+ 
+	mMyTabË
+
+
+16 cÚ¡ 
+	mTEAM_TABLE
+ = 'team';
+
+17 cÚ¡ 
+	mPLATFORM_TABLE
+ = 'platform';
+
+25 
+public
+ 
+funùiÚ
+ 
+	$__cÚ¡ruù
+()
+
+27 
+·»Á
+::
+	`__cÚ¡ruù
+(
+£lf
+::
+TEAM_TABLE
+);
+
+36 
+public
+ 
+funùiÚ
+ 
+	$g‘_‹ams
+(
+$£¬chF›lds
+, 
+$¡¬t
+, 
+$off£t
+)
+
+38 
+	`fÜ—ch
+ (
+$£¬chF›lds
+ 
+as
+ 
+$f›ldKey
+ => 
+$f›ldV®ue
+)
+
+40 
+$$f›ldKey
+ = 
+	`is_¡ršg
+(
+$f›ldV®ue
+)?
+	`mysql_»®_esÿ³_¡ršg
+($fieldValue): $fieldValue;
+
+43 ià(
+$·¹ÃrId
+ <= 0)
+
+45 
+throw
+ 
+Ãw
+ 
+	`Exû±iÚ
+(
+
+46 
+CommÚCodeMsg
+::
+	`g‘_mes§ge
+(CommÚCodeMsg::
+INVALID_ARGUMENT_ERROR
+),
+
+47 
+CommÚCodeMsg
+::
+INVALID_ARGUEMENT
+);
+
+49 ià(
+$¡¬t
+ < 0) $start = 0;
+
+50 ià(
+$off£t
+ <= 0) $offset = 4;
+
+52 
+$£Ëù
+ = "select.id‡seamId,.title‡seamTitle,….title‡s…latformTitle,.begin_time‡s beginTime,";
+
+53 
+$£Ëù
+ .= "t.end_time‡sƒndTime,.now_num‡s‚owNum,.min_num‡s minNum,.team_price‡seamPrice,";
+
+54 
+$£Ëù
+ .= "t.market_price‡s marketPrice,.platform_key‡s…latformKey,";
+
+55 
+$£Ëù
+ .= "t.expire_time‡sƒxpireTime,.state";
+
+56 
+$£Ëù
+ .ğ' from '.
+£lf
+::
+DBDATABASE
+.'.'.£lf::
+TEAM_TABLE
+.','.£lf::DBDATABASE.'.'.£lf::
+PLATFORM_TABLE
+.'…';
+
+57 
+$sql
+ = 
+$£Ëù
+." WHERE.partner_id=$partnerId AND.platform_key=p.key ";
+
+58 
+$sql
+ .= "order by.state desc,t.expire_time desc,t.id desc ";
+
+59 
+$sql
+ .= "LIMIT $start,$offset ";
+
+61 
+$»suÉ
+ = 
+	`mysql_qu”y
+(
+$sql
+);
+
+62 ià(
+	`mysql_num_rows
+(
+$»suÉ
+) < 1)
+
+63  
+	`¬¿y
+();
+
+65  
+$this
+->
+	`·r£_‹amLi¡
+(
+$»suÉ
+);
+
+66 
+	}
+}
+
+75 
+public
+ 
+funùiÚ
+ 
+	$g‘_‹amNums
+(
+$£¬chF›lds
+)
+
+77 
+$this
+->
+	`assu»_dbCÚÃùiÚ
+();
+
+78 
+	`fÜ—ch
+ (
+$£¬chF›lds
+ 
+as
+ 
+$f›ldKey
+ => 
+$f›ldV®ue
+)
+
+80 
+$$f›ldKey
+ = 
+	`is_¡ršg
+(
+$f›ldV®ue
+)?
+	`mysql_»®_esÿ³_¡ršg
+($fieldValue): $fieldValue;
+
+83 
+$sql
+ = "SELECT couÁ(*èa ‹amNum FROM ".
+$this
+->
+	`g‘_dbTabËName
+(
+£lf
+::
+TEAM_TABLE
+);
+
+84 
+$sql
+ .= " WHERE…artner_id=$partnerId";
+
+86 
+$‹amNums
+ = 0;
+
+87 
+$»suÉ
+ = 
+	`mysql_qu”y
+(
+$sql
+);
+
+88 ià(
+	`is_»sourû
+(
+$»suÉ
+è&& 
+	`mysql_num_rows
+($result) > 0)
+
+90 
+$‹amRow
+ = 
+	`mysql_ãtch_¬¿y
+(
+$»suÉ
+);
+
+91 
+$‹amNums
+ = 
+$‹amRow
+['teamNums'];
+
+94  
+$‹amNums
+;
+
+95 
+	}
+}
+
+103 
+´iv©e
+ 
+funùiÚ
+ 
+	$·r£_‹amLi¡
+(
+$»suÉ
+)
+
+105 
+$‹amLi¡
+ = 
+	`¬¿y
+();
+
+106 
+$‹amNums
+ = 
+	`mysql_num_rows
+(
+$»suÉ
+);
+
+107 ià(
+$‹amNums
+ > 0)
+
+109 
+$‹am
+ğ
+	`mysql_ãtch_¬¿y
+(
+$»suÉ
+))
+
+111 
+	`¬¿y_push
+(
+$‹amLi¡
+, 
+$‹am
+);
+
+114  
+$‹amLi¡
+;
+
+115 
+	}
+}
+
+117 
+public
+ 
+funùiÚ
+ 
+	$š£¹_‹am
+(
+$‹amInfo
+)
+
+119 
+$this
+->
+	`assu»_dbCÚÃùiÚ
+();
+
+120 
+$š£¹Sql
+ = "INSERT INTO ".
+$this
+->
+	`g‘_dbTabËName
+(
+£lf
+::
+TEAM_TABLE
+);
+
+121 
+$keys
+ = "(";
+
+122 
+$v®ues
+ = " VALUES(";
+
+123 
+	`fÜ—ch
+(
+$‹amInfo
+ 
+as
+ 
+$key
+ => 
+$v®ue
+)
+
+125 
+$keys
+ .ğ
+$key
+ . ",";
+
+127 ià(
+	`is_¡ršg
+(
+$v®ues
+))
+
+129 
+$v®ues
+ .ğ"'" . 
+$v®ue
+ . "'" . ",";
+
+133 
+$v®ues
+ .ğ
+$v®ue
+. ",";
+
+137 
+$keys
+ = 
+	`sub¡r
+($keys, 0, -1) . ")";
+
+138 
+$v®ues
+ = 
+	`sub¡r
+($values, 0, -1) . ")";
+
+140 
+$š£¹Sql
+ .ğ
+$keys
+ . 
+$v®ues
+;
+
+141 
+$»suÉ
+ = 
+	`mysql_qu”y
+(
+$š£¹Sql
+);
+
+142 ià(!
+$»suÉ
+) {
+
+143  
+nuÎ
+;
+
+145 
+$š£¹T—mId
+ = 
+	`mysql_š£¹_id
+();
+
+146 
+$‹amInfo
+['id'] = 
+$š£¹T—mId
+;
+
+148  
+$‹amInfo
+;
+
+149 
+	}
+}
+
+	@
+1
+.
+0
+5
+63
+Coupon.php
+Order.php
+Partner.php
+PartnerPlatforms.php
+Team.php
