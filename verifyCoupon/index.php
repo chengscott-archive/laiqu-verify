@@ -6,9 +6,11 @@
 <link href="css/check_css.css" rel="stylesheet" type="text/css" />
 
 <link href="../css/com_css.css" rel="stylesheet" type="text/css" />
+<link href="../css/simplemodal.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<script src="js/jquery.min.js"></script>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery.simplemodal.js"></script>
 <script src="js/verifyCoupon.js"></script>
 
 <div class="main" id="main">
@@ -55,8 +57,9 @@
         
             <div class="platform_b">
             <select class="platform" name="platform" id="platform">
+                <option value="juhuasuan">聚划算</option>
                 <option value="laiqu">来趣</option>
-                <option value="360buy">京东</option>
+                <!-- <option value="360buy">京东</option> -->
             </select>
             </div>
         
@@ -69,8 +72,8 @@
             </div>
         
             <div class="button">
-            <a class="reset" type="reset" value="" name="reset" id="reset" href="#"></a>
-            <a class="submit" type="submit" value="" name="submit" id="submit" href="#"></a>
+            <a class="reset" type="reset" value="" name="reset" id="reset" href="javascript:void(0);"></a>
+            <a class="submit" type="submit" value="" name="submit" id="submit" href="javascript:void(0);"></a>
             </div>
         </form>
         </div>

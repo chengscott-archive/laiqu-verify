@@ -24,7 +24,7 @@ class Team extends MyTable
      */
     public function __construct()
     {
-        parent::__construct(); 
+        parent::__construct(self::TEAM_TABLE); 
     }
     /**
     * query consumed coupons according to partner id and team id
@@ -113,6 +113,39 @@ class Team extends MyTable
         }
         return $teamList;
     }
+
+    public function insert_team($teamInfo)
+    {
+        $this->assure_dbConnection();
+        $insertSql = "INSERT INTO ".$this->get_dbTableName(self::TEAM_TABLE);
+        $keys = "(";
+        $values = " VALUES(";
+        foreach($teamInfo as $key => $value)
+        {
+            $keys .= $key . ",";
+            // 偷懒，对now()特殊处理，不加引号
+            if (is_string($values))
+            {
+                $values .= "'" . $value . "'" . ",";
+            }
+            else
+            {
+                $values .=  $value. ",";
+            } 
+        }
+
+        $keys = substr($keys, 0, -1) . ")";
+        $values = substr($values, 0, -1) . ")";
+
+        $insertSql .= $keys . $values;
+        $result = mysql_query($insertSql);
+        if (!$result) {
+            return null;
+        }
+        $insertTeamId = mysql_insert_id();
+        $teamInfo['id'] = $insertTeamId;
+
+        return $teamInfo;
+    }
 }
 ?>
-

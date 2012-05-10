@@ -26,7 +26,7 @@ class VerifyCoupon
 
 
     // platforms supporting coupon verification
-    private $_supportPlatforms = array("laiqu", "360buy");
+    private $_supportPlatforms = array("laiqu", "juhuasuan");  //  currently not support 360buy
 
     private $_platform = '';
     private $_requestMethod = '';   // api request method => 'REST'
@@ -141,6 +141,19 @@ class VerifyCoupon
                 $inputs['couponPwd'] = $request['couponPwd'];
 
         }
+        if (isset($this->_requestParams->consumeCount))
+        {
+            $consumeCount = $request['consumeCount'];
+            if ($consumeCount === "" || !is_numeric($consumeCount) || intval($consumeCount) < 1)
+            {
+                throw new VerifyCoupon_RequestException(
+                    VerifyCouponCodeMsg::get_message(VerifyCouponCodeMsg::MALFORMED_COUNT_NUMBER),
+                    VerifyCouponCodeMsg::MALFORMED_COUNT_NUMBER);            
+            }
+            else
+                $inputs['consumeCount'] = $consumeCount;
+
+        }
         return $inputs;
     }
 
@@ -157,7 +170,7 @@ class VerifyCoupon
     public function get_responseCode($response)
     {
         $responseCode = "";    //验证结果编码
-        if ($response == "" || $this->_responseType == "" || 
+        if (($response == "" && $this->_responseType !== "JUHUASUAN") || $this->_responseType == "" || 
             $this->_codeTag == ""  || $this->_codeSuccess == "")
         {
             throw new VerifyCoupon_ParseResponseException(
@@ -165,7 +178,9 @@ class VerifyCoupon
                 VerifyCouponCodeMsg::PARSE_RESPONSE_EXCEPTION);            
         }            
 
-        if ($this->_responseType == "LAIQU")
+        $codeTag = $this->_codeTag;
+        $responseType = strtoupper($this->_responseType);
+        if ($responseType== "LAIQU")
         {
             preg_match_all("/(<([\w]+)[^>]*>)(.*?)(<\/\\2>)/", $response, $matches, PREG_SET_ORDER);        
             foreach ($matches as $val) {
@@ -174,11 +189,28 @@ class VerifyCoupon
                     $responseCode = $val[3];
                 }
             }
-        } else if ($this->_responseType == "XML")
+        } else if ($responseType == "XML")
         {
             $xmlResponse = simplexml_load_string($response);
-            $responseCode = $xmlResponse->$code;
-        } 
+            $responseCode = $xmlResponse->$codeTag;
+        } else if ($responseType === "JSON")
+        {
+            $jsonResponse = json_decode($response);
+            $responseCode = $jsonResponse->$codeTag;
+        } else if ($responseType === "JUHUASUAN")
+        {
+            // 针对聚划算的返回结果进行特殊处理
+            // 返回结果中有true, 说明验证成功
+            if (false === stripos($response, "false"))
+            {
+                $responseCode = "true";
+            } else if (false !== strpos($response, "302")){
+                // 聚划算验证结果中如果包含 status:302, 说明登陆session过期了.
+                $responseCode = "login_expired";
+            } else {
+                $responseCode = "false";
+            }
+        }
 
         if ($responseCode == '')
         {
@@ -189,9 +221,14 @@ class VerifyCoupon
         if ($responseCode == $this->_codeSuccess)
         {
             return VerifyCouponCodeMsg::VERIFY_COUPON_SUCCESS;
+        } 
+        else if ($responseCode === "login_expired")
+        {
+            return VerifyCouponCodeMsg::JUHUASUAN_LOGIN_EXPIRED;
         }
-        else 
+        else {
             return VerifyCouponCodeMsg::VERIFY_COUPON_FAIL;
+        }
     }
 
     /**

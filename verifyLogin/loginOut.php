@@ -17,5 +17,9 @@ if (isset($_SESSION['partnerId']))
     unset($_SESSION['username']);
     unset($_SESSION['title']);
 }
+if (isset($_SESSION['JSESSIONID']))
+    unset($_SESSION['JSESSIONID']);
+{
+}
 redirect('login.html');
 ?>

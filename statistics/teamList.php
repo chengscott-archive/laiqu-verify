@@ -107,6 +107,7 @@ $totalPages = cal_totalPages($teamNums, TABLE_ROW_NUMS);
             
             <!--<div class="table_item">-->
             <?php
+                $nullDataString = '/';
                 $htmlTeamList = '';
                 for ($i = 0; $i < count($teamList); $i++)
                 {
@@ -132,13 +133,18 @@ $totalPages = cal_totalPages($teamNums, TABLE_ROW_NUMS);
                         <a class='table_item_ico fl' ><img src='../images/logo_team_{$platformKey}.jpg' alt='$platformTitle' title='$platformTitle'/></a>
                         </div> <div class='item4 fl{$oddEvenClass}'>
                         <a class='table_item_text' >";
-                    $htmlTeamList .= date('Y-m-d',$beginTime).'<br />'.date('Y-m-d',$endTime);
+                        $beginTimeString = $endTimeString = $nullDataString;
+                        if ($beginTime >0) $beginTimeString = date('Y-m-d',$beginTime);
+                        if ($endTime >0) $endTimeString = date('Y-m-d',$endTime);
+                    $htmlTeamList .= $beginTimeString.'<br />'.$endTimeString;
                     $htmlTeamList .="</a></div>
                         <div class='item1 fl{$oddEvenClass}'>
                         <a class='table_item_text' >{$nowNum}/{$minNum}</a>
                         </div>
                         <div class='item6 fl{$oddEvenClass}'>
-                        <a class='table_item_text' >￥{$teamPrice}<br />￥{$marketPrice}</a>
+                        <a class='table_item_text' >￥{$teamPrice}";
+                    if ($marketPrice > 0) $htmlTeamList .="<br />￥{$marketPrice}";
+                    $htmlTeamList.="</a>
                         </div>
                         <div class='item7 fl{$oddEvenClass}'>
                             <div class='n_1'>

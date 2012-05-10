@@ -19,6 +19,7 @@ class MyTable
     const DBPASS = 'ghz86377328';
     const DBDATABASE = 'lq_verify';
     
+    protected $_tablename = null;
     protected $_dbconn = null;
     /**
      * Constructor.
@@ -26,8 +27,10 @@ class MyTable
      * @param string     
      * @return  
      */
-    public function __construct()
+    public function __construct($tableName = "")
     {
+        if ($tableName !== "")
+            $this->_tablename = $tableName;
         $this->assure_dbConnection();
     }
 
@@ -55,6 +58,36 @@ class MyTable
             $tableName = self::DBDATABASE.".".$tableName;
 
         return $tableName;
+    }
+
+            //throw new Exception(
+                //ChangePassCodeMsg::get_message(ChangePassCodeMsg::NEW_PASS_NOT_ALLOWED_ERROR),
+                //ChangePassCodeMsg::NEW_PASS_NOT_ALLOWED_ERROR);
+    // todo: 
+    public function get_row($conditions)
+    {
+        $this->assure_dbConnection();
+
+        $selectSql = "SELECT * FROM ".$this->get_dbTableName($this->_tablename)." WHERE 1=1 ";
+        foreach ($conditions as $key => $value)
+        {
+            $key = mysql_real_escape_string($key);
+            $value = mysql_real_escape_string($value);
+
+            if (is_string($value))
+            {
+                $value = "'".$value."'";
+            }
+            $selectSql .= "AND ".$key."=".$value;
+        }
+        $result = mysql_query($selectSql);
+        if ($result && mysql_num_rows($result) > 0)
+        {
+            return mysql_fetch_array($result);
+        }
+        else {
+            return null;
+        }
     }
  
 }

@@ -28,7 +28,7 @@ class Coupon extends MyTable
      */
     public function __construct()
     {
-        parent::__construct(); 
+        parent::__construct(self::COUPON_TABLE); 
     }
     /**
     * query consumed coupons according to partner id and team id
@@ -51,8 +51,9 @@ class Coupon extends MyTable
         if ($offset <= 0) $offset = 6;
 
         $select = "select c.order_id as orderId, t.title as teamTitle, c.id as couponId,";
-        $select .= "u.username as username, u.email as email, o.subbranch as subbranch, c.consume_time as consumeTime";
-        $select .= ' from '.self::DBDATABASE.'.'.self::COUPON_TABLE.' c,'.self::DBDATABASE.'.'.self::TEAM_TABLE.' t,'.self::DBDATABASE.'.'.self::USER_TABLE.' u,'.self::DBDATABASE.'.'.self::ORDER_TABLE.' o ';
+        $select .= "u.username as username, u.email as email, o.subbranch as subbranch, c.consume_time as consumeTime,c.consume_times as consumeTimes,c.platform_coupon_id as platformCouponId,c.consumer_mobile as consumerMobile";
+        $select .= ' from '.self::DBDATABASE.'.'.self::TEAM_TABLE.' t,'.self::DBDATABASE.'.'.self::ORDER_TABLE.' o,';
+        $select .= self::DBDATABASE.'.'.self::COUPON_TABLE.' c left join '.self::DBDATABASE.'.'.self::USER_TABLE.' u on c.user_id=u.id';
         $sql = $select." WHERE c.consume='Y' ";
         if (count(searchFelds) > 0)
         {
@@ -65,12 +66,11 @@ class Coupon extends MyTable
             if ($orderId > 0)
                 $sql .= " AND c.order_id=$orderId";
             if ($couponId > 0)
-                $sql .= " AND c.id=$couponId";
-            if (!empty($username))
-                $sql .= " AND u.username='$username'";
+                $sql .= " AND c.platform_coupon_id=$couponId";
+            if (!empty($mobile))
+                $sql .= " AND c.consumer_mobile='$mobile'";
         }
-        $sql .= " AND t.id=c.team_id AND o.id=c.order_id AND u.id=c.user_id";
-        $sql .= " AND t.id=c.team_id AND o.id=c.order_id AND u.id=c.user_id";
+        $sql .= " AND t.id=c.team_id AND o.id=c.order_id ";//AND u.id=c.user_id";
         // group and order
         $sql .= " order by c.consume_time desc";
         $sql .= " LIMIT $start,$offset";
@@ -107,8 +107,8 @@ class Coupon extends MyTable
             $sql .= !empty($platform)? " AND c.platform_key='$platform'" : "";
             $sql .= $teamId>0 ? " AND c.team_id=".$teamId : "";
             $sql .= $orderId>0 ? " AND c.order_id=".$orderId : "";
-            $sql .= $couponId>0 ? " AND c.coupon_id=".$couponId : "";
-            $sql .= !empty($username) ? " AND u.username='$username'" : "";
+            $sql .= $couponId>0 ? " AND c.platform_coupon_id=".$couponId : "";
+            $sql .= !empty($mobile) ? " AND c.mobile='$mobile'" : "";
         }
         
         $couponNums = 0;
@@ -128,17 +128,18 @@ class Coupon extends MyTable
     * @param    int  couponId   
     * @throws   VerifyCoupon_Exception
     */
-    public function consume_coupon($couponId, $platformKey)
+    public function consume_coupon($couponId, $consumed_times = 1)
     {
-        if ($couponId <= 0 || empty($platformKey))
+        if ($couponId <= 0 || !is_numeric($consumed_times) || $consumed_times < 1)
         {
             throw new VerifyCoupon_Exception(
                 CommonCodeMsg::get_message(CommonCodeMsg::INVALID_ARGUMENT_ERROR),
                 CommonCodeMsg::INVALID_ARGUMENT_ERROR);
         }
-        $update = 'UPDATE '.self::DBDATABASE.'.'.self::COUPON_TABLE;
-        $update .= " set consume='Y',consume_time=UNIX_TIMESTAMP() ";
-        $where = "WHERE id=".$couponId." AND platform_key='".$platformKey."' AND consume='N'";
+
+        $update = 'UPDATE '.$this->get_dbTableName(self::COUPON_TABLE);
+        $update .= " set consume='Y',consume_time=UNIX_TIMESTAMP(),consume_times=consume_times+".$consumed_times;
+        $where = " WHERE id=".$couponId;
         $sql = $update.$where;
 
         return mysql_query($sql);
@@ -162,6 +163,48 @@ class Coupon extends MyTable
             }
         }
         return $consumedCouponList;
+    }
+
+    /**
+    * insert coupon by an coupon info
+    *
+    * @param    array  couponInfo  coupon info array
+    * @return   arrayif true return coupon data, else return null
+    * @throws   THROW-TYPE
+    */
+    public function insert_coupon($couponInfo)
+    {
+        $this->assure_dbConnection();
+        $insertSql = "INSERT INTO ".$this->get_dbTableName(self::COUPON_TABLE);
+        $keys = "(";
+        $values = " VALUES(";
+        foreach($couponInfo as $key => $value)
+        {
+            $keys .= $key . ",";
+            // 偷懒，对now()特殊处理，不加引号
+            if (is_string($values))
+            {
+                $values .= "'" . $value . "'" . ",";
+            }
+            else
+            {
+                $values .=  $value. ",";
+            } 
+            
+        }
+
+        $keys = substr($keys, 0, -1) . ")";
+        $values = substr($values, 0, -1) . ")";
+
+        $insertSql .= $keys . $values;
+        $result = mysql_query($insertSql);
+        if (!$result) {
+            return null;
+        }
+        $insertedcouponId = mysql_insert_id();
+        $couponInfo['id'] = $insertedcouponId;
+
+        return $couponInfo;
     }
 
 }
