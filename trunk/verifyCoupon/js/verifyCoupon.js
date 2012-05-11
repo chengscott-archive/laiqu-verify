@@ -2,7 +2,7 @@ $(document).ready(function(){
     var codeSuccess = 21000;
     var msgCouponIdPwd = "请在左边输入框中输入相应的券号及密码。";
     var msgCouponId = "请在左边输入框中输入相应的券号。";
-    var msgValidateCodeConsumeCount = "请在左边输入框中输入相应的券号,验证码和消费次数。";
+    var msgValidateCodeConsumeCount = "请在左边输入框中输入您的券号和消费次数。";
     var msgSuccess = "验证成功！该券可以使用并已登记消费：<br />"; 
     var msgFailed  = "验证失败！该券信息输入不正确或已被使用，请确认后重新输入！";
 
@@ -102,17 +102,6 @@ $(document).ready(function(){
         var checkJuLoginUrl = "doVerifyCoupon.php?action=isjulogin&platform=juhuasuan";
         
         show_juhuasuan_form();            
-        //$.ajax({
-              //type: "GET",
-              //url: checkJuLoginUrl,
-              //success: function(data) {
-                  //var response = $.parseJSON(data);
-                  //if (response.success !== true)
-                  //{
-                    //show_juhuasuan_validate_window();
-                  //}
-              //}
-        //}); 
     }
 
     function init_event_handlers()
@@ -167,11 +156,12 @@ $(document).ready(function(){
         {
             $("#imageResponse").removeClass("result_w").addClass("result_r").show();
             $("#msgResponse").html(msgSuccess + response.dateTime + "。");
+            cleanup_after_submit();
         } 
-        else if (response.code == codeLoginExpired && platform === "juhuasuan")
-        {
-            show_juhuasuan_validate_window();
-        }
+        //else if (response.code == codeLoginExpired && platform === "juhuasuan")
+        //{
+            //show_juhuasuan_validate_window();
+        //}
         else {
             $("#imageResponse").removeClass("result_r").addClass("result_w").show();
             $("#msgResponse").text(msgFailed);

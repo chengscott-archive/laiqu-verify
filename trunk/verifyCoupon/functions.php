@@ -13,6 +13,9 @@ require_once '../module/PartnerPlatforms.php';
 require_once '../module/Order.php';
 require_once '../module/Team.php';
 require_once '../module/Coupon.php';
+require_once '../common/class/Valite.php';
+require_once 'VerifyCoupon.php';
+require_once '../common/RESTclient.php';
 
 // find a specified cookie from an cookie array
 function findCookie($name, $cookies) 
@@ -36,11 +39,11 @@ function deal_with_platform($request)
     if ($platform === 'juhuasuan')
     {
         $validateCode = $request['validateCode'];
-        if ($validateCode === "" || !login_juhuasuan($validateCode)) 
+        if ($validateCode === "" || !login_platform($platform)) 
         {
             return VerifyCouponCodeMsg::VALIDATECODE_NOT_MATCH_ERROR;
         }
-        else if (login_juhuasuan($validateCode) === "juhuasuan_not_bind") 
+        else if (login_platform($platform) === "juhuasuan_not_bind") 
         {
             return VerifyCouponCodeMsg::PLATFORM_ACCT_NOT_BIND_ERROR;
         }
@@ -48,42 +51,126 @@ function deal_with_platform($request)
     } 
 }
 
-// 聚划算商户登陆
-function login_juhuasuan($validateCode)
+// return image resource by imagecreatefromXXXX
+function get_login_validate_img_path($platform)
 {
-    $loginUrl = "http://59.151.29.121/shopUsed/shopLogin.do";
-    // 获得商户聚划算的账户信息
-    $params = get_juhuasuan_login_params();
-    if ($params === null)
+    $tmp_captcha_name = '';
+    if ($platform === "juhuasuan")
     {
-        return "juhuasuan_not_bind";
+        $captchaUrl = 'http://59.151.29.121/validateCode.do?'.date(mktime());
+        $imgSuffix = 'jpg';
     }
-    $params['model.validateCode'] = $validateCode;
+
     $rest = new RESTclient();
-    $rest->createRequest($loginUrl,'POST',$params);
-    if (!isset($_SESSION['JSESSIONID']))
-    {
-        return false;
-    }
-    // 聚划算的请求中加入JSESSIONID的cookie
+    $rest->createRequest($captchaUrl);
     $req = $rest->getHttpRequest();
-    $req->setCookieJar();
-    $req->addCookie("JSESSIONID", $_SESSION['JSESSIONID']);  // I add path param to addCookie function
+    //$req->setHeader("Host", "59.151.29.121");
+    $rest->sendRequest();
+    $responseObj = $rest->getResponseObj();
+    $jsessionid = findCookie("JSESSIONID", $responseObj->getCookies());
+    if ($jsessionid != '')
+    {
+        $req->addCookie("JSESSIONID", $jsessionid['value']);
+        // 用sesssion保存 jsessionid，供其他聚划算接口调用
+        $_SESSION['JSESSIONID'] = $jsessionid['value'];
+    } 
+    $tmp_captcha_name = tempnam(sys_get_temp_dir(),$imgSuffix);
+    file_put_contents($tmp_captcha_name, $rest->getResponse());
+    return $tmp_captcha_name; 
+}
+
+function decode_captcha($captchaPath)
+{
+    $valite = new Valite();
+
+    $valite->setImage($captchaPath);
+    $valite->getHec();
+    $validateCode = $valite->run();
+
+    return $validateCode;
+}
+// 聚划算商户登陆
+function login_platform($platform)
+{
+    if ($platform === 'juhuasuan')
+    {
+        // 解析验证码,存在失败概率,所以重复执行10次
+        $success = false;
+        $captchaPath = get_login_validate_img_path($platform);
+        $validateCode = decode_captcha($captchaPath);
+        unlink($captchaPath);
+
+        $loginUrl = "http://59.151.29.121/shopUsed/shopLogin.do";
+        // 获得商户聚划算的账户信息
+        $params = get_juhuasuan_login_params();
+        if ($params === null)
+        {
+            return "juhuasuan_not_bind";
+        }
+        $params['model.validateCode'] = $validateCode;
+        $rest = new RESTclient();
+        $rest->createRequest($loginUrl,'POST',$params);
+
+        // 聚划算的请求中加入JSESSIONID的cookie
+        $req = $rest->getHttpRequest();
+        $req->setCookieJar();
+        $req->addCookie("JSESSIONID", $_SESSION['JSESSIONID']);  // I add path param to addCookie function
+        $rest->sendRequest();
+        $response = $rest->getResponse();
+        unset($rest);
+        $success = is_login_success($response, $platform);
+        return $success;
+    }
+}
+
+function doVerifyCoupon($request)
+{
+    $platform = $request['platform'];
+    $verifyCoupon = new VerifyCoupon();
+
+    $verifyCoupon->init($platform);
+
+    $inputs = $verifyCoupon->init_verifyInputs($request);
+    $couponId = $inputs['couponId'];
+
+    $rest = new RESTclient();
+    $params = $verifyCoupon->get_requestParams($inputs);
+
+    if ($verifyCoupon->get_httpMethod() == 'POST') {
+        $rest->createRequest($verifyCoupon->get_apiUrl(), 'POST', $params);
+    } else {
+        $rest->createRequest($verifyCoupon->get_apiUrl());
+        $url = $rest->getUrl();
+        $url->setQueryVariables($params);
+    }
+    $response = '';
+
+    // 聚划算的请求需要加上JSESSIONID
+    if ($platform === "juhuasuan")
+    {
+         $req = $rest->getHttpRequest();
+         $req->addCookie("JSESSIONID", $_SESSION['JSESSIONID']);
+         $consumed_times = $request['consumeCount'];
+    }
+
     $rest->sendRequest();
     $response = $rest->getResponse();
-    unset($rest);
-    return is_juhuasuan_login_success($response);
+    $responseCode = $verifyCoupon->get_responseCode($response);
+    return $responseCode;
 }
 
 // 根据登陆 返回结果 检查是否登陆成功
-function is_juhuasuan_login_success($response)
+function is_login_success($response, $platform)
 {
-    // 成功条件,返回结果中包含 'getList("shopUsed/headers.do");' 
-    if ( 1 !== preg_match('/getList\(\"shopUsed\/headers\.do\"\)/', $response))
+    if ($platform === 'juhuasuan')
     {
-        return false;
+        // 成功条件,返回结果中包含 'getList("shopUsed/headers.do");' 
+        if ( 1 !== preg_match('/getList\(\"shopUsed\/headers\.do\"\)/', $response))
+        {
+            return false;
+        }
+        return true;
     }
-    return true;
 }
 
 function get_juhuasuan_login_params()
@@ -237,7 +324,7 @@ function get_orderInfo($couponId, $platform)
         $response = tidy_ugly_json($response,$platform);
         $result = json_decode($response);
         
-        if (isset($result->data))
+        if (isset($result->data) && count($result->data) > 0)
         {
             $order = $result->data[0];
             $laiquOrder = convert_order($order, $platform);

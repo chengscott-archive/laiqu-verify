@@ -79,7 +79,7 @@ else if (isset($_REQUEST['action']) && $_REQUEST['action'] === 'julogin' && $pla
 
     if ($validateCode !== "")
     { 
-        $success = login_juhuasuan($validateCode);
+        $success = login_platform($platform);
         
         if ($success === "juhuasuan_not_bind") 
         {
@@ -91,37 +91,30 @@ else if (isset($_REQUEST['action']) && $_REQUEST['action'] === 'julogin' && $pla
 }
 
 
-$verifyCoupon = new VerifyCoupon();
-
-$verifyCoupon->init($platform);
-
-$inputs = $verifyCoupon->init_verifyInputs($_REQUEST);
-$couponId = $inputs['couponId'];
-
-$rest = new RESTclient();
-$params = $verifyCoupon->get_requestParams($inputs);
-
-if ($verifyCoupon->get_httpMethod() == 'POST') {
-    $rest->createRequest($verifyCoupon->get_apiUrl(), 'POST', $params);
-} else {
-    $rest->createRequest($verifyCoupon->get_apiUrl());
-    $url = $rest->getUrl();
-    $url->setQueryVariables($params);
-}
-$response = '';
-
-// 聚划算的请求需要加上JSESSIONID
-if ($platform === "juhuasuan")
+$responseCode = doVerifyCoupon($_REQUEST);
+$couponId = $_REQUEST['couponId'];
+if ($platform === 'juhuasuan')
 {
-     $req = $rest->getHttpRequest();
-     $req->addCookie("JSESSIONID", $_SESSION['JSESSIONID']);
-     $consumed_times = $_REQUEST['consumeCount'];
+    $consumed_times = $_REQUEST['consumeCount'];
 }
 
-$rest->sendRequest();
-$response = $rest->getResponse();
-$responseCode = $verifyCoupon->get_responseCode($response);
-//$responseCode = VerifyCouponCodeMsg::VERIFY_COUPON_SUCCESS;
+
+// 登陆超期，则自动重新登陆
+if ($responseCode === VerifyCouponCodeMsg::JUHUASUAN_LOGIN_EXPIRED)
+{
+    //聚划算登录可能会发生失败，只尝试10次
+    $tryTimes = 10;
+    $count = 0;
+    while(!login_platform('juhuasuan'))
+    {
+       if (++$count === $tryTimes ) break;
+    }
+    if ($count < $tryTimes)
+    {
+        $responseCode = doVerifyCoupon($_REQUEST);
+    }
+}
+
 if ($responseCode === VerifyCouponCodeMsg::VERIFY_COUPON_SUCCESS)
 {
     if (!record_consumed_coupon($couponId, $platform, $consumed_times))
@@ -129,7 +122,6 @@ if ($responseCode === VerifyCouponCodeMsg::VERIFY_COUPON_SUCCESS)
         $responseCode = VerifyCouponCodeMsg::RECORD_COUPON_FAILED_ERROR;
     }
 }
-
 if ($responseCode === VerifyCouponCodeMsg::RECORD_COUPON_FAILED_ERROR)
 {
     $response = VerifyCoupon::gen_response_json(

@@ -1,12 +1,13 @@
 <?php
-// author email: ugg.xchj@gmail.com
-// ±¾´úÂë½ö¹©Ñ§Ï°²Î¿¼£¬²»Ìá¹©ÈÎºÎ¼¼Êõ±£Ö¤¡£
-// ÇÐÎðÊ¹ÓÃ±¾´úÂëÓÃÓÚ·Ç·¨ÓÃ´¦£¬Î¥Õßºó¹û×Ô¸º¡£
+// é’ˆå¯¹èšåˆ’ç®—å¹³å°ï¼Œè¿›è¡Œä¿®æ”¹
 
+define('WORD_WIDTH',10);
+define('WORD_HIGHT',13);
+define('OFFSET_X',7);
+define('OFFSET_Y',3);
+define('WORD_SPACING',3);
 
-include_once("files.php");
-
-class valite
+class Valite
 {
 	public function setImage($Image)
 	{
@@ -14,84 +15,11 @@ class valite
 	}
 	public function getData()
 	{
-		return $this->data;
+		return $data;
 	}
-
-	public function study($info)
-	{
-		// ×ö³É×Ö·û´®
-		$data = array();
-		$i = 0;
-		foreach($this->data as $key => $value)
-		{
-			$data[$i] = "";
-			foreach($value as $skey => $svalue)
-			{
-				$data[$i] .= implode("",$svalue);
-			}
-			if(strlen($data[$i]) > $maxfontwith)
-				++$i;
-		}
-
-		if(count($data) != count($info))
-		{
-//			echo count($data)."\n";
-//			print_r($data);
-//			echo count($info)."\n";
-			echo "ÉèÖÃÊý¾Ý¿âÊý¾Ý³ö´í";
-			print_r($data);
-			return false;
-		}
-
-		// ÉèÖÃN¼¶Æ¥ÅäÄ£Ê½
-		foreach($info as $key => $value)
-		{
-			if(isset($this->Keys[0][$value])){
-//				print_r($value);
-				$percent=0.0;
-				similar_text($this->Keys[0][$value], $data[$key],$percent);
-//				print_r($percent);
-//				print_r(" \n");
-				if(intval($percent) < 96)
-				{
-					$i=1;
-					$OK = false;
-					while(isset($this->Keys[$i][$value]))
-					{
-						$percent=0.0;
-//						print_r($value);
-						similar_text($this->Keys[$i][$value], $data[$key],$percent);
-//						print_r($percent);
-//						print_r(" \n");
-						if(intval($percent) > 96){
-							$OK = true;
-							break;
-						}
-						++$i;
-					}
-					if(!$OK){
-//						while(!isset($this->Keys[$i++][$value])){
-//							print_r($i);
-//						print_r($i);
-//						print_r(" \n");
-						$this->Keys[$i][$value] = $data[$key];
-//							$i++;
-//						}
-					}
-				}
-
-			}else{
-				$this->Keys[0][$value] = $data[$key];
-			}
-		}
-
-		return true;
-
-	}
-	
 	public function getResult()
 	{
-		return $this->DataArray;
+		return $DataArray;
 	}
 	public function getHec()
 	{
@@ -100,27 +28,22 @@ class valite
 		$data = array();
 		for($i=0; $i < $size[1]; ++$i)
 		{
-//			echo "$i  R  G  B\n";
 			for($j=0; $j < $size[0]; ++$j)
 			{
 				$rgb = imagecolorat($res,$j,$i);
 				$rgbarray = imagecolorsforindex($res, $rgb);
-//				echo "  ".$rgbarray['red']." ";
-//				echo $rgbarray['green']." ";
-//				echo $rgbarray['blue']." \n";
-//				/*
-				if($rgbarray['red'] > 120 &&( $rgbarray['green']<80
-				|| $rgbarray['blue'] < 80))
-				{
-					$data[$i][$j]=1;
-				}else{
-					$data[$i][$j]=0;
-				}
-//				*/
+                if($rgbarray['red'] < 94 || $rgbarray['green']<94
+                || $rgbarray['blue'] < 94)
+                {
+                    $data[$i][$j]=1;
+                }else{
+                    $data[$i][$j]=0;
+                }
+
 			}
 		}
 
-		// Èç¹û1µÄÖÜÎ§Êý×Ö²»Îª1£¬ÐÞ¸ÄÎªÁË0
+        // å¦‚æžœ1çš„å‘¨å›´æ•°å­—ä¸ä¸º1ï¼Œä¿®æ”¹ä¸ºäº†0
 		for($i=0; $i < $size[1]; ++$i)
 		{
 			for($j=0; $j < $size[0]; ++$j)
@@ -128,35 +51,35 @@ class valite
 				$num = 0;
 				if($data[$i][$j] == 1)
 				{
-					// ÉÏ
+					// ä¸Š
 					if(isset($data[$i-1][$j])){
 						$num = $num + $data[$i-1][$j];
 					}
-					// ÏÂ
+					// ä¸‹
 					if(isset($data[$i+1][$j])){
 						$num = $num + $data[$i+1][$j];
 					}
-					// ×ó
+					// å·¦
 					if(isset($data[$i][$j-1])){
 						$num = $num + $data[$i][$j-1];
 					}
-					// ÓÒ
+					// å³
 					if(isset($data[$i][$j+1])){
 						$num = $num + $data[$i][$j+1];
 					}
-					// ÉÏ×ó
+					// ä¸Šå·¦
 					if(isset($data[$i-1][$j-1])){
 						$num = $num + $data[$i-1][$j-1];
 					}
-					// ÉÏÓÒ
+					// ä¸Šå³
 					if(isset($data[$i-1][$j+1])){
 						$num = $num + $data[$i-1][$j+1];
 					}
-					// ÏÂ×ó
+					// ä¸‹å·¦
 					if(isset($data[$i+1][$j-1])){
 						$num = $num + $data[$i+1][$j-1];
 					}
-					// ÏÂÓÒ
+					// ä¸‹å³
 					if(isset($data[$i+1][$j+1])){
 						$num = $num + $data[$i+1][$j+1];
 					}
@@ -170,426 +93,100 @@ class valite
 
 		$this->DataArray = $data;
 		$this->ImageSize = $size;
-	}
 
+	}
 	public function run()
 	{
 		$result="";
-
-		// ×ö³É×Ö·û´®
-		// ×ö³É×Ö·û´®
-		$data = array();
-		$i = 0;
-		foreach($this->data as $key => $value)
+		// æŸ¥æ‰¾6ä¸ªæ•°å­—
+		$data = array("","","","","","");
+		for($i=0;$i<6;++$i)
 		{
-			$data[$i] = "";
-			foreach($value as $skey => $svalue)
+			$x = ($i*(WORD_WIDTH+WORD_SPACING))+OFFSET_X;
+			$y = OFFSET_Y;
+			for($h = $y; $h < (OFFSET_Y+WORD_HIGHT); ++ $h)
 			{
-				$data[$i] .= implode("",$svalue);
+				for($w = $x; $w < ($x+WORD_WIDTH); ++$w)
+				{
+					$data[$i].=$this->DataArray[$h][$w];
+				}
 			}
-			if(strlen($data[$i]) > $maxfontwith)
-				++$i;
 		}
 
-		// ½øÐÐ¹Ø¼ü×ÖÆ¥Åä
+		// è¿›è¡Œå…³é”®å­—åŒ¹é…
 		foreach($data as $numKey => $numString)
 		{
-//			print_r($numString);
 			$max=0.0;
 			$num = 0;
 			foreach($this->Keys as $key => $value)
 			{
-				$FindOk = false;
-//				print_r($value);
-				foreach($value as $skey => $svalue)
+				$percent=0.0;
+				similar_text($value, $numString,$percent);
+				if(intval($percent) > $max)
 				{
-//					print_r($svalue);
-					$percent=0.0;
-					similar_text($svalue, $numString,$percent);
-//					print_r($percent);
-//					echo " ";
-					if(intval($percent) > $max)
-					{
-						$max = $percent;
-						$num = $skey;
-						if(intval($percent) > 96){
-							$FindOk = true;
-							break;
-						}
-					}
+					$max = $percent;
+					$num = $key;
+					if(intval($percent) > 95)
+						break;
 				}
-				if($FindOk)
-					break;
 			}
-//			echo "\n max=";
-//			echo $max;
-//			echo "\n";
-//			echo $num."\n";
 			$result.=$num;
 		}
-		
-		// ²éÕÒ×î¼ÑÆ¥ÅäÊý×Ö
+		$this->data = $result;
+		// æŸ¥æ‰¾æœ€ä½³åŒ¹é…æ•°å­—
 		return $result;
-	}
-	public function bmp2jpeg($file){
-		$res = $this->imagecreatefrombmp($file);
-		imagejpeg($res,$file.".jpeg");
-	}
-
-	public function filterInfo()
-	{
-		$data=array();
-		$num = 0;
-		$b = false;
-		$Continue = 0;
-		$XStart = 0;
-		// X ×ø±ê
-		for($i=0; $i<$this->ImageSize[0]; ++$i)
-		{
-			// Y ×ø±ê
-	        for($j=0; $j<$this->ImageSize[1]; ++$j)
-		    {
-			    if($this->DataArray[$j][$i] == "1")
-				{
-					$b = true;
-					++$Continue;			
-					break;
-				}else{
-					$b = false;
-				}
-	        }
-			if($b == true)
-			{
-				for($jj = 0; $jj < $this->ImageSize[1]; ++$jj)
-				{
-					$data[$num][$jj][$XStart] = $this->DataArray[$jj][$i];
-				}
-				++$XStart;
-				
-			}else{
-				if($Continue > 0){
-					$XStart = 0;
-					$Continue = 0;
-					++$num;
-				}
-			}
-		}
-		
-		// Õ³Á¬×Ö·û·Ö¸î
-		$inum = 0;
-		for($num =0; $num < count($data); ++$num)
-		{
-			$itemp = 5;
-			$str = implode("",$data[$num][$itemp]);
-			// ³¬¹ý±ê×¼³¤¶È
-			if(strlen($str) > $this->maxfontwith)
-			{
-				$len = (strlen($str)+1)/2;
-				$flen = strlen($str);
-				$ih = 0;
-//				$iih = 0;
-				foreach($data[$num] as $key => $value)
-				{
-					$ix = 0;
-					$ixx = 0;
-					foreach($value as $skey=>$svalue)
-					{
-						if($skey < $len)
-						{
-							$this->data[$inum][$ih][$ix] = $svalue;
-							++$ix;
-						}
-						if($skey > ($flen-$len-1))
-						{
-							$this->data[$inum+1][$ih][$ixx] = $svalue;
-							++$ixx;
-						}
-					}
-					++$ih;
-				}
-				++$inum;
-			}else{
-				$i = 0;
-				foreach($data[$num] as $key => $value){
-					$this->data[$inum][$i] = $value;
-					++$i;
-				}
-				
-			}
-			++$inum;
-		}
-
-		// È¥µô0Êý¾Ý
-		for($num = 0; $num < count($this->data); ++$num)
-		{
-			if(count($this->data[$num]) != $this->ImageSize[1])
-			{
-				echo "·Ö¸î×Ö·û´íÎó";
-				die();
-			}
-
-			for($i=0; $i < $this->ImageSize[1]; ++$i)
-			{
-				$str = implode("",$this->data[$num][$i]);
-				$pos = strpos($str, "1");
-				if($pos === false)
-				{
-					unset($this->data[$num][$i]);
-				}
-			}
-		}
 	}
 
 	public function Draw()
 	{
 		for($i=0; $i<$this->ImageSize[1]; ++$i)
 		{
-			echo implode("",$this->DataArray[$i]);
+	        for($j=0; $j<$this->ImageSize[0]; ++$j)
+		    {
+			    echo $this->DataArray[$i][$j];
+	        }
 		    echo "\n";
 		}
 	}
-	public function imagecreatefrombmp($file)
-	{
-        global  $CurrentBit, $echoMode;
-
-        $f=fopen($file,"r");
-        $Header=fread($f,2);
-
-        if($Header=="BM")
-        {
-                $Size=$this->freaddword($f);
-                $Reserved1=$this->freadword($f);
-                $Reserved2=$this->freadword($f);
-                $FirstByteOfImage=$this->freaddword($f);
-
-                $SizeBITMAPINFOHEADER=$this->freaddword($f);
-                $Width=$this->freaddword($f);
-                $Height=$this->freaddword($f);
-                $biPlanes=$this->freadword($f);
-                $biBitCount=$this->freadword($f);
-                $RLECompression=$this->freaddword($f);
-                $WidthxHeight=$this->freaddword($f);
-                $biXPelsPerMeter=$this->freaddword($f);
-                $biYPelsPerMeter=$this->freaddword($f);
-                $NumberOfPalettesUsed=$this->freaddword($f);
-                $NumberOfImportantColors=$this->freaddword($f);
-
-                if($biBitCount<24)
-                {
-                        $img=imagecreate($Width,$Height);
-                        $Colors=pow(2,$biBitCount);
-                        for($p=0;$p<$Colors;$p++)
-                        {
-                                $B=$this->freadbyte($f);
-                                $G=$this->freadbyte($f);
-                                $R=$this->freadbyte($f);
-                                $Reserved=$this->freadbyte($f);
-                                $Palette[]=imagecolorallocate($img,$R,$G,$B);
-                        };
-
-
-
-
-                        if($RLECompression==0)
-                        {
-                                $Zbytek=(4-ceil(($Width/(8/$biBitCount)))%4)%4;
-
-                                for($y=$Height-1;$y>=0;$y--)
-                                {
-                                        $CurrentBit=0;
-                                        for($x=0;$x<$Width;$x++)
-                                        {
-                                                $C=freadbits($f,$biBitCount);
-                                                imagesetpixel($img,$x,$y,$Palette[$C]);
-                                        };
-                                        if($CurrentBit!=0) {$this->freadbyte($f);};
-                                        for($g=0;$g<$Zbytek;$g++)
-                                        $this->freadbyte($f);
-                                };
-
-                        };
-                };
-
-
-                if($RLECompression==1) //$BI_RLE8
-                {
-                        $y=$Height;
-
-                        $pocetb=0;
-
-                        while(true)
-                        {
-                                $y--;
-                                $prefix=$this->freadbyte($f);
-                                $suffix=$this->freadbyte($f);
-                                $pocetb+=2;
-
-                                $echoit=false;
-
-                                if($echoit)echo "Prefix: $prefix Suffix: $suffix<BR>";
-                                if(($prefix==0)and($suffix==1)) break;
-                                if(feof($f)) break;
-
-                                while(!(($prefix==0)and($suffix==0)))
-                                {
-                                        if($prefix==0)
-                                        {
-                                                $pocet=$suffix;
-                                                $Data.=fread($f,$pocet);
-                                                $pocetb+=$pocet;
-                                                if($pocetb%2==1) {$this->freadbyte($f); $pocetb++;};
-                                        };
-                                        if($prefix>0)
-                                        {
-                                                $pocet=$prefix;
-                                                for($r=0;$r<$pocet;$r++)
-                                                $Data.=chr($suffix);
-                                        };
-                                        $prefix=$this->freadbyte($f);
-                                        $suffix=$this->freadbyte($f);
-                                        $pocetb+=2;
-                                        if($echoit) echo "Prefix: $prefix Suffix: $suffix<BR>";
-                                };
-
-                                for($x=0;$x<strlen($Data);$x++)
-                                {
-                                        imagesetpixel($img,$x,$y,$Palette[ord($Data[$x])]);
-                                };
-                                $Data="";
-
-                        };
-
-                };
-
-
-                if($RLECompression==2) //$BI_RLE4
-                {
-                        $y=$Height;
-                        $pocetb=0;
-
-                        /*while(!feof($f))
-                        echo $this->freadbyte($f)."_".$this->freadbyte($f)."<BR>";*/
-                        while(true)
-                        {
-                                //break;
-                                $y--;
-                                $prefix=$this->freadbyte($f);
-                                $suffix=$this->freadbyte($f);
-                                $pocetb+=2;
-
-                                $echoit=false;
-
-                                if($echoit)echo "Prefix: $prefix Suffix: $suffix<BR>";
-                                if(($prefix==0)and($suffix==1)) break;
-                                if(feof($f)) break;
-
-                                while(!(($prefix==0)and($suffix==0)))
-                                {
-                                        if($prefix==0)
-                                        {
-                                                $pocet=$suffix;
-
-                                                $CurrentBit=0;
-                                                for($h=0;$h<$pocet;$h++)
-                                                $Data.=chr(freadbits($f,4));
-                                                if($CurrentBit!=0) freadbits($f,4);
-                                                $pocetb+=ceil(($pocet/2));
-                                                if($pocetb%2==1) {$this->freadbyte($f); $pocetb++;};
-                                        };
-                                        if($prefix>0)
-                                        {
-                                                $pocet=$prefix;
-                                                $i=0;
-                                                for($r=0;$r<$pocet;$r++)
-                                                {
-                                                        if($i%2==0)
-                                                        {
-                                                                $Data.=chr($suffix%16);
-                                                        }
-                                                        else
-                                                        {
-                                                                $Data.=chr(floor($suffix/16));
-                                                        };
-                                                        $i++;
-                                                };
-                                        };
-                                        $prefix=$this->freadbyte($f);
-                                        $suffix=$this->freadbyte($f);
-                                        $pocetb+=2;
-                                        if($echoit) echo "Prefix: $prefix Suffix: $suffix<BR>";
-                                };
-
-                                for($x=0;$x<strlen($Data);$x++)
-                                {
-                                        imagesetpixel($img,$x,$y,$Palette[ord($Data[$x])]);
-                                };
-                                $Data="";
-
-                        };
-
-                };
-
-
-                if($biBitCount==24)
-                {
-                        $img=imagecreatetruecolor($Width,$Height);
-                        $Zbytek=$Width%4;
-
-                        for($y=$Height-1;$y>=0;$y--)
-                        {
-                                for($x=0;$x<$Width;$x++)
-                                {
-                                        $B=$this->freadbyte($f);
-                                        $G=$this->freadbyte($f);
-                                        $R=$this->freadbyte($f);
-                                        $color=imagecolorexact($img,$R,$G,$B);
-                                        if($color==-1) $color=imagecolorallocate($img,$R,$G,$B);
-                                        imagesetpixel($img,$x,$y,$color);
-                                }
-                                for($z=0;$z<$Zbytek;$z++)
-                                $this->freadbyte($f);
-                        };
-                };
-                return $img;
-
-        };
-
-
-        fclose($f);
-	}
-
-	public function freadbyte($f)
-	{
-        return ord(fread($f,1));
-	}
-
-	public function freadword($f)
-	{
-        $b1=$this->freadbyte($f);
-        $b2=$this->freadbyte($f);
-        return $b2*256+$b1;
-	}
-
-	public function freaddword($f)
-	{
-        $b1=$this->freadword($f);
-        $b2=$this->freadword($f);
-        return $b2*65536+$b1;
-	}
-
+    
+    public function getEachKey()
+    {
+        $keys = array();
+		for($i=0;$i<6;++$i)
+		{
+            $key = "";
+			$x = ($i*(WORD_WIDTH+WORD_SPACING))+OFFSET_X;
+			$y = OFFSET_Y;
+			for($h = $y; $h < (OFFSET_Y+WORD_HIGHT); ++ $h)
+			{
+				for($w = $x; $w < ($x+WORD_WIDTH); ++$w)
+				{
+					$key.=$this->DataArray[$h][$w];
+				}
+			}
+            $keys[$i] = $key;
+		}        
+        return $keys;
+    }
 	public function __construct()
 	{
-		//$keysfiles = new files;
-		//$this->Keys = $keysfiles->funserialize();
-		//if($this->Keys == false)
-			//$this->Keys = array();
-		//unset($keysfiles);
-	}
-	public function __destruct()
-	{
-		$keysfiles = new files;
-		$keysfiles->fserialize($this->Keys);
-//		print_r($this->Keys);
+		$this->Keys = array(
+		'1'=>'0001110000011111000001111100000000110000000011000000001100000000110000000011000000001100000000110000000011000001111111100111111110',
+		'2'=>'0111110000111111100010000011000000001100010000110000000110000000110000010110000001110000000110000001110000000011111111001111111100',
+		'3'=>'0111110000111111110010000011000000001100000001100001111100000111111000000001110000000011000000001100100001110011111110000111110000',
+		'4'=>'0000011000000011100000001110000001111000001101100000110110000110011000011001100011111111101111111110000001100000000110000000011000',
+		'5'=>'1111111100111111110011000000001100000000110000000011111000001111111000000001110000000011000000001100100001110011111110000111110000',
+		'6'=>'0001111000001111110001100001000110000000110000000011011110001111111100111000111011000001101100000110011000111001111111000001111000',
+		'7'=>'0111111110011111111000000001100000000100000000110000000110000000010000000011000000001000000001100000000110000000110000000011000000',
+		'8'=>'0011111000011111110001100011000110001100011100100000111110000011111000011001110011000001101100000110111000111001111111000011111000',
+        '9'=>'0011110000011111110011100011001100000110110000011011100011100111111110001111011000000001100000001100010000110001111110000011110000',
+        'A'=>'0001110000000111000000110110000011011000001101100001100011000110001100011000110011111111101111111110110000011010000000111000000011',
+        'B'=>'0110110000101110100011000110001100011000110011000011011000001111110000110001100011000011001100001100010001110011111110001110110000',
+        'C'=>'0001111100001111011001110000101110000000110000000011000000001100000000110000000011000000001110000000011100001000111111100001111100',
+        'D'=>'1111111000111111110011000011101100000111110000001111000000111100000011110000001111000000111100000110110000111011111111001111111000',
+        'E'=>'1111111100111111110011000000001100000000110000000011111110001111111000110000000011000000001100000000110000000011111111001111111100',
+        'F'=>'1111111000111111100011000000001100000000110000000011000000001111110000111111000011000000001100000000110000000011000000001100000000'
+	);
 	}
 	protected $ImagePath;
 	protected $DataArray;
@@ -597,7 +194,6 @@ class valite
 	protected $data;
 	protected $Keys;
 	protected $NumStringArray;
-	public $maxfontwith = 16;
 
 }
 ?>
