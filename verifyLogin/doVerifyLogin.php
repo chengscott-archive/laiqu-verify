@@ -8,7 +8,7 @@
  * @version   v1.000
  * @history   v1.000 first release 2012-3-12 下午5:27
  */
-require_once('verifyLogin.php');
+require_once('VerifyLogin.php');
 
 function runtimeErrorHandler($errno, $errstr, $errfile, $errline)
 {
