@@ -52,17 +52,19 @@ class MyTable
         mysql_query("SET CHARACTER SET 'utf8'", $this->_dbconn);
     }
 
-    protected function get_dbTableName($tableName)
+    public function get_dbTableName($tableName)
     {
         if ($tableName !== "")
             $tableName = self::DBDATABASE.".".$tableName;
 
         return $tableName;
     }
+    // set tableName
+    public function set_tablename($tableName)
+    {
+        $this->_tablename = $tableName;
+    }
 
-            //throw new Exception(
-                //ChangePassCodeMsg::get_message(ChangePassCodeMsg::NEW_PASS_NOT_ALLOWED_ERROR),
-                //ChangePassCodeMsg::NEW_PASS_NOT_ALLOWED_ERROR);
     // todo: 
     public function get_row($conditions)
     {
@@ -88,6 +90,11 @@ class MyTable
         else {
             return null;
         }
+    }
+    public function query($sql)
+    {
+        $this->assure_dbConnection();
+        return mysql_query($sql);
     }
  
 }

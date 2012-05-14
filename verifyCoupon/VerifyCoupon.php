@@ -125,7 +125,7 @@ class VerifyCoupon
         {
             throw new VerifyCoupon_RequestException(
                 VerifyCouponCodeMsg::get_message(VerifyCouponCodeMsg::INVALID_COUPONID_ARG_ERROR),
-                VerifyCouponCodeMsg::INVALID_COUPON_ARG_ERROR);   
+                VerifyCouponCodeMsg::INVALID_COUPONID_ARG_ERROR);   
         }
         $inputs['couponId'] = $request['couponId'];
 

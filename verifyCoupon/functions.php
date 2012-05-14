@@ -119,6 +119,14 @@ function login_platform($platform)
         $response = $rest->getResponse();
         unset($rest);
         $success = is_login_success($response, $platform);
+        // 登陆成功记录, 记录商户平台信息
+        if ($success === true)
+        {
+            $_SESSION['partner_'.$platform] = array(
+                "p_username" => $params['model.sign'],
+                "p_password" => $params['model.password'],
+                "p_terminalid" => $params['model.password']);
+        }
         return $success;
     }
 }
@@ -132,6 +140,10 @@ function doVerifyCoupon($request)
 
     $inputs = $verifyCoupon->init_verifyInputs($request);
     $couponId = $inputs['couponId'];
+    if ($platform === 'juhuasuan' && isset($_SESSION['partner_'.$platform]))
+    {
+        $inputs['terminalid'] = $_SESSION['partner_'.$platform]['p_terminalid'];
+    }
 
     $rest = new RESTclient();
     $params = $verifyCoupon->get_requestParams($inputs);
@@ -230,7 +242,9 @@ function record_consumed_coupon($couponId, $platform, $consumed_times=1)
             "consume_time" => mktime(),
             "create_time" => mktime(),
             "consume_times" => $consumed_times,
-            "platform_coupon_id" => $couponId
+            "platform_coupon_id" => $couponId,
+            "consumer_mobile" => $orderInfo['consumer_mobile'],
+            "verify_way" => "web"
         );
         return $coupon->insert_coupon($insertCoupon);
     }
@@ -259,6 +273,7 @@ function record_order($couponId,$platform, $consumed_times = 1)
 
     if ($recordedOrder !== null && $platform === "juhuasuan")
     {
+        $recordedOrder['consumer_mobile'] = $orderInfo['consumer_mobile'];
         return $recordedOrder;
     } else if($platform === "juhuasuan")
     {
@@ -272,7 +287,7 @@ function record_order($couponId,$platform, $consumed_times = 1)
             "platform_key" => $orderInfo['platform_key'] 
             );
         $orderInserted = $order->insert_order($insertOrder);
-        //$orderInfo['order_id'] = $orderInserted['id'];
+        $orderInserted['consumer_mobile'] = $orderInfo['consumer_mobile'];        
         return $orderInserted;
     }
 }
@@ -324,14 +339,16 @@ function get_orderInfo($couponId, $platform)
         $response = tidy_ugly_json($response,$platform);
         $result = json_decode($response);
         
-        if (isset($result->data) && count($result->data) > 0)
+        if ($result->success === false && $result->status === 302)
+        {
+            return VerifyCouponCodeMsg::JUHUASUAN_LOGIN_EXPIRED;
+        }
+        else if (isset($result->data) && count($result->data) > 0)
         {
             $order = $result->data[0];
             $laiquOrder = convert_order($order, $platform);
-        } else {
-            throw new Exception(
-                VerifyCouponCodeMsg::get_message(VerifyCouponCodeMsg::JUHUASUAN_LOGIN_EXPIRED),
-                VerifyCouponCodeMsg::JUHUASUAN_LOGIN_EXPIRED);
+        } else if (isset($result->data)){
+            return VerifyCouponCodeMsg::COUPON_NOT_EXIST;
         }
     }
 
@@ -350,6 +367,7 @@ function convert_order($orderInfo, $platform)
         $order['team_price'] = floatval(substr($orderInfo->payment, 3));
         $order['platform_key'] = $platform;
         $order['platform_order_id'] = $orderInfo->taobaoId;
+        $order['consumer_mobile'] = $orderInfo->receiMobile;        
     } 
 
     return $order;
