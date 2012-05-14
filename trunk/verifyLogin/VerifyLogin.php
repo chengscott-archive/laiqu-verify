@@ -14,18 +14,18 @@
  */
 require_once('../common/CodeMessages.php');
 require_once('../common/Exception.php');
-require_once('../common/class/MyTable.php');
+require_once('../verifyCoupon/functions.php');
 
-class VerifyLogin extends MyTable
+class VerifyLogin
 {
     /* constants for database */
-//    const DBHOST = 'localhost';
-//    const DBUSER = 'root';
-//    const DBPASS = 'ghz86377328';
-//    const DBDATABASE = 'lq_verify';
+    const DBHOST = 'localhost';
+    const DBUSER = 'root';
+    const DBPASS = 'ghz86377328';
+    const DBDATABASE = 'lq_verify';
     const USERTABLE = 'partner';
 
-  //  private $_dbconn = null;
+    private $_dbconn = null;
     /**
      * Constructor.
      *
@@ -79,13 +79,38 @@ class VerifyLogin extends MyTable
         {
             $row = mysql_fetch_array($result);
             session_start();
-            $_SESSION['partnerId'] = $row['id'];
+            $partnerId = $row['id'];
+            $_SESSION['partnerId'] = $partnerId;
             $_SESSION['username']  = $row['username'];
             $_SESSION['title']     = $row['title'];
+
+            // 进行平台账户登陆
+            $this->do_loginPlatform($partnerId);
         } else {
             throw new Exception(
                 VerifyLoginCodeMsg::get_message(VerifyLoginCodeMsg::ERROR_NAME_PASS),
                 VerifyLoginCodeMsg::ERROR_NAME_PASS);
+        }
+    }
+
+    //进行平台账户的登陆
+    private function do_loginPlatform($partnerId)
+    {
+        $query = sprintf("SELECT * FROM %s WHERE partner_id=%s AND status=1",
+                    'partner_platforms', $partnerId);
+        $result = mysql_query($query);
+        while($row = mysql_fetch_array($result))
+        {
+            if ($row['platform_key'] === 'juhuasuan')
+            {
+                //聚划算登录可能会发生失败，只尝试10次
+                $tryTimes = 10;
+                $count = 0;
+                while(!login_platform('juhuasuan'))
+                {
+                   if (++$count === 10 ) break;
+                }
+            }
         }
     }
     

@@ -37,7 +37,7 @@
                 <a class="nav_text" href="../statistics/teamList.php">项 目 统 计</a><br />
                 <a class="nav_text" href="#">消 费 评 价</a><br />
                 <a class="nav_text" href="../acctManager/changePass.php">修 改 密 码</a><br />
-                <a class="nav_text" href="../VerifyLogin/loginOut.php">退 出 登 录</a><br />
+                <a class="nav_text" href="../verifyLogin/loginOut.php">退 出 登 录</a><br />
                 <a class="nav_text" href="#">帮 助</a>
 
 
@@ -53,7 +53,7 @@
     <div class="body_r" >  <!--这里的body_r 是原来的body -->
     
         <div class="fl fl_1">
-        <form action="VerifyCoupon.php" method="get" accept-charset="utf-8">
+        <form action="" method="get" accept-charset="utf-8">
         
             <div class="platform_b">
             <select class="platform" name="platform" id="platform">

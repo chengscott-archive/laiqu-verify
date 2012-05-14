@@ -90,14 +90,12 @@ else if (isset($_REQUEST['action']) && $_REQUEST['action'] === 'julogin' && $pla
     exit; 
 }
 
-
 $responseCode = doVerifyCoupon($_REQUEST);
 $couponId = $_REQUEST['couponId'];
 if ($platform === 'juhuasuan')
 {
     $consumed_times = $_REQUEST['consumeCount'];
 }
-
 
 // 登陆超期，则自动重新登陆
 if ($responseCode === VerifyCouponCodeMsg::JUHUASUAN_LOGIN_EXPIRED)

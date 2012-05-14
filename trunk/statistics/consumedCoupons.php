@@ -87,7 +87,7 @@ $totalPages = cal_totalPages($couponTotalNums, TABLE_ROW_NUMS);
                 </div>
                 <a class="nav_text" href="javascript:void(0);">消 费 评 价</a><br />
                 <a class="nav_text" href="../acctManager/changePass.php">修 改 密 码</a><br />
-                <a class="nav_text" href="../VerifyLogin/loginOut.php">退 出 登 录</a><br />
+                <a class="nav_text" href="../verifyLogin/loginOut.php">退 出 登 录</a><br />
                 <a class="nav_text" href="javascript:void(0);">帮 助</a>
 
 
