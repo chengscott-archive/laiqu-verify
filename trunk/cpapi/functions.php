@@ -8,7 +8,7 @@
  * @version   v1.000
  * @history   v1.000 first release 2012-5-11 下午3:41
  */
-
+require_once '../common/functions/common.funcs.php';
 require_once '../common/class/Valite.php';
 require_once '../verifyCoupon/VerifyCoupon.php';
 require_once '../common/RESTclient.php';

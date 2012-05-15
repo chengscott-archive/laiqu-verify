@@ -15,6 +15,7 @@
 require_once('../common/CodeMessages.php');
 require_once('../common/Exception.php');
 require_once('../verifyCoupon/functions.php');
+require_once('../common/class/MyTable.php');
 
 class VerifyLogin
 {
@@ -35,6 +36,7 @@ class VerifyLogin
      */
     public function __construct()
     {
+        $mysql = new MyTable();
         $this->_dbconn = mysql_connect(self::DBHOST, self::DBUSER, self::DBPASS);
         if (!$this->_dbconn)
         {
@@ -156,6 +158,13 @@ class VerifyLogin
             $msg  =  CommonCodeMsg::get_message($code);  
         }
 
+        if ($code === VerifyLoginCodeMsg::VERIFY_LOGIN_SUCCESS)
+        {
+            $response['success'] = true;
+        }
+        else {
+            $response['success'] = false;
+        }
         $response['code'] = $code;
         $response['msg']  = $msg;
         $response['dateTime'] = date("Y-m-d, h:i:s");
