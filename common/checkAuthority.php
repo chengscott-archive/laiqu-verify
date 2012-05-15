@@ -10,8 +10,6 @@
  */
 require_once 'common.php';
 
-define('WEBROOT','http://localhost:8888/laiqu');
-
 if (!is_partner_login())
 {
     redirect(WEBROOT.'/verifyLogin/login.html');
