@@ -300,6 +300,12 @@ class VerifyCoupon
             }
         }
 
+        if ($code === VerifyCouponCodeMsg::VERIFY_COUPON_SUCCESS)
+        {
+            $response['success'] = true;
+        } else {
+            $response['success'] = false;
+        }
         $response['code'] = $code;
         $response['msg']  = $msg;
         $response['dateTime'] = date("Y-m-d, h:i:s");

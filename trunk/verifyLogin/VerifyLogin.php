@@ -19,14 +19,9 @@ require_once('../common/class/MyTable.php');
 
 class VerifyLogin
 {
-    /* constants for database */
-    const DBHOST = 'localhost';
-    const DBUSER = 'root';
-    const DBPASS = 'ghz86377328';
-    const DBDATABASE = 'lq_verify';
     const USERTABLE = 'partner';
 
-    private $_dbconn = null;
+    private $_mysql = null;
     /**
      * Constructor.
      *
@@ -36,20 +31,13 @@ class VerifyLogin
      */
     public function __construct()
     {
-        $mysql = new MyTable();
-        $this->_dbconn = mysql_connect(self::DBHOST, self::DBUSER, self::DBPASS);
-        if (!$this->_dbconn)
-        {
-            throw new Exception(
-                VerifyLoginCodeMsg::get_message(VerifyLoginCodeMsg::MYSQL_CONNECT_ERROR),
-                VerifyLoginCodeMsg::MYSQL_CONNECT_ERROR);
-        }
-        if (!mysql_select_db(self::DBDATABASE, $this->_dbconn))
-        {
-            throw new Exception(
-                VerifyLoginCodeMsg::get_message(VerifyLoginCodeMsg::MYSQL_SELECT_DB_ERROR),
-                VerifyLoginCodeMsg::MYSQL_SELECT_DB_ERROR);
-        }
+        $this->_mysql = new MyTable();
+    }
+
+    // get mysql (MyTable Object)
+    public function get_mysql()
+    {
+        return $this->_mysql;
     }
 
 
