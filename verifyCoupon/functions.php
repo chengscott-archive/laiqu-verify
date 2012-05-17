@@ -167,6 +167,7 @@ function doVerifyCoupon($request)
 
     $rest->sendRequest();
     $response = $rest->getResponse();
+    echo $response; exit;
     $responseCode = $verifyCoupon->get_responseCode($response);
     return $responseCode;
 }

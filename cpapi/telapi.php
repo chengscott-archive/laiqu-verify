@@ -102,7 +102,6 @@ if($action=='consume')
             "partnerId" => $partnerId,
             "jsessionid" => $jsessionid);
         record_consumed_coupon($recordParams);
-         
     }
     else {
         $telResponseCode = COUPON_CONSUME_FAILED;
