@@ -16,6 +16,7 @@
     codeChangePwdFailed = 23003;
     changePassUrl = "do_changePass.php";
     init = function() {
+      highlight_left_nav_bar('acctmanager');
       $("#result_msg_area").text(msgInitResult);
       clean_inputs();
       return clean_inputMsgArea();
@@ -74,7 +75,7 @@
       }
       return responseCode;
     };
-    return $("#do_change_btn").click(function() {
+    $("#do_change_btn").click(function() {
       var newPasswd, newPasswdConfirm, originPasswd;
       originPasswd = $("#origin_passwd").val();
       newPasswd = $("#new_passwd").val();
@@ -93,6 +94,7 @@
       }
       return do_changePass(originPasswd, newPasswd);
     });
+    return init();
   });
 
 }).call(this);

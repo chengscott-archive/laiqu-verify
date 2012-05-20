@@ -125,7 +125,7 @@ function login_platform($platform)
             $_SESSION['partner_'.$platform] = array(
                 "p_username" => $params['model.sign'],
                 "p_password" => $params['model.password'],
-                "p_terminalid" => $params['model.password']);
+                "p_terminalid" => $params['model.terminalId']);
         }
         return $success;
     }
@@ -167,7 +167,6 @@ function doVerifyCoupon($request)
 
     $rest->sendRequest();
     $response = $rest->getResponse();
-    echo $response; exit;
     $responseCode = $verifyCoupon->get_responseCode($response);
     return $responseCode;
 }

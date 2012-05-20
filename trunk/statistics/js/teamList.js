@@ -10,6 +10,7 @@
     prevPage = (page - 1) < 1 ? 1 : page - 1;
     teamRowWrapNums = $('div[id^="teamRowWrap_"]').size();
     init = function() {
+      highlight_left_nav_bar('statistics');        
       if (teamRowWrapNums < tableRowNums || teamNums <= page * tableRowNums) {
         $('#goNextPage').hide();
       }

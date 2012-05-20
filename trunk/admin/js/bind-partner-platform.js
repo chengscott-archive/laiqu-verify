@@ -32,7 +32,7 @@ $(document).ready(function() {
                 "登陆测试当前账户,点击'取消'");
             if (result)
             {
-                window.location = "add-partner.html";
+                window.location = "add-partner.php";
             } else
             {
                 window.location = "../";
