@@ -15,6 +15,7 @@
     couponId = $("#couponId").val();
     username = $("#username").val();
     init = function() {
+      highlight_left_nav_bar('statistics');
       if (couponRowWrapNums < tableRowNums || totalCouponNums <= tableRowNums * page) {
         $('#goNextPage').hide();
       }

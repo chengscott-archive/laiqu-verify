@@ -58,6 +58,7 @@ $totalPages = cal_totalPages($couponTotalNums, TABLE_ROW_NUMS);
 <link href="../css/com_css.css" rel="stylesheet" type="text/css" />
 <link href="css/coupon_css.css" rel="stylesheet" type="text/css" />
 <script src='../js/jquery.min.js'></script>
+<script src='../js/common_funcs.js'></script>
 <script src='js/consumedCoupon.js'></script>
 </head>
 <body>
@@ -79,17 +80,9 @@ $totalPages = cal_totalPages($couponTotalNums, TABLE_ROW_NUMS);
         <div class="body_l">
         	<div class="nav">
   
-
-                <p class="nav_title">商 户 管 理</p>                
-                <a class="nav_text" href="../verifyCoupon/index.php">消 费 登 记</a><br />
-                <div class="nav_bg">
-                <a class="nav_text" href="teamList.php">项 目 统 计</a><br />
-                </div>
-                <a class="nav_text" href="javascript:void(0);">消 费 评 价</a><br />
-                <a class="nav_text" href="../acctManager/changePass.php">修 改 密 码</a><br />
-                <a class="nav_text" href="../verifyLogin/loginOut.php">退 出 登 录</a><br />
-                <a class="nav_text" href="javascript:void(0);">帮 助</a>
-
+                <?php
+                    require '../common/templates/left_nav_bar.php';
+                ?>
 
             </div>
             

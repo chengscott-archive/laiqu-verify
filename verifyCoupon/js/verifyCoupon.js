@@ -2,9 +2,10 @@ $(document).ready(function(){
     var codeSuccess = 21000;
     var msgCouponIdPwd = "请在左边输入框中输入相应的券号及密码。";
     var msgCouponId = "请在左边输入框中输入相应的券号。";
+    var msgConsumeCount = "请在左边输入框中输入销券次数。";
     var msgValidateCodeConsumeCount = "请在左边输入框中输入您的券号和消费次数。";
-    var msgSuccess = "验证成功！该券可以使用并已登记消费：<br />"; 
-    var msgFailed  = "验证失败！该券信息输入不正确或已被使用，请确认后重新输入！";
+    var msgSuccess = "验证成功！<br/>消费时间："; 
+    var msgFailed  = "验证失败！<br/>失败原因: 券信息输入不正确或已被使用。";
 
     var couponIdValue = "券号";
     var couponPwdValue = "密码";
@@ -37,6 +38,13 @@ $(document).ready(function(){
             $("#imageResponse").addClass("result_w").show();
             $("#msgResponse").text(msgCouponId); 
             return;
+        } 
+        if ( $("#consumeCountWrapper") !== undefined && 
+             consumeCount === '' || consumeCount === consumeCountValue)
+        {
+            $("#imageResponse").addClass("result_w").show();
+            $("#msgResponse").text(msgConsumeCount); 
+            return;
         }
 
         verifyUrl += "platform=" + platform + "&couponId=" + couponId;
@@ -51,7 +59,6 @@ $(document).ready(function(){
         $.ajax({
           url: verifyUrl,
           success: function(data) {
-            //$(".result").html(data);
             parse_verifyResponse(data);
           }
        });
@@ -70,29 +77,27 @@ $(document).ready(function(){
     
     function init_page()
     {
-    
+        highlight_left_nav_bar('verifycoupon'); 
         var platform = $("select option:selected").val(); 
         if (platform == "laiqu")
         {
             $("div.fl").css("margin-top","38px"); 
             if ($("#consumeCountWrapper").css("display") != 'none') { $("#consumeCountWrapper").hide();}
             $("#couponPwdWrapper").show();            
-            $("#msgResponse").text(msgCouponIdPwd);
-            //$("div.fl").css("margin-top","68px"); 
-            //$("#couponPwdWrapper").hide();
-            //$("#couponIdWrapper").css("margin-bottom","8px");            
-            //$("#msgResponse").text(msgCouponId);
+            //$("#msgResponse").text(msgCouponIdPwd);
         }
         else if (platform == "360buy")
         {
             $("div.fl").css("margin-top","38px"); 
             $("#couponPwdWrapper").show();            
-            $("#msgResponse").text(msgCouponIdPwd);
+            //$("#msgResponse").text(msgCouponIdPwd);
         }
         else if (platform === "juhuasuan")
         {
             init_juhuasuan_page();
         }
+        init_verifyResultBox(platform);
+        
     }
 
     function init_juhuasuan_page()
@@ -100,20 +105,35 @@ $(document).ready(function(){
         // global setting for juhuansuan
         // url for checking juhuasuan login url
         var checkJuLoginUrl = "doVerifyCoupon.php?action=isjulogin&platform=juhuasuan";
-        
+        //$("#msgResponse").text(msgValidateCodeConsumeCount);
         show_juhuasuan_form();            
     }
 
+    function init_verifyResultBox(platform)
+    {
+        $("#imageResponse").removeClass("result_w result_r").show();
+        
+        if (platform === 'juhuasuan')
+        {
+            $("#msgResponse").text(msgValidateCodeConsumeCount);
+        } else if (platform === '360buy' || platform === 'laiqu'){
+            $("#msgResponse").text(msgCouponIdPwd);
+        } else {
+            $("#msgResponse").text(msgCouponId);
+        }
+    }
     function init_event_handlers()
     {
         $("#platform").change(function() {
             init_page();
         });
         $("#couponId").focusin(function() {
+            init_verifyResultBox($("#platform").val());
             if ( $(this).val() == couponIdValue)
             {
                 $(this).val("");
             }
+             
         });
         $("#couponId").focusout(function() {
             if ( $(this).val() === "")
@@ -127,6 +147,7 @@ $(document).ready(function(){
         });
 
         $("#couponPwd").focusin(function() {
+            init_verifyResultBox($("#platform").val());            
             if ( $(this).val() == couponPwdValue)
             {
                 $(this).val("");
@@ -155,7 +176,9 @@ $(document).ready(function(){
         if (response.code == codeSuccess)
         {
             $("#imageResponse").removeClass("result_w").addClass("result_r").show();
-            $("#msgResponse").html(msgSuccess + response.dateTime + "。");
+
+            var responseMsg = "团购券:  "+$("#couponId").val() + "  " + msgSuccess + response.dateTime;
+            $("#msgResponse").html(responseMsg);
             cleanup_after_submit();
         } 
         //else if (response.code == codeLoginExpired && platform === "juhuasuan")
@@ -164,7 +187,7 @@ $(document).ready(function(){
         //}
         else {
             $("#imageResponse").removeClass("result_r").addClass("result_w").show();
-            $("#msgResponse").text(msgFailed);
+            $("#msgResponse").html("团购券:  "+$("#couponId").val() + "  "+msgFailed);
         }
     }
 
@@ -177,6 +200,7 @@ $(document).ready(function(){
         $(consumeCountString).insertAfter("#couponPwdWrapper");    
         // event for platform juhuasuan
         $("#consumeCount").focusin(function(){
+            init_verifyResultBox($("#platform").val());            
             if ($(this).val() === consumeCountValue)
             {
                 $(this).val("");
