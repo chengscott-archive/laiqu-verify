@@ -56,10 +56,14 @@ $(document).ready(function(){
         {
             verifyUrl += "&consumeCount=" + consumeCount;
         }
+        show_loading_twirly(); 
         $.ajax({
           url: verifyUrl,
           success: function(data) {
             parse_verifyResponse(data);
+          },
+          complete: function(data) {
+            remove_loading_twirly(); 
           }
        });
 
@@ -178,6 +182,10 @@ $(document).ready(function(){
             $("#imageResponse").removeClass("result_w").addClass("result_r").show();
 
             var responseMsg = "团购券:  "+$("#couponId").val() + "  " + msgSuccess + response.dateTime;
+            responseMsg += '<br />查看本项目销券情况,可点击 ';
+            responseMsg += "<a href='"+http_host+"/statistics/consumedCoupons.php?";
+            responseMsg += "teamId=" + response.teamId + "&platform="+response.platform + "&fromTeamPage=1'";
+            responseMsg += " rel='external'>销券列表</a>";
             $("#msgResponse").html(responseMsg);
             cleanup_after_submit();
         } 
@@ -243,23 +251,23 @@ $(document).ready(function(){
         }
     }
 
-    function show_juhuasuan_validate_window()
-    {
-        var validateCodeUrl = "doVerifyCoupon.php?action=validateCode&platform=juhuasuan";
-        var headerText = "输入验证码继续验证";
+    //function show_juhuasuan_validate_window()
+    //{
+        //var validateCodeUrl = "doVerifyCoupon.php?action=validateCode&platform=juhuasuan";
+        //var headerText = "输入验证码继续验证";
 
-        var validateCodeString = '<div id="validate_popup_window"><div id="revaliadte_header"><h3>'+headerText+'<h3></div>';
-        validateCodeString += '<div id="validate_hint">您是第一次操作或请求过期,所以需要验证</div></br>';
-        validateCodeString += '<div class="validateCodeImg_b" name="validateCodeImgWrapper" id="validateCodeImgWrapper">';
-        validateCodeString += '<img id="validateCodeImg" src="' + validateCodeUrl + '"/></div>';
-        validateCodeString += '<div class="validateCode_b" name="validateCodeWrapper" id="validateCodeWrapper">';
-        validateCodeString += '<input class="validateCode" name="validateCode" id="validateCode" value="'+validateCodeText+'"/></div>';
-        //validateCodeString += '<div><a class="submit" type="submit" value="" name="submitValidateCode" id="submitValiadteCode" href="javascript:void(0);"></a></div></div>';
-        validateCodeString += '<div><a class="modal-button" type="submit" value="" name="submitValidateCode" id="submitValiadteCode" href="javascript:void(0);">确定</a></div></div>';
+        //var validateCodeString = '<div id="validate_popup_window"><div id="revaliadte_header"><h3>'+headerText+'<h3></div>';
+        //validateCodeString += '<div id="validate_hint">您是第一次操作或请求过期,所以需要验证</div></br>';
+        //validateCodeString += '<div class="validateCodeImg_b" name="validateCodeImgWrapper" id="validateCodeImgWrapper">';
+        //validateCodeString += '<img id="validateCodeImg" src="' + validateCodeUrl + '"/></div>';
+        //validateCodeString += '<div class="validateCode_b" name="validateCodeWrapper" id="validateCodeWrapper">';
+        //validateCodeString += '<input class="validateCode" name="validateCode" id="validateCode" value="'+validateCodeText+'"/></div>';
+        ////validateCodeString += '<div><a class="submit" type="submit" value="" name="submitValidateCode" id="submitValiadteCode" href="javascript:void(0);"></a></div></div>';
+        //validateCodeString += '<div><a class="modal-button" type="submit" value="" name="submitValidateCode" id="submitValiadteCode" href="javascript:void(0);">确定</a></div></div>';
 
-        $.modal(validateCodeString);
-        set_validatecode_events();
-    }
+        //$.modal(validateCodeString);
+        //set_validatecode_events();
+    //}
 
     function set_validatecode_events()
     {
@@ -291,41 +299,41 @@ $(document).ready(function(){
             }
         });
 
-        $("#submitValiadteCode").click(function()
-        {
-            var validateCode = $("#validateCode").val();
-            var platform = $("#platform").val();
-            var codePlatformAcctNotBind = 211113;
+        //$("#submitValiadteCode").click(function()
+        //{
+            //var validateCode = $("#validateCode").val();
+            //var platform = $("#platform").val();
+            //var codePlatformAcctNotBind = 211113;
 
-            if (validateCode !== "" && validateCode !== validateCodeText)
-            {
-                var juLoginUrl = "doVerifyCoupon.php?action=julogin&platform=juhuasuan&validatecode="+validateCode;
+            //if (validateCode !== "" && validateCode !== validateCodeText)
+            //{
+                //var juLoginUrl = "doVerifyCoupon.php?action=julogin&platform=juhuasuan&validatecode="+validateCode;
 
-                $.ajax({
-                  url: juLoginUrl,
-                  success: function(data) {
-                      var response = $.parseJSON(data);
-                      if (response.success === true)
-                      {
-                          $.modal.close();
-                          $("#submit").trigger('click');
-                      }
-                      else if (response.success == codePlatformAcctNotBind && platform === "juhuasuan")
-                      {
-                          alert("您还未绑定聚划算平台账户,无法进行验证");
-                          $.modal.close();
-                      }
-                      else {
-                        $("#validateCode").val("");
-                        $("#validate_hint").text("验证码错误");
-                      }
-                  }
-               });
-            }
-            else {
-                return false;
-            }
+                //$.ajax({
+                  //url: juLoginUrl,
+                  //success: function(data) {
+                      //var response = $.parseJSON(data);
+                      //if (response.success === true)
+                      //{
+                          //$.modal.close();
+                          //$("#submit").trigger('click');
+                      //}
+                      //else if (response.success == codePlatformAcctNotBind && platform === "juhuasuan")
+                      //{
+                          //alert("您还未绑定聚划算平台账户,无法进行验证");
+                          //$.modal.close();
+                      //}
+                      //else {
+                        //$("#validateCode").val("");
+                        //$("#validate_hint").text("验证码错误");
+                      //}
+                  //}
+               //});
+            //}
+            //else {
+                //return false;
+            //}
 
-        });
+        //});
     }
 });

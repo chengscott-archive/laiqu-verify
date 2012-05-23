@@ -18,6 +18,7 @@ li{list-style:none;}
 
 
 .main{ width:775px; height:auto; min-height:300px; overflow:hidden;}
+
 .top_blank{ height:30px;}
 .top{ height:105px;}
 
@@ -36,3 +37,8 @@ li{list-style:none;}
 .footer_text{ margin-left:309px; margin-top:10px; color:#7a7a7a;}
 .bottom_line{ height:3px; width:775px; background-image:url(../images/bg_line.jpg); background-repeat:repeat-x;}
 .footer{ width:775px; height:90px; margin-top:40px;}
+
+.twirly_loading{ background-color:#5C5C5;}
+.nav_text_assit{ width:35px; }
+.nav_bg_assit_class { margin-top:15px; }
+.divide_line { border: 2px solid #DCE0E3; }

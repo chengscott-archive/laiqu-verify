@@ -308,7 +308,6 @@ class VerifyCoupon
         }
         $response['code'] = $code;
         $response['msg']  = $msg;
-        $response['dateTime'] = date("Y-m-d, h:i:s");
 
         return json_encode($response);
     }
