@@ -9,7 +9,9 @@
     verifyLoginUrl = "doVerifyLogin.php";
     afterLoginUrl = "../verifyCoupon/index.php";
     triggerKeyCode = 13;
+
     do_login = function(name, passwd) {
+      $("#msg_area").text("");
       return $.ajax({
         url: verifyLoginUrl,
         type: 'POST',
@@ -18,7 +20,11 @@
           'password': passwd
         },
         success: function(data) {
-          if (parse_verifyResponse(data)) return window.location = afterLoginUrl;
+          if (parse_verifyResponse(data)) { return window.location = afterLoginUrl; }
+        },
+        complete: function(data) {
+            // 去除loading dialog
+            remove_loading_twirly();
         }
       });
     };
@@ -44,7 +50,10 @@
       var name, pass;
       name = $("#username").val();
       pass = $("#password").val();
-      if (check_input()) do_login(name, pass);
+      if (check_input()) {
+          show_loading_twirly();
+          do_login(name, pass);
+      };
       return false;
     });
 

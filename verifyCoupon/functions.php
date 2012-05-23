@@ -398,4 +398,31 @@ function add_double_quote($matches)
     //return $matches[1].'"'.substr($matches[2], 0, -1).'":';
     return $matches[1].'"'.$matches[2].'":';
 }
+
+// 在验证结果json中加上券信息
+function addCouponInfoToVerifyResponse($response, $couponId, $platform, $consumed_times)
+{
+    $responseObj = json_decode($response);
+    if ($responseObj->success === false)
+    {
+        return $response;
+    }
+    // 获得团购券信息
+    $coupon = new Coupon();
+    $params = array('platform_coupon_id'=>$couponId, 'platform_key'=>$platform);
+    $couponRow = $coupon->get_row($params); 
+    if ($couponRow === null)
+    {
+        return $response;
+    }
+    $responseObj->couponId = $couponId;
+    $responseObj->platform = $platform;
+    $responseObj->teamId = $couponRow['team_id'];
+    $responseObj->orderId = $couponRow['order_id'];
+    $responseObj->consumerMobile = $couponRow['consumer_mobile'];
+    $responseObj->consumedTimes = $couponRow['consumedTimes'];
+    $responseObj->dateTime = strftime('%Y-%m-%d %H:%M:%S',$couponRow['consume_time']);
+    return json_encode($responseObj);
+}
+
 ?>

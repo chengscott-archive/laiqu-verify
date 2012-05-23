@@ -125,10 +125,11 @@ if ($responseCode === VerifyCouponCodeMsg::RECORD_COUPON_FAILED_ERROR)
     $response = VerifyCoupon::gen_response_json(
             VerifyCouponCodeMsg::RECORD_COUPON_FAILED_ERROR,
             "ErrorCode: ".VerifyCouponCodeMsg::RECORD_COUPON_FAILED_ERROR." 平台:".$platform."编号为".$couponId."的已消费的团购券在本地登记失败!");
-    echo $response;
 }
 else {
-    echo VerifyCoupon::gen_response_json($responseCode);
+    $response = VerifyCoupon::gen_response_json($responseCode);
 }
+$responseWithCouponInfo = addCouponInfoToVerifyResponse($response, $couponId, $platform, $consumed_times);
+echo $responseWithCouponInfo;
 unset($rest);
 ?>
