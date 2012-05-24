@@ -69,6 +69,21 @@ function gen_json_response($code)
     echo json_encode($responseArray);
 }
 
+// 返回响应结果数组
+function gen_response_array($code)
+{
+    $responseArray = array();
+    if ($code === "success")
+    {
+        $responseArray['success'] = true; 
+    } else {
+        $responseArray['success'] = false;
+        $responseArray['code'] = $code;
+        $responseArray['msg'] = get_errorMsgs($code);
+    }
+    return $responseArray;
+}
+
 function get_errorMsgs($code)
 {
     global $errorMsgs;
