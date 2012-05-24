@@ -60,7 +60,9 @@ if (mysql_affected_rows() < 1)
     echo gen_json_response(CREATE_PARTNER_FAILED);
 }
 else {
-    echo gen_json_response('success');
+    $responseArray = gen_response_array('success');
+    $responseArray['partnerAcct'] = $partner_acct;
+    echo json_encode($responseArray);
 }
 exit;
 ?>
