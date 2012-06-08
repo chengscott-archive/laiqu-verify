@@ -26,6 +26,9 @@ VerifyCoupon	VerifyCoupon.php	/^class VerifyCoupon$/;"	c
 VerifyCoupon	doVerifyCoupon.php	/^ * @history   v1.001 using class VerifyCoupon with Exception handling 2012-3-9 下午5:09$/;"	c
 VerifyCoupon	v1000/VerifyCoupon.php	/^class VerifyCoupon$/;"	c
 VerifyCoupon_Exception	v1000/Exception.php	/^ class VerifyCoupon_Exception extends PEAR_Exception$/;"	c
+_SESSION	doVerifyCoupon.php	/^        $_SESSION['JSESSIONID'] = $jsessionid['value'];$/;"	p
+_SESSION	functions.php	/^            $_SESSION['partner_'.$platform] = array($/;"	p
+_SESSION	functions.php	/^        $_SESSION['JSESSIONID'] = $jsessionid['value'];$/;"	p
 __construct	v1000/Exception.php	/^    public function __construct($message = null, $code = null)$/;"	f
 _apiUrl	VerifyCoupon.php	/^    private $_apiUrl = '';$/;"	p
 _apiUrl	v1000/VerifyCoupon.php	/^    private $_apiUrl = '';$/;"	p
@@ -50,9 +53,16 @@ _responseType	VerifyCoupon.php	/^    private $_responseType = '';        \/\/ ap
 _responseType	v1000/VerifyCoupon.php	/^    private $_responseType = '';        \/\/ api response type => 'XML','JSON'$/;"	p
 _supportPlatforms	VerifyCoupon.php	/^    private $_supportPlatforms = array("laiqu", "juhuasuan");  \/\/  currently not support 360buy$/;"	p
 _supportPlatforms	v1000/VerifyCoupon.php	/^    private $_supportPlatforms = array("laiqu", "360buy");$/;"	p
+addCouponInfoToVerifyResponse	functions.php	/^function addCouponInfoToVerifyResponse($response, $couponId, $platform, $consumed_times)$/;"	f
+add_double_quote	functions.php	/^function add_double_quote($matches)$/;"	f
 apiUrl	VerifyCoupon_funcs.php	/^   $apiUrl = $$targetApi->apiUrl;$/;"	p
+beautifulJson	functions.php	/^        $beautifulJson = preg_replace("\/'(.*)'\/",'"${1}"', $beautifulJson);$/;"	p
+beautifulJson	functions.php	/^        $beautifulJson = preg_replace('\/(,\\s*)([\\}\\]])\/','${2}',$uglyJson);$/;"	p
+beautifulJson	functions.php	/^    $beautifulJson = "";$/;"	p
 by	VerifyCoupon.php	/^    * initialize class by parse specified configure file$/;"	c
 by	v1000/VerifyCoupon.php	/^    * initialize class by parse specified configure file$/;"	c
+captchaPath	functions.php	/^        $captchaPath = get_login_validate_img_path($platform);$/;"	p
+captchaUrl	functions.php	/^        $captchaUrl = 'http:\/\/59.151.29.121\/validateCode.do?'.date(mktime());$/;"	p
 code	VerifyCoupon.php	/^                $code =  CommonCodeMsg::INVALID_ARGUMENT_ERROR;$/;"	p
 code	VerifyCoupon.php	/^        $code = $result;$/;"	p
 code	doVerifyCoupon.php	/^        $code = CommonCodeMsg::UNCAUGHT_FATAL_ERROR;$/;"	p
@@ -62,6 +72,7 @@ codeSuccess	VerifyCoupon_funcs.php	/^   $codeSuccess = $$targetApi->responseResu
 codeTag	VerifyCoupon.php	/^        $codeTag = $this->_codeTag;$/;"	p
 codeTag	VerifyCoupon_funcs.php	/^        $codeTag == ""  || $codeSuccess == "")$/;"	p
 codeTag	VerifyCoupon_funcs.php	/^   $codeTag = $$targetApi->responseResult->codeTag;$/;"	p
+conditions	functions.php	/^    $conditions = array($/;"	p
 configFileName	VerifyCoupon.php	/^        $configFileName = "..\/platform_api_confs\/" . $this->_platform . ".conf"; $/;"	p
 configFileName	VerifyCoupon_funcs.php	/^   $configFileName = "platform_api_confs\/" . $platform . ".conf"; $/;"	p
 configFileName	v1000/VerifyCoupon.php	/^        $configFileName = "platform_api_confs\/" . $this->_platform . ".conf"; $/;"	p
@@ -69,11 +80,21 @@ configs	VerifyCoupon.php	/^        $configs = json_decode($content);$/;"	p
 configs	VerifyCoupon_funcs.php	/^   $configs = json_decode($content);$/;"	p
 configs	v1000/VerifyCoupon.php	/^        $configs = json_decode($content);$/;"	p
 constants	v1000/Exception.php	/^    * @param int    package error code, one of class constants$/;"	c
+consumeCount	VerifyCoupon.php	/^            $consumeCount = $request['consumeCount'];$/;"	p
+consumedCoupons	functions.php	/^    $consumedCoupons = $coupon->get_row($conditions);$/;"	p
+consumed_times	doVerifyCoupon.php	/^    $consumed_times = $_REQUEST['consumeCount'];$/;"	p
+consumed_times	functions.php	/^         $consumed_times = $request['consumeCount'];$/;"	p
 content	VerifyCoupon.php	/^        $content = file_get_contents($configFileName);$/;"	p
 content	VerifyCoupon_funcs.php	/^   $content = file_get_contents($configFileName);$/;"	p
 content	v1000/VerifyCoupon.php	/^        $content = file_get_contents($configFileName);$/;"	p
-coupon	doVerifyCoupon.php	/^    $coupon = new Coupon();$/;"	p
-couponId	doVerifyCoupon.php	/^    $couponId = $inputs['couponId'];$/;"	p
+convert_order	functions.php	/^function convert_order($orderInfo, $platform)$/;"	f
+count	doVerifyCoupon.php	/^    $count = 0;$/;"	p
+coupon	functions.php	/^    $coupon = new Coupon();$/;"	p
+couponId	functions.php	/^    $couponId = $inputs['couponId'];$/;"	p
+couponRow	functions.php	/^    $couponRow = $coupon->get_row($params); $/;"	p
+deal_with_platform	functions.php	/^function deal_with_platform($request)$/;"	f
+decode_captcha	functions.php	/^function decode_captcha($captchaPath)$/;"	f
+doVerifyCoupon	functions.php	/^function doVerifyCoupon($request)$/;"	f
 errstr	doVerifyCoupon.php	/^        $errstr = $exception->getMessage();$/;"	p
 exceptionHandler	doVerifyCoupon.php	/^function exceptionHandler($exception)$/;"	f
 findCookie	functions.php	/^function findCookie($name, $cookies) $/;"	f
@@ -88,8 +109,11 @@ get_codeTag	VerifyCoupon.php	/^    public function get_codeTag()$/;"	f
 get_codeTag	v1000/VerifyCoupon.php	/^    public function get_codeTag()$/;"	f
 get_httpMethod	VerifyCoupon.php	/^    public function get_httpMethod()$/;"	f
 get_httpMethod	v1000/VerifyCoupon.php	/^    public function get_httpMethod()$/;"	f
+get_juhuasuan_login_params	functions.php	/^function get_juhuasuan_login_params()$/;"	f
+get_login_validate_img_path	functions.php	/^function get_login_validate_img_path($platform)$/;"	f
 get_message	v1000/Exception.php	/^    static public function get_message($code = null)$/;"	f
 get_message	v1000/VerifyCoupon.php	/^    static public function get_message($code = null)$/;"	f
+get_orderInfo	functions.php	/^function get_orderInfo($couponId, $platform)$/;"	f
 get_platform	VerifyCoupon.php	/^    public function get_platform()$/;"	f
 get_platform	v1000/VerifyCoupon.php	/^    public function get_platform()$/;"	f
 get_requestMethod	VerifyCoupon.php	/^    public function get_requestMethod()$/;"	f
@@ -102,77 +126,173 @@ get_responseCode	VerifyCoupon_funcs.php	/^function get_responseCode($response, $
 get_responseCode	v1000/VerifyCoupon.php	/^    public function get_responseCode($response)$/;"	f
 get_responseType	VerifyCoupon.php	/^    public function get_responseType()$/;"	f
 get_responseType	v1000/VerifyCoupon.php	/^    public function get_responseType()$/;"	f
+imgSuffix	functions.php	/^        $imgSuffix = 'jpg';$/;"	p
 init	VerifyCoupon.php	/^    public function init($platform)$/;"	f
 init	v1000/VerifyCoupon.php	/^    public function init($platform)$/;"	f
 init_verifyInputs	VerifyCoupon.php	/^    public function init_verifyInputs($request)$/;"	f
 init_verifyInputs	VerifyCoupon_funcs.php	/^function init_verifyInputs($request)$/;"	f
 init_verifyInputs	v1000/VerifyCoupon.php	/^    public function init_verifyInputs($request)$/;"	f
+inputs	VerifyCoupon.php	/^                $inputs['consumeCount'] = $consumeCount;$/;"	p
 inputs	VerifyCoupon.php	/^                $inputs['couponPwd'] = $request['couponPwd'];$/;"	p
 inputs	VerifyCoupon.php	/^        $inputs['couponId'] = $request['couponId'];$/;"	p
 inputs	VerifyCoupon_funcs.php	/^        $inputs['couponPwd'] = $request['couponPwd'];$/;"	p
 inputs	VerifyCoupon_funcs.php	/^    $inputs = array();$/;"	p
 inputs	VerifyCoupon_funcs.php	/^    $inputs['couponId'] = $request['couponId'];$/;"	p
+inputs	functions.php	/^        $inputs['terminalid'] = $_SESSION['partner_'.$platform]['p_terminalid'];$/;"	p
+inputs	functions.php	/^    $inputs = $verifyCoupon->init_verifyInputs($request);$/;"	p
 inputs	v1000/VerifyCoupon.php	/^                $inputs['couponPwd'] = $request['couponPwd'];$/;"	p
 inputs	v1000/VerifyCoupon.php	/^        $inputs['couponId'] = $request['couponId'];$/;"	p
+insertCoupon	functions.php	/^        $insertCoupon = array($/;"	p
+insertOrder	functions.php	/^        $insertOrder = array($/;"	p
+is_login_success	functions.php	/^function is_login_success($response, $platform)$/;"	f
 is_supported	VerifyCoupon.php	/^    public function is_supported($platform)$/;"	f
 is_supported	v1000/VerifyCoupon.php	/^    public function is_supported($platform)$/;"	f
+jsessionid	doVerifyCoupon.php	/^    $jsessionid = findCookie("JSESSIONID", $responseObj->getCookies());$/;"	p
+jsessionid	functions.php	/^    $jsessionid = findCookie("JSESSIONID", $responseObj->getCookies());$/;"	p
+jsonResponse	VerifyCoupon.php	/^            $jsonResponse = json_decode($response);$/;"	p
+laiquOrder	functions.php	/^            $laiquOrder = convert_order($order, $platform);$/;"	p
+laiquOrder	functions.php	/^    $laiquOrder = array();$/;"	p
+loginUrl	functions.php	/^        $loginUrl = "http:\/\/59.151.29.121\/shopUsed\/shopLogin.do";$/;"	p
+login_platform	functions.php	/^function login_platform($platform)$/;"	f
 message	v1000/Exception.php	/^                $message = self::get_message($code);$/;"	p
 msg	VerifyCoupon.php	/^                $msg  =  CommonCodeMsg::get_message($code);  $/;"	p
 msg	VerifyCoupon.php	/^            $msg = VerifyCouponCodeMsg::get_message($code);$/;"	p
+order	functions.php	/^            $order = $result->data[0];$/;"	p
+order	functions.php	/^        $order['consumer_mobile'] = $orderInfo->receiMobile;        $/;"	p
+order	functions.php	/^        $order['platform_key'] = $platform;$/;"	p
+order	functions.php	/^        $order['platform_order_id'] = $orderInfo->taobaoId;$/;"	p
+order	functions.php	/^        $order['summary'] = $orderInfo->description;$/;"	p
+order	functions.php	/^        $order['team_price'] = floatval(substr($orderInfo->payment, 3));$/;"	p
+order	functions.php	/^        $order['title'] = $orderInfo->product;$/;"	p
+order	functions.php	/^    $order = array();$/;"	p
+order	functions.php	/^    $order = new Order();$/;"	p
+orderId	functions.php	/^    $orderId = $orderInfo['platform_order_id'];$/;"	p
+orderInfo	functions.php	/^        $orderInfo = record_order($couponId, $platform, $consumed_times);$/;"	p
+orderInfo	functions.php	/^        $orderInfo['team_id'] = $recordedTeam['id'];$/;"	p
+orderInfo	functions.php	/^    $orderInfo = get_orderInfo($couponId, $platform);$/;"	p
+orderInfo	functions.php	/^    $orderInfo['consume_times'] = $consumed_times;$/;"	p
+orderInfo	functions.php	/^    $orderInfo['partner_id'] = $_SESSION['partnerId'];$/;"	p
+orderInfo	functions.php	/^    $orderInfo['platform_coupon_id'] = $couponId;$/;"	p
+orderInfo	functions.php	/^    $orderInfo['platform_key'] = $platform;$/;"	p
+orderInserted	functions.php	/^        $orderInserted = $order->insert_order($insertOrder);$/;"	p
+orderInserted	functions.php	/^        $orderInserted['consumer_mobile'] = $orderInfo['consumer_mobile'];        $/;"	p
 params	VerifyCoupon.php	/^                $params[$key] = $value;$/;"	p
 params	VerifyCoupon.php	/^                $params[$value] = $inputs[$key];$/;"	p
 params	VerifyCoupon.php	/^        $params = array();$/;"	p
 params	VerifyCoupon_funcs.php	/^            $params[$key] = $value;$/;"	p
 params	VerifyCoupon_funcs.php	/^        $params[$value] = $inputs[$key];$/;"	p
 params	VerifyCoupon_funcs.php	/^    $params = array();$/;"	p
+params	functions.php	/^        $params = array("model.assitCode" => $couponId);$/;"	p
+params	functions.php	/^        $params = get_juhuasuan_login_params();$/;"	p
+params	functions.php	/^        $params['model.validateCode'] = $validateCode;$/;"	p
+params	functions.php	/^    $params = $verifyCoupon->get_requestParams($inputs);$/;"	p
+params	functions.php	/^    $params = array ($/;"	p
+params	functions.php	/^    $params = array('id'=>$couponRow['team_id']);$/;"	p
+params	functions.php	/^    $params = array('platform_coupon_id'=>$couponId, 'platform_key'=>$platform);$/;"	p
 params	v1000/VerifyCoupon.php	/^                $params[$key] = $value;$/;"	p
 params	v1000/VerifyCoupon.php	/^            $params[$value] = $inputs[$key];$/;"	p
 params	v1000/VerifyCoupon.php	/^        $params = array();$/;"	p
 parse_platform_confs	VerifyCoupon_funcs.php	/^function parse_platform_confs($platform)$/;"	f
 parse_platform_response	VerifyCoupon_funcs.php	/^function parse_platform_response($response, $requestMethod,  $responseType, $codeTag, $codeSuccess)$/;"	f
+partnerPlatforms	functions.php	/^    $partnerPlatforms = new PartnerPlatforms();$/;"	p
+platform	functions.php	/^    $platform = $request['platform'];$/;"	p
+ppRow	functions.php	/^    $ppRow = $partnerPlatforms->get_row($/;"	p
+record_consumed_coupon	functions.php	/^function record_consumed_coupon($couponId, $platform, $consumed_times=1)$/;"	f
+record_order	functions.php	/^function record_order($couponId,$platform, $consumed_times = 1)$/;"	f
+record_team_by_order	functions.php	/^function record_team_by_order($orderInfo)$/;"	f
+recordedOrder	functions.php	/^        $recordedOrder['consumer_mobile'] = $orderInfo['consumer_mobile'];$/;"	p
+recordedOrder	functions.php	/^    $recordedOrder = $order->get_row($conditions);$/;"	p
+recordedTeam	functions.php	/^        $recordedTeam = record_team_by_order($orderInfo);$/;"	p
+req	doVerifyCoupon.php	/^        $req->addCookie("JSESSIONID", $jsessionid['value']);$/;"	p
 req	doVerifyCoupon.php	/^    $req = $rest->getHttpRequest();$/;"	p
-req	doVerifyCoupon.php	/^    $req->setHeader("Accept", "text\/html,application\/xhtml+xml,application\/xml;q=0.9,*\/*;q=0.8");$/;"	p
-req	doVerifyCoupon.php	/^    $req->setHeader("Accept-Charset", "GBK,utf-8;q=0.7,*;q=0.3");$/;"	p
-req	doVerifyCoupon.php	/^    $req->setHeader("Accept-Encoding", "gzip,deflate,sdch");$/;"	p
-req	doVerifyCoupon.php	/^    $req->setHeader("Accept-Language", "zh-CN,zh;q=0.8");$/;"	p
-req	doVerifyCoupon.php	/^    $req->setHeader("Cache-Control", "max-age=0");$/;"	p
-req	doVerifyCoupon.php	/^    $req->setHeader("Connection", "keep-alive");$/;"	p
-req	doVerifyCoupon.php	/^    $req->setHeader("User-Agent", "Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit\/535.19 (KHTML, like Gecko) Chrome\/18.0.1025.168 Safari\/535.19");$/;"	p
+req	functions.php	/^         $req = $rest->getHttpRequest();$/;"	p
+req	functions.php	/^         $req->addCookie("JSESSIONID", $_SESSION['JSESSIONID']);$/;"	p
+req	functions.php	/^        $req = $rest->getHttpRequest();$/;"	p
+req	functions.php	/^        $req->addCookie("JSESSIONID", $_SESSION['JSESSIONID']);  \/\/ I add path param to addCookie function$/;"	p
+req	functions.php	/^        $req->addCookie("JSESSIONID", $_SESSION['JSESSIONID']);$/;"	p
+req	functions.php	/^        $req->addCookie("JSESSIONID", $jsessionid['value']);$/;"	p
+req	functions.php	/^        $req->setCookieJar();$/;"	p
+req	functions.php	/^    $req = $rest->getHttpRequest();$/;"	p
 requestParams	VerifyCoupon_funcs.php	/^   $requestParams = $$targetApi->requestParams;$/;"	p
 requestParamsStatic	VerifyCoupon_funcs.php	/^   $requestParamsStatic = $$targetApi->requestParamsStatic;$/;"	p
+response	VerifyCoupon.php	/^            $response['success'] = false;$/;"	p
+response	VerifyCoupon.php	/^            $response['success'] = true;$/;"	p
 response	VerifyCoupon.php	/^        $response['code'] = $code;$/;"	p
-response	VerifyCoupon.php	/^        $response['dateTime'] = date("Y-m-d, h:i:s");$/;"	p
 response	VerifyCoupon.php	/^        $response['msg']  = $msg;$/;"	p
 response	VerifyCoupon_funcs.php	/^    $response = array();$/;"	p
 response	VerifyCoupon_funcs.php	/^    $response['code'] = $result;$/;"	p
 response	VerifyCoupon_funcs.php	/^    $response['dateTime'] = date("Y-m-d, h:i:s");$/;"	p
 response	VerifyCoupon_funcs.php	/^    $response['msg']  = $codeMessages[$result];$/;"	p
+response	doVerifyCoupon.php	/^    $response = VerifyCoupon::gen_response_json($/;"	p
+response	doVerifyCoupon.php	/^    $response = VerifyCoupon::gen_response_json($responseCode);$/;"	p
+response	functions.php	/^        $response = $rest->getResponse();$/;"	p
+response	functions.php	/^        $response = tidy_ugly_json($response,$platform);$/;"	p
+response	functions.php	/^    $response = $rest->getResponse();$/;"	p
+response	functions.php	/^    $response = '';$/;"	p
 response	v1000/VerifyCoupon.php	/^        $response['code'] = $result;$/;"	p
 response	v1000/VerifyCoupon.php	/^        $response['dateTime'] = date("Y-m-d, h:i:s");$/;"	p
 response	v1000/VerifyCoupon.php	/^        $response['msg']  = self::$_codeMessages[$result];$/;"	p
 responseCode	VerifyCoupon.php	/^                    $responseCode = $val[3];$/;"	p
+responseCode	VerifyCoupon.php	/^                $responseCode = "false";$/;"	p
+responseCode	VerifyCoupon.php	/^                $responseCode = "login_expired";$/;"	p
+responseCode	VerifyCoupon.php	/^                $responseCode = "true";$/;"	p
+responseCode	VerifyCoupon.php	/^            $responseCode = $jsonResponse->$codeTag;$/;"	p
 responseCode	VerifyCoupon.php	/^            $responseCode = $xmlResponse->$codeTag;$/;"	p
 responseCode	VerifyCoupon.php	/^        $responseCode = "";    \/\/验证结果编码$/;"	p
 responseCode	VerifyCoupon_funcs.php	/^                $responseCode = $val[3];$/;"	p
 responseCode	VerifyCoupon_funcs.php	/^        $responseCode = $xmlResponse->$code;$/;"	p
 responseCode	VerifyCoupon_funcs.php	/^    $responseCode = "";    \/\/验证结果编码$/;"	p
+responseCode	doVerifyCoupon.php	/^        $responseCode = VerifyCouponCodeMsg::RECORD_COUPON_FAILED_ERROR;$/;"	p
+responseCode	doVerifyCoupon.php	/^        $responseCode = doVerifyCoupon($_REQUEST);$/;"	p
+responseCode	functions.php	/^    $responseCode = $verifyCoupon->get_responseCode($response);$/;"	p
 responseCode	v1000/VerifyCoupon.php	/^                    $responseCode = $val[3];$/;"	p
 responseCode	v1000/VerifyCoupon.php	/^            $responseCode = $xmlResponse->$code;$/;"	p
 responseCode	v1000/VerifyCoupon.php	/^        $responseCode = "";    \/\/验证结果编码$/;"	p
 responseObj	doVerifyCoupon.php	/^    $responseObj = $rest->getResponseObj();$/;"	p
+responseObj	functions.php	/^        $responseObj->teamTitle = "未知项目";$/;"	p
+responseObj	functions.php	/^        $responseObj->teamTitle = $teamRow['title'];$/;"	p
+responseObj	functions.php	/^    $responseObj = $rest->getResponseObj();$/;"	p
+responseObj	functions.php	/^    $responseObj = json_decode($response);$/;"	p
+responseObj	functions.php	/^    $responseObj->consumedTimes = $couponRow['consumedTimes'];$/;"	p
+responseObj	functions.php	/^    $responseObj->consumerMobile = $couponRow['consumer_mobile'];$/;"	p
+responseObj	functions.php	/^    $responseObj->couponId = $couponId;$/;"	p
+responseObj	functions.php	/^    $responseObj->dateTime = strftime('%Y-%m-%d %H:%M:%S',$couponRow['consume_time']);$/;"	p
+responseObj	functions.php	/^    $responseObj->orderId = $couponRow['order_id'];$/;"	p
+responseObj	functions.php	/^    $responseObj->platform = $platform;$/;"	p
+responseObj	functions.php	/^    $responseObj->teamId = $couponRow['team_id'];$/;"	p
+responseType	VerifyCoupon.php	/^        $responseType = strtoupper($this->_responseType);$/;"	p
 rest	doVerifyCoupon.php	/^    $rest = new RESTclient();$/;"	p
-rest	doVerifyCoupon.php	/^    $rest->createRequest($verifyCoupon->get_apiUrl());$/;"	p
-rest	doVerifyCoupon.php	/^    $rest->createRequest($verifyCoupon->get_apiUrl(), 'POST', $params);$/;"	p
 rest	doVerifyCoupon.php	/^    $rest->createRequest('http:\/\/59.151.29.121\/validateCode.do?'.date(mktime()), 'GET');$/;"	p
 rest	doVerifyCoupon.php	/^    $rest->sendRequest();$/;"	p
+rest	functions.php	/^        $rest = new RESTclient();$/;"	p
+rest	functions.php	/^        $rest->createRequest("http:\/\/59.151.29.121\/shopUsed\/list.do", 'POST', $params);$/;"	p
+rest	functions.php	/^        $rest->createRequest($loginUrl,'POST',$params);$/;"	p
+rest	functions.php	/^        $rest->createRequest($verifyCoupon->get_apiUrl());$/;"	p
+rest	functions.php	/^        $rest->createRequest($verifyCoupon->get_apiUrl(), 'POST', $params);$/;"	p
+rest	functions.php	/^        $rest->sendRequest();$/;"	p
+rest	functions.php	/^    $rest = new RESTclient();$/;"	p
+rest	functions.php	/^    $rest->createRequest($captchaUrl);$/;"	p
+rest	functions.php	/^    $rest->sendRequest();$/;"	p
 rest	v1000/doVerifyCoupon.php	/^    $rest->createRequest($verifyCoupon->get_apiUrl());$/;"	p
 rest	v1000/doVerifyCoupon.php	/^    $rest->createRequest($verifyCoupon->get_apiUrl(), 'POST', $params);$/;"	p
 result	VerifyCoupon_funcs.php	/^       $result =  CODE_ERROR_UNKNOWN;$/;"	p
+result	functions.php	/^        $result = json_decode($response);$/;"	p
 runtimeErrorHandler	doVerifyCoupon.php	/^function runtimeErrorHandler($errno, $errstr, $errfile, $errline)$/;"	f
+success	doVerifyCoupon.php	/^            $success = VerifyCouponCodeMsg::PLATFORM_ACCT_NOT_BIND_ERROR;$/;"	p
+success	doVerifyCoupon.php	/^        $success = false;$/;"	p
+success	doVerifyCoupon.php	/^        $success = login_platform($platform);$/;"	p
+success	doVerifyCoupon.php	/^        $success = true;$/;"	p
+success	doVerifyCoupon.php	/^    $success = false;$/;"	p
+success	functions.php	/^        $success = false;$/;"	p
+success	functions.php	/^        $success = is_login_success($response, $platform);$/;"	p
 targetApi	VerifyCoupon.php	/^        $targetApi = self::TARGET_API;$/;"	p
 targetApi	v1000/VerifyCoupon.php	/^        $targetApi = self::TARGET_API;$/;"	p
 targetApiConfs	VerifyCoupon.php	/^        $targetApiConfs = $configs->$targetApi;$/;"	p
 targetApiConfs	v1000/VerifyCoupon.php	/^        $targetApiConfs = $configs->$targetApi;$/;"	p
+team	functions.php	/^    $team = new Team();$/;"	p
+teamInfo	functions.php	/^            $teamInfo = array($/;"	p
+teamRow	functions.php	/^        $teamRow = $team->get_row($/;"	p
+teamRow	functions.php	/^    $teamRow = $team->get_row($params);$/;"	p
 this	VerifyCoupon.php	/^            $this->_codeTag == ""  || $this->_codeSuccess == "")$/;"	p
 this	VerifyCoupon.php	/^        $this->_apiUrl = $targetApiConfs->apiUrl;$/;"	p
 this	VerifyCoupon.php	/^        $this->_codeSuccess = $targetApiConfs->responseResultStatic->codeSuccess;$/;"	p
@@ -193,10 +313,26 @@ this	v1000/VerifyCoupon.php	/^        $this->_requestMethod = $configs->requestM
 this	v1000/VerifyCoupon.php	/^        $this->_requestParams = $targetApiConfs->requestParams;$/;"	p
 this	v1000/VerifyCoupon.php	/^        $this->_requestParamsStatic = $targetApiConfs->requestParamsStatic;$/;"	p
 this	v1000/VerifyCoupon.php	/^        $this->_responseType = $configs->responseType;$/;"	p
-url	doVerifyCoupon.php	/^    $url = $rest->getUrl();$/;"	p
-url	doVerifyCoupon.php	/^    $url->setQueryVariables($params);$/;"	p
+tidy_ugly_json	functions.php	/^function tidy_ugly_json($uglyJson, $platform)$/;"	f
+tmp_captcha_name	functions.php	/^    $tmp_captcha_name = '';$/;"	p
+tmp_captcha_name	functions.php	/^    $tmp_captcha_name = tempnam(sys_get_temp_dir(),$imgSuffix);$/;"	p
+tryTimes	doVerifyCoupon.php	/^    $tryTimes = 10;$/;"	p
+uglyJson	functions.php	/^        $uglyJson = preg_replace('\/\\s*:\\s*\/',':', $uglyJson);$/;"	p
+uglyJson	functions.php	/^        $uglyJson = preg_replace('\/items\\s*:\\s*\\[[^<]+?\\]\/','', $uglyJson);$/;"	p
+uglyJson	functions.php	/^        $uglyJson = preg_replace_callback('\/([\\{,]\\s*)([[\\w\\d]+)(\\s*:)\/',"add_double_quote", $uglyJson);$/;"	p
+url	functions.php	/^        $url = $rest->getUrl();$/;"	p
+url	functions.php	/^        $url->setQueryVariables($params);$/;"	p
 url	v1000/doVerifyCoupon.php	/^    $url = $rest->getUrl();$/;"	p
 url	v1000/doVerifyCoupon.php	/^    $url->setQueryVariables($params);$/;"	p
+validateCode	doVerifyCoupon.php	/^    $validateCode = $_REQUEST['validatecode'];$/;"	p
+validateCode	functions.php	/^        $validateCode = $request['validateCode'];$/;"	p
+validateCode	functions.php	/^        $validateCode = decode_captcha($captchaPath);$/;"	p
+validateCode	functions.php	/^    $validateCode = $valite->run();$/;"	p
+valite	functions.php	/^    $valite = new Valite();$/;"	p
+valite	functions.php	/^    $valite->getHec();$/;"	p
+valite	functions.php	/^    $valite->setImage($captchaPath);$/;"	p
+verifyCoupon	functions.php	/^    $verifyCoupon = new VerifyCoupon();$/;"	p
+verifyCoupon	functions.php	/^    $verifyCoupon->init($platform);$/;"	p
 verifyMsg	doVerifyCoupon.php	/^    $verifyMsg = VerifyCouponCodeMsg::get_message($code); $/;"	p
 xmlResponse	VerifyCoupon.php	/^            $xmlResponse = simplexml_load_string($response);$/;"	p
 xmlResponse	VerifyCoupon_funcs.php	/^        $xmlResponse = simplexml_load_string($response);$/;"	p

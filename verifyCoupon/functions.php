@@ -422,6 +422,16 @@ function addCouponInfoToVerifyResponse($response, $couponId, $platform, $consume
     $responseObj->consumerMobile = $couponRow['consumer_mobile'];
     $responseObj->consumedTimes = $couponRow['consumedTimes'];
     $responseObj->dateTime = strftime('%Y-%m-%d %H:%M:%S',$couponRow['consume_time']);
+    // 获得项目信息
+    $team = new Team();
+    $params = array('id'=>$couponRow['team_id']);
+    $teamRow = $team->get_row($params);
+    if ($couponRow === null)
+    {
+        $responseObj->teamTitle = "未知项目";
+    } else {
+        $responseObj->teamTitle = $teamRow['title'];
+    }
     return json_encode($responseObj);
 }
 

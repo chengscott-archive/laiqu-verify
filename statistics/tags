@@ -9,24 +9,38 @@ TABLE_ROW_NUMS	teamList.php	/^define("TABLE_ROW_NUMS", 4);$/;"	d
 _SESSION	consumedCoupons.php	/^    $_SESSION['fromTeamPage'] = $_GET['fromTeamPage'];$/;"	p
 _SESSION	consumedCoupons.php	/^    $_SESSION['platform'] = $_GET['platform'];$/;"	p
 _SESSION	consumedCoupons.php	/^    $_SESSION['teamId'] = $_GET['teamId'];$/;"	p
+beginTimeString	teamList.php	/^                        $beginTimeString = $endTimeString = $nullDataString;$/;"	p
 consumeCoupon	consumedCoupons.php	/^                    $consumeCoupon = $couponList[$i];$/;"	p
+consumeTimes	teamToExcel.php	/^    $consumeTimes += $couponRow['consumeTimes'];$/;"	p
+consumedCoupontimes	teamList.php	/^                    $consumedCoupontimes = $couponObj->get_consumedCoupontimes($searchFields);$/;"	p
+couponObj	teamList.php	/^                    $couponObj = new Coupon();$/;"	p
+couponRow	teamToExcel.php	/^    $couponRow = mysql_fetch_assoc($couponResult);$/;"	p
 htmlCouponList	consumedCoupons.php	/^                    $htmlCouponList .= "<div class='table_item_1' id='couponRowWrap_{$i}'>$/;"	p
 htmlCouponList	consumedCoupons.php	/^                    $htmlCouponList .= date('Y-m-d',$consumeCoupon['consumeTime']).$/;"	p
 htmlCouponList	consumedCoupons.php	/^                $htmlCouponList = '';$/;"	p
 htmlTeamList	teamList.php	/^                        $htmlTeamList .= "<div class='new_ico '><\/div>";    \/\/add new mark$/;"	p
 htmlTeamList	teamList.php	/^                    $htmlTeamList .= "<div class='table_item_1' id='teamRowWrap_{$i}'>$/;"	p
-htmlTeamList	teamList.php	/^                    $htmlTeamList .= date('Y-m-d',$beginTime).'<br \/>'.date('Y-m-d',$endTime);$/;"	p
+htmlTeamList	teamList.php	/^                    $htmlTeamList .= $beginTimeString.'<br \/>'.$endTimeString;$/;"	p
 htmlTeamList	teamList.php	/^                    $htmlTeamList .="<\/a><\/div>$/;"	p
 htmlTeamList	teamList.php	/^                    $htmlTeamList .="<a class='table_item_id ' >{$teamId}<\/a>$/;"	p
+htmlTeamList	teamList.php	/^                    $htmlTeamList.="<\/a>$/;"	p
 htmlTeamList	teamList.php	/^                $htmlTeamList = '';$/;"	p
+keyCell	teamToExcel.php	/^    $keyCell = $m_objPHPExcel->getActiveSheet()->getCellByColumnAndRow($col, 1);$/;"	p
+keyCell	teamToExcel.php	/^    $keyCell->setValueExplicit($fieldKeys[$col],PHPExcel_Cell_DataType::TYPE_STRING);$/;"	p
+nullDataString	teamList.php	/^                $nullDataString = '\/';$/;"	p
+objWriter	teamToExcel.php	/^    $objWriter = PHPExcel_IOFactory::createWriter($m_objPHPExcel, 'Excel5');$/;"	p
+objWriter	teamToExcel.php	/^    $objWriter->save("php:\/\/output");  \/\/ 在浏览器输出,浏览器识别不了,就会自动提供下载$/;"	p
 oddClass	consumedCoupons.php	/^                        $oddClass = " item_bg";$/;"	p
 oddClass	consumedCoupons.php	/^                        $oddClass = "";$/;"	p
 oddEvenClass	teamList.php	/^                        $oddEvenClass = ' item_bg';$/;"	p
 oddEvenClass	teamList.php	/^                        $oddEvenClass = '';$/;"	p
 page	consumedCoupons.php	/^    $page = $_GET['page'];$/;"	p
 page	teamList.php	/^    $page = $_GET['page'];$/;"	p
+searchFields	teamList.php	/^                    $searchFields = array($/;"	p
 showPageNums	consumedCoupons.php	/^                    $showPageNums = 11;$/;"	p
 showPageNums	teamList.php	/^                        $showPageNums = 11;$/;"	p
 urlPrefix	consumedCoupons.php	/^                    $urlPrefix .= "&";$/;"	p
 urlPrefix	consumedCoupons.php	/^                    $urlPrefix = "consumedCoupons.php?action=search";$/;"	p
 urlPrefix	teamList.php	/^                        $urlPrefix = "teamList.php?";$/;"	p
+valueCell	teamToExcel.php	/^        $valueCell = $m_objPHPExcel->getActiveSheet()->getCellByColumnAndRow($col, $row);$/;"	p
+valueCell	teamToExcel.php	/^        $valueCell->setValueExplicit($couponRow[$fieldDataKeys[$col]],PHPExcel_Cell_DataType::TYPE_STRING);        $/;"	p

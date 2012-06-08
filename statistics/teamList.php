@@ -1,6 +1,7 @@
 ﻿<?php
 require_once('../common/checkAuthority.php');
 require_once('../common/include/errorCatcher.php');
+require_once('../module/Coupon.php');
 require_once('../module/Team.php');
 require_once('../common/common.php');
 
@@ -88,7 +89,7 @@ $totalPages = cal_totalPages($teamNums, TABLE_ROW_NUMS);
                 <p class="table_title_text">日期</p>
                 </div>
                 <div class="t1 fl">
-                <p class="table_title_text">成交</p>
+                <p class="table_title_text">消费次数</p>
                 </div>
                 <div class="t1 fl">
                 <p class="table_title_text">团购价</p>
@@ -112,6 +113,13 @@ $totalPages = cal_totalPages($teamNums, TABLE_ROW_NUMS);
                         $oddEvenClass = ' item_bg';
                     else
                         $oddEvenClass = '';
+
+                    // 查询项目当前销券次数
+                    $searchFields = array(
+                        'partnerId' => $partnerId,
+                        'teamId' => $teamId);
+                    $couponObj = new Coupon();
+                    $consumedCoupontimes = $couponObj->get_consumedCoupontimes($searchFields);
                     
                     $htmlTeamList .= "<div class='table_item_1' id='teamRowWrap_{$i}'>
                         <div class='item1 fl{$oddEvenClass}'>";
@@ -132,7 +140,7 @@ $totalPages = cal_totalPages($teamNums, TABLE_ROW_NUMS);
                     $htmlTeamList .= $beginTimeString.'<br />'.$endTimeString;
                     $htmlTeamList .="</a></div>
                         <div class='item1 fl{$oddEvenClass}'>
-                        <a class='table_item_text' >{$nowNum}/{$minNum}</a>
+                        <a class='table_item_text' >{$consumedCoupontimes}</a>
                         </div>
                         <div class='item6 fl{$oddEvenClass}'>
                         <a class='table_item_text' >￥{$teamPrice}";
@@ -141,10 +149,11 @@ $totalPages = cal_totalPages($teamNums, TABLE_ROW_NUMS);
                         </div>
                         <div class='item7 fl{$oddEvenClass}'>
                             <div class='n_1'>
-                        <a class='table_item_text xf'  href='consumedCoupons.php?teamId={$teamId}&platform={$platformKey}&fromTeamPage={$page}'>已消费</a><p class='table_item_text fl_line'> | </p><a class='table_item_text xz'  href='javascript:void(0);'>下载</a>
-                            </div>
-                        <br/><div class='n_2'>
-                        <a class='table_item_text'  href='javascript:void(0);'>统计</a>
+                            <a class='table_item_text xf'  href='consumedCoupons.php?teamId={$teamId}&platform={$platformKey}&fromTeamPage={$page}'>查看销券列表</a><p class='table_item_text fl_line'></p></div>
+                            <br /><br />
+                        <div class='n_2'>
+                        <a class='table_item_text xz'  href='teamToExcel.php?teamid={$teamId}'>导出Excel</a> 
+                        <a class='table_item_text'  href='javascript:void(0);' style='display:none;'> ! 统计</a>
                             </div></div></div>";
                 }
                 echo $htmlTeamList;
