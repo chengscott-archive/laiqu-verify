@@ -1,4 +1,4 @@
-cscope 15 $HOME/work/host/laiqu/statistics -q 0000000092 0000012907
+cscope 15 $HOME/work/host/laiqu/statistics -q 0000000134 0000015808
 	@consumedCoupons.php
 
 1 ï»¿<?
@@ -275,17 +275,23 @@ süt
 süt
  
 ¤c
+='../js/common_funcs.js'></script>
+
+62 <
+süt
+ 
+¤c
 ='js/consumedCoupon.js'></script>
 
-62 </
+63 </
 h—d
 >
 
-63 <
+64 <
 body
 >
 
-66 <
+67 <
 div
  
 şass
@@ -293,123 +299,85 @@ div
 id
 ="main">
 
-70 <
+71 <
 div
  
 şass
 ="top_blank">
 
-71 </
+72 </
 div
 >
 
-73 <
+74 <
 div
  
 şass
 ="top">
 
-74 <
+75 <
 img
  
 ¤c
 ="../images/logo.jpg" />
 
-75 </
+76 </
 div
 >
 
-77 <
+78 <
 div
  
 şass
 ="body">
 
-79 <
+80 <
 div
  
 şass
 ="body_l">
 
-80 <
+81 <
 div
  
 şass
 ="nav">
 
-83 <
-p
- 
-şass
-="nav_title">å•† æˆ· ç®¡ ç†</p>
+83 <?
+php
 
-84 <
-a
- 
-şass
-="Çv_‹xt" 
-h»f
-="../v”ifyCoupÚ/šdex.php">æ¶ˆ è´¹ ç™» è®°</a><
-br
- />
 
-85 <
-div
- 
-şass
-="nav_bg">
-
-86 <
-a
- 
-şass
-="Çv_‹xt" 
-h»f
-="‹amLi¡.php">é¡¹ ç›® ç»Ÿ è®¡</a><
-br
- />
+84 
+»quœe
+ '../common/templates/left_nav_bar.php';
 
 87 </
-div
+	gdiv
 >
 
-88 <
-a
- 
-şass
-="Çv_‹xt" 
-h»f
-="javasüt:void(0);">æ¶ˆ è´¹ è¯„ ä»·</a><
-br
- />
-
 89 <
-a
+div
  
-şass
-="Çv_‹xt" 
-h»f
-="../acùMªag”/chªgePass.php">ä¿® æ”¹ å¯† ç </a><
-br
- />
+	gşass
+="serv">
 
 90 <
-a
+div
  
 şass
-="Çv_‹xt" 
+="‹l" 
 h»f
-="../V”ifyLogš/logšOut.php">é€€ å‡º ç™» å½•</a><
-br
- />
+="javascript:void(0);"> </div>
 
 91 <
 a
  
 şass
-="Çv_‹xt" 
-h»f
-="javascript:void(0);">å¸® åŠ©</a>
+="online_qq"></a>
+
+92 </
+div
+>
 
 94 </
 div
@@ -419,37 +387,9 @@ div
 div
  
 şass
-="serv">
-
-97 <
-div
- 
-şass
-="‹l" 
-h»f
-="javascript:void(0);"> </div>
-
-98 <
-a
- 
-şass
-="online_qq"></a>
-
-99 </
-div
->
-
-101 </
-div
->
-
-103 <
-div
- 
-şass
 ="body_r fl">
 
-104 <
+97 <
 p
  
 şass
@@ -465,19 +405,19 @@ h»f
 nb¥
 >å·²æ¶ˆè´¹åˆ¸åˆ—è¡¨</p>
 
-106 <
+99 <
 div
  
 şass
 ="title_line"></div>
 
-108 <
+101 <
 div
  
 şass
 ="search" >
 
-109 <
+102 <
 a
  
 şass
@@ -485,13 +425,13 @@ a
 h»f
 ="teamList.php?page=<?phpƒcho $fromTeamPage; ?>">è¿”å›</a>
 
-110 <
+103 <
 p
  
 şass
 ="search_text fl">è®¢å•å·</p>
 
-111 <
+104 <
 šput
  
 şass
@@ -503,13 +443,13 @@ id
 v®ue
 =""/>
 
-113 <
+106 <
 p
  
 şass
 ="search_text fl">åˆ¸å·</p>
 
-114 <
+107 <
 šput
  
 şass
@@ -521,13 +461,13 @@ id
 v®ue
 =""/>
 
-116 <
+109 <
 p
  
 şass
 ="search_text fl">æ‰‹æœºå·</p>
 
-117 <
+110 <
 šput
  
 şass
@@ -539,7 +479,7 @@ id
 v®ue
 =""/>
 
-119 <
+112 <
 a
  
 şass
@@ -559,131 +499,131 @@ img
 ¤c
 ="../images/search.jpg" /></a>
 
-121 </
+114 </
 div
 >
 
-126 <
+119 <
 div
  
 şass
 ="table">
 
-127 <
+120 <
 div
  
 şass
 ="table_title">
 
-128 <
+121 <
 div
  
 şass
 ="1 fl">
 
-129 <
+122 <
 p
  
 şass
 ="table_title_text">è®¢å•å·</p>
 
-130 </
+123 </
 div
 >
 
-131 <
+124 <
 div
  
 şass
 ="t2 fl">
 
-132 <
+125 <
 p
  
 şass
 ="table_title_text">é¡¹ç›®åç§°</p>
 
-133 </
+126 </
 div
 >
 
-134 <
+127 <
 div
  
 şass
 ="t3 fl">
 
-135 <
+128 <
 p
  
 şass
 ="table_title_text">åˆ¸å·</p>
 
-136 </
+129 </
 div
 >
 
-137 <
+130 <
 div
  
 şass
 ="t4 fl">
 
-138 <
+131 <
 p
  
 şass
 ="table_title_text">è´­ä¹°è€…æ‰‹æœºå·</p>
 
-139 </
+132 </
 div
 >
 
-140 <
+133 <
 div
  
 şass
 ="t1 fl">
 
-141 <
+134 <
 p
  
 şass
 ="table_title_text">é”€åˆ¸æ¬¡æ•°</p>
 
-142 </
+135 </
 div
 >
 
-143 <
+136 <
 div
  
 şass
 ="t5 fl">
 
-144 <
+137 <
 p
  
 şass
 ="table_title_text">æ¶ˆè´¹æ—¶é—´</p>
 
-145 </
+138 </
 div
 >
 
-146 </
+139 </
 div
 >
 
-148 <?
+141 <?
 php
 
 
-149 
+142 
 $htmlCoupÚLi¡
  = '';
 
-150 
+143 
 	g$i
 =0; $˜< 
 couÁ
@@ -691,7 +631,7 @@ couÁ
 $coupÚLi¡
 ); $i++)
 
-152 
+145 
 	g$cÚsumeCoupÚ
  = 
 $coupÚLi¡
@@ -699,29 +639,29 @@ $coupÚLi¡
 $i
 ];
 
-153 ià(
+146 ià(
 	g$i
 %2 == 0)
 
-154 
+147 
 $oddCÏss
  = " item_bg";
 
-156 
+149 
 	g$oddCÏss
  = "";
 
-157 
+150 
 	g$htmlCoupÚLi¡
  .= "<div class='table_item_1' id='couponRowWrap_{$i}'>
 
-158 <
+151 <
 div
  
 şass
 ='item1 fl$oddClass'>
 
-159 <
+152 <
 a
  
 şass
@@ -729,17 +669,17 @@ a
 $cÚsumeCoupÚ
 ['orderId']}</a>
 
-160 </
+153 </
 div
 >
 
-161 <
+154 <
 div
  
 şass
 ='item2 fl$oddClass'>
 
-162 <
+155 <
 a
  
 şass
@@ -747,17 +687,17 @@ a
 $cÚsumeCoupÚ
 ['teamTitle']}</a>
 
-163 </
+156 </
 div
 >
 
-164 <
+157 <
 div
  
 şass
 ='item3 fl$oddClass'>
 
-165 <
+158 <
 a
  
 şass
@@ -765,17 +705,17 @@ a
 $cÚsumeCoupÚ
 ['platformCouponId']}</a>
 
-166 </
+159 </
 div
 >
 
-167 <
+160 <
 div
  
 şass
 ='item4 fl$oddClass'>
 
-168 <
+161 <
 a
  
 şass
@@ -783,17 +723,17 @@ a
 $cÚsumeCoupÚ
 ['consumerMobile']}</a>
 
-169 </
+162 </
 div
 >
 
-170 <
+163 <
 div
  
 şass
 ='item1 fl$oddClass'>
 
-171 <
+164 <
 a
  
 şass
@@ -801,23 +741,23 @@ a
 $cÚsumeCoupÚ
 ['consumeTimes']}</a>
 
-172 </
+165 </
 div
 >
 
-173 <
+166 <
 div
  
 şass
 ='item6 fl$oddClass'>
 
-174 <
+167 <
 a
  
 şass
 ='table_item_text' >";
 
-175 
+168 
 $htmlCoupÚLi¡
  .ğ
 d©e
@@ -825,23 +765,23 @@ d©e
 $cÚsumeCoupÚ
 ['consumeTime']).
 
-176 "<b¸/>".
+169 "<b¸/>".
 d©e
 ('h:i:s',
 $cÚsumeCoupÚ
 ['consumeTime'])."</a> </div> </div>";
 
-178 
+171 
 echo
  
 	g$htmlCoupÚLi¡
 ;
 
-181 </
+174 </
 	gdiv
 >
 
-182 <
+175 <
 šput
  
 	gty³
@@ -855,7 +795,7 @@ echo
 $·ge
 ; ?> />
 
-183 <
+176 <
 šput
  
 	gty³
@@ -869,7 +809,7 @@ $Üd”Id
 echo
  "value=".$orderId; ?> />
 
-184 <
+177 <
 šput
  
 	gty³
@@ -883,7 +823,7 @@ $coupÚId
 echo
  "value=".$couponId; ?> />
 
-185 <
+178 <
 šput
  
 	gty³
@@ -897,7 +837,7 @@ $mobe
 echo
  "value='".$mobile."'"; ?> />
 
-186 <
+179 <
 šput
  
 	gty³
@@ -911,13 +851,13 @@ echo
 $cÚsumedCoupÚNums
 ; ?> />
 
-188 <
+181 <
 div
  
 	gşass
 ="page_turn">
 
-189 <
+182 <
 a
  
 şass
@@ -927,13 +867,13 @@ h»f
 id
 ='goPrevPage'> ä¸Šä¸€é¡µ </a>
 
-190 <
+183 <
 div
  
 şass
 ="page fl">
 
-191 <
+184 <
 p
  
 şass
@@ -943,41 +883,41 @@ id
 nb¥
 
 
-192 <?
+185 <?
 php
 
 
-193 
+186 
 $showPageNums
  = 11;
 
-194 
+187 
 	g$u¾P»fix
  = "consumedCoupons.php?action=search";
 
-195 ià(
+188 ià(
 	g$Üd”Id
  > 0è
 	g$u¾P»fix
  .= "&orderId=$orderId";
 
-196 ià(
+189 ià(
 	g$coupÚId
  > 0è
 	g$u¾P»fix
  .= "&couponId=$couponId";
 
-197 ià(
+190 ià(
 	g$mobe
  !=ğ""è
 $u¾P»fix
  .= "&mobile=$mobile";
 
-198 
+191 
 	g$u¾P»fix
  .= "&";
 
-199 
+192 
 echo
  
 g‘_·geNavHtml
@@ -991,17 +931,17 @@ $u¾P»fix
 $showPageNums
 );
 
-201 &
+194 &
 	gnb¥
 </
 	gp
 >
 
-202 </
+195 </
 	gdiv
 >
 
-203 <
+196 <
 a
  
 	gşass
@@ -1011,53 +951,53 @@ h»f
 id
 ='goNextPage'> ä¸‹ä¸€é¡µ </a>
 
-204 </
+197 </
 div
 >
 
-206 </
+199 </
 div
 >
+
+205 </
+div
+>
+
+207 <
+div
+ 
+şass
+="footer">
+
+211 <
+div
+ 
+şass
+="bottom_line ">
 
 212 </
 div
 >
 
 214 <
-div
- 
-şass
-="footer">
-
-218 <
-div
- 
-şass
-="bottom_line ">
-
-219 </
-div
->
-
-221 <
 p
  
 şass
 ="footer_text">æ¥ è¶£ ç½‘ ç»œ ç§‘ æŠ€ æœ‰ é™ å…¬ å¸</p>
 
-223 </
+216 </
 div
 >
 
-225 </
+218 </
 div
 >
 
-237 </
+230 </
 body
 >
 
-238 </
+231 </
 html
 >
 
@@ -1077,35 +1017,39 @@ php
 
 4 
 »quœe_Úû
-('../module/Team.php');
+('../module/Coupon.php');
 
 5 
 »quœe_Úû
+('../module/Team.php');
+
+6 
+»quœe_Úû
 ('../common/common.php');
 
-7 
+8 
 defše
 ("TABLE_ROW_NUMS", 4);
 
-9 
+10 
 	g$·¹ÃrId
  = 
 $_SESSION
 ['partnerId'];
 
-10 
+11 
 	g$Üd”Id
  = 0;
 
-11 
+12 
 	g$®lowPageShowNums
  = 6;
 
-13 
+14 
 	g$·ge
  = 1;
 
-14 ià(
+15 ià(
 is£t
 (
 $_GET
@@ -1113,13 +1057,13 @@ $_GET
 	g$_GET
 ['page'] > 0)
 
-15 
+16 
 	g$·ge
  = 
 $_GET
 ['page'];
 
-16 
+17 
 	g$¡¬t
  = (
 $·ge
@@ -1127,7 +1071,7 @@ $·ge
 TABLE_ROW_NUMS
 ;
 
-18 
+19 
 	g$‹am
  = 
 Ãw
@@ -1135,17 +1079,17 @@ TABLE_ROW_NUMS
 T—m
 ();
 
-20 
+21 
 	g$£¬chF›lds
  = 
 ¬¿y
 (
 
-21 '·¹ÃrId' => 
+22 '·¹ÃrId' => 
 $·¹ÃrId
 );
 
-22 
+23 
 	g$‹amLi¡
  = 
 $‹am
@@ -1159,7 +1103,7 @@ $¡¬t
 TABLE_ROW_NUMS
 );
 
-23 
+24 
 	g$‹amNums
  = 
 $‹am
@@ -1169,7 +1113,7 @@ g‘_‹amNums
 $£¬chF›lds
 );
 
-24 
+25 
 	g$tÙ®Pages
  = 
 ÿl_tÙ®Pages
@@ -1179,21 +1123,21 @@ $‹amNums
 TABLE_ROW_NUMS
 );
 
-27 <
+28 <
 html
  
 	gxmÊs
 ="http://www.w3.org/1999/xhtml">
 
-28 <
+29 <
 h—d
 >
 
-29 <
+30 <
 t™Ë
 >éªŒè¯å¹³å°</title>
 
-30 <
+31 <
 m‘a
  
 h‰p
@@ -1203,7 +1147,7 @@ equiv
 cÚ‹Á
 ="text/html; charset=utf-8">
 
-32 <
+33 <
 lšk
  
 h»f
@@ -1213,7 +1157,7 @@ h»f
 ty³
 ="text/css" />
 
-33 <
+34 <
 lšk
  
 h»f
@@ -1223,27 +1167,33 @@ h»f
 ty³
 ="text/css" />
 
-35 <
+36 <
 süt
  
 ¤c
 ='../js/jquery.min.js'></script>
 
-36 <
+37 <
 süt
  
 ¤c
 ='js/teamList.js'></script>
 
-37 </
+38 <
+süt
+ 
+¤c
+="../js/common_funcs.js"></script>
+
+39 </
 h—d
 >
 
-38 <
+40 <
 body
 >
 
-41 <
+43 <
 div
  
 şass
@@ -1251,135 +1201,69 @@ div
 id
 ="main">
 
-45 <
+47 <
 div
  
 şass
 ="top_blank">
 
-46 </
+48 </
 div
 >
 
-48 <
+50 <
 div
  
 şass
 ="top">
 
-49 <
+51 <
 img
  
 ¤c
 ="../images/logo.jpg" />
 
-50 </
+52 </
 div
 >
-
-52 <
-div
- 
-şass
-="body">
 
 54 <
 div
  
 şass
+="body">
+
+56 <
+div
+ 
+şass
 ="body_l">
 
-55 <
+57 <
 div
  
 şass
 ="nav">
 
-58 <
-p
- 
-şass
-="nav_title">å•† æˆ· ç®¡ ç†</p>
+60 <?
+php
 
-59 <
-a
- 
-şass
-="Çv_‹xt" 
-h»f
-="../v”ifyCoupÚ/šdex.php">æ¶ˆ è´¹ ç™» è®°</a><
-br
- />
 
-60 <
-div
- 
-şass
-="nav_bg">
+61 
+»quœe
+ '../common/templates/left_nav_bar.php';
 
-61 <
-a
- 
-şass
-="Çv_‹xt" 
-h»f
-="javasüt:void(0);">é¡¹ ç›® ç»Ÿ è®¡</a><
-br
- />
-
-62 </
-div
+63 </
+	gdiv
 >
-
-63 <
-a
- 
-şass
-="Çv_‹xt" 
-h»f
-="javasüt:void(0);">æ¶ˆ è´¹ è¯„ ä»·</a><
-br
- />
-
-64 <
-a
- 
-şass
-="Çv_‹xt" 
-h»f
-="../acùMªag”/chªgePass.php">ä¿® æ”¹ å¯† ç </a><
-br
- />
 
 65 <
-a
- 
-şass
-="Çv_‹xt" 
-h»f
-="../V”ifyLogš/logšOut.php">é€€ å‡º ç™» å½•</a><
-br
- />
-
-66 <
-a
- 
-şass
-="Çv_‹xt" 
-h»f
-="javascript:void(0);">å¸® åŠ©</a>
-
-69 </
-div
->
-
-71 <
 div
  
-şass
+	gşass
 ="serv">
 
-72 <
+66 <
 div
  
 şass
@@ -1387,63 +1271,95 @@ div
 h»f
 ="javascript:void(0);"> </div>
 
-73 <
+67 <
 a
  
 şass
 ="online_qq"></a>
 
-74 </
+68 </
 div
 >
 
-76 </
+70 </
 div
 >
 
-78 <
+72 <
 div
  
 şass
 ="body_r fr">
 
-79 <
+73 <
 p
  
 şass
 ="title_r">>é¡¹ç›®åˆ—è¡¨</p>
 
-81 <
+75 <
 div
  
 şass
 ="title_line"></div>
 
-83 <
+77 <
 div
  
 şass
 ="table">
 
-84 <
+78 <
 div
  
 şass
 ="table_title">
 
-85 <
+79 <
 div
  
 şass
 ="1 fl">
 
-86 <
+80 <
 p
  
 şass
 ="bË_t™Ë_‹xt">é¡¹ç›®
 ID
 </p>
+
+81 </
+div
+>
+
+82 <
+div
+ 
+şass
+="t2 fl">
+
+83 <
+p
+ 
+şass
+="table_title_text">é¡¹ç›®åç§°</p>
+
+84 </
+div
+>
+
+85 <
+div
+ 
+şass
+="t3 fl">
+
+86 <
+p
+ 
+şass
+="table_title_text">å¹³å°</p>
 
 87 </
 div
@@ -1453,13 +1369,13 @@ div
 div
  
 şass
-="t2 fl">
+="t3 fl">
 
 89 <
 p
  
 şass
-="table_title_text">é¡¹ç›®åç§°</p>
+="table_title_text">æ—¥æœŸ</p>
 
 90 </
 div
@@ -1469,13 +1385,13 @@ div
 div
  
 şass
-="t3 fl">
+="t1 fl">
 
 92 <
 p
  
 şass
-="table_title_text">å¹³å°</p>
+="table_title_text">æ¶ˆè´¹æ¬¡æ•°</p>
 
 93 </
 div
@@ -1485,13 +1401,13 @@ div
 div
  
 şass
-="t3 fl">
+="t1 fl">
 
 95 <
 p
  
 şass
-="table_title_text">æ—¥æœŸ</p>
+="table_title_text">å›¢è´­ä»·</p>
 
 96 </
 div
@@ -1501,69 +1417,41 @@ div
 div
  
 şass
-="t1 fl">
+="t4 fl">
 
 98 <
 p
  
 şass
-="table_title_text">æˆäº¤</p>
+="table_title_text">æ“ä½œ</p>
 
 99 </
 div
 >
 
-100 <
-div
- 
-şass
-="t1 fl">
-
-101 <
-p
- 
-şass
-="table_title_text">å›¢è´­ä»·</p>
-
-102 </
+100 </
 div
 >
 
-103 <
-div
- 
-şass
-="t4 fl">
-
-104 <
-p
- 
-şass
-="table_title_text">æ“ä½œ</p>
-
-105 </
-div
->
-
-106 </
-div
->
-
-108 <!--<
+102 <!--<
 div
  
 şass
 ="table_item">-->
 
-109 <?
+103 <?
 php
 
 
-110 
-$htmlT—mLi¡
+104 
+$nuÎD©aSŒšg
+ = '/';
+
+105 
+	g$htmlT—mLi¡
  = '';
 
-111 
+106 
 	g$i
  = 0; $˜< 
 couÁ
@@ -1571,7 +1459,7 @@ couÁ
 $‹amLi¡
 ); $i++)
 
-113 
+108 
 fÜ—ch
  (
 $‹amLi¡
@@ -1585,35 +1473,67 @@ $key
 $v®ue
 )
 
-115 
+110 
 $$key
  = 
 $v®ue
 ;
 
-117 ià(
+112 ià(
 	g$i
 %2 != 0)
 
-118 
+113 
 $oddEv’CÏss
  = ' item_bg';
 
-120 
+115 
 	g$oddEv’CÏss
  = '';
 
+118 
+	g$£¬chF›lds
+ = 
+¬¿y
+(
+
+119 '·¹ÃrId' => 
+$·¹ÃrId
+,
+
+120 '‹amId' => 
+$‹amId
+);
+
+121 
+	g$coupÚObj
+ = 
+Ãw
+ 
+CoupÚ
+();
+
 122 
+	g$cÚsumedCoupÚtimes
+ = 
+$coupÚObj
+->
+g‘_cÚsumedCoupÚtimes
+(
+$£¬chF›lds
+);
+
+124 
 	g$htmlT—mLi¡
  .= "<div class='table_item_1' id='teamRowWrap_{$i}'>
 
-123 <
+125 <
 div
  
 şass
 ='item1 fl{$oddEvenClass}'>";
 
-124 ià(
+126 ià(
 time
 ()< 
 $expœeTime
@@ -1621,25 +1541,25 @@ $expœeTime
 $¡©e
  == 'undone')
 
-125 
+127 
 $htmlT—mLi¡
  .= "<div class='new_ico '></div>";
 
-126 
+128 
 	g$htmlT—mLi¡
  .="<a class='table_item_id ' >{$teamId}</a>
 
-127 </
+129 </
 div
 >
 
-128 <
+130 <
 div
  
 şass
 ='item2 fl{$oddEvenClass}'>
 
-129 <
+131 <
 a
  
 şass
@@ -1647,17 +1567,17 @@ a
 $‹amT™Ë
 }</a>
 
-130 </
+132 </
 div
 >
 
-131 <
+133 <
 div
  
 şass
 ='item3 fl{$oddEvenClass}'>
 
-132 <
+134 <
 a
  
 şass
@@ -1671,131 +1591,173 @@ img
 t™Ë
 ='$platformTitle'/></a>
 
-133 </
+135 </
 div
 > <div 
 şass
 ='item4 fl{$oddEvenClass}'>
 
-134 <
+136 <
 a
  
 şass
 ='table_item_text' >";
 
-135 
-$htmlT—mLi¡
- .ğ
+137 
+$begšTimeSŒšg
+ = 
+$’dTimeSŒšg
+ = 
+$nuÎD©aSŒšg
+;
+
+138 ià(
+	g$begšTime
+ >0è
+	g$begšTimeSŒšg
+ = 
 d©e
 ('Y-m-d',
 $begšTime
-).'<b¸/>'.d©e('Y-m-d',
+);
+
+139 ià(
+	g$’dTime
+ >0è
+	g$’dTimeSŒšg
+ = 
+d©e
+('Y-m-d',
 $’dTime
 );
 
-136 
+140 
+	g$htmlT—mLi¡
+ .ğ
+$begšTimeSŒšg
+.'<b¸/>'.
+$’dTimeSŒšg
+;
+
+141 
 	g$htmlT—mLi¡
  .="</a></div>
 
-137 <
+142 <
 div
  
 şass
 ='item1 fl{$oddEvenClass}'>
 
-138 <
+143 <
 a
  
 şass
 ='bË_™em_‹xt' >{
-$nowNum
-}/{
-$mšNum
+$cÚsumedCoupÚtimes
 }</a>
 
-139 </
+144 </
 div
 >
 
-140 <
+145 <
 div
  
 şass
 ='item6 fl{$oddEvenClass}'>
 
-141 <
+146 <
 a
  
 şass
 ='bË_™em_‹xt' >ï¿¥{
 $‹amPriû
-}<
-br
- />ï¿¥{
-$m¬k‘Priû
-}</a>
+}";
 
-142 </
+147 ià(
+$m¬k‘Priû
+ > 0è
+$htmlT—mLi¡
+ .="<br />ï¿¥{$marketPrice}";
+
+148 
+	g$htmlT—mLi¡
+.="</a>
+
+149 </
 div
 >
 
-143 <
+150 <
 div
  
 şass
 ='item7 fl{$oddEvenClass}'>
 
-144 <
+151 <
 div
  
 şass
 ='n_1'>
 
-145 <
+152 <
 a
  
 şass
 ='bË_™em_‹xˆxf' 
 h»f
-='cÚsumedCoupÚs.php?‹amId={$‹amId}&¶©fÜm={$¶©fÜmKey}&äomT—mPage={$·ge}'>å·²æ¶ˆè´¹</a><
+='cÚsumedCoupÚs.php?‹amId={$‹amId}&¶©fÜm={$¶©fÜmKey}&äomT—mPage={$·ge}'>æŸ¥çœ‹é”€åˆ¸åˆ—è¡¨</a><
 p
- class='table_item_text fl_line'> | </p><a class='table_item_text xz' href='javascript:void(0);'>ä¸‹è½½</a>
-
-146 </
+ cÏss='bË_™em_‹xˆæ_lše'></p></
 div
 >
 
-147 <
+153 <
 br
-/><
+ /><br />
+
+154 <
 div
  
 şass
 ='n_2'>
 
-148 <
+155 <
+a
+ 
+şass
+='bË_™em_‹xˆxz' 
+h»f
+='‹amToExûl.php?‹amid={$‹amId}'>å¯¼å‡º
+Exûl
+</a>
+
+156 <
 a
  
 şass
 ='bË_™em_‹xt' 
 h»f
-='javascript:void(0);'>ç»Ÿè®¡</a>
+='javasüt:void(0);' 
+¡yË
+='display:none;'> ! ç»Ÿè®¡</a>
 
-149 </
+157 </
 div
 ></div></div>";
 
-151 
+159 
 echo
  
 	g$htmlT—mLi¡
 ;
 
-155 </
+163 </
 	gdiv
 >
 
-156 <
+164 <
 šput
  
 	gty³
@@ -1809,7 +1771,7 @@ echo
 $·ge
 ; ?> />
 
-157 <
+165 <
 šput
  
 	gty³
@@ -1823,13 +1785,13 @@ echo
 $‹amNums
 ; ?> />
 
-159 <
+167 <
 div
  
 	gşass
 ="page_turn">
 
-160 <
+168 <
 a
  
 şass
@@ -1839,13 +1801,13 @@ h»f
 id
 ='goPrevPage'> ä¸Šä¸€é¡µ </a>
 
-161 <
+169 <
 div
  
 şass
 ="page fl">
 
-162 <
+170 <
 p
  
 şass
@@ -1855,19 +1817,19 @@ id
 nb¥
 
 
-163 <?
+171 <?
 php
 
 
-164 
+172 
 $showPageNums
  = 11;
 
-165 
+173 
 	g$u¾P»fix
  = "teamList.php?";
 
-166 
+174 
 echo
  
 g‘_·geNavHtml
@@ -1881,17 +1843,17 @@ $u¾P»fix
 $showPageNums
 );
 
-169 &
+177 &
 	gnb¥
 </
 	gp
 >
 
-170 </
+178 </
 	gdiv
 >
 
-171 <
+179 <
 a
  
 	gşass
@@ -1901,61 +1863,448 @@ h»f
 id
 ='goNextPage'> ä¸‹ä¸€é¡µ </a>
 
-172 </
-div
->
-
-174 </
-div
->
-
 180 </
 div
 >
 
-182 <
+182 </
+div
+>
+
+188 </
+div
+>
+
+190 <
 div
  
 şass
 ="footer">
 
-186 <
+194 <
 div
  
 şass
 ="bottom_line ">
 
-187 </
+195 </
 div
 >
 
-189 <
+197 <
 p
  
 şass
 ="footer_text">æ¥ è¶£ ç½‘ ç»œ ç§‘ æŠ€ æœ‰ é™ å…¬ å¸</p>
 
-191 </
+199 </
 div
 >
 
-193 </
+201 </
 div
 >
 
-205 </
+213 </
 body
 >
 
-206 </
+214 </
 html
 >
+
+	@teamToExcel.php
+
+1 <?
+php
+
+
+2 
+»quœe_Úû
+('../common/checkAuthority.php');
+
+3 
+»quœe_Úû
+('../common/include/errorCatcher.php');
+
+4 
+»quœe_Úû
+('../module/Coupon.php');
+
+5 
+»quœe_Úû
+('../module/Team.php');
+
+6 
+»quœe_Úû
+('../common/common.php');
+
+7 
+»quœe_Úû
+("../common/class/PHPExcel.php");
+
+9 ià(!
+is£t
+(
+$_GET
+['‹amid']è|| 
+	g$_GET
+['teamid'] < 1)
+
+11 
+	gecho
+ "false";
+
+12 
+	gex™
+;
+
+16 
+	g$m_objPHPExûl
+ = 
+Ãw
+ 
+PHPExûl
+();
+
+18 
+	g$coupÚ
+ = 
+Ãw
+ 
+CoupÚ
+();
+
+20 
+	g$£¬chF›lds
+ = 
+¬¿y
+('·¹ÃrId' => 
+$_SESSION
+['partnerId'],
+
+21 '‹amId' => 
+$_GET
+['teamid']);
+
+23 
+	g$coupÚSql
+ = 
+$coupÚ
+->
+g’_coupÚS—rchSql
+(
+$£¬chF›lds
+);
+
+25 
+	g$coupÚResuÉ
+ = 
+mysql_qu”y
+(
+$coupÚSql
+);
+
+29 
+	g$f›ldKeys
+ = 
+¬¿y
+("è®¢å•å·", "é¡¹ç›®åç§°", "åˆ¸å·", "è´­ä¹°è€…æ‰‹æœºå·", "é”€åˆ¸æ¬¡æ•°", "æ¶ˆè´¹æ—¶é—´");
+
+30 
+	g$f›ldD©aKeys
+ = 
+¬¿y
+("orderId", "teamTitle", "couponId", "consumerMobile", "consumeTimes", "consumeTime");
+
+31 
+	g$cŞ
+ = 0; $cŞ < 
+couÁ
+(
+$f›ldKeys
+); $col++)
+
+33 
+	g$keyC–l
+ = 
+$m_objPHPExûl
+->
+g‘AùiveSh“t
+()->
+g‘C–lByCŞumnAndRow
+(
+$cŞ
+, 1);
+
+34 
+	g$keyC–l
+->
+£tV®ueEx¶ic™
+(
+$f›ldKeys
+[
+$cŞ
+],
+PHPExûl_C–l_D©aTy³
+::
+TYPE_STRING
+);
+
+37 
+	g$coupÚRow
+ = 
+¬¿y
+();
+
+38 
+	g$coupÚNums
+ = 
+mysql_num_rows
+(
+$coupÚResuÉ
+);
+
+39 
+	g$cÚsumeTimes
+ = 0;
+
+40 
+	g$row
+ = 2; $row <ğ
+$coupÚNums
++1; $row++)
+
+42 
+	g$coupÚRow
+ = 
+mysql_ãtch_assoc
+(
+$coupÚResuÉ
+);
+
+43 
+	g$cÚsumeTimes
+ +ğ
+$coupÚRow
+['consumeTimes'];
+
+44 
+	g$cŞ
+ = 0; $cŞ < 
+couÁ
+(
+$f›ldD©aKeys
+); $col++)
+
+46 
+	g$v®ueC–l
+ = 
+$m_objPHPExûl
+->
+g‘AùiveSh“t
+()->
+g‘C–lByCŞumnAndRow
+(
+$cŞ
+, 
+$row
+);
+
+47 
+	g$v®ueC–l
+->
+£tV®ueEx¶ic™
+(
+$coupÚRow
+[
+$f›ldD©aKeys
+[
+$cŞ
+]],
+PHPExûl_C–l_D©aTy³
+::
+TYPE_STRING
+);
+
+52 
+	g$coupÚNumsKeyC–l
+ = 
+$m_objPHPExûl
+->
+g‘AùiveSh“t
+()->
+g‘C–lByCŞumnAndRow
+(0, 
+$row
+);
+
+53 
+	g$coupÚNumsKeyC–l
+->
+£tV®ueEx¶ic™
+("å·²æ¶ˆè´¹åˆ¸æ•°",
+PHPExûl_C–l_D©aTy³
+::
+TYPE_STRING
+);
+
+54 
+	g$coupÚNumsV®ueC–l
+ = 
+$m_objPHPExûl
+->
+g‘AùiveSh“t
+()->
+g‘C–lByCŞumnAndRow
+(1, 
+$row
+);
+
+55 
+	g$coupÚNumsV®ueC–l
+->
+£tV®ueEx¶ic™
+(
+$coupÚNums
+,
+PHPExûl_C–l_D©aTy³
+::
+TYPE_STRING
+);
+
+56 
+	g$coupÚTimesKeyC–l
+ = 
+$m_objPHPExûl
+->
+g‘AùiveSh“t
+()->
+g‘C–lByCŞumnAndRow
+(0, 
+$row
++1);
+
+57 
+	g$coupÚTimesKeyC–l
+->
+£tV®ueEx¶ic™
+("å·²æ¶ˆè´¹æ¬¡æ•°",
+PHPExûl_C–l_D©aTy³
+::
+TYPE_STRING
+);
+
+58 
+	g$coupÚTimesV®ueC–l
+ = 
+$m_objPHPExûl
+->
+g‘AùiveSh“t
+()->
+g‘C–lByCŞumnAndRow
+(1, 
+$row
++1);
+
+59 
+	g$coupÚTimesV®ueC–l
+->
+£tV®ueEx¶ic™
+(
+$cÚsumeTimes
+,
+PHPExûl_C–l_D©aTy³
+::
+TYPE_STRING
+);
+
+61 
+	g$sh“tT™Ë
+ = 
+$coupÚRow
+['teamTitle']."_é”€åˆ¸åˆ—è¡¨";
+
+63 
+šşude
+("../common/laiqu_excel.php");
+
+65 
+	g$m_expÜtTy³
+ = "excel";
+
+67 
+	g$m_¡rOuutExûlFeName
+ = 
+$sh“tT™Ë
+."_".
+d©e
+('Y-m-j_H_i_s').".xls";
+
+70 if(
+	g$m_expÜtTy³
+=="excel"){
+
+71 
+$objWr™”
+ = 
+PHPExûl_IOFaùÜy
+::
+ü—‹Wr™”
+(
+$m_objPHPExûl
+, 'Excel5');
+
+74 
+h—d”
+("Pragma:…ublic");
+
+75 
+h—d”
+("Expires: 0");
+
+76 
+h—d”
+("Cache-Control:must-revalidate,…ost-check=0,…re-check=0");
+
+77 
+h—d”
+("Content-Type:application/force-download");
+
+78 
+h—d”
+("Content-Type:‡pplication/vnd.ms-excel;");
+
+79 
+h—d”
+("Content-Type:application/octet-stream");
+
+80 
+h—d”
+("Content-Type:application/download");
+
+81 
+h—d”
+("CÚ‹Á-Di¥os™iÚ:©chm’t;f’ame=".
+$m_¡rOuutExûlFeName
+);
+
+82 
+h—d”
+("Content-Transfer-Encoding:binary");
+
+83 
+	g$objWr™”
+->
+§ve
+("php://output");
 
 	@
 1
 .
 0
-2
-33
+3
+49
 consumedCoupons.php
 teamList.php
+teamToExcel.php

@@ -1,4 +1,4 @@
-cscope 15 $HOME/work/host/laiqu/module -q 0000000110 0000010872
+cscope 15 $HOME/work/host/laiqu/module -q 0000000114 0000010800
 	@Coupon.php
 
 1 <?
@@ -73,8 +73,134 @@ $¡¬t
 $off£t
 )
 
-45 
-	`fÜ—ch
+45 ià(
+$¡¬t
+ < 0) $start = 0;
+
+46 ià(
+$off£t
+ <= 0) $offset = 6;
+
+48 
+$sql
+ = 
+$this
+->
+	`g’_coupÚS—rchSql
+(
+$£¬chF›lds
+, 
+$¡¬t
+, 
+$off£t
+);
+
+50 
+$»suÉ
+ = 
+	`mysql_qu”y
+(
+$sql
+);
+
+51 ià(
+	`mysql_num_rows
+(
+$»suÉ
+) < 1)
+
+52  
+	`¬¿y
+();
+
+54  
+$this
+->
+	`·r£_coupÚLi¡
+(
+$»suÉ
+);
+
+55 
+	}
+}
+
+64 
+public
+ 
+funùiÚ
+ 
+	$g‘_cÚsumedCoupÚtimes
+(
+$£¬chF›lds
+)
+
+66 
+$this
+->
+	`assu»_dbCÚÃùiÚ
+();
+
+67 
+$sql
+ = 
+$this
+->
+	`g’_coupÚS—rchSql
+(
+$£¬chF›lds
+);
+
+69 
+$cÚsumedtimes
+ = 0;
+
+70 
+$»suÉ
+ = 
+	`mysql_qu”y
+(
+$sql
+);
+
+71 
+$coupÚRow
+ = 
+	`mysql_ãtch_assoc
+(
+$»suÉ
+))
+
+73 
+$cÚsumedtimes
+ +ð
+$coupÚRow
+['consume_times'];
+
+75  
+$cÚsumedtimes
+;
+
+76 
+	}
+}
+
+78 
+´iv©e
+ 
+funùiÚ
+ 
+g’_coupÚS—rchSql
+(
+$£¬chF›lds
+, 
+$¡¬t
+ = 0, 
+$off£t
+ = -1)
+
+80 
+fÜ—ch
  (
 $£¬chF›lds
  
@@ -85,159 +211,153 @@ $f›ldKey
 $f›ldV®ue
 )
 
-47 
+82 
 $$f›ldKey
  = 
-	`is_¡ršg
+is_¡ršg
 (
 $f›ldV®ue
 )?
-	`mysql_»®_esÿ³_¡ršg
+mysql_»®_esÿ³_¡ršg
 ($fieldValue): $fieldValue;
 
-50 ià(
-$¡¬t
+85 ià(
+	g$¡¬t
  < 0) $start = 0;
 
-51 ià(
+86 ià(
+	g$off£t
+ <ð0è
 $off£t
- <= 0) $offset = 6;
+ = 6;
 
-53 
-$£Ëù
+88 
+	g$£Ëù
  = "select c.order_id‡s orderId,.title‡seamTitle, c.id‡s couponId,";
 
-54 
-$£Ëù
- .= "u.username‡s username, u.email‡sƒmail, o.subbranch‡s subbranch, c.consume_time‡s consumeTime";
+89 
+	g$£Ëù
+ .= "u.username‡s username, u.email‡sƒmail, o.subbranch‡s subbranch, c.consume_time‡s consumeTime,c.consume_times‡s consumeTimes,c.platform_coupon_id‡s…latformCouponId,c.consumer_mobile‡s consumerMobile";
 
-55 
-$£Ëù
+90 
+	g$£Ëù
  .ð' from '.
 £lf
 ::
 DBDATABASE
 .'.'.£lf::
-COUPON_TABLE
-.' c,'.£lf::DBDATABASE.'.'.£lf::
 TEAM_TABLE
 .','.£lf::DBDATABASE.'.'.£lf::
-USER_TABLE
-.' u,'.£lf::DBDATABASE.'.'.£lf::
 ORDER_TABLE
-.' o ';
+.' o,';
 
-56 
-$sql
+91 
+	g$£Ëù
+ .ð
+£lf
+::
+DBDATABASE
+.'.'.£lf::
+COUPON_TABLE
+.' c†eá još '.£lf::DBDATABASE.'.'.£lf::
+USER_TABLE
+.' u on c.user_id=u.id';
+
+92 
+	g$sql
  = 
 $£Ëù
 ." WHERE c.consume='Y' ";
 
-57 ià(
-	`couÁ
+93 ià(
+couÁ
 (
 £¬chF–ds
 ) > 0)
 
-59 ià(
-$·¹ÃrId
+95 ià(
+	g$·¹ÃrId
  > 0)
 
-60 
-$sql
+96 
+	g$sql
  .= " AND c.partner_id=$partnerId";
 
-61 ià(
-$‹amId
+97 ià(
+	g$‹amId
  > 0)
 
-62 
-$sql
+98 
+	g$sql
  .= " AND c.team_id=$teamId ";
 
-63 ià(!
-	`em±y
+99 ià(!
+em±y
 (
 $¶©fÜm
 ))
 
-64 
-$sql
+100 
+	g$sql
  .= " AND c.platform_key='$platform'";
 
-65 ià(
-$Üd”Id
+101 ià(
+	g$Üd”Id
  > 0)
 
-66 
-$sql
+102 
+	g$sql
  .= " AND c.order_id=$orderId";
 
-67 ià(
-$coupÚId
+103 ià(
+	g$coupÚId
  > 0)
 
-68 
-$sql
- .= " AND c.id=$couponId";
+104 
+	g$sql
+ .= " AND c.platform_coupon_id=$couponId";
 
-69 ià(!
-	`em±y
+105 ià(!
+em±y
 (
-$u£ºame
+$mobže
 ))
 
-70 
-$sql
- .= " AND u.username='$username'";
+106 
+	g$sql
+ .= " AND c.consumer_mobile='$mobile'";
 
-72 
-$sql
- .= " AND.id=c.team_id AND o.id=c.order_id AND u.id=c.user_id";
+108 
+	g$sql
+ .= " AND.id=c.team_id AND o.id=c.order_id ";
 
-73 
-$sql
- .= " AND.id=c.team_id AND o.id=c.order_id AND u.id=c.user_id";
-
-75 
-$sql
+110 
+	g$sql
  .= " order by c.consume_time desc";
 
-76 
+111 ià(
+	g$¡¬t
+ >= 0) {
+
+112 
 $sql
- .= " LIMIT $start,$offset";
+ .= " LIMIT $start";
 
-78 
-$»suÉ
- = 
-	`mysql_qu”y
-(
-$sql
-);
+113 ià(
+	g$off£t
+ > 
+	g$¡¬t
+)
 
-79 ià(
-	`mysql_num_rows
-(
-$»suÉ
-) < 1)
+114 
+	g$sql
+ .= ",$offset";
 
-80  
-	`¬¿y
-();
+117  
+	g$sql
+;
 
-82  
-$this
-->
-	`·r£_coupÚLi¡
-(
-$»suÉ
-);
-
-83 
-	}
-}
-
-92 
+127 
 public
  
 funùiÚ
@@ -247,113 +367,27 @@ funùiÚ
 $£¬chF›lds
 )
 
-94 
+129 
 $this
 ->
 	`assu»_dbCÚÃùiÚ
 ();
 
-95 
-	`fÜ—ch
- (
-$£¬chF›lds
- 
-as
- 
-$f›ldKey
- => 
-$f›ldV®ue
-)
-
-97 
-$$f›ldKey
+130 
+$sql
  = 
-	`is_¡ršg
-(
-$f›ldV®ue
-)?
-	`mysql_»®_esÿ³_¡ršg
-($fieldValue): $fieldValue;
-
-100 
-$sql
- = "SELECT couÁ(*èa coupÚNum FROM ".
 $this
 ->
-	`g‘_dbTabËName
-(
-£lf
-::
-COUPON_TABLE
-).'‡s c,';
-
-101 
-$sql
- .ð
-$this
-->
-	`g‘_dbTabËName
-(
-£lf
-::
-USER_TABLE
-).'‡s u';
-
-102 
-$sql
- .= " WHERE consume='Y'";
-
-104 ià(
-	`couÁ
+	`g’_coupÚS—rchSql
 (
 $£¬chF›lds
-) > 0)
+);
 
-106 
-$sql
- .ð
-$·¹ÃrId
->0 ? " AND c.partner_id=".$partnerId : "";
-
-107 
-$sql
- .ð!
-	`em±y
-(
-$¶©fÜm
-)? " AND c.platform_key='$platform'" : "";
-
-108 
-$sql
- .ð
-$‹amId
->0 ? " AND c.team_id=".$teamId : "";
-
-109 
-$sql
- .ð
-$Üd”Id
->0 ? " AND c.order_id=".$orderId : "";
-
-110 
-$sql
- .ð
-$coupÚId
->0 ? " AND c.coupon_id=".$couponId : "";
-
-111 
-$sql
- .ð!
-	`em±y
-(
-$u£ºame
-) ? " AND u.username='$username'" : "";
-
-114 
+132 
 $coupÚNums
  = 0;
 
-115 
+133 
 $»suÉ
  = 
 	`mysql_qu”y
@@ -361,37 +395,23 @@ $»suÉ
 $sql
 );
 
-116 ià(
-	`is_»sourû
-(
-$»suÉ
-è&& 
-	`mysql_num_rows
-($result) > 0)
-
-118 
-$couÁRow
+134 
+$coupÚNums
  = 
-	`mysql_ãtch_¬¿y
+	`mysql_num_rows
 (
 $»suÉ
 );
 
-119 
-$coupÚNums
- = 
-$couÁRow
-['couponNums'];
-
-122  
+140  
 $coupÚNums
 ;
 
-123 
+141 
 	}
 }
 
-131 
+149 
 public
  
 funùiÚ
@@ -403,7 +423,7 @@ $coupÚId
 $cÚsumed_times
  = 1)
 
-133 ià(
+151 ià(
 $coupÚId
  <ð0 || !
 	`is_num”ic
@@ -411,7 +431,7 @@ $coupÚId
 $cÚsumed_times
 ) || $consumed_times < 1)
 
-135 
+153 
 throw
  
 Ãw
@@ -419,7 +439,7 @@ throw
 	`V”ifyCoupÚ_Exû±iÚ
 (
 
-136 
+154 
 CommÚCodeMsg
 ::
 	`g‘_mes§ge
@@ -427,13 +447,13 @@ CommÚCodeMsg
 INVALID_ARGUMENT_ERROR
 ),
 
-137 
+155 
 CommÚCodeMsg
 ::
 INVALID_ARGUMENT_ERROR
 );
 
-140 
+158 
 $upd©e
  = 'UPDATE '.
 $this
@@ -445,19 +465,19 @@ $this
 COUPON_TABLE
 );
 
-141 
+159 
 $upd©e
  .ð" s‘ cÚsume='Y',cÚsume_time=UNIX_TIMESTAMP(),cÚsume_times=cÚsume_times+".
 $cÚsumed_times
 ;
 
-142 
+160 
 $wh”e
  = " WHERE id=".
 $coupÚId
 ;
 
-143 
+161 
 $sql
  = 
 $upd©e
@@ -465,17 +485,17 @@ $upd©e
 $wh”e
 ;
 
-145  
+163  
 	`mysql_qu”y
 (
 $sql
 );
 
-146 
+164 
 	}
 }
 
-154 
+172 
 ´iv©e
  
 funùiÚ
@@ -485,13 +505,13 @@ funùiÚ
 $»suÉ
 )
 
-156 
+174 
 $cÚsumedCoupÚLi¡
  = 
 	`¬¿y
 ();
 
-157 
+175 
 $coupÚNums
  = 
 	`mysql_num_rows
@@ -499,11 +519,11 @@ $coupÚNums
 $»suÉ
 );
 
-158 ià(
+176 ià(
 $coupÚNums
  > 0)
 
-160 
+178 
 $cÚsumedCoupÚ
  = 
 	`mysql_ãtch_¬¿y
@@ -511,7 +531,7 @@ $cÚsumedCoupÚ
 $»suÉ
 ))
 
-162 
+180 
 	`¬¿y_push
 (
 $cÚsumedCoupÚLi¡
@@ -519,15 +539,15 @@ $cÚsumedCoupÚLi¡
 $cÚsumedCoupÚ
 );
 
-165  
+183  
 $cÚsumedCoupÚLi¡
 ;
 
-166 
+184 
 	}
 }
 
-175 
+193 
 public
  
 funùiÚ
@@ -537,13 +557,13 @@ funùiÚ
 $coupÚInfo
 )
 
-177 
+195 
 $this
 ->
 	`assu»_dbCÚÃùiÚ
 ();
 
-178 
+196 
 $š£¹Sql
  = "INSERT INTO ".
 $this
@@ -555,15 +575,15 @@ $this
 COUPON_TABLE
 );
 
-179 
+197 
 $keys
  = "(";
 
-180 
+198 
 $v®ues
  = " VALUES(";
 
-181 
+199 
 	`fÜ—ch
 (
 $coupÚInfo
@@ -575,43 +595,43 @@ $key
 $v®ue
 )
 
-183 
+201 
 $keys
  .ð
 $key
  . ",";
 
-185 ià(
+203 ià(
 	`is_¡ršg
 (
 $v®ues
 ))
 
-187 
+205 
 $v®ues
  .ð"'" . 
 $v®ue
  . "'" . ",";
 
-191 
+209 
 $v®ues
  .ð
 $v®ue
 . ",";
 
-196 
+214 
 $keys
  = 
 	`sub¡r
 ($keys, 0, -1) . ")";
 
-197 
+215 
 $v®ues
  = 
 	`sub¡r
 ($values, 0, -1) . ")";
 
-199 
+217 
 $š£¹Sql
  .ð
 $keys
@@ -619,7 +639,7 @@ $keys
 $v®ues
 ;
 
-200 
+218 
 $»suÉ
  = 
 	`mysql_qu”y
@@ -627,31 +647,31 @@ $»suÉ
 $š£¹Sql
 );
 
-201 ià(!
+219 ià(!
 $»suÉ
 ) {
 
-202  
+220  
 nuÎ
 ;
 
-204 
+222 
 $š£¹edcoupÚId
  = 
 	`mysql_š£¹_id
 ();
 
-205 
+223 
 $coupÚInfo
 ['id'] = 
 $š£¹edcoupÚId
 ;
 
-207  
+225  
 $coupÚInfo
 ;
 
-208 
+226 
 	}
 }
 

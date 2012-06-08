@@ -21,6 +21,7 @@
 .text_1{ font-size:18px; margin-top:10px; color:#cc1105;}
 .line{ width:255px; height:3px; margin-top:10px; background-image:url(../../images/bg_line.jpg); background-repeat:repeat-x;}
 .text_2_2{ line-height:150%; margin-top:10px; color:#7a7a7a;}
+.text_2_3{ line-height:150%; margin-top:10px; color:#7a7a7a; font-size:14px;}
 .imageResponse{ width:89px; height:60px;}
 .result_r{ width:89px; height:60px; margin-top:15px; margin-left:84px; background-image:url(../../images/result_r.jpg);}
 .result_w{ width:75px; height:75px; margin-top:15px; margin-left:84px; background-image:url(../../images/result_w.jpg)}

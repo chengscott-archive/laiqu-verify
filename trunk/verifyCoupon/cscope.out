@@ -1,4 +1,4 @@
-cscope 15 $HOME/work/host/laiqu/VerifyCoupon -q 0000000222 0000022417
+cscope 15 $HOME/work/host/laiqu/verifyCoupon -q 0000000322 0000034191
 	@VerifyCoupon.php
 
 1 <?
@@ -380,7 +380,7 @@ INVALID_COUPONID_ARG_ERROR
 128 
 V”ifyCoupÚCodeMsg
 ::
-INVALID_COUPON_ARG_ERROR
+INVALID_COUPONID_ARG_ERROR
 );
 
 130 
@@ -431,15 +431,67 @@ $šputs
 $»que¡
 ['couponPwd'];
 
-144  
+144 ià(
+	`is£t
+(
+$this
+->
+_»que¡P¬ams
+->
+cÚsumeCouÁ
+))
+
+146 
+$cÚsumeCouÁ
+ = 
+$»que¡
+['consumeCount'];
+
+147 ià(
+$cÚsumeCouÁ
+ ==ğ"" || !
+	`is_num”ic
+($cÚsumeCouÁè|| 
+	`štv®
+($consumeCount) < 1)
+
+149 
+throw
+ 
+Ãw
+ 
+	`V”ifyCoupÚ_Reque¡Exû±iÚ
+(
+
+150 
+V”ifyCoupÚCodeMsg
+::
+	`g‘_mes§ge
+(V”ifyCoupÚCodeMsg::
+MALFORMED_COUNT_NUMBER
+),
+
+151 
+V”ifyCoupÚCodeMsg
+::
+MALFORMED_COUNT_NUMBER
+);
+
+154 
+$šputs
+['cÚsumeCouÁ'] = 
+$cÚsumeCouÁ
+;
+
+157  
 $šputs
 ;
 
-145 
+158 
 	}
 }
 
-157 
+170 
 public
  
 funùiÚ
@@ -449,19 +501,19 @@ funùiÚ
 $»¥Ú£
 )
 
-159 
+172 
 $»¥Ú£Code
  = "";
 
-160 ià(
+173 ià((
 $»¥Ú£
- =ğ"" || 
+ =ğ"" && 
 $this
 ->
 _»¥Ú£Ty³
- == "" ||
+ !== "JUHUASUAN") || $this->_responseType == "" ||
 
-161 
+174 
 $this
 ->
 _codeTag
@@ -469,7 +521,7 @@ _codeTag
 _codeSucûss
  == "")
 
-163 
+176 
 throw
  
 Ãw
@@ -477,7 +529,7 @@ throw
 	`V”ifyCoupÚ_P¬£Re¥Ú£Exû±iÚ
 (
 
-164 
+177 
 V”ifyCoupÚCodeMsg
 ::
 	`g‘_mes§ge
@@ -485,13 +537,13 @@ V”ifyCoupÚCodeMsg
 PARSE_RESPONSE_EXCEPTION
 ),
 
-165 
+178 
 V”ifyCoupÚCodeMsg
 ::
 PARSE_RESPONSE_EXCEPTION
 );
 
-168 
+181 
 $codeTag
  = 
 $this
@@ -499,13 +551,21 @@ $this
 _codeTag
 ;
 
-169 ià(
+182 
+$»¥Ú£Ty³
+ = 
+	`¡¹ouµ”
+(
 $this
 ->
 _»¥Ú£Ty³
- == "LAIQU")
+);
 
-171 
+183 ià(
+$»¥Ú£Ty³
+== "LAIQU")
+
+185 
 	`´eg_m©ch_®l
 ("/(<([\w]+)[^>]*>)(.*?)(<\/\\2>)/", 
 $»¥Ú£
@@ -515,7 +575,7 @@ $m©ches
 PREG_SET_ORDER
 );
 
-172 
+186 
 	`fÜ—ch
  (
 $m©ches
@@ -525,7 +585,7 @@ as
 $v®
 ) {
 
-173 ià(
+187 ià(
 $v®
 [2] =ğ
 $this
@@ -533,19 +593,17 @@ $this
 _codeTag
 )
 
-175 
+189 
 $»¥Ú£Code
  = 
 $v®
 [3];
 
-178 } ià(
-$this
-->
-_»¥Ú£Ty³
+192 } ià(
+$»¥Ú£Ty³
  == "XML")
 
-180 
+194 
 $xmlRe¥Ú£
  = 
 	`sim¶exml_lßd_¡ršg
@@ -553,7 +611,7 @@ $xmlRe¥Ú£
 $»¥Ú£
 );
 
-181 
+195 
 $»¥Ú£Code
  = 
 $xmlRe¥Ú£
@@ -561,11 +619,63 @@ $xmlRe¥Ú£
 $codeTag
 ;
 
-184 ià(
+196 } ià(
+$»¥Ú£Ty³
+ === "JSON")
+
+198 
+$jsÚRe¥Ú£
+ = 
+	`jsÚ_decode
+(
+$»¥Ú£
+);
+
+199 
+$»¥Ú£Code
+ = 
+$jsÚRe¥Ú£
+->
+$codeTag
+;
+
+200 } ià(
+$»¥Ú£Ty³
+ === "JUHUASUAN")
+
+204 ià(
+çl£
+ ==ğ
+	`¡ros
+(
+$»¥Ú£
+, "false"))
+
+206 
+$»¥Ú£Code
+ = "true";
+
+207 } ià(
+çl£
+ !=ğ
+	`¡½os
+(
+$»¥Ú£
+, "302")){
+
+209 
+$»¥Ú£Code
+ = "login_expired";
+
+211 
+$»¥Ú£Code
+ = "false";
+
+215 ià(
 $»¥Ú£Code
  == '')
 
-186 
+217 
 throw
  
 Ãw
@@ -573,7 +683,7 @@ throw
 	`V”ifyCoupÚ_P¬£Re¥Ú£Exû±iÚ
 (
 
-187 
+218 
 V”ifyCoupÚCodeMsg
 ::
 	`g‘_mes§ge
@@ -581,13 +691,13 @@ V”ifyCoupÚCodeMsg
 PARSE_RESPONSE_EXCEPTION
 ),
 
-188 
+219 
 V”ifyCoupÚCodeMsg
 ::
 PARSE_RESPONSE_EXCEPTION
 );
 
-190 ià(
+221 ià(
 $»¥Ú£Code
  =ğ
 $this
@@ -595,23 +705,33 @@ $this
 _codeSucûss
 )
 
-192  
+223  
 V”ifyCoupÚCodeMsg
 ::
 VERIFY_COUPON_SUCCESS
 ;
 
-195  
+225 ià(
+$»¥Ú£Code
+ === "login_expired")
+
+227  
+V”ifyCoupÚCodeMsg
+::
+JUHUASUAN_LOGIN_EXPIRED
+;
+
+230  
 V”ifyCoupÚCodeMsg
 ::
 VERIFY_COUPON_FAIL
 ;
 
-196 
+232 
 	}
 }
 
-208 
+244 
 public
  
 funùiÚ
@@ -621,13 +741,13 @@ funùiÚ
 $šputs
 )
 
-210 ià(!
+246 ià(!
 	`is_¬¿y
 (
 $šputs
 ))
 
-212 
+248 
 throw
  
 Ãw
@@ -635,7 +755,7 @@ throw
 	`V”ifyCoupÚ_Reque¡Exû±iÚ
 (
 
-213 
+249 
 V”ifyCoupÚCodeMsg
 ::
 	`g‘_mes§ge
@@ -643,19 +763,19 @@ V”ifyCoupÚCodeMsg
 TRANSFER_REQUEST_PARAM_ERROR
 ),
 
-214 
+250 
 V”ifyCoupÚCodeMsg
 ::
 TRANSFER_REQUEST_PARAM_ERROR
 );
 
-217 
+253 
 $·¿ms
  = 
 	`¬¿y
 ();
 
-218 
+254 
 	`fÜ—ch
  (
 $this
@@ -669,7 +789,7 @@ $key
 $v®ue
 )
 
-221 ià(!
+257 ià(!
 	`is£t
 (
 $šputs
@@ -677,7 +797,7 @@ $šputs
 $key
 ]))
 
-223 
+259 
 throw
  
 Ãw
@@ -685,7 +805,7 @@ throw
 	`V”ifyCoupÚ_Reque¡Exû±iÚ
 (
 
-224 
+260 
 V”ifyCoupÚCodeMsg
 ::
 	`g‘_mes§ge
@@ -693,13 +813,13 @@ V”ifyCoupÚCodeMsg
 TRANSFER_REQUEST_PARAM_ERROR
 ),
 
-225 
+261 
 V”ifyCoupÚCodeMsg
 ::
 TRANSFER_REQUEST_PARAM_ERROR
 );
 
-228 
+264 
 $·¿ms
 [
 $v®ue
@@ -709,7 +829,7 @@ $šputs
 $key
 ];
 
-230 ià(
+266 ià(
 $this
 ->
 _»que¡P¬amsStic
@@ -717,7 +837,7 @@ _»que¡P¬amsStic
 nuÎ
 )
 
-233 
+269 
 	`fÜ—ch
  (
 $this
@@ -731,7 +851,7 @@ $key
 $v®ue
 )
 
-235 
+271 
 $·¿ms
 [
 $key
@@ -739,15 +859,15 @@ $key
 $v®ue
 ;
 
-238  
+274  
 $·¿ms
 ;
 
-239 
+275 
 	}
 }
 
-250 
+286 
 public
  
 funùiÚ
@@ -759,17 +879,17 @@ $»suÉ
 $msg
  = "")
 
-253 
+289 
 $code
  = 
 $»suÉ
 ;
 
-254 ià(
+290 ià(
 	g$msg
  == "")
 
-257 
+293 
 $msg
  = 
 V”ifyCoupÚCodeMsg
@@ -779,13 +899,13 @@ g‘_mes§ge
 $code
 );
 
-260 ià(
+296 ià(
 em±y
 (
 $msg
 ))
 
-262 
+298 
 	g$code
  = 
 CommÚCodeMsg
@@ -793,7 +913,7 @@ CommÚCodeMsg
 INVALID_ARGUMENT_ERROR
 ;
 
-263 
+299 
 	g$msg
  = 
 CommÚCodeMsg
@@ -803,31 +923,45 @@ g‘_mes§ge
 $code
 );
 
-267 
+303 ià(
+	g$code
+ ==ğ
+V”ifyCoupÚCodeMsg
+::
+VERIFY_COUPON_SUCCESS
+)
+
+305 
+$»¥Ú£
+['sucûss'] = 
+Œue
+;
+
+307 
+	g$»¥Ú£
+['sucûss'] = 
+çl£
+;
+
+309 
 	g$»¥Ú£
 ['code'] = 
 $code
 ;
 
-268 
+310 
 	g$»¥Ú£
 ['msg'] = 
 $msg
 ;
 
-269 
-	g$»¥Ú£
-['d©eTime'] = 
-d©e
-("Y-m-d, h:i:s");
-
-271  
+312  
 jsÚ_’code
 (
 $»¥Ú£
 );
 
-276 
+317 
 public
  
 funùiÚ
@@ -835,17 +969,17 @@ funùiÚ
 	$g‘_¶©fÜm
 ()
 
-278  
+319  
 $this
 ->
 _¶©fÜm
 ;
 
-279 
+320 
 	}
 }
 
-283 
+324 
 public
  
 funùiÚ
@@ -853,17 +987,17 @@ funùiÚ
 	$g‘_»que¡M‘hod
 ()
 
-285  
+326  
 $this
 ->
 _»que¡M‘hod
 ;
 
-286 
+327 
 	}
 }
 
-290 
+331 
 public
  
 funùiÚ
@@ -871,17 +1005,17 @@ funùiÚ
 	$g‘_h‰pM‘hod
 ()
 
-292  
+333  
 $this
 ->
 _h‰pM‘hod
 ;
 
-293 
+334 
 	}
 }
 
-297 
+338 
 public
  
 funùiÚ
@@ -889,17 +1023,17 @@ funùiÚ
 	$g‘_»¥Ú£Ty³
 ()
 
-299  
+340  
 $this
 ->
 _»¥Ú£Ty³
 ;
 
-300 
+341 
 	}
 }
 
-304 
+345 
 public
  
 funùiÚ
@@ -907,17 +1041,17 @@ funùiÚ
 	$g‘_­iU¾
 ()
 
-306  
+347  
 $this
 ->
 _­iU¾
 ;
 
-307 
+348 
 	}
 }
 
-311 
+352 
 public
  
 funùiÚ
@@ -925,17 +1059,17 @@ funùiÚ
 	$g‘_codeTag
 ()
 
-313  
+354  
 $this
 ->
 _codeTag
 ;
 
-314 
+355 
 	}
 }
 
-318 
+359 
 public
  
 funùiÚ
@@ -943,13 +1077,13 @@ funùiÚ
 	$g‘_codeSucûss
 ()
 
-320  
+361  
 $this
 ->
 _codeSucûss
 ;
 
-321 
+362 
 	}
 }
 
@@ -1463,11 +1597,11 @@ php
 
 13 
 	g»quœe_Úû
- '../module/Coupon.php';
+ '../common/CodeMessages.php';
 
 14 
-»quœe_Úû
-('../common/CodeMessages.php');
+	g»quœe_Úû
+ 'functions.php';
 
 16 
 funùiÚ
@@ -1596,6 +1730,10 @@ $_REQUEST
 ['platform'];
 
 44 ià(
+is£t
+(
+$_REQUEST
+['aùiÚ']è&& 
 	g$_REQUEST
 ['aùiÚ'] ==ğ'v®id©eCode' && 
 $¶©fÜm
@@ -1627,61 +1765,13 @@ $»¡
 g‘H‰pReque¡
 ();
 
-49 
-	g$»q
-->
-£tH—d”
-("Accept-Encoding", "gzip,deflate,sdch");
-
 50 
-	g$»q
-->
-£tH—d”
-("Connection", "keep-alive");
-
-51 
-	g$»q
-->
-£tH—d”
-("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/535.19 (KHTML,†ike Gecko) Chrome/18.0.1025.168 Safari/535.19");
-
-52 
-	g$»q
-->
-£tH—d”
-("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
-
-53 
-	g$»q
-->
-£tH—d”
-("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
-
-54 
-	g$»q
-->
-£tH—d”
-("Accept-Charset", "GBK,utf-8;q=0.7,*;q=0.3");
-
-55 
-	g$»q
-->
-£tH—d”
-("Accept-Language", "zh-CN,zh;q=0.8");
-
-56 
-	g$»q
-->
-£tH—d”
-("Cache-Control", "max-age=0");
-
-58 
 	g$»¡
 ->
 £ndReque¡
 ();
 
-61 
+51 
 	g$»¥Ú£Obj
  = 
 $»¡
@@ -1689,135 +1779,223 @@ $»¡
 g‘Re¥Ú£Obj
 ();
 
-62 
-v¬_dump
-(
+52 
+	g$j£ssiÚid
+ = 
+fšdCook›
+("JSESSIONID", 
 $»¥Ú£Obj
 ->
 g‘Cook›s
 ());
 
-65 
-	gex™
-;
+53 ià(
+	g$j£ssiÚid
+ != '')
 
-68 
-	g$v”ifyCoupÚ
- = 
-Ãw
+55 
+$»q
+->
+addCook›
+("JSESSIONID", 
+$j£ssiÚid
+['value']);
+
+57 
+	g$_SESSION
+['JSESSIONID'] = 
+$j£ssiÚid
+['value'];
+
+59 
+h—d”
+("Content-Type:image/jpeg");
+
+60 
+echo
  
-V”ifyCoupÚ
-();
-
-70 
-	g$v”ifyCoupÚ
-->
-š™
-(
-$¶©fÜm
-);
-
-72 
-	g$šputs
- = 
-$v”ifyCoupÚ
-->
-š™_v”ifyIÅuts
-(
-$_REQUEST
-);
-
-74 
 	g$»¡
- = 
-Ãw
- 
-RESTş›Á
-();
-
-75 
-	g$·¿ms
- = 
-$v”ifyCoupÚ
-->
-g‘_»que¡P¬ams
-(
-$šputs
-);
-
-77 ià(
-	g$v”ifyCoupÚ
-->
-g‘_h‰pM‘hod
-() == 'POST') {
-
-78 
-$»¡
-->
-ü—‹Reque¡
-(
-$v”ifyCoupÚ
-->
-g‘_­iU¾
-(), 'POST', 
-$·¿ms
-);
-
-80 
-	g$»¡
-->
-ü—‹Reque¡
-(
-$v”ifyCoupÚ
-->
-g‘_­iU¾
-());
-
-81 
-	g$u¾
- = 
-$»¡
-->
-g‘U¾
-();
-
-82 
-	g$u¾
-->
-£tQu”yV¬ŸbËs
-(
-$·¿ms
-);
-
-84 
-	g$»¥Ú£
- = '';
-
-85 
-	g$»¡
-->
-£ndReque¡
-();
-
-86 
-	g$»¥Ú£
- = 
-$»¡
 ->
 g‘Re¥Ú£
 ();
 
-87 
-	g$»¥Ú£Code
- = 
-$v”ifyCoupÚ
-->
-g‘_»¥Ú£Code
+61 
+un£t
 (
-$»¥Ú£
+$»¡
 );
 
-88 ià(
+62 
+	gex™
+;
+
+64 ià(
+is£t
+(
+$_REQUEST
+['aùiÚ']è&& 
+	g$_REQUEST
+['aùiÚ'] ==ğ'isjulogš' && 
+$¶©fÜm
+ === 'juhuasuan')
+
+66 ià(
+is£t
+(
+$_SESSION
+['JSESSIONID']) && $_SESSION['JSESSIONID'] !== "")
+
+68 
+$sucûss
+ = 
+Œue
+;
+
+70 
+	g$sucûss
+ = 
+çl£
+;
+
+72 
+echo
+ 
+jsÚ_’code
+(
+¬¿y
+("sucûss"=>
+$sucûss
+));
+
+73 
+	gex™
+;
+
+75 ià(
+is£t
+(
+$_REQUEST
+['aùiÚ']è&& 
+	g$_REQUEST
+['aùiÚ'] ==ğ'julogš' && 
+$¶©fÜm
+ === 'juhuasuan')
+
+77 
+$v®id©eCode
+ = 
+$_REQUEST
+['validatecode'];
+
+78 
+	g$sucûss
+ = 
+çl£
+;
+
+80 ià(
+	g$v®id©eCode
+ !== "")
+
+82 
+$sucûss
+ = 
+logš_¶©fÜm
+(
+$¶©fÜm
+);
+
+84 ià(
+	g$sucûss
+ === "juhuasuan_not_bind")
+
+86 
+$sucûss
+ = 
+V”ifyCoupÚCodeMsg
+::
+PLATFORM_ACCT_NOT_BIND_ERROR
+;
+
+89 
+echo
+ 
+jsÚ_’code
+(
+¬¿y
+("sucûss" => 
+$sucûss
+));
+
+90 
+	gex™
+;
+
+93 
+	g$»¥Ú£Code
+ = 
+doV”ifyCoupÚ
+(
+$_REQUEST
+);
+
+94 
+	g$coupÚId
+ = 
+$_REQUEST
+['couponId'];
+
+95 ià(
+	g$¶©fÜm
+ === 'juhuasuan')
+
+97 
+$cÚsumed_times
+ = 
+$_REQUEST
+['consumeCount'];
+
+101 ià(
+	g$»¥Ú£Code
+ ==ğ
+V”ifyCoupÚCodeMsg
+::
+JUHUASUAN_LOGIN_EXPIRED
+)
+
+104 
+$ŒyTimes
+ = 10;
+
+105 
+	g$couÁ
+ = 0;
+
+106 !
+logš_¶©fÜm
+('juhuasuan'))
+
+108 ià(++
+	g$couÁ
+ ==ğ
+$ŒyTimes
+ ) ;
+
+110 ià(
+	g$couÁ
+ < 
+	g$ŒyTimes
+)
+
+112 
+	g$»¥Ú£Code
+ = 
+doV”ifyCoupÚ
+(
+$_REQUEST
+);
+
+116 ià(
 	g$»¥Ú£Code
  ==ğ
 V”ifyCoupÚCodeMsg
@@ -1825,62 +2003,90 @@ V”ifyCoupÚCodeMsg
 VERIFY_COUPON_SUCCESS
 )
 
-90 
-$coupÚId
- = 
-$šputs
-['couponId'];
-
-91 
-	g$coupÚ
- = 
-Ãw
- 
-CoupÚ
-();
-
-93 ià(!
-	g$coupÚ
-->
-cÚsume_coupÚ
+118 ià(!
+»cÜd_cÚsumed_coupÚ
 (
 $coupÚId
 , 
 $¶©fÜm
+, 
+$cÚsumed_times
 ))
 
-95 
-d›
-(
+120 
+$»¥Ú£Code
+ = 
+V”ifyCoupÚCodeMsg
+::
+RECORD_COUPON_FAILED_ERROR
+;
+
+123 ià(
+	g$»¥Ú£Code
+ ==ğ
+V”ifyCoupÚCodeMsg
+::
+RECORD_COUPON_FAILED_ERROR
+)
+
+125 
+$»¥Ú£
+ = 
 V”ifyCoupÚ
 ::
 g’_»¥Ú£_jsÚ
 (
 
-96 
+126 
 V”ifyCoupÚCodeMsg
 ::
-MARK_COUPON_CONSUMED_ERROR
+RECORD_COUPON_FAILED_ERROR
 ,
 
-97 "E¼ÜCode: ".
+127 "E¼ÜCode: ".
 V”ifyCoupÚCodeMsg
 ::
-MARK_COUPON_CONSUMED_ERROR
+RECORD_COUPON_FAILED_ERROR
 ." å¹³å°:".
 $¶©fÜm
 ."ç¼–å·ä¸º".
 $coupÚId
-."çš„å·²æ¶ˆè´¹çš„å›¢è´­åˆ¸åœ¨æœ¬åœ°æ ‡è®°å¤±è´¥!"));
+."çš„å·²æ¶ˆè´¹çš„å›¢è´­åˆ¸åœ¨æœ¬åœ°ç™»è®°å¤±è´¥!");
 
-100 
-echo
- 
-	gV”ifyCoupÚ
+130 
+	g$»¥Ú£
+ = 
+V”ifyCoupÚ
 ::
 g’_»¥Ú£_jsÚ
 (
 $»¥Ú£Code
+);
+
+132 
+	g$»¥Ú£W™hCoupÚInfo
+ = 
+addCoupÚInfoToV”ifyRe¥Ú£
+(
+$»¥Ú£
+, 
+$coupÚId
+, 
+$¶©fÜm
+, 
+$cÚsumed_times
+);
+
+133 
+echo
+ 
+	g$»¥Ú£W™hCoupÚInfo
+;
+
+134 
+un£t
+(
+$»¡
 );
 
 	@functions.php
@@ -1889,7 +2095,35 @@ $»¥Ú£Code
 php
 
 
+12 
+	g»quœe_Úû
+ '../module/PartnerPlatforms.php';
+
 13 
+	g»quœe_Úû
+ '../module/Order.php';
+
+14 
+	g»quœe_Úû
+ '../module/Team.php';
+
+15 
+	g»quœe_Úû
+ '../module/Coupon.php';
+
+16 
+	g»quœe_Úû
+ '../common/class/Valite.php';
+
+17 
+	g»quœe_Úû
+ 'VerifyCoupon.php';
+
+18 
+	g»quœe_Úû
+ '../common/RESTclient.php';
+
+21 
 funùiÚ
  
 	$fšdCook›
@@ -1899,7 +2133,7 @@ $Çme
 $cook›s
 )
 
-15 
+23 
 	`fÜ—ch
  (
 $cook›s
@@ -1909,17 +2143,1617 @@ as
 $cook›
 )
 
-17 ià(
+25 ià(
 $cook›
 ['Çme'] ==ğ
 $Çme
 )
 
-19  
+27  
 $cook›
 ;
 
-23 
+31 
+	}
+}
+
+35 
+funùiÚ
+ 
+	$d—l_w™h_¶©fÜm
+(
+$»que¡
+)
+
+37 
+$¶©fÜm
+ = 
+$»que¡
+['platform'];
+
+39 ià(
+$¶©fÜm
+ === 'juhuasuan')
+
+41 
+$v®id©eCode
+ = 
+$»que¡
+['validateCode'];
+
+42 ià(
+$v®id©eCode
+ ==ğ"" || !
+	`logš_¶©fÜm
+(
+$¶©fÜm
+))
+
+44  
+V”ifyCoupÚCodeMsg
+::
+VALIDATECODE_NOT_MATCH_ERROR
+;
+
+46 ià(
+	`logš_¶©fÜm
+(
+$¶©fÜm
+) === "juhuasuan_not_bind")
+
+48  
+V”ifyCoupÚCodeMsg
+::
+PLATFORM_ACCT_NOT_BIND_ERROR
+;
+
+50  
+Œue
+;
+
+52 
+	}
+}
+
+55 
+funùiÚ
+ 
+	$g‘_logš_v®id©e_img_·th
+(
+$¶©fÜm
+)
+
+57 
+$tmp_ÿ±cha_Çme
+ = '';
+
+58 ià(
+$¶©fÜm
+ === "juhuasuan")
+
+60 
+$ÿ±chaU¾
+ = 'h‰p://59.151.29.121/v®id©eCode.do?'.
+	`d©e
+(
+	`mktime
+());
+
+61 
+$imgSuffix
+ = 'jpg';
+
+64 
+$»¡
+ = 
+Ãw
+ 
+	`RESTş›Á
+();
+
+65 
+$»¡
+->
+	`ü—‹Reque¡
+(
+$ÿ±chaU¾
+);
+
+66 
+$»q
+ = 
+$»¡
+->
+	`g‘H‰pReque¡
+();
+
+68 
+$»¡
+->
+	`£ndReque¡
+();
+
+69 
+$»¥Ú£Obj
+ = 
+$»¡
+->
+	`g‘Re¥Ú£Obj
+();
+
+70 
+$j£ssiÚid
+ = 
+	`fšdCook›
+("JSESSIONID", 
+$»¥Ú£Obj
+->
+	`g‘Cook›s
+());
+
+71 ià(
+$j£ssiÚid
+ != '')
+
+73 
+$»q
+->
+	`addCook›
+("JSESSIONID", 
+$j£ssiÚid
+['value']);
+
+75 
+$_SESSION
+['JSESSIONID'] = 
+$j£ssiÚid
+['value'];
+
+77 
+$tmp_ÿ±cha_Çme
+ = 
+	`‹m²am
+(
+	`sys_g‘_‹mp_dœ
+(),
+$imgSuffix
+);
+
+78 
+	`fe_put_cÚ‹Ás
+(
+$tmp_ÿ±cha_Çme
+, 
+$»¡
+->
+	`g‘Re¥Ú£
+());
+
+79  
+$tmp_ÿ±cha_Çme
+;
+
+80 
+	}
+}
+
+82 
+funùiÚ
+ 
+	$decode_ÿ±cha
+(
+$ÿ±chaP©h
+)
+
+84 
+$v®™e
+ = 
+Ãw
+ 
+	`V®™e
+();
+
+86 
+$v®™e
+->
+	`£tImage
+(
+$ÿ±chaP©h
+);
+
+87 
+$v®™e
+->
+	`g‘Hec
+();
+
+88 
+$v®id©eCode
+ = 
+$v®™e
+->
+	`run
+();
+
+90  
+$v®id©eCode
+;
+
+91 
+	}
+}
+
+93 
+funùiÚ
+ 
+	$logš_¶©fÜm
+(
+$¶©fÜm
+)
+
+95 ià(
+$¶©fÜm
+ === 'juhuasuan')
+
+98 
+$sucûss
+ = 
+çl£
+;
+
+99 
+$ÿ±chaP©h
+ = 
+	`g‘_logš_v®id©e_img_·th
+(
+$¶©fÜm
+);
+
+100 
+$v®id©eCode
+ = 
+	`decode_ÿ±cha
+(
+$ÿ±chaP©h
+);
+
+101 
+	`uÆšk
+(
+$ÿ±chaP©h
+);
+
+103 
+$logšU¾
+ = "http://59.151.29.121/shopUsed/shopLogin.do";
+
+105 
+$·¿ms
+ = 
+	`g‘_juhuasuª_logš_·¿ms
+();
+
+106 ià(
+$·¿ms
+ ==ğ
+nuÎ
+)
+
+110 
+$·¿ms
+['mod–.v®id©eCode'] = 
+$v®id©eCode
+;
+
+111 
+$»¡
+ = 
+Ãw
+ 
+	`RESTş›Á
+();
+
+112 
+$»¡
+->
+	`ü—‹Reque¡
+(
+$logšU¾
+,'POST',
+$·¿ms
+);
+
+115 
+$»q
+ = 
+$»¡
+->
+	`g‘H‰pReque¡
+();
+
+116 
+$»q
+->
+	`£tCook›J¬
+();
+
+117 
+$»q
+->
+	`addCook›
+("JSESSIONID", 
+$_SESSION
+['JSESSIONID']);
+
+118 
+$»¡
+->
+	`£ndReque¡
+();
+
+119 
+$»¥Ú£
+ = 
+$»¡
+->
+	`g‘Re¥Ú£
+();
+
+120 
+	`un£t
+(
+$»¡
+);
+
+121 
+$sucûss
+ = 
+	`is_logš_sucûss
+(
+$»¥Ú£
+, 
+$¶©fÜm
+);
+
+123 ià(
+$sucûss
+ ==ğ
+Œue
+)
+
+125 
+$_SESSION
+['·¹Ãr_'.
+$¶©fÜm
+] = 
+	`¬¿y
+(
+
+126 "p_u£ºame" => 
+$·¿ms
+['model.sign'],
+
+127 "p_·sswÜd" => 
+$·¿ms
+['model.password'],
+
+128 "p_‹rmš®id" => 
+$·¿ms
+['model.terminalId']);
+
+130  
+$sucûss
+;
+
+132 
+	}
+}
+
+134 
+funùiÚ
+ 
+	$doV”ifyCoupÚ
+(
+$»que¡
+)
+
+136 
+$¶©fÜm
+ = 
+$»que¡
+['platform'];
+
+137 
+$v”ifyCoupÚ
+ = 
+Ãw
+ 
+	`V”ifyCoupÚ
+();
+
+139 
+$v”ifyCoupÚ
+->
+	`š™
+(
+$¶©fÜm
+);
+
+141 
+$šputs
+ = 
+$v”ifyCoupÚ
+->
+	`š™_v”ifyIÅuts
+(
+$»que¡
+);
+
+142 
+$coupÚId
+ = 
+$šputs
+['couponId'];
+
+143 ià(
+$¶©fÜm
+ ==ğ'juhuasuª' && 
+	`is£t
+(
+$_SESSION
+['partner_'.$platform]))
+
+145 
+$šputs
+['‹rmš®id'] = 
+$_SESSION
+['·¹Ãr_'.
+$¶©fÜm
+]['p_terminalid'];
+
+148 
+$»¡
+ = 
+Ãw
+ 
+	`RESTş›Á
+();
+
+149 
+$·¿ms
+ = 
+$v”ifyCoupÚ
+->
+	`g‘_»que¡P¬ams
+(
+$šputs
+);
+
+151 ià(
+$v”ifyCoupÚ
+->
+	`g‘_h‰pM‘hod
+() == 'POST') {
+
+152 
+$»¡
+->
+	`ü—‹Reque¡
+(
+$v”ifyCoupÚ
+->
+	`g‘_­iU¾
+(), 'POST', 
+$·¿ms
+);
+
+154 
+$»¡
+->
+	`ü—‹Reque¡
+(
+$v”ifyCoupÚ
+->
+	`g‘_­iU¾
+());
+
+155 
+$u¾
+ = 
+$»¡
+->
+	`g‘U¾
+();
+
+156 
+$u¾
+->
+	`£tQu”yV¬ŸbËs
+(
+$·¿ms
+);
+
+158 
+$»¥Ú£
+ = '';
+
+161 ià(
+$¶©fÜm
+ === "juhuasuan")
+
+163 
+$»q
+ = 
+$»¡
+->
+	`g‘H‰pReque¡
+();
+
+164 
+$»q
+->
+	`addCook›
+("JSESSIONID", 
+$_SESSION
+['JSESSIONID']);
+
+165 
+$cÚsumed_times
+ = 
+$»que¡
+['consumeCount'];
+
+168 
+$»¡
+->
+	`£ndReque¡
+();
+
+169 
+$»¥Ú£
+ = 
+$»¡
+->
+	`g‘Re¥Ú£
+();
+
+170 
+$»¥Ú£Code
+ = 
+$v”ifyCoupÚ
+->
+	`g‘_»¥Ú£Code
+(
+$»¥Ú£
+);
+
+171  
+$»¥Ú£Code
+;
+
+172 
+	}
+}
+
+175 
+funùiÚ
+ 
+	$is_logš_sucûss
+(
+$»¥Ú£
+, 
+$¶©fÜm
+)
+
+177 ià(
+$¶©fÜm
+ === 'juhuasuan')
+
+180 iàĞ1 !=ğ
+	`´eg_m©ch
+('/g‘Li¡\(\"shİU£d\/h—d”s\.do\"\)/', 
+$»¥Ú£
+))
+
+182  
+çl£
+;
+
+184  
+Œue
+;
+
+186 
+	}
+}
+
+188 
+funùiÚ
+ 
+	$g‘_juhuasuª_logš_·¿ms
+()
+
+190 
+$·¹ÃrPÏtfÜms
+ = 
+Ãw
+ 
+	`P¬Š”PÏtfÜms
+();
+
+191 ià(!
+	`is£t
+(
+$_SESSION
+['partnerId']))
+
+193  
+nuÎ
+;
+
+195 
+$µRow
+ = 
+$·¹ÃrPÏtfÜms
+->
+	`g‘_row
+(
+
+196 
+	`¬¿y
+("·¹Ãr_id" => 
+$_SESSION
+['partnerId'],
+
+200 ià(
+$µRow
+ ==ğ
+nuÎ
+) { ‚ull; }
+
+202 
+$·¿ms
+ = 
+	`¬¿y
+ (
+
+203 "mod–.sign" => 
+$µRow
+['p_username'],
+
+204 "mod–.·sswÜd" => 
+$µRow
+['p_password'],
+
+205 "mod–.‹rmš®Id" => 
+$µRow
+['p_terminalid']);
+
+206  
+$·¿ms
+;
+
+207 
+	}
+}
+
+210 
+funùiÚ
+ 
+	$»cÜd_cÚsumed_coupÚ
+(
+$coupÚId
+, 
+$¶©fÜm
+, 
+$cÚsumed_times
+=1)
+
+212 
+$coupÚ
+ = 
+Ãw
+ 
+	`CoupÚ
+();
+
+213 
+$cÚd™iÚs
+ = 
+	`¬¿y
+(
+
+214 "¶©fÜm_coupÚ_id"=>
+$coupÚId
+,
+
+215 "¶©fÜm_key"=>
+$¶©fÜm
+);
+
+216 
+$cÚsumedCoupÚs
+ = 
+$coupÚ
+->
+	`g‘_row
+(
+$cÚd™iÚs
+);
+
+218 ià(!
+	`is_num”ic
+(
+$cÚsumed_times
+) || $consumed_times < 1)
+
+220  
+çl£
+;
+
+222 ià(
+$cÚsumedCoupÚs
+ !=ğ
+nuÎ
+ && 
+$¶©fÜm
+ === "juhuasuan")
+
+224  
+$coupÚ
+->
+	`cÚsume_coupÚ
+(
+$cÚsumedCoupÚs
+['id'], 
+$cÚsumed_times
+);
+
+225 } ià(
+$¶©fÜm
+ === "juhuasuan")
+
+228 
+$Üd”Info
+ = 
+	`»cÜd_Üd”
+(
+$coupÚId
+, 
+$¶©fÜm
+, 
+$cÚsumed_times
+);
+
+231 ifĞ
+$Üd”Info
+ ==ğ
+çl£
+)
+
+233  
+çl£
+;
+
+236 
+$š£¹CoupÚ
+ = 
+	`¬¿y
+(
+
+237 "¶©fÜm_key" => 
+$Üd”Info
+['platform_key'],
+
+238 "·¹Ãr_id" => 
+$_SESSION
+['partnerId'],
+
+239 "‹am_id" => 
+$Üd”Info
+['team_id'],
+
+240 "Üd”_id" => 
+$Üd”Info
+['id'],
+
+242 "cÚsume_time" => 
+	`mktime
+(),
+
+243 "ü—‹_time" => 
+	`mktime
+(),
+
+244 "cÚsume_times" => 
+$cÚsumed_times
+,
+
+245 "¶©fÜm_coupÚ_id" => 
+$coupÚId
+,
+
+246 "cÚsum”_mobe" => 
+$Üd”Info
+['consumer_mobile'],
+
+249  
+$coupÚ
+->
+	`š£¹_coupÚ
+(
+$š£¹CoupÚ
+);
+
+251 
+	}
+}
+
+253 
+funùiÚ
+ 
+	$»cÜd_Üd”
+(
+$coupÚId
+,
+$¶©fÜm
+, 
+$cÚsumed_times
+ = 1)
+
+256 
+$Üd”Info
+ = 
+	`g‘_Üd”Info
+(
+$coupÚId
+, 
+$¶©fÜm
+);
+
+257 ià(!
+	`is_¬¿y
+(
+$Üd”Info
+è|| 
+	`em±y
+($orderInfo))
+
+259  
+çl£
+;
+
+262 
+$Üd”Info
+['¶©fÜm_key'] = 
+$¶©fÜm
+;
+
+263 
+$Üd”Info
+['cÚsume_times'] = 
+$cÚsumed_times
+;
+
+264 
+$Üd”Info
+['·¹Ãr_id'] = 
+$_SESSION
+['partnerId'];
+
+265 
+$Üd”Info
+['¶©fÜm_coupÚ_id'] = 
+$coupÚId
+;
+
+267 
+$Üd”Id
+ = 
+$Üd”Info
+['platform_order_id'];
+
+268 
+$Üd”
+ = 
+Ãw
+ 
+	`Ord”
+();
+
+269 
+$cÚd™iÚs
+ = 
+	`¬¿y
+(
+
+270 "¶©fÜm_Üd”_id"=>
+$Üd”Id
+,
+
+271 "¶©fÜm_key"=>
+$¶©fÜm
+);
+
+272 
+$»cÜdedOrd”
+ = 
+$Üd”
+->
+	`g‘_row
+(
+$cÚd™iÚs
+);
+
+274 ià(
+$»cÜdedOrd”
+ !=ğ
+nuÎ
+ && 
+$¶©fÜm
+ === "juhuasuan")
+
+276 
+$»cÜdedOrd”
+['cÚsum”_mobe'] = 
+$Üd”Info
+['consumer_mobile'];
+
+277  
+$»cÜdedOrd”
+;
+
+278 } if(
+$¶©fÜm
+ === "juhuasuan")
+
+280 
+$»cÜdedT—m
+ = 
+	`»cÜd_‹am_by_Üd”
+(
+$Üd”Info
+);
+
+281 
+$Üd”Info
+['‹am_id'] = 
+$»cÜdedT—m
+['id'];
+
+283 
+$š£¹Ord”
+ = 
+	`¬¿y
+(
+
+284 "‹am_id" => 
+$Üd”Info
+['team_id'],
+
+285 "ü—‹_time" => 
+	`mktime
+(),
+
+286 "¶©fÜm_Üd”_id" => 
+$Üd”Info
+['platform_order_id'],
+
+287 "¶©fÜm_key" => 
+$Üd”Info
+['platform_key']
+
+289 
+$Üd”In£¹ed
+ = 
+$Üd”
+->
+	`š£¹_Üd”
+(
+$š£¹Ord”
+);
+
+290 
+$Üd”In£¹ed
+['cÚsum”_mobe'] = 
+$Üd”Info
+['consumer_mobile'];
+
+291  
+$Üd”In£¹ed
+;
+
+293 
+	}
+}
+
+296 
+funùiÚ
+ 
+	$»cÜd_‹am_by_Üd”
+(
+$Üd”Info
+)
+
+298 
+$‹am
+ = 
+Ãw
+ 
+	`T—m
+();
+
+299 ià(
+	`is_¬¿y
+(
+$Üd”Info
+è&& !
+	`em±y
+($orderInfo))
+
+302 
+$‹amRow
+ = 
+$‹am
+->
+	`g‘_row
+(
+
+303 
+	`¬¿y
+("t™Ë"=>
+$Üd”Info
+['title'],
+
+304 "¶©fÜm_key"=>
+$Üd”Info
+['platform_key']));
+
+306 ià(!
+	`is_¬¿y
+(
+$‹amRow
+è|| 
+	`em±y
+($teamRow))
+
+308 
+$‹amInfo
+ = 
+	`¬¿y
+(
+
+309 "t™Ë" => 
+$Üd”Info
+['title'],
+
+310 "¶©fÜm_key" => 
+$Üd”Info
+['platform_key'],
+
+311 "summ¬y" => 
+$Üd”Info
+['summary'],
+
+312 "·¹Ãr_id" => 
+$Üd”Info
+['partner_id'],
+
+313 "‹am_´iû" => 
+$Üd”Info
+['team_price']
+
+315  
+$‹am
+->
+	`š£¹_‹am
+(
+$‹amInfo
+);
+
+317  
+$‹amRow
+;
+
+320  
+çl£
+;
+
+322 
+	}
+}
+
+325 
+funùiÚ
+ 
+	$g‘_Üd”Info
+(
+$coupÚId
+, 
+$¶©fÜm
+)
+
+327 
+$»¡
+ = 
+Ãw
+ 
+	`RESTş›Á
+();
+
+328 
+$ÏiquOrd”
+ = 
+	`¬¿y
+();
+
+330 ià(
+$¶©fÜm
+ === "juhuasuan")
+
+332 
+$·¿ms
+ = 
+	`¬¿y
+("mod–.ass™Code" => 
+$coupÚId
+);
+
+333 
+$»¡
+->
+	`ü—‹Reque¡
+("h‰p://59.151.29.121/shİU£d/li¡.do", 'POST', 
+$·¿ms
+);
+
+334 
+$»q
+ = 
+$»¡
+->
+	`g‘H‰pReque¡
+();
+
+335 
+$»q
+->
+	`addCook›
+("JSESSIONID", 
+$_SESSION
+['JSESSIONID']);
+
+336 
+$»¡
+->
+	`£ndReque¡
+();
+
+337 
+$»¥Ú£
+ = 
+$»¡
+->
+	`g‘Re¥Ú£
+();
+
+339 
+$»¥Ú£
+ = 
+	`tidy_ugly_jsÚ
+($»¥Ú£,
+$¶©fÜm
+);
+
+340 
+$»suÉ
+ = 
+	`jsÚ_decode
+(
+$»¥Ú£
+);
+
+342 ià(
+$»suÉ
+->
+sucûss
+ ==ğ
+çl£
+ && $»suÉ->
+¡©us
+ === 302)
+
+344  
+V”ifyCoupÚCodeMsg
+::
+JUHUASUAN_LOGIN_EXPIRED
+;
+
+346 ià(
+	`is£t
+(
+$»suÉ
+->
+d©a
+è&& 
+	`couÁ
+($result->data) > 0)
+
+348 
+$Üd”
+ = 
+$»suÉ
+->
+d©a
+[0];
+
+349 
+$ÏiquOrd”
+ = 
+	`cÚv”t_Üd”
+(
+$Üd”
+, 
+$¶©fÜm
+);
+
+350 } ià(
+	`is£t
+(
+$»suÉ
+->
+d©a
+)){
+
+351  
+V”ifyCoupÚCodeMsg
+::
+COUPON_NOT_EXIST
+;
+
+355  
+$ÏiquOrd”
+;
+
+356 
+	}
+}
+
+359 
+funùiÚ
+ 
+	$cÚv”t_Üd”
+(
+$Üd”Info
+, 
+$¶©fÜm
+)
+
+361 
+$Üd”
+ = 
+	`¬¿y
+();
+
+362 ià(
+$¶©fÜm
+ === "juhuasuan")
+
+364 
+$Üd”
+['t™Ë'] = 
+$Üd”Info
+->
+´oduù
+;
+
+365 
+$Üd”
+['summ¬y'] = 
+$Üd”Info
+->
+desütiÚ
+;
+
+367 
+$Üd”
+['‹am_´iû'] = 
+	`æßtv®
+(
+	`sub¡r
+(
+$Üd”Info
+->
+·ym’t
+, 3));
+
+368 
+$Üd”
+['¶©fÜm_key'] = 
+$¶©fÜm
+;
+
+369 
+$Üd”
+['¶©fÜm_Üd”_id'] = 
+$Üd”Info
+->
+obaoId
+;
+
+370 
+$Üd”
+['cÚsum”_mobe'] = 
+$Üd”Info
+->
+»ûiMobe
+;
+
+373  
+$Üd”
+;
+
+375 
+	}
+}
+
+378 
+funùiÚ
+ 
+	$tidy_ugly_jsÚ
+(
+$uglyJsÚ
+, 
+$¶©fÜm
+)
+
+380 
+$b—utifulJsÚ
+ = "";
+
+381 ià(
+$¶©fÜm
+ === "juhuasuan")
+
+384 
+$uglyJsÚ
+ = 
+	`´eg_»¶aû
+('/items\s*:\s*\[[^<]+?\]/','', $uglyJson);
+
+385 
+$uglyJsÚ
+ = 
+	`´eg_»¶aû
+('/\s*:\s*/',':', $uglyJson);
+
+387 
+$uglyJsÚ
+ = 
+	`´eg_»¶aû_ÿÎback
+('/([\{,]\s*)([[\w\d]+)(\s*:)/',"add_double_quote", $uglyJson);
+
+389 
+$b—utifulJsÚ
+ = 
+	`´eg_»¶aû
+('/(,\s*)([\}\]])/','${2}',
+$uglyJsÚ
+);
+
+391 
+$b—utifulJsÚ
+ = 
+	`´eg_»¶aû
+("/'(.*)'/",'"${1}"', $beautifulJson);
+
+394  
+$b—utifulJsÚ
+;
+
+395 
+	}
+}
+
+396 
+funùiÚ
+ 
+	$add_doubË_quÙe
+(
+$m©ches
+)
+
+399  
+$m©ches
+[1].'"'.$matches[2].'":';
+
+400 
+	}
+}
+
+403 
+funùiÚ
+ 
+	$addCoupÚInfoToV”ifyRe¥Ú£
+(
+$»¥Ú£
+, 
+$coupÚId
+, 
+$¶©fÜm
+, 
+$cÚsumed_times
+)
+
+405 
+$»¥Ú£Obj
+ = 
+	`jsÚ_decode
+(
+$»¥Ú£
+);
+
+406 ià(
+$»¥Ú£Obj
+->
+sucûss
+ ==ğ
+çl£
+)
+
+408  
+$»¥Ú£
+;
+
+411 
+$coupÚ
+ = 
+Ãw
+ 
+	`CoupÚ
+();
+
+412 
+$·¿ms
+ = 
+	`¬¿y
+('¶©fÜm_coupÚ_id'=>
+$coupÚId
+, '¶©fÜm_key'=>
+$¶©fÜm
+);
+
+413 
+$coupÚRow
+ = 
+$coupÚ
+->
+	`g‘_row
+(
+$·¿ms
+);
+
+414 ià(
+$coupÚRow
+ ==ğ
+nuÎ
+)
+
+416  
+$»¥Ú£
+;
+
+418 
+$»¥Ú£Obj
+->
+coupÚId
+ = 
+$coupÚId
+;
+
+419 
+$»¥Ú£Obj
+->
+¶©fÜm
+ = 
+$¶©fÜm
+;
+
+420 
+$»¥Ú£Obj
+->
+‹amId
+ = 
+$coupÚRow
+['team_id'];
+
+421 
+$»¥Ú£Obj
+->
+Üd”Id
+ = 
+$coupÚRow
+['order_id'];
+
+422 
+$»¥Ú£Obj
+->
+cÚsum”Mobe
+ = 
+$coupÚRow
+['consumer_mobile'];
+
+423 
+$»¥Ú£Obj
+->
+cÚsumedTimes
+ = 
+$coupÚRow
+['consumedTimes'];
+
+424 
+$»¥Ú£Obj
+->
+d©eTime
+ = 
+	`¡ráime
+('%Y-%m-%d %H:%M:%S',
+$coupÚRow
+['consume_time']);
+
+426 
+$‹am
+ = 
+Ãw
+ 
+	`T—m
+();
+
+427 
+$·¿ms
+ = 
+	`¬¿y
+('id'=>
+$coupÚRow
+['team_id']);
+
+428 
+$‹amRow
+ = 
+$‹am
+->
+	`g‘_row
+(
+$·¿ms
+);
+
+429 ià(
+$coupÚRow
+ ==ğ
+nuÎ
+)
+
+431 
+$»¥Ú£Obj
+->
+‹amT™Ë
+ = "æœªçŸ¥é¡¹ç›®";
+
+433 
+$»¥Ú£Obj
+->
+‹amT™Ë
+ = 
+$‹amRow
+['title'];
+
+435  
+	`jsÚ_’code
+(
+$»¥Ú£Obj
+);
+
+436 
 	}
 }
 
@@ -1975,27 +3809,49 @@ h»f
 ty³
 ="text/css" />
 
-9 </
+9 <
+lšk
+ 
+h»f
+="../css/sim¶emod®.css" 
+»l
+="¡yËsh“t" 
+ty³
+="text/css" />
+
+10 </
 h—d
 >
 
-10 <
+11 <
 body
 >
-
-11 <
-süt
- 
-¤c
-="js/jquery.min.js"></script>
 
 12 <
 süt
  
 ¤c
-="js/verifyCoupon.js"></script>
+="../js/jquery.min.js"></script>
+
+13 <
+süt
+ 
+¤c
+="../js/jquery.simplemodal.js"></script>
 
 14 <
+süt
+ 
+¤c
+="../js/common_funcs.js"></script>
+
+15 <
+süt
+ 
+¤c
+="js/verifyCoupon.js"></script>
+
+17 <
 div
  
 şass
@@ -2003,135 +3859,69 @@ div
 id
 ="main">
 
-18 <
+21 <
 div
  
 şass
 ="top_blank">
 
-19 </
+22 </
 div
 >
 
-21 <
+24 <
 div
  
 şass
 ="top">
 
-22 <
+25 <
 img
  
 ¤c
 ="../images/logo.jpg" />
 
-23 </
+26 </
 div
 >
-
-25 <
-div
- 
-şass
-="body">
-
-27 <
-div
- 
-şass
-="body_l">
 
 28 <
 div
  
 şass
-="nav">
+="body">
+
+30 <
+div
+ 
+şass
+="body_l">
 
 31 <
-p
- 
-şass
-="nav_title">å•† æˆ· ç®¡ ç†</p>
-
-32 <
 div
  
 şass
-="nav_bg">
+="nav">
 
-33 <
-a
- 
-şass
-="Çv_‹xt" 
-h»f
-="javasüt:void(0);">æ¶ˆ è´¹ ç™» è®°</a><
-br
- />
+33 <?
+php
 
-34 </
-div
+
+34 
+»quœe
+ '../common/templates/left_nav_bar.php';
+
+36 </
+	gdiv
 >
-
-35 <
-a
- 
-şass
-="Çv_‹xt" 
-h»f
-="../¡©i¡ics/‹amLi¡.php">é¡¹ ç›® ç»Ÿ è®¡</a><
-br
- />
-
-36 <
-a
- 
-şass
-="Çv_‹xt" 
-h»f
-="#">æ¶ˆ è´¹ è¯„ ä»·</a><
-br
- />
-
-37 <
-a
- 
-şass
-="Çv_‹xt" 
-h»f
-="../acùMªag”/chªgePass.php">ä¿® æ”¹ å¯† ç </a><
-br
- />
 
 38 <
-a
- 
-şass
-="Çv_‹xt" 
-h»f
-="../V”ifyLogš/logšOut.php">é€€ å‡º ç™» å½•</a><
-br
- />
-
-39 <
-a
- 
-şass
-="Çv_‹xt" 
-h»f
-="#">å¸® åŠ©</a>
-
-42 </
-div
->
-
-44 <
 div
  
-şass
+	gşass
 ="serv">
 
-45 <
+39 <
 div
  
 şass
@@ -2139,21 +3929,21 @@ div
 h»f
 ="#"> </div>
 
-46 <
+40 <
 a
  
 şass
 ="online_qq"></a>
 
-47 </
+41 </
 div
 >
 
-49 </
+43 </
 div
 >
 
-51 <
+45 <
 div
  
 şass
@@ -2163,17 +3953,17 @@ body_r
 body
  -->
 
-53 <
+47 <
 div
  
 şass
 ="fl fl_1">
 
-54 <
+48 <
 fÜm
  
 aùiÚ
-="V”ifyCoupÚ.php" 
+="" 
 m‘hod
 ="g‘" 
 acû±
@@ -2181,13 +3971,13 @@ acû±
 ch¬£t
 ="utf-8">
 
-56 <
+50 <
 div
  
 şass
 ="platform_b">
 
-57 <
+51 <
 £Ëù
  
 şass
@@ -2197,33 +3987,33 @@ div
 id
 ="platform">
 
-58 <
-İtiÚ
- 
-v®ue
-="laiqu">æ¥è¶£</option>
-
-59 <!-- <
-İtiÚ
- 
-v®ue
-="360buy">äº¬ä¸œ</option> -->
-
-60 <
+52 <
 İtiÚ
  
 v®ue
 ="juhuasuan">èšåˆ’ç®—</option>
 
-61 </
+53 <
+İtiÚ
+ 
+v®ue
+="laiqu">æ¥è¶£</option>
+
+54 <!-- <
+İtiÚ
+ 
+v®ue
+="360buy">äº¬ä¸œ</option> -->
+
+55 </
 £Ëù
 >
 
-62 </
+56 </
 div
 >
 
-64 <
+58 <
 div
  
 şass
@@ -2233,7 +4023,7 @@ div
 id
 ="couponIdWrapper">
 
-65 <
+59 <
 šput
  
 şass
@@ -2245,11 +4035,11 @@ id
 v®ue
 ="åˆ¸å·"/>
 
-66 </
+60 </
 div
 >
 
-68 <
+62 <
 div
  
 şass
@@ -2259,7 +4049,7 @@ div
 id
 ="couponPwdWrapper">
 
-69 <
+63 <
 šput
  
 şass
@@ -2271,17 +4061,17 @@ id
 v®ue
 ="å¯†ç "/>
 
-70 </
+64 </
 div
 >
 
-72 <
+66 <
 div
  
 şass
 ="button">
 
-73 <
+67 <
 a
  
 şass
@@ -2295,9 +4085,9 @@ v®ue
 id
 ="»£t" 
 h»f
-="#"></a>
+="javascript:void(0);"></a>
 
-74 <
+68 <
 a
  
 şass
@@ -2311,37 +4101,37 @@ v®ue
 id
 ="subm™" 
 h»f
-="#"></a>
+="javascript:void(0);"></a>
 
-75 </
+69 </
 div
 >
 
-76 </
+70 </
 fÜm
 >
 
-77 </
+71 </
 div
 >
 
-79 <
+73 <
 div
  
 şass
 ="mid">
 
-80 </
+74 </
 div
 >
 
-83 <
+77 <
 div
  
 şass
 ="fr fr_1">
 
-85 <
+79 <
 p
  
 şass
@@ -2349,7 +4139,7 @@ p
 b
 >éªŒè¯ç»“æœï¼š</b></p>
 
-87 <
+81 <
 div
  
 Çme
@@ -2359,79 +4149,79 @@ id
 şass
 ="imageResponse" ></div>
 
-88 <
+82 <
 div
  
 şass
 ="line"></div>
 
-89 <
+83 <
 p
  
 şass
-="‹xt_2_2" 
+="‹xt_2_3" 
 Çme
 ="msgRe¥Ú£" 
 id
 ="msgResponse">è¯·åœ¨å·¦è¾¹è¾“å…¥æ¡†ä¸­è¾“å…¥ç›¸åº”çš„åˆ¸å·åŠå¯†ç ã€‚</p>
 
+86 </
+div
+>
+
+89 </
+div
+>
+
 92 </
 div
 >
 
-95 </
-div
->
-
-98 </
-div
->
-
-101 <
+95 <
 div
  
 şass
 ="footer">
 
-103 <
+97 <
 div
  
 şass
 ="bottom_1">
 
-104 </
+98 </
 div
 >
 
-106 <
+100 <
 div
  
 şass
 ="bottom_line">
 
-108 </
+102 </
 div
 >
 
-110 <
+104 <
 p
  
 şass
 ="footer_text">æ¥ è¶£ ç½‘ ç»œ ç§‘ æŠ€ æœ‰ é™ å…¬ å¸</p>
 
-112 </
+106 </
 div
 >
 
-114 </
+108 </
 div
 >
 
-116 </
+110 </
 body
 >
 
-117 </
+111 </
 html
 >
 

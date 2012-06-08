@@ -80,7 +80,7 @@
         
         <div name="imageResponse" id="imageResponse" class="imageResponse" ></div>
         <div class="line"></div>
-        <p class="text_2_2" name="msgResponse" id="msgResponse">请在左边输入框中输入相应的券号及密码。</p>
+        <p class="text_2_3" name="msgResponse" id="msgResponse">请在左边输入框中输入相应的券号及密码。</p>
         
         
         </div>
@@ -109,4 +109,3 @@
 
 </body>
 </html>
-

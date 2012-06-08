@@ -29,15 +29,17 @@ __construct	Team.php	/^    public function __construct()$/;"	f
 changePass	Partner.php	/^    public function changePass($partnerId, $originPasswd, $newPasswd)$/;"	f
 consume_coupon	Coupon.php	/^    public function consume_coupon($couponId, $consumed_times = 1)$/;"	f
 consumedCouponList	Coupon.php	/^        $consumedCouponList = array();$/;"	p
-countRow	Coupon.php	/^            $countRow = mysql_fetch_array($result);$/;"	p
+consumedtimes	Coupon.php	/^            $consumedtimes += $couponRow['consume_times'];$/;"	p
+consumedtimes	Coupon.php	/^        $consumedtimes = 0;$/;"	p
 couponInfo	Coupon.php	/^        $couponInfo['id'] = $insertedcouponId;$/;"	p
-couponNums	Coupon.php	/^            $couponNums = $countRow['couponNums'];$/;"	p
 couponNums	Coupon.php	/^        $couponNums = 0;$/;"	p
 couponNums	Coupon.php	/^        $couponNums = mysql_num_rows($result);$/;"	p
 for	Partner.php	/^ * Partner.php  class for handling table partner$/;"	c
 for	PartnerPlatforms.php	/^ * PartnerPlatforms.php  class for handling table partner_platforms$/;"	c
+gen_couponSearchSql	Coupon.php	/^    private function gen_couponSearchSql($searchFields, $start = 0, $offset = -1)$/;"	f
 get_consumedCouponNums	Coupon.php	/^    public function get_consumedCouponNums($searchFields)$/;"	f
 get_consumedCoupons	Coupon.php	/^    public function get_consumedCoupons($searchFields, $start, $offset)$/;"	f
+get_consumedCoupontimes	Coupon.php	/^    public function get_consumedCoupontimes($searchFields)$/;"	f
 get_teamNums	Team.php	/^    public function get_teamNums($searchFields)$/;"	f
 get_teams	Team.php	/^    public function get_teams($searchFields, $start, $offset)$/;"	f
 insertSql	Coupon.php	/^        $insertSql .= $keys . $values;$/;"	p
@@ -73,8 +75,9 @@ result	Order.php	/^        $result = mysql_query($insertSql);$/;"	p
 result	Partner.php	/^            $result = mysql_query($selectSql);$/;"	p
 result	Team.php	/^        $result = mysql_query($insertSql);$/;"	p
 result	Team.php	/^        $result = mysql_query($sql);$/;"	p
-select	Coupon.php	/^        $select .= "u.username as username, u.email as email, o.subbranch as subbranch, c.consume_time as consumeTime";$/;"	p
-select	Coupon.php	/^        $select .= ' from '.self::DBDATABASE.'.'.self::COUPON_TABLE.' c,'.self::DBDATABASE.'.'.self::TEAM_TABLE.' t,'.self::DBDATABASE.'.'.self::USER_TABLE.' u,'.self::DBDATABASE.'.'.self::ORDER_TABLE.' o ';$/;"	p
+select	Coupon.php	/^        $select .= "u.username as username, u.email as email, o.subbranch as subbranch, c.consume_time as consumeTime,c.consume_times as consumeTimes,c.platform_coupon_id as platformCouponId,c.consumer_mobile as consumerMobile";$/;"	p
+select	Coupon.php	/^        $select .= ' from '.self::DBDATABASE.'.'.self::TEAM_TABLE.' t,'.self::DBDATABASE.'.'.self::ORDER_TABLE.' o,';$/;"	p
+select	Coupon.php	/^        $select .= self::DBDATABASE.'.'.self::COUPON_TABLE.' c left join '.self::DBDATABASE.'.'.self::USER_TABLE.' u on c.user_id=u.id';$/;"	p
 select	Coupon.php	/^        $select = "select c.order_id as orderId, t.title as teamTitle, c.id as couponId,";$/;"	p
 select	Team.php	/^        $select .= "t.end_time as endTime, t.now_num as nowNum, t.min_num as minNum, t.team_price as teamPrice,";$/;"	p
 select	Team.php	/^        $select .= "t.expire_time as expireTime, t.state";$/;"	p
@@ -82,25 +85,19 @@ select	Team.php	/^        $select .= "t.market_price as marketPrice, t.platform_
 select	Team.php	/^        $select .= ' from '.self::DBDATABASE.'.'.self::TEAM_TABLE.' t,'.self::DBDATABASE.'.'.self::PLATFORM_TABLE.' p';$/;"	p
 select	Team.php	/^        $select = "select t.id as teamId, t.title as teamTitle, p.title as platformTitle, t.begin_time as beginTime,";$/;"	p
 selectSql	Partner.php	/^            $selectSql = "SELECT * FROM ".$this->get_dbTableName(self::PARTNER_TABLE)." WHERE id=".$partnerId.$/;"	p
-sql	Coupon.php	/^                $sql .= " AND c.id=$couponId";$/;"	p
+sql	Coupon.php	/^                $sql .= " AND c.consumer_mobile='$mobile'";$/;"	p
 sql	Coupon.php	/^                $sql .= " AND c.order_id=$orderId";$/;"	p
 sql	Coupon.php	/^                $sql .= " AND c.partner_id=$partnerId";$/;"	p
+sql	Coupon.php	/^                $sql .= " AND c.platform_coupon_id=$couponId";$/;"	p
 sql	Coupon.php	/^                $sql .= " AND c.platform_key='$platform'";$/;"	p
 sql	Coupon.php	/^                $sql .= " AND c.team_id=$teamId ";$/;"	p
-sql	Coupon.php	/^                $sql .= " AND u.username='$username'";$/;"	p
-sql	Coupon.php	/^            $sql .= !empty($platform)? " AND c.platform_key='$platform'" : "";$/;"	p
-sql	Coupon.php	/^            $sql .= !empty($username) ? " AND u.username='$username'" : "";$/;"	p
-sql	Coupon.php	/^            $sql .= $couponId>0 ? " AND c.coupon_id=".$couponId : "";$/;"	p
-sql	Coupon.php	/^            $sql .= $orderId>0 ? " AND c.order_id=".$orderId : "";$/;"	p
-sql	Coupon.php	/^            $sql .= $partnerId>0 ? " AND c.partner_id=".$partnerId : "";$/;"	p
-sql	Coupon.php	/^            $sql .= $teamId>0 ? " AND c.team_id=".$teamId : "";$/;"	p
-sql	Coupon.php	/^        $sql .= " AND t.id=c.team_id AND o.id=c.order_id AND u.id=c.user_id";$/;"	p
-sql	Coupon.php	/^        $sql .= " LIMIT $start,$offset";$/;"	p
-sql	Coupon.php	/^        $sql .= " WHERE consume='Y'";$/;"	p
+sql	Coupon.php	/^                $sql .= ",$offset";$/;"	p
+sql	Coupon.php	/^            $sql .= " LIMIT $start";$/;"	p
+sql	Coupon.php	/^        $sql .= " AND t.id=c.team_id AND o.id=c.order_id ";\/\/AND u.id=c.user_id";$/;"	p
 sql	Coupon.php	/^        $sql .= " order by c.consume_time desc";$/;"	p
-sql	Coupon.php	/^        $sql .= $this->get_dbTableName(self::USER_TABLE).' as u';$/;"	p
-sql	Coupon.php	/^        $sql = "SELECT count(*) as couponNums FROM ".$this->get_dbTableName(self::COUPON_TABLE).' as c,';$/;"	p
 sql	Coupon.php	/^        $sql = $select." WHERE c.consume='Y' ";$/;"	p
+sql	Coupon.php	/^        $sql = $this->gen_couponSearchSql($searchFields);$/;"	p
+sql	Coupon.php	/^        $sql = $this->gen_couponSearchSql($searchFields, $start, $offset);$/;"	p
 sql	Coupon.php	/^        $sql = $update.$where;$/;"	p
 sql	Team.php	/^        $sql .= " WHERE partner_id=$partnerId";$/;"	p
 sql	Team.php	/^        $sql .= "LIMIT $start,$offset ";$/;"	p

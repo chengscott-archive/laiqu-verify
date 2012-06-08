@@ -3,9 +3,9 @@ $(document).ready(function(){
     var msgCouponIdPwd = "请在左边输入框中输入相应的券号及密码。";
     var msgCouponId = "请在左边输入框中输入相应的券号。";
     var msgConsumeCount = "请在左边输入框中输入销券次数。";
-    var msgValidateCodeConsumeCount = "请在左边输入框中输入您的券号和消费次数。";
-    var msgSuccess = "验证成功！<br/>消费时间："; 
-    var msgFailed  = "验证失败！<br/>失败原因: 券信息输入不正确或已被使用。";
+    var msgValidateCodeConsumeCount = "请在左边输入框中输入券号和消费次数。";
+    var msgSuccess = "验证成功！<br/>消费时间: "; 
+    var msgFailed  = "验证失败！<br/>失败原因: 券信息错误或已被使用。";
 
     var couponIdValue = "券号";
     var couponPwdValue = "密码";
@@ -43,7 +43,7 @@ $(document).ready(function(){
              consumeCount === '' || consumeCount === consumeCountValue)
         {
             $("#imageResponse").addClass("result_w").show();
-            $("#msgResponse").text(msgConsumeCount); 
+            $("#msgResponse").addClass("text_2_3").text(msgConsumeCount); 
             return;
         }
 
@@ -181,11 +181,12 @@ $(document).ready(function(){
         {
             $("#imageResponse").removeClass("result_w").addClass("result_r").show();
 
-            var responseMsg = "团购券:  "+$("#couponId").val() + "  " + msgSuccess + response.dateTime;
-            responseMsg += '<br />查看本项目销券情况,可点击 ';
+            var responseMsg = "所属项目:  " + response.teamTitle + "<br />";
+            responseMsg += "团购券号:  "+$("#couponId").val() + "  " + msgSuccess + response.dateTime + "<br />";
+            responseMsg += '销券情况: 查看请点击 ';
             responseMsg += "<a href='"+http_host+"/statistics/consumedCoupons.php?";
             responseMsg += "teamId=" + response.teamId + "&platform="+response.platform + "&fromTeamPage=1'";
-            responseMsg += " rel='external'>销券列表</a>";
+            responseMsg += " target='_blank'>销券列表</a>";
             $("#msgResponse").html(responseMsg);
             cleanup_after_submit();
         } 
