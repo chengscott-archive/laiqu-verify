@@ -2,8 +2,7 @@
 <head>
 <title>来趣客服搜索系统</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link href="css/search.css" rel="stylesheet" type="text/css" />
-<link href="css/search.css" rel="stylesheet" type="text/css" />
+<link href="./search.css" rel="stylesheet" type="text/css" />
 <link href="../css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
 <!--@import "../../media/css/demo_page.css";-->
 </head>
@@ -13,6 +12,7 @@
 <script src="../js/jquery.dataTables.min.js"></script>
 <script src="./search.js"></script>
 <div class="main" id="main">
+    <div id="search_loading_bar"></div>
     <div id="search_box">
         <form action="doSearch.php" id=search_form method="get" accept-charset="utf-8">
             
@@ -30,14 +30,22 @@
 </div>
 <script type="text/javascript" charset="utf-8">
 var options = {
+       beforeSubmit: beforeSearchCoupon,
        success: parseSearchResponse,
        dataType: 'json',
        type: 'POST'
 };
 $("#search_form").ajaxForm(options);
 
+
+function beforeSearchCoupon()
+{
+    toggle_search_bar_loading();
+}
 function parseSearchResponse(responseText, statusText, xhr, $form) {
         // 由于指定返回类型为json,所以reponseText已为对象
+        toggle_search_bar_loading();
+        
         var jsonResponse = responseText;
         if (jsonResponse.success === "true")
         {
@@ -62,6 +70,7 @@ function parseSearchResponse(responseText, statusText, xhr, $form) {
                         ]
                 });
                 $("#msg_area").html("");
+                $("#search_table_container").css("display", "block");
                 $("#search_result_table").css('display', 'block');
                 bind_search_table_events();
             }
@@ -70,25 +79,14 @@ function parseSearchResponse(responseText, statusText, xhr, $form) {
             $("#msg_area").html("模板添加失败,失败原因:" + jsonResponse.msg);
         }
 }
-
-function filterSearchResult(data)
-{
-    var filteredResult = [];
-    for (var i=0; i < data.length; i++)
+//events binds
+$("#search_content").keydown(function(event) {
+    // 13 means enter key
+    if (event.keyCode === 13)
     {
-        element = data[i];
-        var resendMsg = "<a href='javascript:void(0);' id=resend_orderid_"+element.orderId+">重发短信</a>";
-        filteredResult.push(new Array(
-                    element.taobaoId,
-                    element.product,
-                    element.payment,
-                    element.receiMobile,
-                    element.remainder,
-                    element.creationDate,
-                    resendMsg));
+       $("#submit_search").trigger('click'); 
     }
-    return filteredResult;
-}
+});
 </script>
 </body>
 </html>
