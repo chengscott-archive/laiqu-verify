@@ -1,0 +1,2409 @@
+cscope 15 $HOME/work/host/laiqu/cpapi -q 0000000203 0000016307
+	@constants.php
+
+1 <?
+php
+
+
+12 
+defše
+('ALLOWED_IP','127.0.0.1');
+
+17 
+defše
+('ACCESS_NOT_ALLOWED',9999);
+
+18 
+defše
+('UNKNOWN_EXCEPTION',10000);
+
+20 
+defše
+('COUPON_IS_VALID', 1001);
+
+21 
+defše
+('COUPON_USED_OK', 1002);
+
+22 
+defše
+('COUPON_INVALID_USED', 1003);
+
+23 
+defše
+('COUPON_ENDED', 1004);
+
+24 
+defše
+('COUPON_INVALID', 1005);
+
+25 
+defše
+('COUPON_WRONG_PWD', 1006);
+
+29 
+defše
+("COUPON_VERIFY_OK", 100);
+
+30 
+defše
+("COUPON_VERIRY_FAILED", 101);
+
+31 
+defše
+("COUPON_CONSUME_OK", 102);
+
+32 
+defše
+("COUPON_CONSUME_FAILED", 103);
+
+33 
+defše
+("COUPON_CONSUME_NOT_EXIST", 104);
+
+34 
+defše
+("COUPON_CONSUME_USED", 105);
+
+35 
+defše
+("COUPON_CONSUME_EXPIRED", 106);
+
+36 
+defše
+("PARTNER_OR_PLATFORM_BIND",107);
+
+37 
+defše
+("PLATFORM_LOGIN_FAILED", 108);
+
+38 
+defše
+("PLATFORM_NOT_BIND", 109);
+
+41 
+defše
+("PARTNER_BINDED", 200);
+
+42 
+defše
+("PARTNER_NOT_BIND", 201);
+
+43 
+defše
+("PARTNER_BIND_OK", 202);
+
+44 
+defše
+("PARTNER_NOT_EXIST", 203);
+
+45 
+defše
+("PARTNER_UNBIND_OK", 204);
+
+46 
+defše
+("PARTNER_UNBIND_FAILED", 205);
+
+	@cp_init.php
+
+1 <?
+php
+
+
+13 
+	g»quœe_Úû
+ 'constants.php';
+
+14 
+	g»quœe_Úû
+ 'functions.php';
+
+15 
+	g»quœe_Úû
+ '../module/Coupon.php';
+
+16 
+	g»quœe_Úû
+ '../module/Order.php';
+
+17 
+	g»quœe_Úû
+ '../module/Partner.php';
+
+18 
+	g»quœe_Úû
+ '../module/PartnerPlatforms.php';
+
+19 
+	g»quœe_Úû
+ '../module/Team.php';
+
+21 @
+£ssiÚ_¡¬t
+();
+
+22 
+	g$mysql
+ = 
+Ãw
+ 
+MyTabË
+();
+
+25 
+	g$
+ = 
+g‘_ş›Á_
+();
+
+	@functions.php
+
+1 <?
+php
+
+
+11 
+	g»quœe_Úû
+ '../common/functions/common.funcs.php';
+
+12 
+	g»quœe_Úû
+ '../common/class/Valite.php';
+
+13 
+	g»quœe_Úû
+ '../verifyCoupon/VerifyCoupon.php';
+
+14 
+	g»quœe_Úû
+ '../common/RESTclient.php';
+
+19 
+funùiÚ
+ 
+	$g’_»¥Ú£
+(
+$»suÉ
+)
+
+21 
+$¡©u£s
+ = 
+	`¬¿y
+(
+
+22 
+COUPON_VERIFY_OK
+ => 'done',
+
+23 
+COUPON_VERIRY_FAILED
+ => 'failed',
+
+24 
+COUPON_CONSUME_OK
+ => 'done',
+
+25 
+COUPON_CONSUME_FAILED
+ => 'failed',
+
+26 
+COUPON_CONSUME_NOT_EXIST
+ => 'failed',
+
+27 
+COUPON_CONSUME_USED
+ => 'failed',
+
+28 
+COUPON_CONSUME_EXPIRED
+ => 'failed',
+
+29 
+PARTNER_BINDED
+ => 'done',
+
+30 
+PARTNER_NOT_BIND
+ => 'failed',
+
+31 
+PARTNER_BIND_OK
+ => 'done',
+
+32 
+PARTNER_NOT_EXIST
+ => 'failed',
+
+33 
+PARTNER_UNBIND_OK
+ => 'done',
+
+34 
+PARTNER_UNBIND_FAILED
+ => 'failed',
+
+35 
+PARTNER_OR_PLATFORM_BIND
+=>'failed',
+
+36 
+PLATFORM_LOGIN_FAILED
+=>'failed',
+
+37 
+PLATFORM_NOT_BIND
+=>'failed',
+
+38 
+UNKNOWN_EXCEPTION
+=>'failed'
+
+40 
+$»¥Ú£
+ = "¡©us=".
+$¡©u£s
+[
+$»suÉ
+]."&result=$result";
+
+41  
+$»¥Ú£
+;
+
+42 
+	}
+}
+
+46 
+funùiÚ
+ 
+	$do_logšPÏtfÜm
+(
+$¶©fÜm
+,
+$·¹ÃrId
+)
+
+48 
+$»suÉ
+ = 
+çl£
+;
+
+49 ià(
+$¶©fÜm
+ === 'juhuasuan')
+
+52 
+$ŒyTimes
+ = 5;
+
+53 
+$i
+=0; $˜< 
+$ŒyTimes
+; $i++)
+
+55 
+$»suÉ
+ = 
+	`logš_¶©fÜm
+('juhuasuª', 
+$·¹ÃrId
+);
+
+56 ià(
+$»suÉ
+ === "platform_not_bind")
+
+60 ià(
+$»suÉ
+ !ğ
+çl£
+)
+
+66  
+$»suÉ
+;
+
+67 
+	}
+}
+
+71 
+funùiÚ
+ 
+	$logš_¶©fÜm
+(
+$¶©fÜm
+, 
+$·¹ÃrId
+)
+
+73 ià(
+$¶©fÜm
+ === 'juhuasuan')
+
+76 
+$sucûss
+ = 
+çl£
+;
+
+77 
+$ÿ±chaJ£s
+ = 
+	`g‘_logš_v®id©e_img·th_j£s
+(
+$¶©fÜm
+);
+
+78 
+$ÿ±chaP©h
+ = 
+$ÿ±chaJ£s
+['captchaPath'];
+
+79 
+$j£ssiÚid
+ = 
+$ÿ±chaJ£s
+['jsessionid'];
+
+81 
+$v®id©eCode
+ = 
+	`decode_ÿ±cha
+(
+$ÿ±chaP©h
+);
+
+82 
+	`uÆšk
+(
+$ÿ±chaP©h
+);
+
+84 
+$logšU¾
+ = "http://59.151.29.121/shopUsed/shopLogin.do";
+
+86 
+$·¿ms
+ = 
+	`g‘_juhuasuª_logš_·¿ms
+(
+$·¹ÃrId
+);
+
+87 ià(
+$·¿ms
+ ==ğ
+nuÎ
+)
+
+91 
+$·¿ms
+['mod–.v®id©eCode'] = 
+$v®id©eCode
+;
+
+92 
+$»¡
+ = 
+Ãw
+ 
+	`RESTş›Á
+();
+
+93 
+$»¡
+->
+	`ü—‹Reque¡
+(
+$logšU¾
+,'POST',
+$·¿ms
+);
+
+96 
+$»q
+ = 
+$»¡
+->
+	`g‘H‰pReque¡
+();
+
+97 
+$»q
+->
+	`£tCook›J¬
+();
+
+98 
+$»q
+->
+	`addCook›
+("JSESSIONID", 
+$j£ssiÚid
+);
+
+99 
+$»¡
+->
+	`£ndReque¡
+();
+
+100 
+$»¥Ú£
+ = 
+$»¡
+->
+	`g‘Re¥Ú£
+();
+
+101 
+	`un£t
+(
+$»¡
+);
+
+102 
+$sucûss
+ = 
+	`is_logš_sucûss
+(
+$»¥Ú£
+, 
+$¶©fÜm
+);
+
+104 ià(
+$sucûss
+ ==ğ
+Œue
+)
+
+106 
+$sucûss
+ = 
+$j£ssiÚid
+;
+
+108  
+$sucûss
+;
+
+110 
+	}
+}
+
+112 
+funùiÚ
+ 
+	$g‘_juhuasuª_logš_·¿ms
+(
+$·¹ÃrId
+)
+
+114 
+$·¹ÃrPÏtfÜms
+ = 
+Ãw
+ 
+	`P¬Š”PÏtfÜms
+();
+
+115 ià(
+$·¹ÃrId
+ < 0)
+
+117  
+nuÎ
+;
+
+119 
+$µRow
+ = 
+$·¹ÃrPÏtfÜms
+->
+	`g‘_row
+(
+
+120 
+	`¬¿y
+(
+
+121 "·¹Ãr_id" => 
+$·¹ÃrId
+,
+
+126 ià(
+$µRow
+ ==ğ
+nuÎ
+) { ‚ull; }
+
+128 
+$·¿ms
+ = 
+	`¬¿y
+ (
+
+129 "mod–.sign" => 
+$µRow
+['p_username'],
+
+130 "mod–.·sswÜd" => 
+$µRow
+['p_password'],
+
+131 "mod–.‹rmš®Id" => 
+$µRow
+['p_terminalid']);
+
+132  
+$·¿ms
+;
+
+133 
+	}
+}
+
+136 
+funùiÚ
+ 
+	$g‘_logš_v®id©e_img·th_j£s
+(
+$¶©fÜm
+)
+
+138 
+$tmp_ÿ±cha_Çme
+ = '';
+
+139 ià(
+$¶©fÜm
+ === "juhuasuan")
+
+141 
+$ÿ±chaU¾
+ = 'h‰p://59.151.29.121/v®id©eCode.do?'.
+	`d©e
+(
+	`mktime
+());
+
+142 
+$imgSuffix
+ = 'jpg';
+
+145 
+$»¡
+ = 
+Ãw
+ 
+	`RESTş›Á
+();
+
+146 
+$»¡
+->
+	`ü—‹Reque¡
+(
+$ÿ±chaU¾
+);
+
+147 
+$»q
+ = 
+$»¡
+->
+	`g‘H‰pReque¡
+();
+
+148 
+$»¡
+->
+	`£ndReque¡
+();
+
+149 
+$»¥Ú£Obj
+ = 
+$»¡
+->
+	`g‘Re¥Ú£Obj
+();
+
+150 
+$j£ssiÚid
+ = 
+	`fšdCook›
+("JSESSIONID", 
+$»¥Ú£Obj
+->
+	`g‘Cook›s
+());
+
+151 ià(
+$j£ssiÚid
+ != '')
+
+153 
+$»q
+->
+	`addCook›
+("JSESSIONID", 
+$j£ssiÚid
+['value']);
+
+155 
+$tmp_ÿ±cha_Çme
+ = 
+	`‹m²am
+(
+	`sys_g‘_‹mp_dœ
+(),
+$imgSuffix
+);
+
+156 
+	`fe_put_cÚ‹Ás
+(
+$tmp_ÿ±cha_Çme
+, 
+$»¡
+->
+	`g‘Re¥Ú£
+());
+
+157  
+	`¬¿y
+(
+
+158 "ÿ±chaP©h"=>
+$tmp_ÿ±cha_Çme
+,
+
+159 "j£ssiÚid"=>
+$j£ssiÚid
+['value']);
+
+160 
+	}
+}
+
+163 
+funùiÚ
+ 
+	$is_logš_sucûss
+(
+$»¥Ú£
+, 
+$¶©fÜm
+)
+
+165 ià(
+$¶©fÜm
+ === 'juhuasuan')
+
+168 iàĞ1 !=ğ
+	`´eg_m©ch
+('/g‘Li¡\(\"shİU£d\/h—d”s\.do\"\)/', 
+$»¥Ú£
+))
+
+170  
+çl£
+;
+
+172  
+Œue
+;
+
+174 
+	}
+}
+
+177 
+funùiÚ
+ 
+	$doV”ifyCoupÚ
+(
+$»que¡
+)
+
+179 
+$¶©fÜm
+ = 
+$»que¡
+['platform'];
+
+180 
+$v”ifyCoupÚ
+ = 
+Ãw
+ 
+	`V”ifyCoupÚ
+();
+
+182 
+$v”ifyCoupÚ
+->
+	`š™
+(
+$¶©fÜm
+);
+
+184 
+$šputs
+ = 
+$v”ifyCoupÚ
+->
+	`š™_v”ifyIÅuts
+(
+$»que¡
+);
+
+185 
+$coupÚId
+ = 
+$šputs
+['couponId'];
+
+186 ià(
+$¶©fÜm
+ === 'juhuasuan')
+
+188 
+$šputs
+['‹rmš®id'] = 
+$»que¡
+['terminalId'];
+
+191 
+$»¡
+ = 
+Ãw
+ 
+	`RESTş›Á
+();
+
+192 
+$·¿ms
+ = 
+$v”ifyCoupÚ
+->
+	`g‘_»que¡P¬ams
+(
+$šputs
+);
+
+194 ià(
+$v”ifyCoupÚ
+->
+	`g‘_h‰pM‘hod
+() == 'POST') {
+
+195 
+$»¡
+->
+	`ü—‹Reque¡
+(
+$v”ifyCoupÚ
+->
+	`g‘_­iU¾
+(), 'POST', 
+$·¿ms
+);
+
+197 
+$»¡
+->
+	`ü—‹Reque¡
+(
+$v”ifyCoupÚ
+->
+	`g‘_­iU¾
+());
+
+198 
+$u¾
+ = 
+$»¡
+->
+	`g‘U¾
+();
+
+199 
+$u¾
+->
+	`£tQu”yV¬ŸbËs
+(
+$·¿ms
+);
+
+201 
+$»¥Ú£
+ = '';
+
+204 ià(
+$¶©fÜm
+ === "juhuasuan")
+
+206 
+$»q
+ = 
+$»¡
+->
+	`g‘H‰pReque¡
+();
+
+207 
+$»q
+->
+	`addCook›
+("JSESSIONID", 
+$»que¡
+['jsessionid']);
+
+210 
+$»¡
+->
+	`£ndReque¡
+();
+
+211 
+$»¥Ú£
+ = 
+$»¡
+->
+	`g‘Re¥Ú£
+();
+
+212 
+$»¥Ú£Code
+ = 
+$v”ifyCoupÚ
+->
+	`g‘_»¥Ú£Code
+(
+$»¥Ú£
+);
+
+213  
+$»¥Ú£Code
+;
+
+214 
+	}
+}
+
+216 
+funùiÚ
+ 
+	$decode_ÿ±cha
+(
+$ÿ±chaP©h
+)
+
+218 
+$v®™e
+ = 
+Ãw
+ 
+	`V®™e
+();
+
+220 
+$v®™e
+->
+	`£tImage
+(
+$ÿ±chaP©h
+);
+
+221 
+$v®™e
+->
+	`g‘Hec
+();
+
+222 
+$v®id©eCode
+ = 
+$v®™e
+->
+	`run
+();
+
+224  
+$v®id©eCode
+;
+
+225 
+	}
+}
+
+228 
+funùiÚ
+ 
+	$»cÜd_cÚsumed_coupÚ
+(
+$»cÜdP¬ams
+)
+
+230 
+$coupÚId
+ = 
+$»cÜdP¬ams
+['couponId'];
+
+231 
+$¶©fÜm
+ = 
+$»cÜdP¬ams
+['platform'];
+
+232 
+$cÚsumed_times
+ = 
+$»cÜdP¬ams
+['consumed_times'];
+
+233 
+$·¹ÃrId
+ = 
+$»cÜdP¬ams
+['partnerId'];
+
+234 
+$j£ssiÚid
+ = 
+$»cÜdP¬ams
+['jsessionid'];
+
+236 
+$coupÚ
+ = 
+Ãw
+ 
+	`CoupÚ
+();
+
+237 
+$cÚd™iÚs
+ = 
+	`¬¿y
+(
+
+238 "¶©fÜm_coupÚ_id"=>
+$coupÚId
+,
+
+239 "¶©fÜm_key"=>
+$¶©fÜm
+);
+
+240 
+$cÚsumedCoupÚs
+ = 
+$coupÚ
+->
+	`g‘_row
+(
+$cÚd™iÚs
+);
+
+242 ià(!
+	`is_num”ic
+(
+$cÚsumed_times
+) || $consumed_times < 1)
+
+244  
+çl£
+;
+
+246 ià(
+$cÚsumedCoupÚs
+ !=ğ
+nuÎ
+ && 
+$¶©fÜm
+ === "juhuasuan")
+
+248  
+$coupÚ
+->
+	`cÚsume_coupÚ
+(
+$cÚsumedCoupÚs
+['id'], 
+$cÚsumed_times
+);
+
+249 } ià(
+$¶©fÜm
+ === "juhuasuan")
+
+252 
+$Üd”Info
+ = 
+	`»cÜd_Üd”
+(
+$»cÜdP¬ams
+);
+
+255 ifĞ
+$Üd”Info
+ ==ğ
+çl£
+)
+
+257  
+çl£
+;
+
+260 
+$š£¹CoupÚ
+ = 
+	`¬¿y
+(
+
+261 "¶©fÜm_key" => 
+$Üd”Info
+['platform_key'],
+
+262 "·¹Ãr_id" => 
+$·¹ÃrId
+,
+
+263 "‹am_id" => 
+$Üd”Info
+['team_id'],
+
+264 "Üd”_id" => 
+$Üd”Info
+['id'],
+
+266 "cÚsume_time" => 
+	`mktime
+(),
+
+267 "ü—‹_time" => 
+	`mktime
+(),
+
+268 "cÚsume_times" => 
+$cÚsumed_times
+,
+
+269 "¶©fÜm_coupÚ_id" => 
+$coupÚId
+,
+
+270 "cÚsum”_mobe" => 
+$Üd”Info
+['consumer_mobile'],
+
+273  
+$coupÚ
+->
+	`š£¹_coupÚ
+(
+$š£¹CoupÚ
+);
+
+275 
+	}
+}
+
+277 
+funùiÚ
+ 
+	$»cÜd_Üd”
+(
+$»cÜdP¬ams
+)
+
+279 
+$coupÚId
+ = 
+$»cÜdP¬ams
+['couponId'];
+
+280 
+$¶©fÜm
+ = 
+$»cÜdP¬ams
+['platform'];
+
+281 
+$cÚsumed_times
+ = 
+$»cÜdP¬ams
+['consumed_times'];
+
+282 
+$·¹ÃrId
+ = 
+$»cÜdP¬ams
+['partnerId'];
+
+283 
+$j£ssiÚid
+ = 
+$»cÜdP¬ams
+['jsessionid'];
+
+286 
+$Üd”Info
+ = 
+	`g‘_Üd”Info
+(
+$»cÜdP¬ams
+);
+
+287 ià(!
+	`is_¬¿y
+(
+$Üd”Info
+è|| 
+	`em±y
+($orderInfo))
+
+289  
+çl£
+;
+
+292 
+$Üd”Info
+['¶©fÜm_key'] = 
+$¶©fÜm
+;
+
+293 
+$Üd”Info
+['cÚsume_times'] = 
+$cÚsumed_times
+;
+
+294 
+$Üd”Info
+['·¹Ãr_id'] = 
+$·¹ÃrId
+;
+
+295 
+$Üd”Info
+['¶©fÜm_coupÚ_id'] = 
+$coupÚId
+;
+
+297 
+$Üd”Id
+ = 
+$Üd”Info
+['platform_order_id'];
+
+298 
+$Üd”
+ = 
+Ãw
+ 
+	`Ord”
+();
+
+299 
+$cÚd™iÚs
+ = 
+	`¬¿y
+(
+
+300 "¶©fÜm_Üd”_id"=>
+$Üd”Id
+,
+
+301 "¶©fÜm_key"=>
+$¶©fÜm
+);
+
+302 
+$»cÜdedOrd”
+ = 
+$Üd”
+->
+	`g‘_row
+(
+$cÚd™iÚs
+);
+
+304 ià(
+$»cÜdedOrd”
+ !=ğ
+nuÎ
+ && 
+$¶©fÜm
+ === "juhuasuan")
+
+306 
+$»cÜdedOrd”
+['cÚsum”_mobe'] = 
+$Üd”Info
+['consumer_mobile'];
+
+307  
+$»cÜdedOrd”
+;
+
+308 } if(
+$¶©fÜm
+ === "juhuasuan")
+
+310 
+$»cÜdedT—m
+ = 
+	`»cÜd_‹am_by_Üd”
+(
+$Üd”Info
+);
+
+311 
+$Üd”Info
+['‹am_id'] = 
+$»cÜdedT—m
+['id'];
+
+313 
+$š£¹Ord”
+ = 
+	`¬¿y
+(
+
+314 "‹am_id" => 
+$Üd”Info
+['team_id'],
+
+315 "ü—‹_time" => 
+	`mktime
+(),
+
+316 "¶©fÜm_Üd”_id" => 
+$Üd”Info
+['platform_order_id'],
+
+317 "¶©fÜm_key" => 
+$Üd”Info
+['platform_key']
+
+319 
+$Üd”In£¹ed
+ = 
+$Üd”
+->
+	`š£¹_Üd”
+(
+$š£¹Ord”
+);
+
+321 
+$Üd”In£¹ed
+['cÚsum”_mobe'] = 
+$Üd”Info
+['consumer_mobile'];
+
+322  
+$Üd”In£¹ed
+;
+
+324 
+	}
+}
+
+327 
+funùiÚ
+ 
+	$»cÜd_‹am_by_Üd”
+(
+$Üd”Info
+)
+
+329 
+$‹am
+ = 
+Ãw
+ 
+	`T—m
+();
+
+330 ià(
+	`is_¬¿y
+(
+$Üd”Info
+è&& !
+	`em±y
+($orderInfo))
+
+333 
+$‹amRow
+ = 
+$‹am
+->
+	`g‘_row
+(
+
+334 
+	`¬¿y
+("t™Ë"=>
+$Üd”Info
+['title'],
+
+335 "¶©fÜm_key"=>
+$Üd”Info
+['platform_key']));
+
+337 ià(!
+	`is_¬¿y
+(
+$‹amRow
+è|| 
+	`em±y
+($teamRow))
+
+339 
+$‹amInfo
+ = 
+	`¬¿y
+(
+
+340 "t™Ë" => 
+$Üd”Info
+['title'],
+
+341 "¶©fÜm_key" => 
+$Üd”Info
+['platform_key'],
+
+342 "summ¬y" => 
+$Üd”Info
+['summary'],
+
+343 "·¹Ãr_id" => 
+$Üd”Info
+['partner_id'],
+
+344 "‹am_´iû" => 
+$Üd”Info
+['team_price']
+
+346  
+$‹am
+->
+	`š£¹_‹am
+(
+$‹amInfo
+);
+
+348  
+$‹amRow
+;
+
+351  
+çl£
+;
+
+353 
+	}
+}
+
+356 
+funùiÚ
+ 
+	$g‘_Üd”Info
+(
+$»cÜdP¬ams
+)
+
+358 
+$coupÚId
+ = 
+$»cÜdP¬ams
+['couponId'];
+
+359 
+$¶©fÜm
+ = 
+$»cÜdP¬ams
+['platform'];
+
+360 
+$cÚsumed_times
+ = 
+$»cÜdP¬ams
+['consumed_times'];
+
+361 
+$·¹ÃrId
+ = 
+$»cÜdP¬ams
+['partnerId'];
+
+362 
+$j£ssiÚid
+ = 
+$»cÜdP¬ams
+['jsessionid'];
+
+364 
+$»¡
+ = 
+Ãw
+ 
+	`RESTş›Á
+();
+
+365 
+$ÏiquOrd”
+ = 
+	`¬¿y
+();
+
+367 ià(
+$¶©fÜm
+ === "juhuasuan")
+
+369 
+$·¿ms
+ = 
+	`¬¿y
+("mod–.ass™Code" => 
+$coupÚId
+);
+
+370 
+$»¡
+->
+	`ü—‹Reque¡
+("h‰p://59.151.29.121/shİU£d/li¡.do", 'POST', 
+$·¿ms
+);
+
+371 
+$»q
+ = 
+$»¡
+->
+	`g‘H‰pReque¡
+();
+
+372 
+$»q
+->
+	`addCook›
+("JSESSIONID", 
+$j£ssiÚid
+);
+
+373 
+$»¡
+->
+	`£ndReque¡
+();
+
+374 
+$»¥Ú£
+ = 
+$»¡
+->
+	`g‘Re¥Ú£
+();
+
+376 
+$»¥Ú£
+ = 
+	`tidy_ugly_jsÚ
+($»¥Ú£,
+$¶©fÜm
+);
+
+377 
+$»suÉ
+ = 
+	`jsÚ_decode
+(
+$»¥Ú£
+);
+
+379 ià(
+$»suÉ
+->
+sucûss
+ ==ğ
+çl£
+ && $»suÉ->
+¡©us
+ === 302)
+
+381  
+V”ifyCoupÚCodeMsg
+::
+JUHUASUAN_LOGIN_EXPIRED
+;
+
+383 ià(
+	`is£t
+(
+$»suÉ
+->
+d©a
+è&& 
+	`couÁ
+($result->data) > 0)
+
+385 
+$Üd”
+ = 
+$»suÉ
+->
+d©a
+[0];
+
+386 
+$ÏiquOrd”
+ = 
+	`cÚv”t_Üd”
+(
+$Üd”
+, 
+$¶©fÜm
+);
+
+387 } ià(
+	`is£t
+(
+$»suÉ
+->
+d©a
+)){
+
+388  
+V”ifyCoupÚCodeMsg
+::
+COUPON_NOT_EXIST
+;
+
+392  
+$ÏiquOrd”
+;
+
+393 
+	}
+}
+
+396 
+funùiÚ
+ 
+	$cÚv”t_Üd”
+(
+$Üd”Info
+, 
+$¶©fÜm
+)
+
+398 
+$Üd”
+ = 
+	`¬¿y
+();
+
+399 ià(
+$¶©fÜm
+ === "juhuasuan")
+
+401 
+$Üd”
+['t™Ë'] = 
+$Üd”Info
+->
+´oduù
+;
+
+402 
+$Üd”
+['summ¬y'] = 
+$Üd”Info
+->
+desütiÚ
+;
+
+404 
+$Üd”
+['‹am_´iû'] = 
+	`æßtv®
+(
+	`sub¡r
+(
+$Üd”Info
+->
+·ym’t
+, 3));
+
+405 
+$Üd”
+['¶©fÜm_key'] = 
+$¶©fÜm
+;
+
+406 
+$Üd”
+['¶©fÜm_Üd”_id'] = 
+$Üd”Info
+->
+obaoId
+;
+
+407 
+$Üd”
+['cÚsum”_mobe'] = 
+$Üd”Info
+->
+»ûiMobe
+;
+
+410  
+$Üd”
+;
+
+412 
+	}
+}
+
+415 
+funùiÚ
+ 
+	$tidy_ugly_jsÚ
+(
+$uglyJsÚ
+, 
+$¶©fÜm
+)
+
+417 
+$b—utifulJsÚ
+ = "";
+
+418 ià(
+$¶©fÜm
+ === "juhuasuan")
+
+421 
+$uglyJsÚ
+ = 
+	`´eg_»¶aû
+('/items\s*:\s*\[[^<]+?\]/','', $uglyJson);
+
+422 
+$uglyJsÚ
+ = 
+	`´eg_»¶aû
+('/\s*:\s*/',':', $uglyJson);
+
+424 
+$uglyJsÚ
+ = 
+	`´eg_»¶aû_ÿÎback
+('/([\{,]\s*)([[\w\d]+)(\s*:)/',"add_double_quote", $uglyJson);
+
+426 
+$b—utifulJsÚ
+ = 
+	`´eg_»¶aû
+('/(,\s*)([\}\]])/','${2}',
+$uglyJsÚ
+);
+
+428 
+$b—utifulJsÚ
+ = 
+	`´eg_»¶aû
+("/'(.*)'/",'"${1}"', $beautifulJson);
+
+431  
+$b—utifulJsÚ
+;
+
+432 
+	}
+}
+
+433 
+funùiÚ
+ 
+	$add_doubË_quÙe
+(
+$m©ches
+)
+
+436  
+$m©ches
+[1].'"'.$matches[2].'":';
+
+437 
+	}
+}
+
+	@telapi.php
+
+1 <?
+php
+
+
+16 
+	g»quœe
+ 'cp_init.php';
+
+18 
+funùiÚ
+ 
+	$ruÁimeE¼ÜHªdËr
+(
+$”ºo
+, 
+$”r¡r
+, 
+$”rfe
+, 
+$”¾še
+)
+
+21 
+$code
+ = 
+UNKNOWN_EXCEPTION
+;
+
+23 
+	`”rÜ_log
+(
+$”r¡r
+);
+
+24 
+	`d›
+(
+	`g’_»¥Ú£
+(
+UNKNOWN_EXCEPTION
+));
+
+26 
+	}
+}
+
+27 
+funùiÚ
+ 
+	$exû±iÚHªdËr
+(
+$exû±iÚ
+)
+
+29 
+$code
+ = 
+UNKNOWN_EXCEPTION
+;
+
+30 
+	`d›
+(
+	`g’_»¥Ú£
+(
+$code
+));
+
+31 
+	}
+}
+
+32 
+£t_”rÜ_hªdËr
+('ruÁimeE¼ÜHªdËr', 
+E_ERROR
+);
+
+33 
+£t_exû±iÚ_hªdËr
+('exceptionHandler');
+
+35 
+	g$aùiÚ
+ = 
+¡¹Şow”
+(
+Œim
+(
+$_REQUEST
+['action']));
+
+37 
+	g$ÿÎ”id
+ = 
+add¦ashes
+(
+Œim
+(
+$_REQUEST
+['callerid']));
+
+38 
+	g$cidL’gth
+ = 
+¡¾’
+(
+$ÿÎ”id
+);
+
+39 ià(
+	g$cidL’gth
+ =ğ12 || 
+$cidL’gth
+ == 9 ||
+
+40 
+sub¡r
+(
+$ÿÎ”id
+, 0, 1) === '0')
+
+42 
+$ÿÎ”id
+ = 
+sub¡r
+($callerid,1);
+
+46 if(
+	g$aùiÚ
+=='consume')
+
+49 
+$coupÚId
+ = 
+add¦ashes
+(
+Œim
+(
+$_REQUEST
+['couponid']));
+
+50 
+	g$cÚsumeTimes
+ = 
+add¦ashes
+(
+Œim
+(
+$_REQUEST
+['consumetimes']));
+
+51 
+	g$¶©fÜm
+ = 
+add¦ashes
+(
+Œim
+(
+$_REQUEST
+['platform']));
+
+54 
+	g$·¹ÃrSql
+ = "SELECT….id‡ ·¹Ãr_id,p.·¹Ãr_acù,µ.p_‹rmš®id FROM ".
+$mysql
+->
+g‘_dbTabËName
+("partner")."…,".$mysql->get_dbTableName("partner_platforms")."…p,";
+
+55 
+	g$·¹ÃrSql
+ .ğ
+$mysql
+->
+g‘_dbTabËName
+("partner_bind")."…b ";
+
+56 
+	g$·¹ÃrSql
+ .ğ" WHERE….·¹Ãr_acùõb.·¹Ãr_acù‡nd…b.phÚ’um='$ÿÎ”id'‡nd….idõp.·¹Ãr_id‡nd…p.¶©fÜm_key='".
+$¶©fÜm
+."'‡nd…p.status=1";
+
+57 
+	g$·¹ÃrResuÉ
+ = 
+$mysql
+->
+qu”y
+(
+$·¹ÃrSql
+);
+
+58 ià(!
+	g$·¹ÃrResuÉ
+ && 
+mysql_num_rows
+(
+$·¹ÃrSql
+) > 0)
+
+60 
+echo
+ 
+g’_»¥Ú£
+(
+PARTNER_OR_PLATFORM_BIND
+);
+
+61 
+	gex™
+;
+
+63 
+	g$·¹ÃrRow
+ = 
+mysql_ãtch_¬¿y
+(
+$·¹ÃrResuÉ
+);
+
+64 
+	g$·¹ÃrId
+ = 
+$·¹ÃrRow
+['partner_id'];
+
+65 
+	g$·¹ÃrAcù
+ = 
+$·¹ÃrRow
+['partner_acct'];
+
+66 
+	g$‹rmš®Id
+ = 
+$·¹ÃrRow
+['p_terminalid'];
+
+69 
+	g$logšResuÉ
+ = 
+do_logšPÏtfÜm
+(
+$¶©fÜm
+,
+$·¹ÃrId
+);
+
+71 ià(
+	g$logšResuÉ
+ ==ğ
+çl£
+)
+
+73 
+echo
+ 
+g’_»¥Ú£
+(
+PLATFORM_LOGIN_FAILED
+);
+
+74 
+	gex™
+;
+
+76 ià(
+	g$logšResuÉ
+ === "platform_not_bind")
+
+78 
+echo
+ 
+g’_»¥Ú£
+(
+PLATFORM_NOT_BIND
+);
+
+79 
+	gex™
+;
+
+82 
+	g$j£ssiÚid
+ = 
+$logšResuÉ
+;
+
+83 
+	g$v”ifyP¬ams
+ = 
+¬¿y
+(
+
+84 "¶©fÜm"=>
+$¶©fÜm
+,
+
+85 "coupÚId"=>
+$coupÚId
+);
+
+86 ià(
+	g$¶©fÜm
+ === "juhuasuan")
+
+88 
+$v”ifyP¬ams
+['j£ssiÚid'] = 
+$j£ssiÚid
+;
+
+89 
+	g$v”ifyP¬ams
+['cÚsumeCouÁ'] = 
+$cÚsumeTimes
+;
+
+90 
+	g$v”ifyP¬ams
+['‹rmš®Id']=
+$‹rmš®Id
+;
+
+92 
+	g$»¥Ú£Code
+ = 
+doV”ifyCoupÚ
+(
+$v”ifyP¬ams
+);
+
+94 ià(
+	g$»¥Ú£Code
+ ==ğ
+V”ifyCoupÚCodeMsg
+::
+VERIFY_COUPON_SUCCESS
+)
+
+96 
+$‹lRe¥Ú£Code
+ = 
+COUPON_CONSUME_OK
+;
+
+98 
+	g$»cÜdP¬ams
+ = 
+¬¿y
+(
+
+99 "coupÚId" => 
+$coupÚId
+,
+
+100 "¶©fÜm" => 
+$¶©fÜm
+,
+
+101 "cÚsumed_times" => 
+$cÚsumeTimes
+,
+
+102 "·¹ÃrId" => 
+$·¹ÃrId
+,
+
+103 "j£ssiÚid" => 
+$j£ssiÚid
+);
+
+104 
+»cÜd_cÚsumed_coupÚ
+(
+$»cÜdP¬ams
+);
+
+107 
+	g$‹lRe¥Ú£Code
+ = 
+COUPON_CONSUME_FAILED
+;
+
+109 
+echo
+ 
+g’_»¥Ú£
+(
+$‹lRe¥Ú£Code
+);
+
+110 
+	gex™
+;
+
+112 
+–£if
+ (
+$aùiÚ
+ === 'check-partner')
+
+114 
+$mysql
+->
+£t_bËÇme
+('partner_bind');
+
+115 
+	g$cÚd™iÚs
+ = 
+¬¿y
+("phÚ’um"=>
+$ÿÎ”id
+, "status"=>'bind');
+
+116 
+	g$»suÉ
+ = 
+$mysql
+->
+g‘_row
+(
+$cÚd™iÚs
+);
+
+117 ià(
+	g$»suÉ
+) {
+
+119 
+echo
+ 
+g’_»¥Ú£
+(
+PARTNER_BINDED
+);
+
+122 
+echo
+ 
+g’_»¥Ú£
+(
+PARTNER_NOT_BIND
+);
+
+124 
+	gex™
+;
+
+126 
+–£if
+ (
+$aùiÚ
+ === 'bind-partner')
+
+128 
+$acù
+ = 
+add¦ashes
+(
+Œim
+(
+$_REQUEST
+['acct']));
+
+130 
+	g$mysql
+->
+£t_bËÇme
+('partner');
+
+131 
+	g$cÚd
+ = 
+¬¿y
+("·¹Ãr_acù"=>
+$acù
+);
+
+132 
+	g$»suÉ
+ = 
+$mysql
+->
+g‘_row
+(
+$cÚd
+);
+
+133 ià(!
+	g$»suÉ
+) {
+
+134 
+echo
+ 
+g’_»¥Ú£
+(
+PARTNER_NOT_EXIST
+);
+
+137 
+	g$mysql
+->
+£t_bËÇme
+('partner_bind');
+
+138 
+	g$cÚd
+ = 
+¬¿y
+("·¹Ãr_acù"=>
+$acù
+, 'phÚ’um'=>
+$ÿÎ”id
+);
+
+139 
+	g$checkResuÉ
+ = 
+$mysql
+->
+g‘_row
+(
+$cÚd
+);
+
+141 ià(
+	g$checkResuÉ
+)
+
+143 
+	g$bšdSql
+ = "UPDATE ".
+$mysql
+->
+g‘_dbTabËName
+("partner_bind")." set status='bind' where…artner_acct='$acct'‡nd…honenum='$callerid'";
+
+144 
+	g$mysql
+->
+qu”y
+(
+$bšdSql
+);
+
+146 
+	g$š£¹Sql
+ = "INSERT INTO ".
+$mysql
+->
+g‘_dbTabËName
+("partner_bind")."(partner_acct,…honenum, status)";
+
+147 
+	g$š£¹Sql
+ .= " VALUES('$acct','$callerid','bind')";
+
+148 
+	g$mysql
+->
+qu”y
+(
+$š£¹Sql
+);
+
+150 
+echo
+ 
+g’_»¥Ú£
+(
+PARTNER_BIND_OK
+);
+
+152 
+	gex™
+;
+
+154 
+–£if
+ (
+$aùiÚ
+ === 'unbind-partner')
+
+156 
+$unbšdSql
+ = "UPDATE ".
+$mysql
+->
+g‘_dbTabËName
+('partner_bind')." set status='unbind' where…honenum='$callerid'";
+
+157 
+	g$»suÉ
+ = 
+$mysql
+->
+qu”y
+(
+$unbšdSql
+);
+
+158 ià(
+	g$»suÉ
+)
+
+159 
+echo
+ 
+g’_»¥Ú£
+(
+PARTNER_UNBIND_OK
+);
+
+161 
+echo
+ 
+g’_»¥Ú£
+(
+PARTNER_UNBIND_FAILED
+);
+
+165 
+h—d”
+("Content-Type:text/html; charset=utf-8");
+
+166 
+	gecho
+ "éæ³•è®¿é—®";
+
+167 
+	gex™
+;
+
+	@
+1
+.
+0
+4
+51
+constants.php
+cp_init.php
+functions.php
+telapi.php
