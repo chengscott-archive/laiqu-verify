@@ -62,11 +62,11 @@ function search_juhuasuan_coupon($searchContent)
     {
         if (is_numeric($searchContent))
         {
-            // 10数字为辅助码
-            if ( 10 === strlen($searchContent) )
-            {
-                $searchParams['model.assitCode'] = $searchContent;
-            }
+            //// 10数字为辅助码
+            //if ( 10 === strlen($searchContent) )
+            //{
+                //$searchParams['model.assitCode'] = $searchContent;
+            //}
             // 11数字为接收手机号
             if ( 11 === strlen($searchContent) )
             {
