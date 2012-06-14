@@ -1,0 +1,192 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ACCESS_NOT_ALLOWED	constants.php	/^define('ACCESS_NOT_ALLOWED',9999);$/;"	d
+ALLOWED_IP	constants.php	/^define('ALLOWED_IP','127.0.0.1');$/;"	d
+COUPON_CONSUME_EXPIRED	constants.php	/^define("COUPON_CONSUME_EXPIRED", 106);  \/\/ 团购券已过期$/;"	d
+COUPON_CONSUME_FAILED	constants.php	/^define("COUPON_CONSUME_FAILED", 103);  \/\/ 消费失败$/;"	d
+COUPON_CONSUME_NOT_EXIST	constants.php	/^define("COUPON_CONSUME_NOT_EXIST", 104);  \/\/ 团购券不存在$/;"	d
+COUPON_CONSUME_OK	constants.php	/^define("COUPON_CONSUME_OK", 102);    \/\/ 消费成功$/;"	d
+COUPON_CONSUME_USED	constants.php	/^define("COUPON_CONSUME_USED", 105);  \/\/ 团购券已被使用$/;"	d
+COUPON_ENDED	constants.php	/^define('COUPON_ENDED', 1004);       \/\/ 已过期$/;"	d
+COUPON_INVALID	constants.php	/^define('COUPON_INVALID', 1005);     \/\/ 无效$/;"	d
+COUPON_INVALID_USED	constants.php	/^define('COUPON_INVALID_USED', 1003);\/\/ 已被使用$/;"	d
+COUPON_IS_VALID	constants.php	/^define('COUPON_IS_VALID', 1001);    \/\/ 验证有效$/;"	d
+COUPON_USED_OK	constants.php	/^define('COUPON_USED_OK', 1002);     \/\/ 使用成功$/;"	d
+COUPON_VERIFY_OK	constants.php	/^define("COUPON_VERIFY_OK", 100);    \/\/ 验证成功$/;"	d
+COUPON_VERIRY_FAILED	constants.php	/^define("COUPON_VERIRY_FAILED", 101);    \/\/ 验证失败$/;"	d
+COUPON_WRONG_PWD	constants.php	/^define('COUPON_WRONG_PWD', 1006);     \/\/ 密码错误$/;"	d
+PARTNER_BINDED	constants.php	/^define("PARTNER_BINDED", 200);    \/\/商家账号已绑定$/;"	d
+PARTNER_BIND_OK	constants.php	/^define("PARTNER_BIND_OK", 202);    \/\/商家账号绑定成功$/;"	d
+PARTNER_NOT_BIND	constants.php	/^define("PARTNER_NOT_BIND", 201);    \/\/商家账号未绑定$/;"	d
+PARTNER_NOT_EXIST	constants.php	/^define("PARTNER_NOT_EXIST", 203);    \/\/商家账号不存在$/;"	d
+PARTNER_OR_PLATFORM_BIND	constants.php	/^define("PARTNER_OR_PLATFORM_BIND",107); \/\/ 商家没有绑定手机号或平台$/;"	d
+PARTNER_UNBIND_FAILED	constants.php	/^define("PARTNER_UNBIND_FAILED", 205);    \/\/商家账号解除绑定失败$/;"	d
+PARTNER_UNBIND_OK	constants.php	/^define("PARTNER_UNBIND_OK", 204);    \/\/商家账号解除绑定成功$/;"	d
+PLATFORM_LOGIN_FAILED	constants.php	/^define("PLATFORM_LOGIN_FAILED", 108); \/\/ 平台登录失败$/;"	d
+PLATFORM_NOT_BIND	constants.php	/^define("PLATFORM_NOT_BIND", 109); \/\/平台未绑定$/;"	d
+UNKNOWN_EXCEPTION	constants.php	/^define('UNKNOWN_EXCEPTION',10000);$/;"	d
+acct	telapi.php	/^    $acct = addslashes(trim($_REQUEST['acct'])); \/\/商家账号$/;"	p
+add_double_quote	functions.php	/^function add_double_quote($matches)$/;"	f
+beautifulJson	functions.php	/^        $beautifulJson = preg_replace("\/'(.*)'\/",'"${1}"', $beautifulJson);$/;"	p
+beautifulJson	functions.php	/^        $beautifulJson = preg_replace('\/(,\\s*)([\\}\\]])\/','${2}',$uglyJson);$/;"	p
+beautifulJson	functions.php	/^    $beautifulJson = "";$/;"	p
+bindSql	telapi.php	/^            $bindSql = "UPDATE ".$mysql->get_dbTableName("partner_bind")." set status='bind' where partner_acct='$acct' and phonenum='$callerid'";$/;"	p
+callerid	telapi.php	/^        $callerid = substr($callerid,1);$/;"	p
+captchaJses	functions.php	/^        $captchaJses = get_login_validate_imgpath_jses($platform);$/;"	p
+captchaPath	functions.php	/^        $captchaPath = $captchaJses['captchaPath'];$/;"	p
+captchaUrl	functions.php	/^        $captchaUrl = 'http:\/\/59.151.29.121\/validateCode.do?'.date(mktime());$/;"	p
+checkResult	telapi.php	/^        $checkResult = $mysql->get_row($cond);$/;"	p
+code	telapi.php	/^    $code = UNKNOWN_EXCEPTION;$/;"	p
+cond	telapi.php	/^        $cond = array("partner_acct"=>$acct, 'phonenum'=>$callerid);$/;"	p
+cond	telapi.php	/^    $cond = array("partner_acct"=>$acct);$/;"	p
+conditions	functions.php	/^    $conditions = array($/;"	p
+conditions	telapi.php	/^    $conditions = array("phonenum"=>$callerid, "status"=>'bind');$/;"	p
+consumeTimes	telapi.php	/^    $consumeTimes = addslashes(trim($_REQUEST['consumetimes']));  \/\/销券次数$/;"	p
+consumedCoupons	functions.php	/^    $consumedCoupons = $coupon->get_row($conditions);$/;"	p
+consumed_times	functions.php	/^    $consumed_times = $recordParams['consumed_times'];$/;"	p
+convert_order	functions.php	/^function convert_order($orderInfo, $platform)$/;"	f
+coupon	functions.php	/^    $coupon = new Coupon();$/;"	p
+couponId	functions.php	/^    $couponId = $inputs['couponId'];$/;"	p
+couponId	functions.php	/^    $couponId = $recordParams['couponId'];$/;"	p
+couponId	telapi.php	/^    $couponId = addslashes(trim($_REQUEST['couponid']));  \/\/团购券序列号$/;"	p
+decode_captcha	functions.php	/^function decode_captcha($captchaPath)$/;"	f
+doVerifyCoupon	functions.php	/^function doVerifyCoupon($request)$/;"	f
+do_loginPlatform	functions.php	/^function do_loginPlatform($platform,$partnerId)$/;"	f
+exceptionHandler	telapi.php	/^function exceptionHandler($exception)$/;"	f
+gen_response	functions.php	/^function gen_response($result)$/;"	f
+get_juhuasuan_login_params	functions.php	/^function get_juhuasuan_login_params($partnerId)$/;"	f
+get_login_validate_imgpath_jses	functions.php	/^function get_login_validate_imgpath_jses($platform)$/;"	f
+get_orderInfo	functions.php	/^function get_orderInfo($recordParams)$/;"	f
+imgSuffix	functions.php	/^        $imgSuffix = 'jpg';$/;"	p
+inputs	functions.php	/^        $inputs['terminalid'] = $request['terminalId'];$/;"	p
+inputs	functions.php	/^    $inputs = $verifyCoupon->init_verifyInputs($request);$/;"	p
+insertCoupon	functions.php	/^        $insertCoupon = array($/;"	p
+insertOrder	functions.php	/^        $insertOrder = array($/;"	p
+insertSql	telapi.php	/^            $insertSql .= " VALUES('$acct','$callerid','bind')";$/;"	p
+insertSql	telapi.php	/^            $insertSql = "INSERT INTO ".$mysql->get_dbTableName("partner_bind")."(partner_acct, phonenum, status)";$/;"	p
+is_login_success	functions.php	/^function is_login_success($response, $platform)$/;"	f
+jsessionid	functions.php	/^        $jsessionid = $captchaJses['jsessionid'];$/;"	p
+jsessionid	functions.php	/^    $jsessionid = $recordParams['jsessionid'];$/;"	p
+jsessionid	functions.php	/^    $jsessionid = findCookie("JSESSIONID", $responseObj->getCookies());$/;"	p
+jsessionid	telapi.php	/^    $jsessionid = $loginResult;$/;"	p
+laiquOrder	functions.php	/^            $laiquOrder = convert_order($order, $platform);$/;"	p
+laiquOrder	functions.php	/^    $laiquOrder = array();$/;"	p
+loginResult	telapi.php	/^    $loginResult = do_loginPlatform($platform,$partnerId); \/\/ if success, juhuasuan return jsessionid$/;"	p
+loginUrl	functions.php	/^        $loginUrl = "http:\/\/59.151.29.121\/shopUsed\/shopLogin.do";$/;"	p
+login_platform	functions.php	/^function login_platform($platform, $partnerId)$/;"	f
+mysql	telapi.php	/^            $mysql->query($bindSql);$/;"	p
+mysql	telapi.php	/^            $mysql->query($insertSql);$/;"	p
+mysql	telapi.php	/^        $mysql->set_tablename('partner_bind');$/;"	p
+mysql	telapi.php	/^    $mysql->set_tablename('partner');$/;"	p
+mysql	telapi.php	/^    $mysql->set_tablename('partner_bind');$/;"	p
+order	functions.php	/^            $order = $result->data[0];$/;"	p
+order	functions.php	/^        $order['consumer_mobile'] = $orderInfo->receiMobile;$/;"	p
+order	functions.php	/^        $order['platform_key'] = $platform;$/;"	p
+order	functions.php	/^        $order['platform_order_id'] = $orderInfo->taobaoId;$/;"	p
+order	functions.php	/^        $order['summary'] = $orderInfo->description;$/;"	p
+order	functions.php	/^        $order['team_price'] = floatval(substr($orderInfo->payment, 3));$/;"	p
+order	functions.php	/^        $order['title'] = $orderInfo->product;$/;"	p
+order	functions.php	/^    $order = array();$/;"	p
+order	functions.php	/^    $order = new Order();$/;"	p
+orderId	functions.php	/^    $orderId = $orderInfo['platform_order_id'];$/;"	p
+orderInfo	functions.php	/^        $orderInfo = record_order($recordParams);$/;"	p
+orderInfo	functions.php	/^        $orderInfo['team_id'] = $recordedTeam['id'];$/;"	p
+orderInfo	functions.php	/^    $orderInfo = get_orderInfo($recordParams);$/;"	p
+orderInfo	functions.php	/^    $orderInfo['consume_times'] = $consumed_times;$/;"	p
+orderInfo	functions.php	/^    $orderInfo['partner_id'] = $partnerId;$/;"	p
+orderInfo	functions.php	/^    $orderInfo['platform_coupon_id'] = $couponId;$/;"	p
+orderInfo	functions.php	/^    $orderInfo['platform_key'] = $platform;$/;"	p
+orderInserted	functions.php	/^        $orderInserted = $order->insert_order($insertOrder);$/;"	p
+orderInserted	functions.php	/^        $orderInserted['consumer_mobile'] = $orderInfo['consumer_mobile'];$/;"	p
+params	functions.php	/^        $params = array("model.assitCode" => $couponId);$/;"	p
+params	functions.php	/^        $params = get_juhuasuan_login_params($partnerId);$/;"	p
+params	functions.php	/^        $params['model.validateCode'] = $validateCode;$/;"	p
+params	functions.php	/^    $params = $verifyCoupon->get_requestParams($inputs);$/;"	p
+params	functions.php	/^    $params = array ($/;"	p
+partnerAcct	telapi.php	/^        $partnerAcct = $partnerRow['partner_acct'];$/;"	p
+partnerId	functions.php	/^    $partnerId = $recordParams['partnerId'];$/;"	p
+partnerId	telapi.php	/^        $partnerId = $partnerRow['partner_id'];$/;"	p
+partnerPlatforms	functions.php	/^    $partnerPlatforms = new PartnerPlatforms();$/;"	p
+partnerResult	telapi.php	/^    $partnerResult = $mysql->query($partnerSql);$/;"	p
+partnerRow	telapi.php	/^        $partnerRow = mysql_fetch_array($partnerResult);$/;"	p
+partnerSql	telapi.php	/^    $partnerSql .= " WHERE p.partner_acct=pb.partner_acct and pb.phonenum='$callerid' and p.id=pp.partner_id and pp.platform_key='".$platform."' and pp.status=1";$/;"	p
+partnerSql	telapi.php	/^    $partnerSql .= $mysql->get_dbTableName("partner_bind")." pb ";$/;"	p
+partnerSql	telapi.php	/^    $partnerSql = "SELECT p.id as partner_id,p.partner_acct,pp.p_terminalid FROM ".$mysql->get_dbTableName("partner")." p,".$mysql->get_dbTableName("partner_platforms")." pp,";$/;"	p
+platform	functions.php	/^    $platform = $recordParams['platform'];$/;"	p
+platform	functions.php	/^    $platform = $request['platform'];$/;"	p
+platform	telapi.php	/^    $platform = addslashes(trim($_REQUEST['platform']));  \/\/平台$/;"	p
+ppRow	functions.php	/^    $ppRow = $partnerPlatforms->get_row( $/;"	p
+recordParams	telapi.php	/^        $recordParams = array($/;"	p
+record_consumed_coupon	functions.php	/^function record_consumed_coupon($recordParams)$/;"	f
+record_order	functions.php	/^function record_order($recordParams)$/;"	f
+record_team_by_order	functions.php	/^function record_team_by_order($orderInfo)$/;"	f
+recordedOrder	functions.php	/^        $recordedOrder['consumer_mobile'] = $orderInfo['consumer_mobile'];$/;"	p
+recordedOrder	functions.php	/^    $recordedOrder = $order->get_row($conditions);$/;"	p
+recordedTeam	functions.php	/^        $recordedTeam = record_team_by_order($orderInfo);$/;"	p
+req	functions.php	/^         $req = $rest->getHttpRequest();$/;"	p
+req	functions.php	/^         $req->addCookie("JSESSIONID", $request['jsessionid']);$/;"	p
+req	functions.php	/^        $req = $rest->getHttpRequest();$/;"	p
+req	functions.php	/^        $req->addCookie("JSESSIONID", $jsessionid);  \/\/ I add path param to addCookie function$/;"	p
+req	functions.php	/^        $req->addCookie("JSESSIONID", $jsessionid);$/;"	p
+req	functions.php	/^        $req->addCookie("JSESSIONID", $jsessionid['value']);$/;"	p
+req	functions.php	/^        $req->setCookieJar();$/;"	p
+req	functions.php	/^    $req = $rest->getHttpRequest();$/;"	p
+response	functions.php	/^        $response = $rest->getResponse();$/;"	p
+response	functions.php	/^        $response = tidy_ugly_json($response,$platform);$/;"	p
+response	functions.php	/^    $response = "status=".$statuses[$result]."&result=$result";$/;"	p
+response	functions.php	/^    $response = $rest->getResponse();$/;"	p
+response	functions.php	/^    $response = '';$/;"	p
+responseCode	functions.php	/^    $responseCode = $verifyCoupon->get_responseCode($response);$/;"	p
+responseCode	telapi.php	/^    $responseCode = doVerifyCoupon($verifyParams);$/;"	p
+responseObj	functions.php	/^    $responseObj = $rest->getResponseObj();$/;"	p
+rest	functions.php	/^        $rest = new RESTclient();$/;"	p
+rest	functions.php	/^        $rest->createRequest("http:\/\/59.151.29.121\/shopUsed\/list.do", 'POST', $params);$/;"	p
+rest	functions.php	/^        $rest->createRequest($loginUrl,'POST',$params);$/;"	p
+rest	functions.php	/^        $rest->createRequest($verifyCoupon->get_apiUrl());$/;"	p
+rest	functions.php	/^        $rest->createRequest($verifyCoupon->get_apiUrl(), 'POST', $params);$/;"	p
+rest	functions.php	/^        $rest->sendRequest();$/;"	p
+rest	functions.php	/^    $rest = new RESTclient();$/;"	p
+rest	functions.php	/^    $rest->createRequest($captchaUrl);$/;"	p
+rest	functions.php	/^    $rest->sendRequest();$/;"	p
+result	functions.php	/^            $result = login_platform('juhuasuan', $partnerId);$/;"	p
+result	functions.php	/^        $result = json_decode($response);$/;"	p
+result	functions.php	/^    $result = false;$/;"	p
+result	telapi.php	/^    $result = $mysql->get_row($cond);$/;"	p
+result	telapi.php	/^    $result = $mysql->get_row($conditions);$/;"	p
+result	telapi.php	/^    $result = $mysql->query($unbindSql);$/;"	p
+runtimeErrorHandler	telapi.php	/^function runtimeErrorHandler($errno, $errstr, $errfile, $errline)$/;"	f
+statuses	functions.php	/^    $statuses = array($/;"	p
+success	functions.php	/^            $success = $jsessionid;$/;"	p
+success	functions.php	/^        $success = false;$/;"	p
+success	functions.php	/^        $success = is_login_success($response, $platform);$/;"	p
+team	functions.php	/^    $team = new Team();$/;"	p
+teamInfo	functions.php	/^            $teamInfo = array($/;"	p
+teamRow	functions.php	/^        $teamRow = $team->get_row($/;"	p
+telResponseCode	telapi.php	/^        $telResponseCode = COUPON_CONSUME_FAILED;$/;"	p
+telResponseCode	telapi.php	/^        $telResponseCode = COUPON_CONSUME_OK;$/;"	p
+terminalId	telapi.php	/^        $terminalId = $partnerRow['p_terminalid'];$/;"	p
+tidy_ugly_json	functions.php	/^function tidy_ugly_json($uglyJson, $platform)$/;"	f
+tmp_captcha_name	functions.php	/^    $tmp_captcha_name = '';$/;"	p
+tmp_captcha_name	functions.php	/^    $tmp_captcha_name = tempnam(sys_get_temp_dir(),$imgSuffix);$/;"	p
+tryTimes	functions.php	/^        $tryTimes = 5;$/;"	p
+uglyJson	functions.php	/^        $uglyJson = preg_replace('\/\\s*:\\s*\/',':', $uglyJson);$/;"	p
+uglyJson	functions.php	/^        $uglyJson = preg_replace('\/items\\s*:\\s*\\[[^<]+?\\]\/','', $uglyJson);$/;"	p
+uglyJson	functions.php	/^        $uglyJson = preg_replace_callback('\/([\\{,]\\s*)([[\\w\\d]+)(\\s*:)\/',"add_double_quote", $uglyJson);$/;"	p
+unbindSql	telapi.php	/^    $unbindSql = "UPDATE ".$mysql->get_dbTableName('partner_bind')." set status='unbind' where phonenum='$callerid'";$/;"	p
+url	functions.php	/^        $url = $rest->getUrl();$/;"	p
+url	functions.php	/^        $url->setQueryVariables($params);$/;"	p
+validateCode	functions.php	/^        $validateCode = decode_captcha($captchaPath);$/;"	p
+validateCode	functions.php	/^    $validateCode = $valite->run();$/;"	p
+valite	functions.php	/^    $valite = new Valite();$/;"	p
+valite	functions.php	/^    $valite->getHec();$/;"	p
+valite	functions.php	/^    $valite->setImage($captchaPath);$/;"	p
+verifyCoupon	functions.php	/^    $verifyCoupon = new VerifyCoupon();$/;"	p
+verifyCoupon	functions.php	/^    $verifyCoupon->init($platform);$/;"	p
+verifyParams	telapi.php	/^        $verifyParams['consumeCount'] = $consumeTimes;$/;"	p
+verifyParams	telapi.php	/^        $verifyParams['jsessionid'] = $jsessionid;$/;"	p
+verifyParams	telapi.php	/^        $verifyParams['terminalId']=$terminalId;$/;"	p
+verifyParams	telapi.php	/^    $verifyParams = array($/;"	p

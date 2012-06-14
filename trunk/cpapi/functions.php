@@ -173,6 +173,78 @@ function is_login_success($response, $platform)
     }
 }
 
+// 聚划算管理员登陆
+// if success return JSESSIONID, else return false
+function admin_login_platform($platform)
+{
+    if ($platform === 'juhuasuan')
+    {
+        // 解析验证码,存在失败概率,所以重复执行10次
+        $success = false;
+        $captchaJses = get_login_validate_imgpath_jses($platform);
+        $captchaPath = $captchaJses['captchaPath'];
+        $jsessionid = $captchaJses['jsessionid'];
+
+        $validateCode = decode_captcha($captchaPath);
+        unlink($captchaPath);
+
+        $loginUrl = "http://59.151.29.121/login.do";
+        // 获得商户聚划算的账户信息
+        $params = get_juhuasuan_admin_login_params($platform);
+        if ($params === null)
+        {
+            return $platform.": 系统登陆配置不存在";
+        }
+        $params['model.validateCode'] = $validateCode;
+        $rest = new RESTclient();
+        $rest->createRequest($loginUrl,'POST',$params);
+
+        // 聚划算的请求中加入JSESSIONID的cookie
+        $req = $rest->getHttpRequest();
+        $req->setCookieJar();
+        $req->addCookie("JSESSIONID", $jsessionid);  // I add path param to addCookie function
+        $rest->sendRequest();
+        $response = $rest->getResponse();
+        unset($rest);
+        $success = is_admin_login_success($response, $platform);
+        // 登陆成功记录, 记录商户平台信息
+        if ($success === true)
+        {
+            session_start();
+            $_SESSION['JSESSIONID'] = $jsessionid;
+            $success = $jsessionid;
+        }
+        return $success;
+    }
+}
+// 获得平台管理员登陆参数
+function get_juhuasuan_admin_login_params($platform)
+{
+    $params = array();
+    if ($platform === "juhuasuan")
+    {
+        $params['model.sign'] = 'laiqu@lq.com';
+        $params['model.password'] = '056816'; 
+    }
+
+    return $params;
+}
+// 管理员平台的登陆成功判断
+function is_admin_login_success($response, $platform)
+{
+    $result = false;
+    if ($platform === 'juhuasuan')
+    {
+        // 成功条件,返回结果中包含 '<body SCROLL="no">' 
+        if ( 1 === preg_match('/<body SCROLL="no">/', $response))
+        {
+            $result = true;
+        }
+    }
+
+    return $result;
+}
+
 // 验证团购券
 function doVerifyCoupon($request)
 {

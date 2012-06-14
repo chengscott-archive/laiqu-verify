@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>来趣客服搜索系统</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="css/search.css" rel="stylesheet" type="text/css" />
+<link href="css/search.css" rel="stylesheet" type="text/css" />
+<link href="../css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+<!--@import "../../media/css/demo_page.css";-->
+</head>
+<body>
+<script src="../js/jquery.min.js"></script>
+<script src="../js/jquery.form.js"></script>
+<script src="../js/jquery.dataTables.min.js"></script>
+<script src="search.js"></script>
+<div class="main" id="main">
+    <form action="doSearch.php" id=search_form method="get" accept-charset="utf-8">
+        
+         <input type="text" name="search_content" value="" placeholder='订单号,手机号,辅助码'>
+         <!-- 目前只支持聚划算 -->
+         <input type="hidden" name="platform" value="juhuasuan">
+         &nbsp;<input type="submit" value="查询">
+    </form>
+    <div id="search_table_container">
+        <table cellpadding="0" cellspacing="0" border="0" style='display:none;' class="display" id="search_result_table" width="100%">
+        </table>
+    </div>
+    <div id="msg_area"></div>
+</div>
+</body>
+</html>
