@@ -1,0 +1,157 @@
+#main{margin-left:auto; margin-right:auto;}
+body{margin:0px;padding:0px; background-color:#CCC;}
+*html body{TEXT-ALIGN: center;}
+body,table,td,tr,th,input,select{font-size:12px;font-family:"微软雅黑";}
+body>div{margin-right:auto;margin-left:auto;}
+img,form{border:0px;}
+div{border:0px;margin:0px auto;padding:0px;text-align:left;height:auto;}
+form,select{margin:0px;padding:0px;text-align:left;height:auto;}
+input,select{vertical-align:middle;}
+ul,ol,li,dl,dt,dd,p,span, h1, h2, h3, h4, h5, h6{border:0px;margin:0px;padding:0px;text-align:left;height:auto;}
+h1, h2, h3, h4, h5, h6 { font-size: 12px; }
+em, cite, strong, th { font-style: normal; }
+s,ins,u,i{text-decoration:none;}
+
+.login
+{
+	width:100%;
+}
+
+.login_content
+{
+	width:100%; 
+
+
+}
+
+.login_form
+{
+	width:307px;
+	height:296px;
+	vertical-align:middle;
+	background-image:url(../images/login_bg.jpg);
+	margin-top:150px;
+
+}
+
+.login_title
+{
+	width:87px;
+	height:27px;
+	float:left;
+	margin-top:12px;
+	padding-left:110px;
+
+}
+.userid_bg
+{
+	width:241px;
+	height:55px;
+	background-image:url(../images/login-form_r4_c2.jpg);
+	background-repeat:no-repeat;
+	float:left;
+	margin-top:5px;
+	margin-left:33px;
+}
+
+*html .userid_bg
+{
+	margin-left:17px;
+}
+
+*html .userpwd_bg
+{
+	margin-left:17px;
+}
+
+.UserId
+{
+	width:225px;
+	height:20px;
+	margin-top:26px;
+	margin-left:8px;
+	background:transparent;
+	border:none;
+
+}
+
+*html .UserId
+{
+	margin-top:24px;
+	margin-left:-10px;
+
+}
+
+*+html .UserId
+{
+	margin-top:24px;
+	margin-left:-26px;
+
+}
+
+.userpwd_bg
+{
+	width:241px;
+	height:55px;
+	background-image:url(../images/login-form_r6_c2.jpg);
+	background-repeat:no-repeat;
+	float:left;
+	margin-top:13px;
+	margin-left:33px;
+}
+
+.Userpwd
+{
+	width:225px;
+	height:20px;
+	margin-top:26px;
+	margin-left:8px;
+	background:transparent;
+	border:none;
+}
+
+*+html .Userpwd
+{
+	margin-top:24px;
+	margin-left:-26px;
+
+}
+
+*html .Userpwd
+{
+	margin-top:24px;
+	margin-left:-10px;
+
+}
+
+.login_button
+{
+	width:241px;
+	height:35px;
+	background-image:url(../images/login-form_r8_c2.jpg);
+	float:left;
+	margin-top:29px;
+	margin-left:33px;
+}
+
+a.login_button:hover
+{
+	background-image:url(../images/login-form_r8_c2_2.jpg);
+}
+
+.login_fail_tip
+{
+	width:144px;
+	height:18px;
+	#background-image:url(../images/login-form_r8_c2.jpg);
+	float:left;
+	margin-top:20px;
+	margin-left:30px;
+}
+
+*html .login_fail_tip
+{
+	margin-top:15px;
+	margin-left:15px;
+	overflow:hidden;
+}

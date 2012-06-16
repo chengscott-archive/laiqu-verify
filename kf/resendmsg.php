@@ -1,9 +1,9 @@
 <?php
 //var resendmsgUrl = 'resendmsg.php?orderid='+orderId;
+require_once 'check_staff_authority.php';
 require_once '../cpapi/functions.php';
 require_once '../common/RESTclient.php';
 
-$_REQUEST['platform'] = 'juhuasuan';
 if (!isset($_REQUEST['orderid']) || $_REQUEST['orderid'] === "" ||
     !isset($_REQUEST['platform']) || $_REQUEST['platform'] === "")
 {
