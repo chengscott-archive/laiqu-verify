@@ -1,6 +1,7 @@
 <?php
 //var resendmsgUrl = 'resendmsg.php?orderid='+orderId;
 require_once 'check_staff_authority.php';
+require_once 'common.php';
 require_once '../cpapi/functions.php';
 require_once '../common/RESTclient.php';
 
@@ -37,22 +38,6 @@ if ($count < $tryTimes)
 }
 exit;
 
-// function definations
-function gen_successResp($data = null)
-{
-    if ($data === null)
-    {
-        $result = array("success"=>"true");
-    } else {
-        $result = array("success"=>"true", "data"=>$data);
-    }
-    return json_encode($result);
-}
-
-function gen_failResp($msg = "")
-{
-   return json_encode(array("success"=>"false", "msg"=>$msg));
-}
 // 重发团购券短信
 // 返回结果格式:json
 function resend_coupon($platform, $orderId)
@@ -88,35 +73,4 @@ function resend_juhuasuan_coupon($orderId)
         return false;
     }
 }
-
-// 调用平台的接口
-function do_platform_request($platform, $url, $params, $method = "POST")
-{
-    $rest = new RESTclient();
-    if ($method == 'POST') {
-        $rest->createRequest($url, 'POST', $params);
-    } else {
-        $rest->createRequest($url);
-        $url = $rest->getUrl();
-        $url->setQueryVariables($params);
-    }
-    if ($platform === "juhuasuan" && isset($_SESSION['JSESSIONID']))
-    {
-        $req = $rest->getHttpRequest();
-        $req->addCookie("JSESSIONID", $_SESSION['JSESSIONID']);
-    }
-    $rest->sendRequest();
-    $response = $rest->getResponse();
-
-    return $response;
-}
-
-function admin_tidy_ugly_json($response, $platform)
-{
-    $response = tidy_ugly_json($response, $platform);
-    $response = strip_tags($response);
-    $response = preg_replace('/\t/','',$response);
-
-    return $response;
-}
-//?>
+?>
