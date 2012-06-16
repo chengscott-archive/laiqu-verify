@@ -24,7 +24,11 @@ function resendMsg(orderId)
       $.ajax({
         url: resendmsgUrl,
         type: 'GET',
+        beforeSend: function() {
+            $("#search_loading_bar").html("<img src='../images/hor_loading.gif' />");
+        },
         success: function(data){
+            $("#search_loading_bar").html("");
             if (data && data.success === "true")
             {
                 alert("重发短信成功");
