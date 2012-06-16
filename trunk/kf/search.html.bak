@@ -11,7 +11,7 @@
 <script src="../js/jquery.min.js"></script>
 <script src="../js/jquery.form.js"></script>
 <script src="../js/jquery.dataTables.min.js"></script>
-<script src="search.js"></script>
+<script src="js/search.js"></script>
 <div class="main" id="main">
     <form action="doSearch.php" id=search_form method="get" accept-charset="utf-8">
         

@@ -1,16 +1,15 @@
 <?php
-require_once '../cpapi/functions.php';
-require_once '../common/RESTclient.php';
+require_once 'common.php';
 
 $_REQUEST['platform'] = 'juhuasuan';
-if (!isset($_REQUEST['search_content']) ||
+if (!isset($_REQUEST['search_content']) || trim($_REQUEST['search_content']) === "" ||
     !isset($_REQUEST['platform']) || $_REQUEST['platform'] === "")
 {
    echo gen_failResp("查询参数缺失");
    exit;
 }
 $platform = $_REQUEST['platform'];
-$searchContent = $_REQUEST['search_content'];
+$searchContent = trim($_REQUEST['search_content']);
 
 
 //聚划算登录可能会发生失败，只尝试10次
@@ -25,23 +24,17 @@ while(!admin_login_platform($platform))
 if ($count < $tryTimes)
 {
     $searchResult = search_coupon($platform, $searchContent);
-    echo gen_successResp($searchResult);
+    if ($searchResult === null || count($searchResult) < 1)
+    {
+        echo gen_failResp("没有找到任何匹配的记录");
+    } else {
+        echo gen_successResp($searchResult);
+    }
 } else {
     echo gen_failResp("平台登陆失败");
 }
 exit;
 
-// function definations
-function gen_successResp($data)
-{
-    $result = array("success"=>"true", "data"=>$data);
-    return json_encode($result);
-}
-
-function gen_failResp($msg = "")
-{
-   return json_encode(array("success"=>"false", "msg"=>$msg));
-}
 // 搜索团购券信息
 // 返回结果格式:json
 function search_coupon($platform, $searchContent)
@@ -51,7 +44,6 @@ function search_coupon($platform, $searchContent)
         return search_juhuasuan_coupon($searchContent);
     }
 }
-
 function search_juhuasuan_coupon($searchContent)
 {
     $searchContent = trim($searchContent);
@@ -73,9 +65,12 @@ function search_juhuasuan_coupon($searchContent)
                 $searchParams['model.receiverMobile'] = $searchContent;
             }
             // 10数字为辅助码
-            if ( 15 === strlen($searchContent) )
+            else if ( 15 === strlen($searchContent) )
             {
                 $searchParams['model.taobaoId'] = $searchContent;
+            }
+            else {
+                return null;
             }
         } else {
             return null;
@@ -94,36 +89,5 @@ function search_juhuasuan_coupon($searchContent)
     } else {
         return null;
     }
-}
-
-// 调用平台的接口
-function do_platform_request($platform, $url, $params, $method = "POST")
-{
-    $rest = new RESTclient();
-    if ($method == 'POST') {
-        $rest->createRequest($url, 'POST', $params);
-    } else {
-        $rest->createRequest($url);
-        $url = $rest->getUrl();
-        $url->setQueryVariables($params);
-    }
-    if ($platform === "juhuasuan" && isset($_SESSION['JSESSIONID']))
-    {
-        $req = $rest->getHttpRequest();
-        $req->addCookie("JSESSIONID", $_SESSION['JSESSIONID']);
-    }
-    $rest->sendRequest();
-    $response = $rest->getResponse();
-
-    return $response;
-}
-
-function admin_tidy_ugly_json($response, $platform)
-{
-    $response = tidy_ugly_json($response, $platform);
-    $response = strip_tags($response);
-    $response = preg_replace('/\t/','',$response);
-
-    return $response;
 }
 ?>
