@@ -3,47 +3,42 @@
 <head>
 <title>来趣客服搜索系统</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link href="css/search.css" rel="stylesheet" type="text/css" />
+<link href="./search.css" rel="stylesheet" type="text/css" />
 <link href="../css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
-<link href="css/simplemodal.css" rel="stylesheet" type="text/css" />
-<link href="css/check_content_css.css" rel="stylesheet" type="text/css" />
 <!--@import "../../media/css/demo_page.css";-->
+</head>
+<body>
 <script src="../js/jquery.min.js"></script>
 <script src="../js/jquery.form.js"></script>
 <script src="../js/jquery.dataTables.min.js"></script>
-<script src="../js/jquery.simplemodal.js"></script>
-<script src="js/search.js"></script>
-</head>
-<body>
-<div class="check_page_2">
-	<div class="banner_bg">
-    	<div class="banner">
-            <div class="check_logo_2"><img src="images/check_logo_2.jpg" />
-            </div>
-            <div class="search_bg">
-                <form action="doSearch.php" id=search_form method="get" accept-charset="utf-8">
-                    
-                     <input class="check_input" type="text" name="search_content" id="search_content" value="" placeholder='订单号,手机号'>
-                     <!-- 目前只支持聚划算 -->
-                     <input type="hidden" name="platform" id="platform" value="juhuasuan">
-                    <a class="check_button" href="javascript:void(0);" id="submit_search"><img src="images/search_button.jpg" /></a>
-                </form>
-            </div>
-        </div>
-    </div>
-
+<script src="./search.js"></script>
+<div class="main" id="main">
     <div id="search_loading_bar"></div>
+    <div id="search_box">
+        <form action="doSearch.php" id=search_form method="get" accept-charset="utf-8">
+            
+             <input type="text" name="search_content" id="search_content" value="" placeholder='订单号,手机号'>
+             <!-- 目前只支持聚划算 -->
+             <input type="hidden" name="platform" id="platform" value="juhuasuan">
+             &nbsp;<input type="submit" id="submit_search" value="查询">
+        </form>
+    </div>
     <div id="search_table_container">
         <table cellpadding="0" cellspacing="0" border="0" style='display:none;' class="display" id="search_result_table" width="100%">
         </table>
     </div>
     <div id="msg_area"></div>
-
-    <input type=hidden id="search_content_from_request" value="<?php echo $_REQUEST['search_content']; ?>">
-    <input type=hidden id="username" value="<?php echo $_SESSION['staff_info']['username']; ?>">
-    <input type=hidden id="role" value="<?php echo $_SESSION['staff_info']['role']; ?>">
 </div>
 <script type="text/javascript" charset="utf-8">
+var options = {
+       beforeSubmit: beforeSearchCoupon,
+       success: parseSearchResponse,
+       dataType: 'json',
+       type: 'POST'
+};
+$("#search_form").ajaxForm(options);
+
+
 function beforeSearchCoupon()
 {
     toggle_search_bar_loading();
@@ -82,35 +77,17 @@ function parseSearchResponse(responseText, statusText, xhr, $form) {
             }
         } else {
             $("#search_result_table").css('display', 'none');
-            $("#msg_area").html("查询失败,失败原因:" + jsonResponse.msg);
+            $("#msg_area").html("模板添加失败,失败原因:" + jsonResponse.msg);
         }
 }
 //events binds
-$("#submit_search").click(function() {
-   if ($.trim($("#search_content").val()) === "")
-   {
-       $("#msg_area").text("请输入查询条件");
-       return false;
-   }
-    var options = {
-           beforeSubmit: beforeSearchCoupon,
-           success: parseSearchResponse,
-           dataType: 'json',
-           type: 'POST'
-    };
-   $("#search_form").ajaxSubmit(options);
-   return false;
-});
 $("#search_content").keydown(function(event) {
-    // 13 means enter key, must preventDefault
+    // 13 means enter key
     if (event.keyCode === 13)
     {
-       event.preventDefault();
        $("#submit_search").trigger('click'); 
     }
 });
-// 页面的初始化操作
-page_init();
 </script>
 </body>
 </html>

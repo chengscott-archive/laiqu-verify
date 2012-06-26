@@ -241,7 +241,6 @@ function is_admin_login_success($response, $platform)
             $result = true;
         }
     }
-
     return $result;
 }
 

@@ -166,7 +166,7 @@ $totalPages = cal_totalPages($couponTotalNums, TABLE_ROW_NUMS);
                             <div class='item6 fl$oddClass'>
                             <a class='table_item_text' >";
                     $htmlCouponList .= date('Y-m-d',$consumeCoupon['consumeTime']).
-                                      "<br />".date('h:i:s',$consumeCoupon['consumeTime'])."</a> </div> </div>";
+                                      "<br />".date('H:i:s',$consumeCoupon['consumeTime'])."</a> </div> </div>";
                 }
                 echo $htmlCouponList;
             ?>
