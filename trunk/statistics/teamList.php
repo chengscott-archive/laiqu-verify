@@ -2,6 +2,7 @@
 require_once('../common/checkAuthority.php');
 require_once('../common/include/errorCatcher.php');
 require_once('../module/Coupon.php');
+require_once('../module/Order.php');
 require_once('../module/Team.php');
 require_once('../common/common.php');
 
@@ -19,9 +20,9 @@ $start = ($page-1)*TABLE_ROW_NUMS;
 $team = new Team();
 
 $searchFields = array(
-    'partnerId' => $partnerId);
+    'shop' => $_SESSION['title']);
 $teamList = $team->get_teams($searchFields, $start, TABLE_ROW_NUMS);
-$teamNums = $team->get_teamNums($searchFields);
+$teamNums = $team->get_select_nums($searchFields);
 $totalPages = cal_totalPages($teamNums, TABLE_ROW_NUMS);
 
 ?>
@@ -89,10 +90,10 @@ $totalPages = cal_totalPages($teamNums, TABLE_ROW_NUMS);
                 <p class="table_title_text">日期</p>
                 </div>
                 <div class="t1 fl">
-                <p class="table_title_text">消费次数</p>
+                <p class="table_title_text">订单数</p>
                 </div>
                 <div class="t1 fl">
-                <p class="table_title_text">团购价</p>
+                <p class="table_title_text">消费次数</p>
                 </div>
                 <div class="t4 fl">
                 <p class="table_title_text">操作</p>
@@ -114,10 +115,18 @@ $totalPages = cal_totalPages($teamNums, TABLE_ROW_NUMS);
                     else
                         $oddEvenClass = '';
 
+                    // 查询当前项目订单数
+                    $searchFields = array(
+                        'platform_key' => $platformKey,
+                        'platform_product_id' => $productId
+                    );
+                    $orderObj = new Order();
+                    $orderNums = $orderObj->get_select_nums($searchFields);
                     // 查询项目当前销券次数
                     $searchFields = array(
-                        'partnerId' => $partnerId,
-                        'teamId' => $teamId);
+                        'platform_key' => $platformKey,
+                        'platform_product_id' => $productId,
+                        'operation_type' => '兑换');
                     $couponObj = new Coupon();
                     $consumedCoupontimes = $couponObj->get_consumedCoupontimes($searchFields);
                     
@@ -135,24 +144,34 @@ $totalPages = cal_totalPages($teamNums, TABLE_ROW_NUMS);
                         </div> <div class='item4 fl{$oddEvenClass}'>
                         <a class='table_item_text' >";
                         $beginTimeString = $endTimeString = $nullDataString;
-                        if ($beginTime >0) $beginTimeString = date('Y-m-d',$beginTime);
-                        if ($endTime >0) $endTimeString = date('Y-m-d',$endTime);
+                        if ($createDate >0) $beginTimeString = date('Y-m-d',$createDate);
+                        if ($expireTime >0) $endTimeString = date('Y-m-d',$expireTime);
                     $htmlTeamList .= $beginTimeString.'<br />'.$endTimeString;
                     $htmlTeamList .="</a></div>
-                        <div class='item1 fl{$oddEvenClass}'>
-                        <a class='table_item_text' >{$consumedCoupontimes}</a>
+                        <div class='item6 fl{$oddEvenClass}'>
+                        <a class='table_item_text' >{$orderNums}</a>
                         </div>
                         <div class='item6 fl{$oddEvenClass}'>
-                        <a class='table_item_text' >￥{$teamPrice}";
-                    if ($marketPrice > 0) $htmlTeamList .="<br />￥{$marketPrice}";
-                    $htmlTeamList.="</a>
+                        <a class='table_item_text' >{$consumedCoupontimes}</a>
                         </div>
                         <div class='item7 fl{$oddEvenClass}'>
                             <div class='n_1'>
-                            <a class='table_item_text xf'  href='consumedCoupons.php?teamId={$teamId}&platform={$platformKey}&fromTeamPage={$page}'>查看销券列表</a><p class='table_item_text fl_line'></p></div>
+                            <a class='table_item_text xf'  
+                                href='orderList.php?teamId={$teamId}&platform={$platformKey}&fromTeamPage={$page}&productid={$productId}&title={$teamTitle}&ordernums={$orderNums}'>
+                                查看订单列表
+                            </a>
+                            <p class='table_item_text fl_line'></p>
+                            </div>
+                            <div class='n_1'>
+                            <a class='table_item_text xf'  
+                                href='consumedCoupons.php?teamId={$teamId}&platform={$platformKey}&fromTeamPage={$page}&productid={$productId}&title={$teamTitle}&consumetimes={$consumedCoupontimes}'>
+                                查看销券列表
+                            </a>
+                            <p class='table_item_text fl_line'></p>
+                            </div>
                             <br /><br />
                         <div class='n_2'>
-                        <a class='table_item_text xz'  href='teamToExcel.php?teamid={$teamId}'>导出Excel</a> 
+                        <a class='table_item_text xz'  href='teamToExcel.php?productid={$productId}&platform={$platformKey}&producttitle={$teamTitle}'>导出Excel</a> 
                         <a class='table_item_text'  href='javascript:void(0);' style='display:none;'> ! 统计</a>
                             </div></div></div>";
                 }

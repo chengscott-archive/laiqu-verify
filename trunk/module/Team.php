@@ -40,7 +40,7 @@ class Team extends MyTable
             $$fieldKey = is_string($fieldValue)?mysql_real_escape_string($fieldValue): $fieldValue;
         }
 
-        if ($partnerId <= 0)
+        if ((isset($partnerId) && $partnerId <= 0) || (isset($shop) && $shop === ""))
         {
             throw new Exception(
                   CommonCodeMsg::get_message(CommonCodeMsg::INVALID_ARGUMENT_ERROR),
@@ -49,13 +49,21 @@ class Team extends MyTable
         if ($start < 0) $start = 0;
         if ($offset <= 0) $offset = 4;
 
-        $select = "select t.id as teamId, t.title as teamTitle, p.title as platformTitle, t.begin_time as beginTime,";
-        $select .= "t.end_time as endTime, t.now_num as nowNum, t.min_num as minNum, t.team_price as teamPrice,";
-        $select .= "t.market_price as marketPrice, t.platform_key as platformKey,";
-        $select .= "t.expire_time as expireTime, t.state";
+        $select = "select t.id as teamId, t.title as teamTitle, p.title as platformTitle, t.create_date as createDate,";
+        $select .= "t.expire_time as expireTime, t.now_num as nowNum, t.min_num as minNum, t.team_price as teamPrice,";
+        $select .= "t.market_price as marketPrice, t.platform_key as platformKey, t.state,";
+        $select .= "t.platform_record_id as productId";
         $select .= ' from '.self::DBDATABASE.'.'.self::TEAM_TABLE.' t,'.self::DBDATABASE.'.'.self::PLATFORM_TABLE.' p';
-        $sql = $select." WHERE t.partner_id=$partnerId AND t.platform_key=p.key ";
-        $sql .= "order by t.state desc,t.expire_time desc,t.id desc ";
+        $sql = $select." WHERE t.platform_key=p.key ";
+        if (isset($partnerId) && $partnerId > 0)
+        {
+            $sql .= "AND t.partner_id=$partnerId ";
+        }
+        if (isset($shop) && $shop !== "")
+        {
+            $sql .= "AND t.shop='$shop' ";
+        }
+        $sql .= "AND 1=1 order by t.state desc,t.expire_time desc,t.id desc ";
         $sql .= "LIMIT $start,$offset ";
 
         $result = mysql_query($sql);

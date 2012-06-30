@@ -65,11 +65,54 @@ class MyTable
         $this->_tablename = $tableName;
     }
 
-    // todo: 
-    public function get_row($conditions)
+    public function get_select_result($conditions, $start = 0, $offset = -1, $tableName = "")
     {
         $this->assure_dbConnection();
 
+        $selectSql = $this->get_select_sql($conditions,$start, $offset, $tableName);
+        $result = mysql_query($selectSql);
+        return $result;
+    }
+
+    public function get_select_rows($conditions, $start = 0, $offset = -1, $tableName = "")
+    {
+        $this->assure_dbConnection();
+
+        $selectSql = $this->get_select_sql($conditions,$start, $offset, $tableName);
+        $result = mysql_query($selectSql);
+
+        $rows = array();
+        while($orderRow = mysql_fetch_assoc($result))
+        {
+            array_push($rows, $orderRow);
+        }
+        return $rows;
+    }
+    public function get_select_nums($conditions, $tableName = "")
+    {
+        $nums = 0;
+        $this->assure_dbConnection();
+        $selectSql = $this->get_select_sql($conditions, 0, -1, $tableName);
+        $selectSql = str_replace('*', 'count(*) as nums', $selectSql);
+        $result = mysql_query($selectSql);
+        $row = mysql_fetch_assoc($result);
+
+        if ($row)
+        {
+            $nums = $row['nums'];
+        }
+        return $nums;
+    }
+
+    public function get_select_sql($conditions, $start, $offset,$tableName = "")
+    {
+        if ($tableName === "" && $this->_tablename === "")
+        {
+            return "";
+        } else if ($tableName === "")
+        {
+            $tableName = $this->_tablename;
+        }
         $selectSql = "SELECT * FROM ".$this->get_dbTableName($this->_tablename)." WHERE 1=1 ";
         foreach ($conditions as $key => $value)
         {
@@ -82,7 +125,21 @@ class MyTable
             }
             $selectSql .= "AND ".$key."=".$value;
         }
-        $result = mysql_query($selectSql);
+        if ($start > 0 && $offset === -1) {
+            $selectSql .= " LIMIT $start";
+        }
+        elseif ($start >= 0 && $offset > 0)
+        {
+           $selectSql .= " LIMIT $start,$offset"; 
+        }
+        return $selectSql;
+    }
+    // todo: 
+    public function get_row($conditions, $tableName = "")
+    {
+        $this->assure_dbConnection();
+
+        $result = $this->get_select_result($conditions, $tableName);
         if ($result && mysql_num_rows($result) > 0)
         {
             return mysql_fetch_array($result);

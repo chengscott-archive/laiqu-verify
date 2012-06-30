@@ -90,12 +90,26 @@ else if (isset($_REQUEST['action']) && $_REQUEST['action'] === 'julogin' && $pla
     exit; 
 }
 
-$responseCode = doVerifyCoupon($_REQUEST);
 $couponId = $_REQUEST['couponId'];
 if ($platform === 'juhuasuan')
 {
     $consumed_times = $_REQUEST['consumeCount'];
+} else {
+    $consumed_times = 1;
 }
+// 商户名,同步的数据没有partnerid
+$partnerTitle = $_SESSION['title'];
+// 检查团购券能否被验证
+$checkResult = check_coupon_available($partnerTitle, $platform, $couponId, $consumed_times);
+
+// 检查团购券失败
+if ($checkResult !== true)
+{
+    echo VerifyCoupon::gen_response_json($checkResult);
+    exit;
+}
+
+$responseCode = doVerifyCoupon($_REQUEST);
 
 // 登陆超期，则自动重新登陆
 if ($responseCode === VerifyCouponCodeMsg::JUHUASUAN_LOGIN_EXPIRED)
@@ -115,7 +129,8 @@ if ($responseCode === VerifyCouponCodeMsg::JUHUASUAN_LOGIN_EXPIRED)
 
 if ($responseCode === VerifyCouponCodeMsg::VERIFY_COUPON_SUCCESS)
 {
-    if (!record_consumed_coupon($couponId, $platform, $consumed_times))
+    // if (!record_consumed_coupon($couponId, $platform, $consumed_times))
+    if (!sync_coupons($platform))
     {
         $responseCode = VerifyCouponCodeMsg::RECORD_COUPON_FAILED_ERROR;
     }
@@ -125,8 +140,7 @@ if ($responseCode === VerifyCouponCodeMsg::RECORD_COUPON_FAILED_ERROR)
     $response = VerifyCoupon::gen_response_json(
             VerifyCouponCodeMsg::RECORD_COUPON_FAILED_ERROR,
             "ErrorCode: ".VerifyCouponCodeMsg::RECORD_COUPON_FAILED_ERROR." 平台:".$platform."编号为".$couponId."的已消费的团购券在本地登记失败!");
-}
-else {
+} else {
     $response = VerifyCoupon::gen_response_json($responseCode);
 }
 $responseWithCouponInfo = addCouponInfoToVerifyResponse($response, $couponId, $platform, $consumed_times);

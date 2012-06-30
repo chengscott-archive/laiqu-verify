@@ -57,6 +57,8 @@ class VerifyCouponCodeMsg
     const VERIFY_COUPON_SUCCESS = 21000;
     const VERIFY_COUPON_FAIL = 210001;
     const COUPON_NOT_EXIST = 210002;
+    const COUPON_EXPIRED = 210003;
+    const CONSUME_TIMES_NOT_ENOUGH = 210004;
     // 2xxxx: Error - server side error before and after API is called
     const UNKNOWN_PLATFORM_ERROR = 21100;
     const TRANSFER_REQUEST_PARAM_ERROR = 21102;
@@ -78,6 +80,8 @@ class VerifyCouponCodeMsg
         self::VERIFY_COUPON_SUCCESS => "验证成功",
         self::VERIFY_COUPON_FAIL => "验证失败",
         self::COUPON_NOT_EXIST => "团购券不存在",
+        self::COUPON_EXPIRED => "团购券已过期",
+        self::CONSUME_TIMES_NOT_ENOUGH => "团购券可消费次数不足",
         self::UNKNOWN_PLATFORM_ERROR => "未知平台错误",
         self::TRANSFER_REQUEST_PARAM_ERROR => "将客户端输入转为API请求参数错误",
         self::REQUEST_EXCEPTION => "接口验证API异常",

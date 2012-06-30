@@ -7,7 +7,7 @@
 .search{ width:609px; height:26px; margin-left:6px; margin-top:6px;}
 *html .search{ width:609px; height:26px; margin-top:-3px; float:right;}
 .search_text{ margin-top:2px;}
-.back_text{ margin-right:140px;  color:#C00; font-size:14px;}
+.back_text{ margin-right:0px;  color:#C00; font-size:14px;}
 *html  .back_text{ margin-right:132px; color:#C00; font-size:14px;}
 .back_text:link{ text-decoration:none;}
 
@@ -17,22 +17,22 @@
 .search_button { margin-left:3px;}
 
 .cell_h{ height:80px;}
-.t1{height:40px; width:60px;}
+.t1{height:40px; width:70px;}
 .t2{ height:40px; width:158px;}
-.t3{ height:40px; width:80px;}
+.t3{ height:40px; width:100px;}
 .t4{ height:40px; width:140px;}
-.t5{ height:40px; width:100px;}
+.t5{ height:40px; width:140px;}
 .table_title_text{ text-align:center; margin-top:11px;}
 
-.item1{ height:80px; width:60px; border-left:1px solid #FFF; border-top:1px solid #FFF; border-bottom:1px solid #FFF; display:table;  }
+.item1{ height:80px; width:65px; border-left:1px solid #FFF; border-top:1px solid #FFF; border-bottom:1px solid #FFF; display:table;  }
 *html .item1{padding-top:30px; padding-left:8px;}
 .item2{ height:80px; width:158px; border-left:1px solid #FFF; border-top:1px solid #FFF; border-bottom:1px solid #FFF; display:table;}
 *html .item2{padding-top:12px; padding-left:8px;}
-.item3{ height:80px; width:80px; border-left:1px solid #FFF; border-top:1px solid #FFF; border-bottom:1px solid #FFF; display:table;}
+.item3{ height:80px; width:100px; border-left:1px solid #FFF; border-top:1px solid #FFF; border-bottom:1px solid #FFF; display:table;}
 *html .item3{padding-top:30px; padding-left:8px;}
 .item4 {height:80px; width:140px; border-left:1px solid #FFF; border-top:1px solid #FFF; border-bottom:1px solid #FFF; display:table;}
 *html .item4{padding-top:22px; padding-left:5px;}
-.item6{height:80px; width:100px; border-left:1px solid #FFF; border-top:1px solid #FFF;  border-bottom:1px solid #FFF; display:table; }
+.item6{height:80px; width:140px; border-left:1px solid #FFF; border-top:1px solid #FFF;  border-bottom:1px solid #FFF; display:table; }
 *html .item6{padding-top:22px; padding-left:5px;}
 
 .item_bg{ background-color:dddfe1;}
@@ -42,6 +42,8 @@
 
 
 .page_turn{ float:right; margin-right:20px; margin-top:8px; margin-bottom:10px;}
+.bottom_info{ float:left; margin-left:20px; margin-top:8px; margin-bottom:10px; color:#3C2BEE;}
+#search_action_bar{float:right;margin-right: 2px;}
 
 
 
