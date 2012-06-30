@@ -4,8 +4,8 @@ $(document).ready(function(){
     var msgCouponId = "请在左边输入框中输入相应的券号。";
     var msgConsumeCount = "请在左边输入框中输入销券次数。";
     var msgValidateCodeConsumeCount = "请在左边输入框中输入券号和消费次数。";
-    var msgSuccess = "验证成功！<br/>消费时间: "; 
-    var msgFailed  = "验证失败！<br/>失败原因: 券信息错误或已被使用。";
+    var msgSuccess = "验证成功！<br/>消费时间："; 
+    var msgFailed  = "验证失败！<br/>失败原因：";
 
     var couponIdValue = "券号";
     var couponPwdValue = "密码";
@@ -151,7 +151,7 @@ $(document).ready(function(){
         });
 
         $("#couponPwd").focusin(function() {
-            init_verifyResultBox($("#platform").val());            
+            init_verifyResultBox($("#platform").val());          
             if ( $(this).val() == couponPwdValue)
             {
                 $(this).val("");
@@ -181,11 +181,12 @@ $(document).ready(function(){
         {
             $("#imageResponse").removeClass("result_w").addClass("result_r").show();
 
-            var responseMsg = "所属项目:  " + response.teamTitle + "<br />";
-            responseMsg += "团购券号:  "+$("#couponId").val() + "  " + msgSuccess + response.dateTime + "<br />";
-            responseMsg += '销券情况: 查看请点击 ';
+            var responseMsg = "所属项目：" + response.teamTitle + "<br />";
+            responseMsg += "团购券号："+$("#couponId").val() + "&nbsp;消费"+$('#consumeCount').val()+"次<br />";
+            responseMsg += "购买数量："+ response.purchaseNums + "份&nbsp;&nbsp;剩余数量："+ response.remainNums+"份<br />";
+            responseMsg += '销券情况：查看请点击 ';
             responseMsg += "<a href='"+http_host+"/statistics/consumedCoupons.php?";
-            responseMsg += "teamId=" + response.teamId + "&platform="+response.platform + "&fromTeamPage=1'";
+            responseMsg += "productid=" + response.productId + "&platform="+response.platform + "&fromTeamPage=1&title="+response.teamTitle+"'";
             responseMsg += " target='_blank'>销券列表</a>";
             $("#msgResponse").html(responseMsg);
             cleanup_after_submit();
@@ -196,7 +197,7 @@ $(document).ready(function(){
         //}
         else {
             $("#imageResponse").removeClass("result_r").addClass("result_w").show();
-            $("#msgResponse").html("团购券:  "+$("#couponId").val() + "  "+msgFailed);
+            $("#msgResponse").html("团购券："+$("#couponId").val() + "  "+msgFailed + response.msg);
         }
     }
 

@@ -67,4 +67,12 @@ function get_pageNavHtml($page, $totalPages, $urlPrefix, $showPagesNums = 11)
     }
     return $pageNavHtml;
 }
+
+/**
+ * set date timezone before use date functions
+ */
+function set_date_timezone()
+{
+    date_default_timezone_set('Asia/Shanghai');
+}
 ?>

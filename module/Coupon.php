@@ -64,13 +64,12 @@ class Coupon extends MyTable
     public function get_consumedCoupontimes($searchFields)
     {
         $this->assure_dbConnection();
-        $sql = $this->gen_couponSearchSql($searchFields);
+        $result = $this->get_select_result($searchFields);
 
         $consumedtimes = 0;
-        $result = mysql_query($sql);
         while($couponRow = mysql_fetch_assoc($result))
         {
-            $consumedtimes += $couponRow['consumeTimes'];
+            $consumedtimes += $couponRow['consume_times'];
         }
         return $consumedtimes;
     }    
@@ -82,11 +81,11 @@ class Coupon extends MyTable
             $$fieldKey = is_string($fieldValue)?mysql_real_escape_string($fieldValue): $fieldValue;
         }
 
-        $select = "select c.order_id as orderId, t.title as teamTitle, c.id as couponId,";
+        $select = "select c.order_id as orderId, t.title as teamTitle, c.id as couponId, c.platform_order_id as platformOrderId, c.operation_type as operationType, c.taobao_id as taobaoId,";
         $select .= "u.username as username, u.email as email, o.subbranch as subbranch, c.consume_time as consumeTime,c.consume_times as consumeTimes,c.platform_coupon_id as platformCouponId,c.consumer_mobile as consumerMobile";
         $select .= ' from '.self::DBDATABASE.'.'.self::TEAM_TABLE.' t,'.self::DBDATABASE.'.'.self::ORDER_TABLE.' o,';
         $select .= self::DBDATABASE.'.'.self::COUPON_TABLE.' c left join '.self::DBDATABASE.'.'.self::USER_TABLE.' u on c.user_id=u.id';
-        $sql = $select." WHERE c.consume='Y' ";
+        $sql = $select." WHERE operation_type='兑换' ";
         if (count($searchFields) > 0)
         {
             if (isset($partnerId) && $partnerId > 0)
@@ -96,13 +95,23 @@ class Coupon extends MyTable
             if (isset($platform) && !empty($platform))
                 $sql .= " AND c.platform_key='$platform'";
             if (isset($orderId) && $orderId > 0)
-                $sql .= " AND c.order_id=$orderId";
+            {
+                if ($platform === "juhuasuan"){
+                    $sql .= " AND c.taobao_id=$orderId";
+                }
+                else {
+                    $sql .= " AND c.platform_order_id=$oderId";
+                }
+
+            }
             if (isset($couponId) && $couponId > 0)
                 $sql .= " AND c.platform_coupon_id=$couponId";
             if (isset($mobile) && !empty($mobile))
                 $sql .= " AND c.consumer_mobile='$mobile'";
+            if (isset($productId) && !empty($productId))
+                $sql .= " AND c.platform_product_id='$productId'";
         }
-        $sql .= " AND t.id=c.team_id AND o.id=c.order_id ";//AND u.id=c.user_id";
+        $sql .= " AND t.platform_record_id=c.platform_product_id AND o.platform_record_id=c.platform_order_id ";
         // group and order
         $sql .= " order by c.consume_time desc";
         if ($start > 0 && $offset === -1) {
@@ -112,7 +121,6 @@ class Coupon extends MyTable
         {
            $sql .= " LIMIT $start,$offset"; 
         }
-
         return $sql;
     }
 

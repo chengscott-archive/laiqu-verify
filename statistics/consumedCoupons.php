@@ -21,11 +21,46 @@ if(isset($_GET['teamId']))
     $_SESSION['teamId'] = $_GET['teamId'];
 }
 $teamId = isset($_SESSION['teamId'])? $_SESSION['teamId']: 0;
+if(isset($_GET['productid']))
+{
+    $_SESSION['productId'] = $_GET['productid'];
+}
+$productId = isset($_SESSION['productId'])? $_SESSION['productId']: 0;
 if(isset($_GET['platform']))
 {
     $_SESSION['platform'] = $_GET['platform'];
 }
 $platform = isset($_SESSION['platform'])? $_SESSION['platform']: '';
+// 项目标题
+if(isset($_GET['title']))
+{
+    $_SESSION['productTitle'] = $_GET['title'];
+} elseif (!isset($_SESSION['productTitle']))
+{
+    $teamObj = new Team();
+    $params = array(
+        "platform" => $platform
+    );
+    if ($teamId > 0)
+    {
+        $params['id'] = $teamId;
+    }
+    if ($productId !== "")
+    {
+        $params['platform_record_id'] = $productId;
+    }
+    $teamRow = $teamObj->get_row($params);
+    $_SESSION['productTitle'] = $teamRow['title'];
+}
+$productTitle = isset($_SESSION['productTitle'])? $_SESSION['productTitle']: '';
+
+// 计算总消费次数
+$searchFields = array(
+    'platform_key' => $platform,
+    'platform_product_id' => $productId,
+    'operation_type' => '兑换');
+$couponObj = new Coupon();
+$consumeTimes = $couponObj->get_consumedCoupontimes($searchFields);
 
 $orderId = isset($_GET['orderId'])? $_GET['orderId']: 0;
 $couponId = isset($_GET['couponId'])? $_GET['couponId']: 0;
@@ -39,12 +74,13 @@ $start = ($page-1)*TABLE_ROW_NUMS;
 $coupon = new Coupon();
 
 $searchFields = array(
-    'partnerId' => $partnerId,
-    'teamId' => $teamId,
+    // 'partnerId' => $partnerId,
+    // 'teamId' => $teamId,
     'platform' => $platform,
     'orderId' => $orderId,
     'couponId' => $couponId,
-    'mobile' => $mobile);
+    'mobile' => $mobile,
+    'productId' => $productId);
 $couponList = $coupon->get_consumedCoupons($searchFields, $start, TABLE_ROW_NUMS);
 $couponTotalNums = $coupon->get_consumedCouponNums($searchFields);
 $totalPages = cal_totalPages($couponTotalNums, TABLE_ROW_NUMS);
@@ -99,7 +135,8 @@ $totalPages = cal_totalPages($couponTotalNums, TABLE_ROW_NUMS);
             <div class="title_line"></div>
             
           	<div class="search" >
-            <a class="back_text fl" href="teamList.php?page=<?php echo $fromTeamPage; ?>">返回</a>
+            <a class="back_text fl" href="teamList.php?page=<?php echo $fromTeamPage; ?>"><?php echo $productTitle; ?></a>
+            <span id='search_action_bar'>
             <p class="search_text fl">订单号</p>            
             <input class="orderId fl" name="" id="orderIdSearch" value=""/>
             
@@ -110,7 +147,7 @@ $totalPages = cal_totalPages($couponTotalNums, TABLE_ROW_NUMS);
             <input class="Username fl" name="" id="mobileSearch" value=""/>    
             
             <a class="search_button fl" type="" value="" name="" id="searchCoupon" href="javascript:void(0);"><img src="../images/search.jpg" /></a>        
-            
+            </span> 
             </div>
            
             
@@ -118,11 +155,8 @@ $totalPages = cal_totalPages($couponTotalNums, TABLE_ROW_NUMS);
                 
             <div class="table">
 				<div class="table_title">
-                <div class=" t1 fl">
-                <p class="table_title_text">订单号</p>
-                </div>
                 <div class="t2 fl">
-                <p class="table_title_text">项目名称</p>
+                <p class="table_title_text">订单号</p>
                 </div>
                 <div class="t3 fl">
                 <p class="table_title_text">券号</p>
@@ -148,12 +182,14 @@ $totalPages = cal_totalPages($couponTotalNums, TABLE_ROW_NUMS);
                     else
                         $oddClass = "";
                     $htmlCouponList .= "<div class='table_item_1' id='couponRowWrap_{$i}'>
-                            <div class='item1 fl$oddClass'>
-                                <a class='table_item_text '>{$consumeCoupon['orderId']}</a>
-                            </div>
-                            <div class='item2 fl$oddClass'>
-                            <a class='table_item_text' >{$consumeCoupon['teamTitle']}</a>
-                            </div>
+                            <div class='item2 fl$oddClass'>";
+                    if ($platform === "juhuasuan")
+                    {
+                        $htmlCouponList .= "<a class='table_item_text' >{$consumeCoupon['taobaoId']}</a>";
+                    } else {
+                        $htmlCouponList .= "<a class='table_item_text' >{$consumeCoupon['platformOrderId']}</a>";                       
+                    }
+                    $htmlCouponList .= "</div>
                             <div class='item3 fl$oddClass'>
                             <a class='table_item_text' >{$consumeCoupon['platformCouponId']}</a>
                             </div>
@@ -176,8 +212,11 @@ $totalPages = cal_totalPages($couponTotalNums, TABLE_ROW_NUMS);
             <input type='hidden' id='orderId' <?php if ($orderId >0) echo "value=".$orderId; ?> />
             <input type='hidden' id='couponId' <?php if ($couponId >0) echo "value=".$couponId; ?> />
             <input type='hidden' id='mobile' <?php if ($mobile !=='') echo "value='".$mobile."'"; ?> />
-            <input type='hidden' id='consumedCouponNums' <?php echo "value=".$consumedCouponNums; ?> />
             
+        <div class="bottom_info">
+            总消费次数:<?php echo $consumeTimes; ?>
+            <span style="margin-left:136px;">总页数:<?php echo $totalPages; ?>&nbsp;&nbsp;当前页:<?php echo $page; ?></span>
+        </div>
         <div class="page_turn">
             <a class="turn_text fl" href="javascript:void(0);" id='goPrevPage'> 上一页 </a>
                 <div class="page fl">

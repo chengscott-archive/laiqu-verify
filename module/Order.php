@@ -74,5 +74,19 @@ class Order extends MyTable
         return $orderInfo;
     }
 
+    public function get_consumedCoupontimes($searchFields)
+    {
+        $this->assure_dbConnection();
+        $sql = $this->gen_couponSearchSql($searchFields);
+
+        $consumedtimes = 0;
+        $result = mysql_query($sql);
+        while($couponRow = mysql_fetch_assoc($result))
+        {
+            $consumedtimes += $couponRow['consumeTimes'];
+        }
+        return $consumedtimes;
+    }    
+
 }
 ?>
