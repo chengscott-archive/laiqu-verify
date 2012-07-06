@@ -12,7 +12,7 @@
 // 验证商户号码绑定 http://host:port/laiqu/cpapi/telapi.php?action=check-partner&callerid=18858260247
 // 绑定商户号码 http://host:port/laiqu/cpapi/telapi.php?action=bind-partner&callerid=18858260248&acct=87654321
 // 解除绑定商户号码 http://host:port/laiqu/cpapi/telapi.php?action=unbind-partner&callerid=18858260248
-// 消费 http://xxxxx/laiqu/cpapi/telapi.php?action=consume&callerid=88888888&num=1234567
+// 消费 http://xxxxx/laiqu/cpapi/telapi.php?action=consume&callerid=88888888&num=1234567&platform=juhuasuan
 require 'cp_init.php';
 
 function runtimeErrorHandler($errno, $errstr, $errfile, $errline)
@@ -51,20 +51,29 @@ if($action=='consume')
     $platform = addslashes(trim($_REQUEST['platform']));  //平台
 
     // 根据来电电话获得商户验证号,再去获得partner_id
-    $partnerSql = "SELECT p.id as partner_id,p.partner_acct,pp.p_terminalid FROM ".$mysql->get_dbTableName("partner")." p,".$mysql->get_dbTableName("partner_platforms")." pp,";
+    $partnerSql = "SELECT p.id as partner_id,p.partner_acct,pp.p_terminalid, p.title FROM ".$mysql->get_dbTableName("partner")." p,".$mysql->get_dbTableName("partner_platforms")." pp,";
     $partnerSql .= $mysql->get_dbTableName("partner_bind")." pb ";
     $partnerSql .= " WHERE p.partner_acct=pb.partner_acct and pb.phonenum='$callerid' and p.id=pp.partner_id and pp.platform_key='".$platform."' and pp.status=1";
     $partnerResult = $mysql->query($partnerSql);
-    if (!$partnerResult && mysql_num_rows($partnerSql) > 0)
+    if (!$partnerResult || mysql_num_rows($partnerResult) < 1)
     {
         echo gen_response(PARTNER_OR_PLATFORM_BIND);
         exit;
     } else {
-        $partnerRow = mysql_fetch_array($partnerResult);
+        $partnerRow = mysql_fetch_assoc($partnerResult);
+        $partnerTitle = $partnerRow['title'];
         $partnerId = $partnerRow['partner_id'];
         $partnerAcct = $partnerRow['partner_acct'];
         $terminalId = $partnerRow['p_terminalid'];
     }    
+
+    // 检查券是否有效
+    $checkResult = check_coupon_available($partnerTitle, $platform, $couponId, $consumeTimes);
+    if ($checkResult !== true)
+    {
+        echo gen_response($checkResult);
+        exit;
+    }
 
     $loginResult = do_loginPlatform($platform,$partnerId); // if success, juhuasuan return jsessionid
 
@@ -90,18 +99,14 @@ if($action=='consume')
         $verifyParams['terminalId']=$terminalId;
     }
     $responseCode = doVerifyCoupon($verifyParams);
-    //$responseCode = VerifyCouponCodeMsg::VERIFY_COUPON_SUCCESS;
     if ($responseCode === VerifyCouponCodeMsg::VERIFY_COUPON_SUCCESS)
     {
         $telResponseCode = COUPON_CONSUME_OK;
 
-        $recordParams = array(
-            "couponId" => $couponId,
-            "platform" => $platform,
-            "consumed_times" => $consumeTimes,
-            "partnerId" => $partnerId,
-            "jsessionid" => $jsessionid);
-        record_consumed_coupon($recordParams);
+        // if (!sync_coupons($platform))
+        // {
+        //     $telResponseCode = COUPON_RECORD_FAILED_ERROR;
+        // }
     }
     else {
         $telResponseCode = COUPON_CONSUME_FAILED;

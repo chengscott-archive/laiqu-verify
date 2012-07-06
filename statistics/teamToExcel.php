@@ -42,8 +42,8 @@ $couponResult = $mysql->query($couponSql);
 $m_objPHPExcel->setActiveSheetIndex(0);
 $activeSheet = $m_objPHPExcel->getActiveSheet();
 // $activeSheet->setTitle($productTitle."_订单列表");
-$orderFieldKeys = array("订单号", "券号", "购买者手机号", "交易金额", "购买数量", "剩余数量", "购买时间");
-$orderFieldDataKeys = array("taobao_id", "coupon_id", "receiver_mobile", "payment", "purchase_nums", "remain_nums", "order_create_date");
+$orderFieldKeys = array("订单号", "券号", "购买数量", "剩余数量", "购买时间");
+$orderFieldDataKeys = array("taobao_id", "coupon_id", "purchase_nums", "remain_nums", "order_create_date");
 for ($col = 0; $col < count($orderFieldKeys); $col++)
 {
     $keyCell = $m_objPHPExcel->getActiveSheet()->getCellByColumnAndRow($col, 1);
@@ -81,8 +81,8 @@ $m_objPHPExcel->createSheet(1);
 $m_objPHPExcel->setActiveSheetIndex(1);
 $activeSheet = $m_objPHPExcel->getActiveSheet();
 $activeSheet->setTitle($productTitle."_消费列表");
-$couponFieldKeys = array("订单号", "券号", "购买者手机号", "销券次数", "消费时间");
-$couponFieldDataKeys = array("taobao_id", "platform_coupon_id", "consumer_mobile", "consume_times", "consume_time");
+$couponFieldKeys = array("订单号", "券号", "销券次数", "消费时间");
+$couponFieldDataKeys = array("taobao_id", "platform_coupon_id", "consume_times", "consume_time");
 for ($col = 0; $col < count($couponFieldKeys); $col++)
 {
     $keyCell = $m_objPHPExcel->getActiveSheet()->getCellByColumnAndRow($col, 1);

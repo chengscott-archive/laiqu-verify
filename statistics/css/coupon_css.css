@@ -1,11 +1,11 @@
 .body{ width:775px; min-height:300px; height:auto; overflow:hidden;}
-.body_r{ width:621px; height:auto; background-color:#eef0f2; margin-left:4px; padding-bottom:6px;}
+.body_r{ width:480px; height:auto; background-color:#eef0f2; margin-left:4px; padding-bottom:6px;}
 .title_r{ color:#faad08; margin-left:6px; margin-top:6px; font-size:14px;}
-.title_line{ height:1px; width:609px; margin-left:6px; margin-top:6px; background-image:url(../images/title_line.jpg); background-repeat:repeat-x;}
-.table{ width:609px; margin-left:6px;}
+.title_line{ height:1px; width:470px; margin-left:6px; margin-top:6px; background-image:url(../images/title_line.jpg); background-repeat:repeat-x;}
+.table{ width:470px; margin-left:6px;}
 
-.search{ width:609px; height:26px; margin-left:6px; margin-top:6px;}
-*html .search{ width:609px; height:26px; margin-top:-3px; float:right;}
+.search{ width:470px; height:26px; margin-left:6px; margin-top:6px;}
+*html .search{ width:470px; height:26px; margin-top:-3px; float:right;}
 .search_text{ margin-top:2px;}
 .back_text{ margin-right:0px;  color:#C00; font-size:14px;}
 *html  .back_text{ margin-right:132px; color:#C00; font-size:14px;}
@@ -44,6 +44,8 @@
 .page_turn{ float:right; margin-right:20px; margin-top:8px; margin-bottom:10px;}
 .bottom_info{ float:left; margin-left:20px; margin-top:8px; margin-bottom:10px; color:#3C2BEE;}
 #search_action_bar{float:right;margin-right: 2px;}
+
+.product_title {float:right; margin-right:20px;  color:#C00; font-size:14px;}
 
 
 

@@ -137,12 +137,13 @@ $totalPages = cal_totalPages($orderTotalNums, TABLE_ROW_NUMS);
      	</div>
     
 		<div class="body_r fl">
-            <p class="title_r"i>><a href="teamList.php" style="color:#faad08;">项目列表</a>&nbsp>订单列表</p>
+            <p class="title_r">><a href="teamList.php" style="color:#faad08;">项目列表</a>&nbsp>订单列表
+            <a class="product_title" href="teamList.php?page=<?php echo $fromTeamPage; ?>"><?php echo $productTitle; ?></a>
+            </p>
             
             <div class="title_line"></div>
             
           	<div class="search" >
-            <a class="back_text fl" href="teamList.php?page=<?php echo $fromTeamPage; ?>"><?php echo $productTitle; ?></a>
             <span id='search_action_bar'>
                 <p class="search_text fl">订单号</p>            
                 <input class="orderId fl" name="" id="orderIdSearch" value=""/>
@@ -165,16 +166,17 @@ $totalPages = cal_totalPages($orderTotalNums, TABLE_ROW_NUMS);
                 <div class="t2 fl">
                 <p class="table_title_text">订单号</p>
                 </div>
-                <div class="t3 fl">
+<!--                 <div class="t3 fl">
                 <p class="table_title_text">券号</p>
                 </div>
-                <div class="t4 fl">
+ -->                
+               <!--  <div class="t4 fl">
                 <p class="table_title_text">购买者手机号</p>
-                </div>
-                <div class="t7 fl">
+                </div> -->
+<!--                 <div class="t7 fl">
                 <p class="table_title_text">交易金额</p>
                 </div>
-                <div class="t1 fl">
+ -->                <div class="t1 fl">
                 <p class="table_title_text">购买数量</p>
                 </div>
                 <div class="t1 fl">
@@ -204,15 +206,6 @@ $totalPages = cal_totalPages($orderTotalNums, TABLE_ROW_NUMS);
                         $htmlOrderList .= "<a class='table_item_text' >{$eachOrder['platform_record_id']}</a>";                       
                     }
                     $htmlOrderList .= "</div>
-                            <div class='item3 fl$oddClass'>
-                            <a class='table_item_text' >{$eachOrder['coupon_id']}</a>
-                            </div>
-                            <div class='item4 fl$oddClass'>
-                                <a class='table_item_text' >{$eachOrder['receiver_mobile']}</a>
-                            </div>
-                            <div class='item7 fl$oddClass'>
-                            <a class='table_item_text' >￥{$eachOrder['payment']}</a>
-                            </div>
                             <div class='item1 fl$oddClass'>
                             <a class='table_item_text' >{$eachOrder['purchase_nums']}</a>
                             </div>
@@ -235,7 +228,6 @@ $totalPages = cal_totalPages($orderTotalNums, TABLE_ROW_NUMS);
             
         <div class="bottom_info">
             总订单数:<?php echo $orderNums; ?>
-            <span style="margin-left:230px;">总页数:<?php echo $totalPages; ?>&nbsp;&nbsp;当前页:<?php echo $page; ?></span>
         </div>
         <div class="page_turn">
             <a class="turn_text fl" href="javascript:void(0);" id='goPrevPage'> 上一页 </a>

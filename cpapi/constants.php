@@ -36,6 +36,8 @@ define("COUPON_CONSUME_EXPIRED", 106);  // 团购券已过期
 define("PARTNER_OR_PLATFORM_BIND",107); // 商家没有绑定手机号或平台
 define("PLATFORM_LOGIN_FAILED", 108); // 平台登录失败
 define("PLATFORM_NOT_BIND", 109); //平台未绑定
+define("COUPON_CONSUME_TIMES_NOT_ENOUGH", 110); // 团购券剩余可消费次数不足
+define("COUPON_SYNC_FAILED_ERROR", 111); // 团购券验证后同步失败
 
 // code for supplier
 define("PARTNER_BINDED", 200);    //商家账号已绑定

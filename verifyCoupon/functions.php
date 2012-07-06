@@ -442,7 +442,7 @@ function addCouponInfoToVerifyResponse($response, $couponId, $platform, $consume
     $responseObj->orderId = $orderRow['platform_record_id'];
     $responseObj->consumerMobile = $orderRow['receiver_mobile'];
     $responseObj->purchaseNums = $orderRow['purchase_nums'];
-    $responseObj->remainNums = $orderRow['remain_nums'];
+    $responseObj->remainNums = $orderRow['remain_nums'] - $consumed_times;
     // 获得项目信息
     $team = new Team();
     $params = array('id'=>$orderRow['team_id']);
@@ -472,7 +472,7 @@ function check_coupon_available($partnerTitle, $platform, $couponId, $consumed_t
 
     $selectSql = "SELECT o.* FROM ".$mysql->get_dbTableName('order')." o, ".$mysql->get_dbTableName('team')." t ";
     $selectSql .= "WHERE o.coupon_id='".$couponId."' AND o.platform_key='".$platform."' ";
-    $selectSql .= " AND o.platform_product_id=t.platform_record_id "; //AND t.shop='".$partnerTitle."'";
+    $selectSql .= " AND o.platform_product_id=t.platform_record_id AND t.shop='".$partnerTitle."'";
 
     $result = $mysql->query($selectSql);
 
@@ -486,6 +486,11 @@ function check_coupon_available($partnerTitle, $platform, $couponId, $consumed_t
     if ($orderRow['expire_time'] < $currentDateSecs)
     {
         return VerifyCouponCodeMsg::COUPON_EXPIRED;
+    }
+    // 团购券已被使用
+    if ($orderRow['remain_nums'] == 0)
+    {
+        return COUPON_USED_UP;
     }
     // 团购券可消费次数不足
     if ($orderRow['remain_nums'] < $consumed_times)

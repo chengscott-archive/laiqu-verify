@@ -13,7 +13,7 @@ $password = $_REQUEST['password'];
 
 if (staff_login($username, $password))
 {
-    echo gen_successResp();
+    echo gen_successResp($_SESSION['staff_info']);
 } else {
     echo gen_failResp("用户名和密码不匹配");
 }
