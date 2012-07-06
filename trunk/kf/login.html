@@ -44,7 +44,13 @@
             success: function(data){
                 if (data && data.success === "true")
                 {
-                    window.location = "index.php";
+                    // 财务登陆自己的系统
+                    if (data.data.role === "finance")
+                    {
+                        window.location = "../finance/index.php";
+                    } else {
+                        window.location = "index.php";
+                    }
                 } else {
                     show_login_fail_tip();
                 }

@@ -26,6 +26,7 @@ function gen_response($result)
         COUPON_CONSUME_NOT_EXIST => 'failed',
         COUPON_CONSUME_USED => 'failed',
         COUPON_CONSUME_EXPIRED => 'failed',
+        COUPON_CONSUME_TIMES_NOT_ENOUGH => 'failed',
         PARTNER_BINDED => 'done',
         PARTNER_NOT_BIND => 'failed',
         PARTNER_BIND_OK => 'done',
@@ -505,5 +506,69 @@ function add_double_quote($matches)
 {
     //return $matches[1].'"'.substr($matches[2], 0, -1).'":';
     return $matches[1].'"'.$matches[2].'":';
+}
+
+/**
+ * 根据本地订单数据，检查此次验证的可行性
+ * @param  string $partnerTitle   商户名（同步来的数据没有partner_id)
+ * @param  string $platform       平台
+ * @param  string $couponId       团购券号
+ * @param  int $consumed_times    验证次数
+ * @return int                    成功:true,失败：错误码
+ */
+function check_coupon_available($partnerTitle, $platform, $couponId, $consumed_times)
+{
+    set_date_timezone(); 
+    $currentDateSecs = strtotime(date('Y-m-d'));
+    $mysql = new MyTable();
+
+    $selectSql = "SELECT o.* FROM ".$mysql->get_dbTableName('order')." o, ".$mysql->get_dbTableName('team')." t ";
+    $selectSql .= "WHERE o.coupon_id='".$couponId."' AND o.platform_key='".$platform."' ";
+    $selectSql .= " AND o.platform_product_id=t.platform_record_id AND t.shop='".$partnerTitle."'";
+
+    $result = $mysql->query($selectSql);
+
+    // 团购券不存在
+    if (!$result || mysql_num_rows($result) < 1)
+    {
+        return COUPON_CONSUME_NOT_EXIST;
+    }
+    $orderRow = mysql_fetch_array($result);
+    // 团购券已过期
+    if ($orderRow['expire_time'] < $currentDateSecs)
+    {
+        return COUPON_CONSUME_EXPIRED;
+    }
+    // 团购券已被使用
+    if ($orderRow['remain_nums'] == 0)
+    {
+        return COUPON_CONSUME_USED;
+    }
+    // 团购券可消费次数不足
+    if ($orderRow['remain_nums'] < $consumed_times)
+    {
+        return COUPON_CONSUME_TIMES_NOT_ENOUGH;
+    }
+
+    return true;
+}
+// 验证成功之后，通过同步方式将数据同步过来,调用外部系统命令行
+// Todo: 由于有自动进程在同步执行，如果验证也触发了同步操作，
+// 不知道会不会锁住，如果没有锁，会不会丢失数据或者脏数据?
+function sync_coupons($platform, $couponId = "", $consumed_times = 0)
+{
+    date_default_timezone_set('Asia/Shanghai');
+
+    $currentDate = date('Y-m-d');
+    $sync_cmd_path = "/Users/everpointer/work/host/sync_coupon_data/";
+    // $cmd = "export PWD=".$sync_cmd_path."; ";
+    $cmd = $sync_cmd_path."sync_proc.php $platform $currentDate";
+    $result = exec($cmd);
+    if (strstr($result, "end syncing") !== false)
+    {
+        return true;
+    } else {
+        return false;
+    }
 }
 ?>

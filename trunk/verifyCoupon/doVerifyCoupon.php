@@ -107,7 +107,7 @@ if ($checkResult !== true)
 {
     echo VerifyCoupon::gen_response_json($checkResult);
     exit;
-}
+ }
 
 $responseCode = doVerifyCoupon($_REQUEST);
 
@@ -126,14 +126,15 @@ if ($responseCode === VerifyCouponCodeMsg::JUHUASUAN_LOGIN_EXPIRED)
         $responseCode = doVerifyCoupon($_REQUEST);
     }
 }
-
 if ($responseCode === VerifyCouponCodeMsg::VERIFY_COUPON_SUCCESS)
 {
     // if (!record_consumed_coupon($couponId, $platform, $consumed_times))
-    if (!sync_coupons($platform))
-    {
-        $responseCode = VerifyCouponCodeMsg::RECORD_COUPON_FAILED_ERROR;
-    }
+    // if (!sync_coupons($platform))
+    // {
+    //     $responseCode = VerifyCouponCodeMsg::RECORD_COUPON_FAILED_ERROR;
+    // }
+    // sync_coupons($platform);
+    // 
 }
 if ($responseCode === VerifyCouponCodeMsg::RECORD_COUPON_FAILED_ERROR)
 {

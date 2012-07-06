@@ -1,0 +1,255 @@
+<?php
+require_once 'common.php';
+// 按产品获得特定年月消费列表
+// yearmonth 格式为 'YYYY-MM'
+function get_expense_list($platform, $yearmonth, $productTitle = "")
+{
+    $productList = get_product_list($platform);
+    if ($productTitle !== "")
+    {
+        $matchedProduct = null;
+        foreach($productList as $product)
+        {
+            if($product['title'] === $productTitle)
+            {
+                $matchedProduct = $product;
+                break;
+            }
+        }
+        if ($matchedProduct === null)
+        {
+            return array();
+        } else {
+            $productList = array($matchedProduct);
+        }
+    }
+    for ($pCount = 0; $pCount < count($productList); $pCount++)
+    {
+        $product = &$productList[$pCount];
+        // 需要统计的金额
+        $productExpenseMoney = 0;    // 产品消费金额
+        $productRefundMonry  = 0;    // 产品退款金额
+        $productExpenseNums = 0;    // 产品消费份数
+        $productRefundRecordNums = 0;        // 退款总比数 (即凭证管理中的退款记录数)
+        $productJuwuyouRefundRecordNums = 0; // 聚无忧退款总比数
+        $productManualRefundRecordNums =  0; // 人工退款总比数
+        $productJuwuyouRefundMoney = 0;      // 聚无忧退款总金额 
+        $productManualRefundMoney = 0;       // 人工退款总金额 
+        $productIncomingAfter7 = 0;          // 7天后退款总收入
+
+        $productId = $product['productId'];
+        $orderList = get_order_list($platform, $productId);
+        for ($oCount = 0; $oCount < count($orderList); $oCount++)
+        {
+            $order = &$orderList[$oCount];
+
+            $orderExpenseMoney = 0;         // 订单消费金额
+            $orderManualRefundMoney = 0;    // 订单手工退款金额
+            $orderJuwuyouRefundMoney = 0;   // 订单聚无忧退款金额
+            $orderExpenseNums = 0;          // 消费笔数(不是总数)
+            $orderRefundRecordNums = 0;        // 退款总比数 (即凭证管理中的退款记录数)
+            $orderJuwuyouRefundRecordNums = 0; // 聚无忧退款总比数
+            $orderManualRefundRecordNums =  0; // 人工退款总比数
+            $orderIncomingAfter7 = 0;          // 7天后退款总收入
+
+            $orderId = $order['orderId'];
+            $taobaoId = $order['taobaoId'];
+            // 订单单价 = 交易金额/购买数量
+            $buy_nums = get_order_buy_nums($orderId);
+            // 转换交易金额,交易金额格式￥2,999.00 (美国风格,需要去掉逗号)
+            $paymentStr = substr($order['payment'],3); 
+            $payment = doubleval(str_replace(',','',$paymentStr));
+            $order_unit_price = $payment/$buy_nums;
+            $order['unit_price'] = $order_unit_price;
+            // 根据订单编号获得指定日期的使用记录
+            $order_used_list = get_order_used_list($platform, $taobaoId, $yearmonth);
+            foreach ($order_used_list as $order_used)
+            {
+                $operationMoney = $order_unit_price*intval($order_used['useNum']);
+                if ($order_used['operationType'] === "兑换")
+                {
+                    // 增加消费金额
+                    $orderExpenseMoney += $operationMoney;
+                    $orderExpenseNums += $order_used['useNum'];
+                } else if ($order_used['operationType'] === "作废"){
+                    // 计算退款金额,以7天为期限
+                    $order_used_refund = cal_order_used_refund($order_used, $order_unit_price, $orderIncomingAfter7);
+                    if ($order_used['source'] === "聚无忧")
+                    {
+                        // 增加聚无忧退款
+                        $orderJuwuyouRefundMoney += $order_used_refund;
+                        $orderJuwuyouRefundRecordNums++;
+                    } elseif ($order_used['source'] === "管理平台") {
+                        // 增加聚无忧手工退款
+                        $orderManualRefundMoney += $order_used_refund;
+                        $orderManualRefundRecordNums++;
+                    }
+                }
+            } 
+            // 将统计金额回写到订单列表中
+            // Todo: 为了比对数据，到时可以将订单列表记录到文件中,
+            // 再根据各种条件导出Excel，进行比对
+            $order['expense_money'] = $orderExpenseMoney;
+            $order['total_refund'] = $orderJuwuyouRefundMoney + $orderManualRefundMoney;
+            $order['juwuyou_refund'] = $orderJuwuyouRefundMoney;
+            $order['manual_refund'] = $orderManualRefundMoney;
+            $order['expense_nums'] = $orderExpenseNums;
+            $order['juwuyou_refund_record_nums'] = $orderJuwuyouRefundRecordNums;
+            $order['manual_refund_record_nums'] = $orderManualRefundRecordNums;
+            $order['refund_record_nums'] = $orderRefundRecordNums = $orderJuwuyouRefundRecordNums + $orderManualRefundRecordNums;
+            $order['incoming_after_7'] = $orderIncomingAfter7;
+            // 回加到产品数据上
+            $productExpenseMoney += $order['expense_money'];
+            $productRefundMonry  +=  $order['total_refund'];
+            $productExpenseNums += $orderExpenseNums;    // 产品消费份数
+            $productRefundRecordNums += $order['refund_record_nums'];        // 退款总比数 (即凭证管理中的退款记录数)
+            $productJuwuyouRefundRecordNums += $order['juwuyou_refund_record_nums']; // 聚无忧退款总比数
+            $productManualRefundRecordNums +=   $order['manual_refund_record_nums']; // 人工退款总比数
+            $productJuwuyouRefundMoney += $order['juwuyou_refund'];
+            $productManualRefundMoney +=  $order['manual_refund'];
+            $productIncomingAfter7 +=  $order['incoming_after_7'];          // 7天后退款总收入
+
+        }
+        // 将产品统计记录回写到产品列表中
+        $product['expense_money'] = $productExpenseMoney;
+        $product['total_refund'] = $productRefundMonry;
+        $product['expense_nums'] = $productExpenseNums;
+        $product['juwuyou_refund'] = $productJuwuyouRefundMoney;
+        $product['manual_refund'] = $productManualRefundMoney;
+        $product['juwuyou_refund_record_nums'] = $productJuwuyouRefundRecordNums;
+        $product['manual_refund_record_nums'] = $productManualRefundRecordNums;
+        $product['refund_record_nums'] = $productRefundRecordNums;
+        $product['incoming_after_7'] = $productIncomingAfter7;
+        
+        $product['yearmonth'] = $yearmonth;
+        //$product_info = gen_product_info($product);
+        //dump_array($product_info);
+        //exit;
+        // Todo: 展示订单详细列表
+        if (count($productList) === 1)
+        {
+        }
+        unset($orderList);
+    }
+    return $productList;
+}
+
+function cal_order_used_refund($order_used, $order_unit_price,&$incomingAfter7)
+{
+    $refund = 0;
+    //$useDate = new DateTime($order_used['useDate']);
+    $str_createDate = get_createdate($order_used['usingId']);
+    //$createDate = new DateTime($str_createDate);
+    $useDateSecs = strtotime($order_used['useDate']);
+    $createDateSecs = strtotime($str_createDate);
+    // 由于DateTime的diff方法只有5.3以上的版本支持,所以只能手动计算了
+    $intervalDays = round(abs($useDateSecs - $createDateSecs) / (60*60*24));
+    // 退款从下订单开始,超过7天要扣%10的钱,再减去1元码费
+    if ( $intervalDays <= 7)
+    {
+        $refund = $order_unit_price*intval($order_used['useNum']) - 1;
+    } else {
+        $refund = $order_unit_price*intval($order_used['useNum'])*0.9 - 1;
+        $incomingAfter7 += $order_unit_price*intval($order_used['useNum'])*0.1;
+    }
+    return $refund;
+}
+
+function get_product_list($platform)
+{
+    $productlistUrl = "";
+    $productParams = array();
+    if ($platform === "juhuasuan")
+    {
+        $productlistUrl = "http://59.151.29.121/product/list.do";
+        $method = "POST";
+    }
+    $productList = fetch_all_data($platform, $productlistUrl, $productParams, $method);
+    return $productList;
+}
+
+function get_order_list($platform, $productId)
+{
+    $orderlistUrl = "";
+    $orderParams = array();
+    if ($platform === "juhuasuan")
+    {
+        $orderlistUrl = "http://59.151.29.121/order/list.do";
+        $method = "POST";
+        $orderParams['model.productId'] = $productId;
+    }
+    $orderList = fetch_all_data($platform, $orderlistUrl, $orderParams, $method);
+    return $orderList;
+}
+
+// yearmonth的格式必须是 "yyyy-mm"
+function get_order_used_list($platform, $orderId, $yearmonth)
+{
+    $orderUsedListUrl = "";
+    $orderUsedParams = array();
+    if ($platform === "juhuasuan")
+    {
+        $orderUsedListUrl = "http://59.151.29.121/orderUsed/list.do";
+        $method = "POST";
+        $orderUsedParams['model.taobaoId'] = $orderId;
+        $yearmonthSecs = strtotime($yearmonth);
+        $str_beginDate = strftime("%Y-%m-%d", $yearmonthSecs); 
+        $orderUsedParams['model.beginDate'] = strftime("%Y-%m-%d", $yearmonthSecs);
+        // 计算指定月份最后1日日期
+        $orderUsedParams['model.endDate'] = get_month_last_day($yearmonth);
+    }
+    $orderUsedList = fetch_all_data($platform, $orderUsedListUrl, $orderUsedParams, $method);
+    return $orderUsedList;
+}
+
+// 获得订单购买数量
+function get_order_buy_nums($orderId)
+{
+    $url = "http://59.151.29.121/order/detail.do?20120614150439";
+    $params['model.orderId'] = $orderId;
+    $method = "POST";
+    $details = fetch_detail_info($url, $params, $method);
+    $buyNums = intval($details['购买数量']);
+    return $buyNums;
+}
+// 获得创建日期
+function get_createdate($usingId)
+{
+    $url = "http://59.151.29.121/orderUsed/detail.do";
+    $params['model.usingId'] = $usingId;
+    $method = "POST";
+    $details = fetch_detail_info($url, $params, $method);
+    $str_createDate = $details['创建日期'];
+    return $str_createDate;
+}
+
+function gen_product_info($product)
+{
+    $product_keys = array(
+        "title" => "产品名称",
+        "yearmonth" => "统计年月",
+        "expense_nums" => "消费份数",
+        "expense_money" => "消费金额",
+        "refund_record_nums" => "退款总比数",
+        "juwuyou_refund_record_nums" => "聚无优退款比数",
+        "manual_refund_record_nums" => "人工退款比数",
+        "juwuyou_refund" => "聚无忧退款金额",
+        "manual_refund" => "人工退款金额",
+        "incoming_after_7" => "7天后退款总收入",
+    );
+    $product_info = array();
+    foreach ($product_keys as $key=>$value)
+    {
+        $product_info[$value] = $product[$key];
+    }
+    return $product_info;
+}
+
+function dump_array($data)
+{
+    foreach($data as $key => $value)
+    {
+        echo $key.":&nbsp;".$value."<br />";
+    }
+}
+?>

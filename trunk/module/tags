@@ -1,133 +1,462 @@
+	Session.vim	/^cnoremap  <Home>$/
+	Session.vim	/^map  <Home>$/
+	Session.vim	/^vnoremap  "+y$/
+	Session.vim	/^cnoremap  <Del>$/
+	Session.vim	/^imap  $/
+	Session.vim	/^cnoremap  <End>$/
+	Session.vim	/^map  <End>$/
+	Session.vim	/^cnoremap  <BS>$/
+	Session.vim	/^imap  $/
+S	Session.vim	/^imap S <Plug>ISurround$/
+s	Session.vim	/^imap s <Plug>Isurround$/
+	Session.vim	/^cnoremap  <Left>$/
+	Session.vim	/^map  h$/
+		Session.vim	/^inoremap <silent> 	 =TriggerSnippet()$/
+		Session.vim	/^nmap 	 v>$/
+	Session.vim	/^cnoremap  <Up>$/
+	Session.vim	/^imap <expr>  pumvisible()?"\\":"\\"$/
+	Session.vim	/^map  k$/
+	Session.vim	/^cnoremap  <Right>$/
+	Session.vim	/^imap  $/
+	Session.vim	/^map  l$/
+	Session.vim	/^imap  <Plug>SuperTabForward$/
+	Session.vim	/^nnoremap <silent>  :YRReplace '1', 'p'$/
+	Session.vim	/^imap  <Plug>SuperTabBackward$/
+	Session.vim	/^nnoremap <silent>  :YRReplace '-1', 'P'$/
+		Session.vim	/^inoremap <silent> 	 =ShowAvailableSnips()$/
+	Session.vim	/^imap  :w$/
+	Session.vim	/^nmap  :w$/
+	Session.vim	/^inoremap  "+pa$/
+	Session.vim	/^nmap  :q!$/
+	Session.vim	/^nmap  :shell$/
+	Session.vim	/^imap  $/
 !_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
 !_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
 !_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
-COUPON_TABLE	Coupon.php	/^    const COUPON_TABLE = 'coupon';    $/;"	d
-COUPON_TABLE	Order.php	/^    const COUPON_TABLE = 'coupon';    $/;"	d
-Coupon	Coupon.php	/^class Coupon extends MyTable$/;"	c
-ORDER_TABLE	Coupon.php	/^    const ORDER_TABLE  = 'order';$/;"	d
-ORDER_TABLE	Order.php	/^    const ORDER_TABLE  = 'order';$/;"	d
-Order	Order.php	/^class Order extends MyTable$/;"	c
-PARTNER_TABLE	Partner.php	/^    const PARTNER_TABLE = 'partner';$/;"	d
-PARTNET_PLATFORMS_TABLE	PartnerPlatforms.php	/^    const PARTNET_PLATFORMS_TABLE = 'partner_platforms';$/;"	d
-PLATFORM_TABLE	Team.php	/^    const PLATFORM_TABLE  = 'platform';$/;"	d
-Partner	Partner.php	/^class Partner extends MyTable$/;"	c
-PartnerPlatforms	PartnerPlatforms.php	/^class PartnerPlatforms extends MyTable$/;"	c
-TEAM_TABLE	Coupon.php	/^    const TEAM_TABLE  = 'team';$/;"	d
-TEAM_TABLE	Order.php	/^    const TEAM_TABLE  = 'team';$/;"	d
-TEAM_TABLE	Team.php	/^    const TEAM_TABLE  = 'team';$/;"	d
-Team	Team.php	/^class Team extends MyTable$/;"	c
-USER_TABLE	Coupon.php	/^    const USER_TABLE  = 'user';$/;"	d
-USER_TABLE	Order.php	/^    const USER_TABLE  = 'user';$/;"	d
-__construct	Coupon.php	/^    public function __construct()$/;"	f
-__construct	Order.php	/^    public function __construct()$/;"	f
-__construct	Partner.php	/^    public function __construct()$/;"	f
-__construct	PartnerPlatforms.php	/^    public function __construct()$/;"	f
-__construct	Team.php	/^    public function __construct()$/;"	f
-changePass	Partner.php	/^    public function changePass($partnerId, $originPasswd, $newPasswd)$/;"	f
-consume_coupon	Coupon.php	/^    public function consume_coupon($couponId, $consumed_times = 1)$/;"	f
-consumedCouponList	Coupon.php	/^        $consumedCouponList = array();$/;"	p
-consumedtimes	Coupon.php	/^            $consumedtimes += $couponRow['consume_times'];$/;"	p
-consumedtimes	Coupon.php	/^        $consumedtimes = 0;$/;"	p
-couponInfo	Coupon.php	/^        $couponInfo['id'] = $insertedcouponId;$/;"	p
-couponNums	Coupon.php	/^        $couponNums = 0;$/;"	p
-couponNums	Coupon.php	/^        $couponNums = mysql_num_rows($result);$/;"	p
-for	Partner.php	/^ * Partner.php  class for handling table partner$/;"	c
-for	PartnerPlatforms.php	/^ * PartnerPlatforms.php  class for handling table partner_platforms$/;"	c
-gen_couponSearchSql	Coupon.php	/^    private function gen_couponSearchSql($searchFields, $start = 0, $offset = -1)$/;"	f
-get_consumedCouponNums	Coupon.php	/^    public function get_consumedCouponNums($searchFields)$/;"	f
-get_consumedCoupons	Coupon.php	/^    public function get_consumedCoupons($searchFields, $start, $offset)$/;"	f
-get_consumedCoupontimes	Coupon.php	/^    public function get_consumedCoupontimes($searchFields)$/;"	f
-get_teamNums	Team.php	/^    public function get_teamNums($searchFields)$/;"	f
-get_teams	Team.php	/^    public function get_teams($searchFields, $start, $offset)$/;"	f
-insertSql	Coupon.php	/^        $insertSql .= $keys . $values;$/;"	p
-insertSql	Coupon.php	/^        $insertSql = "INSERT INTO ".$this->get_dbTableName(self::COUPON_TABLE);$/;"	p
-insertSql	Order.php	/^        $insertSql .= $keys . $values;$/;"	p
-insertSql	Order.php	/^        $insertSql = "INSERT INTO ".$this->get_dbTableName(self::ORDER_TABLE);$/;"	p
-insertSql	Team.php	/^        $insertSql .= $keys . $values;$/;"	p
-insertSql	Team.php	/^        $insertSql = "INSERT INTO ".$this->get_dbTableName(self::TEAM_TABLE);$/;"	p
-insertTeamId	Team.php	/^        $insertTeamId = mysql_insert_id();$/;"	p
-insert_coupon	Coupon.php	/^    public function insert_coupon($couponInfo)$/;"	f
-insert_order	Order.php	/^    public function insert_order($orderInfo)$/;"	f
-insert_team	Team.php	/^    public function insert_team($teamInfo)$/;"	f
-insertedOrderId	Order.php	/^        $insertedOrderId = mysql_insert_id();$/;"	p
-insertedcouponId	Coupon.php	/^        $insertedcouponId = mysql_insert_id();$/;"	p
-keys	Coupon.php	/^            $keys .= $key . ",";$/;"	p
-keys	Coupon.php	/^        $keys = "(";$/;"	p
-keys	Coupon.php	/^        $keys = substr($keys, 0, -1) . ")";$/;"	p
-keys	Order.php	/^            $keys .= $key . ",";$/;"	p
-keys	Order.php	/^        $keys = "(";$/;"	p
-keys	Order.php	/^        $keys = substr($keys, 0, -1) . ")";$/;"	p
-keys	Team.php	/^            $keys .= $key . ",";$/;"	p
-keys	Team.php	/^        $keys = "(";$/;"	p
-keys	Team.php	/^        $keys = substr($keys, 0, -1) . ")";$/;"	p
-newPasswd	Partner.php	/^        $newPasswd = mysql_real_escape_string($newPasswd);$/;"	p
-orderInfo	Order.php	/^        $orderInfo['id'] = $insertedOrderId;$/;"	p
-originPasswd	Partner.php	/^            $originPasswd = crypt_pass($originPasswd);$/;"	p
-originPasswd	Partner.php	/^        $originPasswd = mysql_real_escape_string($originPasswd);$/;"	p
-parse_couponList	Coupon.php	/^    private function parse_couponList($result)$/;"	f
-parse_teamList	Team.php	/^    private function parse_teamList($result)$/;"	f
-result	Coupon.php	/^        $result = mysql_query($insertSql);$/;"	p
-result	Coupon.php	/^        $result = mysql_query($sql);$/;"	p
-result	Order.php	/^        $result = mysql_query($insertSql);$/;"	p
-result	Partner.php	/^            $result = mysql_query($selectSql);$/;"	p
-result	Team.php	/^        $result = mysql_query($insertSql);$/;"	p
-result	Team.php	/^        $result = mysql_query($sql);$/;"	p
-select	Coupon.php	/^        $select .= "u.username as username, u.email as email, o.subbranch as subbranch, c.consume_time as consumeTime,c.consume_times as consumeTimes,c.platform_coupon_id as platformCouponId,c.consumer_mobile as consumerMobile";$/;"	p
-select	Coupon.php	/^        $select .= ' from '.self::DBDATABASE.'.'.self::TEAM_TABLE.' t,'.self::DBDATABASE.'.'.self::ORDER_TABLE.' o,';$/;"	p
-select	Coupon.php	/^        $select .= self::DBDATABASE.'.'.self::COUPON_TABLE.' c left join '.self::DBDATABASE.'.'.self::USER_TABLE.' u on c.user_id=u.id';$/;"	p
-select	Coupon.php	/^        $select = "select c.order_id as orderId, t.title as teamTitle, c.id as couponId,";$/;"	p
-select	Team.php	/^        $select .= "t.end_time as endTime, t.now_num as nowNum, t.min_num as minNum, t.team_price as teamPrice,";$/;"	p
-select	Team.php	/^        $select .= "t.expire_time as expireTime, t.state";$/;"	p
-select	Team.php	/^        $select .= "t.market_price as marketPrice, t.platform_key as platformKey,";$/;"	p
-select	Team.php	/^        $select .= ' from '.self::DBDATABASE.'.'.self::TEAM_TABLE.' t,'.self::DBDATABASE.'.'.self::PLATFORM_TABLE.' p';$/;"	p
-select	Team.php	/^        $select = "select t.id as teamId, t.title as teamTitle, p.title as platformTitle, t.begin_time as beginTime,";$/;"	p
-selectSql	Partner.php	/^            $selectSql = "SELECT * FROM ".$this->get_dbTableName(self::PARTNER_TABLE)." WHERE id=".$partnerId.$/;"	p
-sql	Coupon.php	/^                $sql .= " AND c.consumer_mobile='$mobile'";$/;"	p
-sql	Coupon.php	/^                $sql .= " AND c.order_id=$orderId";$/;"	p
-sql	Coupon.php	/^                $sql .= " AND c.partner_id=$partnerId";$/;"	p
-sql	Coupon.php	/^                $sql .= " AND c.platform_coupon_id=$couponId";$/;"	p
-sql	Coupon.php	/^                $sql .= " AND c.platform_key='$platform'";$/;"	p
-sql	Coupon.php	/^                $sql .= " AND c.team_id=$teamId ";$/;"	p
-sql	Coupon.php	/^                $sql .= ",$offset";$/;"	p
-sql	Coupon.php	/^            $sql .= " LIMIT $start";$/;"	p
-sql	Coupon.php	/^        $sql .= " AND t.id=c.team_id AND o.id=c.order_id ";\/\/AND u.id=c.user_id";$/;"	p
-sql	Coupon.php	/^        $sql .= " order by c.consume_time desc";$/;"	p
-sql	Coupon.php	/^        $sql = $select." WHERE c.consume='Y' ";$/;"	p
-sql	Coupon.php	/^        $sql = $this->gen_couponSearchSql($searchFields);$/;"	p
-sql	Coupon.php	/^        $sql = $this->gen_couponSearchSql($searchFields, $start, $offset);$/;"	p
-sql	Coupon.php	/^        $sql = $update.$where;$/;"	p
-sql	Team.php	/^        $sql .= " WHERE partner_id=$partnerId";$/;"	p
-sql	Team.php	/^        $sql .= "LIMIT $start,$offset ";$/;"	p
-sql	Team.php	/^        $sql .= "order by t.state desc,t.expire_time desc,t.id desc ";$/;"	p
-sql	Team.php	/^        $sql = "SELECT count(*) as teamNums FROM ".$this->get_dbTableName(self::TEAM_TABLE);$/;"	p
-sql	Team.php	/^        $sql = $select." WHERE t.partner_id=$partnerId AND t.platform_key=p.key ";$/;"	p
-teamInfo	Team.php	/^        $teamInfo['id'] = $insertTeamId;$/;"	p
-teamList	Team.php	/^        $teamList = array();$/;"	p
-teamNums	Team.php	/^            $teamNums = $teamRow['teamNums'];$/;"	p
-teamNums	Team.php	/^        $teamNums = 0;$/;"	p
-teamNums	Team.php	/^        $teamNums = mysql_num_rows($result);$/;"	p
-teamRow	Team.php	/^            $teamRow = mysql_fetch_array($result);$/;"	p
-this	Coupon.php	/^        $this->assure_dbConnection();$/;"	p
-this	Order.php	/^        $this->assure_dbConnection();$/;"	p
-this	Partner.php	/^        $this->assure_dbConnection();$/;"	p
-this	Team.php	/^        $this->assure_dbConnection();$/;"	p
-update	Coupon.php	/^        $update .= " set consume='Y',consume_time=UNIX_TIMESTAMP(),consume_times=consume_times+".$consumed_times;$/;"	p
-update	Coupon.php	/^        $update = 'UPDATE '.$this->get_dbTableName(self::COUPON_TABLE);$/;"	p
-updateSql	Partner.php	/^                $updateSql .= " password='".crypt_pass($newPasswd)."'"." WHERE id=".$partnerId;$/;"	p
-updateSql	Partner.php	/^                $updateSql = "UPDATE ".$this->get_dbTableName(self::PARTNER_TABLE)." SET";$/;"	p
-values	Coupon.php	/^                $values .=  $value. ",";$/;"	p
-values	Coupon.php	/^                $values .= "'" . $value . "'" . ",";$/;"	p
-values	Coupon.php	/^        $values = " VALUES(";$/;"	p
-values	Coupon.php	/^        $values = substr($values, 0, -1) . ")";$/;"	p
-values	Order.php	/^                $values .=  $value. ",";$/;"	p
-values	Order.php	/^                $values .= "'" . $value . "'" . ",";$/;"	p
-values	Order.php	/^        $values = " VALUES(";$/;"	p
-values	Order.php	/^        $values = substr($values, 0, -1) . ")";$/;"	p
-values	Team.php	/^                $values .=  $value. ",";$/;"	p
-values	Team.php	/^                $values .= "'" . $value . "'" . ",";$/;"	p
-values	Team.php	/^        $values = " VALUES(";$/;"	p
-values	Team.php	/^        $values = substr($values, 0, -1) . ")";$/;"	p
-where	Coupon.php	/^        $where = " WHERE id=".$couponId;$/;"	p
+$c	Session.vim	/^cnoremap $c e eCurrentFileDir("e")$/
+$d	Session.vim	/^cnoremap $d e ~\/Desktop\/$/
+$h	Session.vim	/^cnoremap $h e ~\/$/
+$j	Session.vim	/^cnoremap $j e .\/$/
+$q	Session.vim	/^cnoremap $q eDeleteTillSlash()$/
+(	Session.vim	/^inoremap <buffer> <silent> ( (=EchoFunc()$/
+)	Session.vim	/^inoremap <buffer> <silent> ) =EchoFuncClear()$/
+*	Session.vim	/^vnoremap <silent> * :call VisualSearch('b')$/
+0	Session.vim	/^nmap 0 ^     " ??$/
+0	Session.vim	/^normal! 0$/
+0	Session.vim	/^vmap 0 ^     " ??$/
+010l	Session.vim	/^normal! 010l$/
+013l	Session.vim	/^normal! 013l$/
+018l	Session.vim	/^normal! 018l$/
+020l	Session.vim	/^normal! 020l$/
+026l	Session.vim	/^normal! 026l$/
+029l	Session.vim	/^normal! 029l$/
+034l	Session.vim	/^normal! 034l$/
+041l	Session.vim	/^normal! 041l$/
+042l	Session.vim	/^normal! 042l$/
+04l	Session.vim	/^normal! 04l$/
+07l	Session.vim	/^normal! 07l$/
+;	Session.vim	/^map <silent> ;$/
+;1	Session.vim	/^map ;1 :tabprev$/
+;2	Session.vim	/^map ;2 :tabnext$/
+;]	Session.vim	/^map ;] :MRU$/
+;ab	Session.vim	/^nmap ;ab :FufBookmarkFileAdd$/
+;b	Session.vim	/^map <silent> ;b :BufExplorer$/
+;bb	Session.vim	/^map ;bb :cd ..$/
+;bc	Session.vim	/^map ;bc :Bclose$/
+;bca	Session.vim	/^map ;bca :1,300 bd!$/
+;c	Session.vim	/^nmap ;c  <Plug>NERDCommenterToggle$/
+;c	Session.vim	/^vmap ;c  <Plug>NERDCommenterToggle$/
+;c$	Session.vim	/^nmap ;c$ <Plug>NERDCommenterToEOL$/
+;c$	Session.vim	/^vmap ;c$ <Plug>NERDCommenterToEOL$/
+;cA	Session.vim	/^nmap ;cA <Plug>NERDCommenterAppend$/
+;cA	Session.vim	/^vmap ;cA <Plug>NERDCommenterAppend$/
+;cD	Session.vim	/^nmap <silent> ;cD <Plug>VCSDelete$/
+;cG	Session.vim	/^nmap <silent> ;cG <Plug>VCSClearAndGotoOriginal$/
+;cL	Session.vim	/^nmap <silent> ;cL <Plug>VCSLock$/
+;cN	Session.vim	/^nmap <silent> ;cN <Plug>VCSSplitAnnotate$/
+;cU	Session.vim	/^nmap <silent> ;cU <Plug>VCSUnlock$/
+;ca	Session.vim	/^nmap ;ca <Plug>NERDCommenterAltDelims$/
+;cb	Session.vim	/^nmap ;cb <Plug>NERDCommenterAlignBoth$/
+;cb	Session.vim	/^vmap ;cb <Plug>NERDCommenterAlignBoth$/
+;cc	Session.vim	/^nmap ;cc <Plug>NERDCommenterComment$/
+;cc	Session.vim	/^vmap ;cc <Plug>NERDCommenterComment$/
+;cd	Session.vim	/^nmap <silent> ;cd <Plug>VCSDiff$/
+;cg	Session.vim	/^nmap <silent> ;cg <Plug>VCSGotoOriginal$/
+;ci	Session.vim	/^nmap ;ci <Plug>NERDCommenterInvert$/
+;ci	Session.vim	/^vmap ;ci <Plug>NERDCommenterInvert$/
+;cl	Session.vim	/^nmap ;cl <Plug>NERDCommenterAlignLeft$/
+;cl	Session.vim	/^vmap ;cl <Plug>NERDCommenterAlignLeft$/
+;cm	Session.vim	/^nmap ;cm <Plug>NERDCommenterMinimal$/
+;cm	Session.vim	/^vmap ;cm <Plug>NERDCommenterMinimal$/
+;cn	Session.vim	/^nmap ;cn <Plug>NERDCommenterNest$/
+;cn	Session.vim	/^vmap ;cn <Plug>NERDCommenterNest$/
+;cq	Session.vim	/^nmap <silent> ;cq <Plug>VCSRevert$/
+;cr	Session.vim	/^nmap <silent> ;cr <Plug>VCSReview$/
+;cs	Session.vim	/^nmap ;cs <Plug>NERDCommenterSexy$/
+;cs	Session.vim	/^vmap ;cs <Plug>NERDCommenterSexy$/
+;ctc	Session.vim	/^map ;ctc :!\/usr\/local\/bin\/ctags -R --c++-kinds=+p --fields=iaS --extra=+q .$/
+;ctp	Session.vim	/^map ;ctp :!$HOME\/myscripts\/ctags_php$/
+;cu	Session.vim	/^nmap ;cu <Plug>NERDCommenterUncomment$/
+;cu	Session.vim	/^vmap ;cu <Plug>NERDCommenterUncomment$/
+;cv	Session.vim	/^nmap <silent> ;cv <Plug>VCSVimDiff$/
+;cy	Session.vim	/^nmap ;cy <Plug>NERDCommenterYank$/
+;cy	Session.vim	/^vmap ;cy <Plug>NERDCommenterYank$/
+;e	Session.vim	/^map ;e :e! ~\/.vimrc$/
+;fT	Session.vim	/^nmap ;fT :FufTag!$/
+;fb	Session.vim	/^nmap ;fb :FufBuffer$/
+;fd	Session.vim	/^nmap ;fd :FufDir$/
+;ff	Session.vim	/^nmap ;ff :FufFile$/
+;fm	Session.vim	/^nmap ;fm :FufMruFile$/
+;foo	Session.vim	/^map <silent> ;foo :e ftp:\/\/vh506097@121.11.253.157\/www\/o2o\/$/
+;fq	Session.vim	/^nmap ;fq :FufQuickFix$/
+;ft	Session.vim	/^nmap ;ft :FufTag$/
+;g	Session.vim	/^map ;g :vimgrep \/\/ **\/*.<Left><letf><Left><Left><Left><Left><Left> "??$/
+;ig	Session.vim	/^map ;ig :call IncludeGuard()$/
+;jsh	Session.vim	/^noremap ;jsh :!\/usr\/local\/bin\/jshint %$/
+;jsl	Session.vim	/^noremap ;jsl :!\/usr\/local\/bin\/jsl -process %$/
+;lcs	Session.vim	/^nmap <silent> ;lcs :call C_CreateGuiMenus()$/
+;m	Session.vim	/^noremap ;m mmHmt:%s\/$/
+;mb	Session.vim	/^map ;mb :TMiniBufExplorer$/
+;n	Session.vim	/^map ;n :cn$/
+;no	Session.vim	/^nmap ;no :NERDTreeToggle$/
+;nt	Session.vim	/^nmap ;nt :NERDTree$/
+;p	Session.vim	/^map ;p :cp$/
+;pl	Session.vim	/^noremap ;pl :!php -l -f %$/
+;pp	Session.vim	/^map ;pp :setlocal paste!$/
+;pr	Session.vim	/^noremap ;pr :w!$/
+;q	Session.vim	/^map ;q :e ~\/buffer$/
+;rn	Session.vim	/^map ;rn :RN$/
+;rr	Session.vim	/^nmap ;rr :call ReloadSnippets(g:snippets_dir, &filetype)$/
+;rs	Session.vim	/^map ;rs :call RestoreSess()$/
+;s?	Session.vim	/^map ;s? z=$/
+;sa	Session.vim	/^map ;sa za$/
+;sb	Session.vim	/^nmap ;sb :FufBookmarkFile$/
+;sc	Session.vim	/^nmap ;sc :source ~\/.vimrc$/
+;sd	Session.vim	/^nmap ;sd :cs find d =expand("<cword>")$/
+;se	Session.vim	/^nmap ;se :cs find e =expand("<cword>")$/
+;sf	Session.vim	/^nmap ;sf :cs find f =expand("<cfile>")$/
+;sg	Session.vim	/^nmap ;sg :cs find g =expand("<cword>")$/
+;si	Session.vim	/^nmap ;si :cs find i ^=expand("<cfile>")$/
+;sn	Session.vim	/^map ;sn ]s$/
+;sp	Session.vim	/^nmap ;sp :NERDTree \/Users\/everpointer\/.vim\/snippets$/
+;sp	Session.vim	/^omap ;sp [s$/
+;sp	Session.vim	/^vmap ;sp [s$/
+;ss	Session.vim	/^nmap ;ss :cs find s =expand("<cword>")$/
+;ss	Session.vim	/^omap ;ss :setlocal spell!$/
+;ss	Session.vim	/^vmap ;ss :setlocal spell!$/
+;st	Session.vim	/^nmap ;st :cs find t =expand("<cword>")$/
+;t	Session.vim	/^map ;t <Plug>TaskList$/
+;tc	Session.vim	/^map ;tc :tabclose$/
+;te	Session.vim	/^map ;te :tabedit$/
+;tl	Session.vim	/^map ;tl :TaskList$/
+;tm	Session.vim	/^map ;tm :tabmove$/
+;tn	Session.vim	/^map ;tn :tabnew$/
+;tt	Session.vim	/^map ;tt :TlistToggle$/
+;ucs	Session.vim	/^nmap <silent> ;ucs :call C_RemoveGuiMenus()$/
+;w	Session.vim	/^imap ;w :w$/
+;w	Session.vim	/^nmap ;w :w$/
+;wq	Session.vim	/^nmap ;wq :wq!$/
+;ww	Session.vim	/^nmap ;ww :w!$/
+<C-F11>	Session.vim	/^inoremap <C-F11> :Maximize$/
+<C-F11>	Session.vim	/^nnoremap <C-F11> :Maximize$/
+<C-F4>	Session.vim	/^map <C-F4> :tabclose$/
+<C-Tab>	Session.vim	/^inoremap <C-Tab> 	$/
+<C-Tab>	Session.vim	/^map <C-Tab> :exe "tabn ".g:lasttab$/
+<D-BS>	Session.vim	/^imap <D-BS> $/
+<D-Down>	Session.vim	/^inoremap <D-Down> <C-End>$/
+<D-Down>	Session.vim	/^noremap <D-Down> <C-End>$/
+<D-Left>	Session.vim	/^noremap <D-Left> <Home>$/
+<D-Left>	Session.vim	/^noremap! <D-Left> <Home>$/
+<D-Right>	Session.vim	/^noremap <D-Right> <End>$/
+<D-Right>	Session.vim	/^noremap! <D-Right> <End>$/
+<D-Up>	Session.vim	/^inoremap <D-Up> <C-Home>$/
+<D-Up>	Session.vim	/^noremap <D-Up> <C-Home>$/
+<D-j>	Session.vim	/^nmap <D-j> ê$/
+<D-j>	Session.vim	/^vmap <D-j> ê$/
+<D-k>	Session.vim	/^nmap <D-k> ë$/
+<D-k>	Session.vim	/^vmap <D-k> ë$/
+<F11>	Session.vim	/^inoremap <F11> :Fullscreen$/
+<F11>	Session.vim	/^nnoremap <F11> :Fullscreen$/
+<F3>	Session.vim	/^map <F3> :call Do_CsTag()$/
+<F4>	Session.vim	/^inoremap <F4> :Open$/
+<F4>	Session.vim	/^nnoremap <F4> :Open$/
+<F6>	Session.vim	/^map <F6> :TlistToggle$/
+<Left>	Session.vim	/^nmap <Left> :bp$/
+<Left>	Session.vim	/^omap <Left> :bp$/
+<M-BS>	Session.vim	/^imap <M-BS> $/
+<M-Down>	Session.vim	/^imap <M-Down> }$/
+<M-Down>	Session.vim	/^map <M-Down> }$/
+<M-Left>	Session.vim	/^noremap <M-Left> <C-Left>$/
+<M-Left>	Session.vim	/^noremap! <M-Left> <C-Left>$/
+<M-Right>	Session.vim	/^noremap <M-Right> <C-Right>$/
+<M-Right>	Session.vim	/^noremap! <M-Right> <C-Right>$/
+<M-Up>	Session.vim	/^imap <M-Up> {$/
+<M-Up>	Session.vim	/^map <M-Up> {$/
+<NL>	Session.vim	/^cnoremap <NL> <Down>$/
+<NL>	Session.vim	/^imap <expr> <NL> pumvisible()?"\\":"\\"$/
+<NL>	Session.vim	/^map <NL> j$/
+<Plug>CVSEdit	Session.vim	/^nnoremap <silent> <Plug>CVSEdit :CVSEdit$/
+<Plug>CVSEditors	Session.vim	/^nnoremap <silent> <Plug>CVSEditors :CVSEditors$/
+<Plug>CVSUnedit	Session.vim	/^nnoremap <silent> <Plug>CVSUnedit :CVSUnedit$/
+<Plug>CVSWatchAdd	Session.vim	/^nnoremap <silent> <Plug>CVSWatchAdd :CVSWatch add$/
+<Plug>CVSWatchOff	Session.vim	/^nnoremap <silent> <Plug>CVSWatchOff :CVSWatch off$/
+<Plug>CVSWatchOn	Session.vim	/^nnoremap <silent> <Plug>CVSWatchOn :CVSWatch on$/
+<Plug>CVSWatchRemove	Session.vim	/^nnoremap <silent> <Plug>CVSWatchRemove :CVSWatch remove$/
+<Plug>CVSWatchers	Session.vim	/^nnoremap <silent> <Plug>CVSWatchers :CVSWatchers$/
+<Plug>NERDCommenterAlignBoth	Session.vim	/^nnoremap <silent> <Plug>NERDCommenterAlignBoth :call NERDComment(0, "alignBoth")$/
+<Plug>NERDCommenterAlignBoth	Session.vim	/^vnoremap <silent> <Plug>NERDCommenterAlignBoth :call NERDComment(1, "alignBoth")$/
+<Plug>NERDCommenterAlignLeft	Session.vim	/^nnoremap <silent> <Plug>NERDCommenterAlignLeft :call NERDComment(0, "alignLeft")$/
+<Plug>NERDCommenterAlignLeft	Session.vim	/^vnoremap <silent> <Plug>NERDCommenterAlignLeft :call NERDComment(1, "alignLeft")$/
+<Plug>NERDCommenterAppend	Session.vim	/^nmap <silent> <Plug>NERDCommenterAppend :call NERDComment(0, "append")$/
+<Plug>NERDCommenterComment	Session.vim	/^nnoremap <silent> <Plug>NERDCommenterComment :call NERDComment(0, "norm")$/
+<Plug>NERDCommenterComment	Session.vim	/^vnoremap <silent> <Plug>NERDCommenterComment :call NERDComment(1, "norm")$/
+<Plug>NERDCommenterInInsert	Session.vim	/^inoremap <silent> <Plug>NERDCommenterInInsert  <BS>:call NERDComment(0, "insert")$/
+<Plug>NERDCommenterInvert	Session.vim	/^nnoremap <silent> <Plug>NERDCommenterInvert :call NERDComment(0, "invert")$/
+<Plug>NERDCommenterInvert	Session.vim	/^vnoremap <silent> <Plug>NERDCommenterInvert :call NERDComment(1, "invert")$/
+<Plug>NERDCommenterMinimal	Session.vim	/^nnoremap <silent> <Plug>NERDCommenterMinimal :call NERDComment(0, "minimal")$/
+<Plug>NERDCommenterMinimal	Session.vim	/^vnoremap <silent> <Plug>NERDCommenterMinimal :call NERDComment(1, "minimal")$/
+<Plug>NERDCommenterNest	Session.vim	/^nnoremap <silent> <Plug>NERDCommenterNest :call NERDComment(0, "nested")$/
+<Plug>NERDCommenterNest	Session.vim	/^vnoremap <silent> <Plug>NERDCommenterNest :call NERDComment(1, "nested")$/
+<Plug>NERDCommenterSexy	Session.vim	/^nnoremap <silent> <Plug>NERDCommenterSexy :call NERDComment(0, "sexy")$/
+<Plug>NERDCommenterSexy	Session.vim	/^vnoremap <silent> <Plug>NERDCommenterSexy :call NERDComment(1, "sexy")$/
+<Plug>NERDCommenterToEOL	Session.vim	/^nnoremap <silent> <Plug>NERDCommenterToEOL :call NERDComment(0, "toEOL")$/
+<Plug>NERDCommenterToggle	Session.vim	/^nnoremap <silent> <Plug>NERDCommenterToggle :call NERDComment(0, "toggle")$/
+<Plug>NERDCommenterToggle	Session.vim	/^vnoremap <silent> <Plug>NERDCommenterToggle :call NERDComment(1, "toggle")$/
+<Plug>NERDCommenterUncomment	Session.vim	/^nnoremap <silent> <Plug>NERDCommenterUncomment :call NERDComment(0, "uncomment")$/
+<Plug>NERDCommenterUncomment	Session.vim	/^vnoremap <silent> <Plug>NERDCommenterUncomment :call NERDComment(1, "uncomment")$/
+<Plug>NERDCommenterYank	Session.vim	/^nmap <silent> <Plug>NERDCommenterYank :call NERDComment(0, "yank")$/
+<Plug>NERDCommenterYank	Session.vim	/^vmap <silent> <Plug>NERDCommenterYank :call NERDComment(1, "yank")$/
+<Plug>NetrwBrowseX	Session.vim	/^nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)$/
+<Plug>VCSAdd	Session.vim	/^nnoremap <silent> <Plug>VCSAdd :VCSAdd$/
+<Plug>VCSAnnotate	Session.vim	/^nnoremap <silent> <Plug>VCSAnnotate :VCSAnnotate$/
+<Plug>VCSClearAndGotoOriginal	Session.vim	/^nnoremap <silent> <Plug>VCSClearAndGotoOriginal :VCSGotoOriginal!$/
+<Plug>VCSCommit	Session.vim	/^nnoremap <silent> <Plug>VCSCommit :VCSCommit$/
+<Plug>VCSDelete	Session.vim	/^nnoremap <silent> <Plug>VCSDelete :VCSDelete$/
+<Plug>VCSDiff	Session.vim	/^nnoremap <silent> <Plug>VCSDiff :VCSDiff$/
+<Plug>VCSGotoOriginal	Session.vim	/^nnoremap <silent> <Plug>VCSGotoOriginal :VCSGotoOriginal$/
+<Plug>VCSInfo	Session.vim	/^nnoremap <silent> <Plug>VCSInfo :VCSInfo$/
+<Plug>VCSLock	Session.vim	/^nnoremap <silent> <Plug>VCSLock :VCSLock$/
+<Plug>VCSLog	Session.vim	/^nnoremap <silent> <Plug>VCSLog :VCSLog$/
+<Plug>VCSRevert	Session.vim	/^nnoremap <silent> <Plug>VCSRevert :VCSRevert$/
+<Plug>VCSReview	Session.vim	/^nnoremap <silent> <Plug>VCSReview :VCSReview$/
+<Plug>VCSSplitAnnotate	Session.vim	/^nnoremap <silent> <Plug>VCSSplitAnnotate :VCSAnnotate!$/
+<Plug>VCSStatus	Session.vim	/^nnoremap <silent> <Plug>VCSStatus :VCSStatus$/
+<Plug>VCSUnlock	Session.vim	/^nnoremap <silent> <Plug>VCSUnlock :VCSUnlock$/
+<Plug>VCSUpdate	Session.vim	/^nnoremap <silent> <Plug>VCSUpdate :VCSUpdate$/
+<Plug>VCSVimDiff	Session.vim	/^nnoremap <silent> <Plug>VCSVimDiff :VCSVimDiff$/
+<Right>	Session.vim	/^nmap <Right> :bn$/
+<Right>	Session.vim	/^omap <Right> :bn$/
+<S-Tab>	Session.vim	/^inoremap <silent> <S-Tab> =BackwardsSnippet()$/
+<S-Tab>	Session.vim	/^nmap <S-Tab> v<$/
+<SNR>66_yrrecord	Session.vim	/^inoremap <silent> <SNR>66_yrrecord =YRRecord3()$/
+<SNR>66_yrrecord	Session.vim	/^nnoremap <silent> <SNR>66_yrrecord :call YRRecord3()$/
+COUPON_TABLE	Coupon.php	/^    const COUPON_TABLE = 'coupon';    $/
+COUPON_TABLE	Order.php	/^    const COUPON_TABLE = 'coupon';    $/
+Coupon	Coupon.php	/^class Coupon extends MyTable$/
+ORDER_TABLE	Coupon.php	/^    const ORDER_TABLE  = 'order';$/
+ORDER_TABLE	Order.php	/^    const ORDER_TABLE  = 'order';$/
+Order	Order.php	/^class Order extends MyTable$/
+P	Session.vim	/^nnoremap <silent> P :YRPaste 'P'$/
+PARTNER_TABLE	Partner.php	/^    const PARTNER_TABLE = 'partner';$/
+PARTNET_PLATFORMS_TABLE	PartnerPlatforms.php	/^    const PARTNET_PLATFORMS_TABLE = 'partner_platforms';$/
+PLATFORM_TABLE	Team.php	/^    const PLATFORM_TABLE  = 'platform';$/
+Partner	Partner.php	/^class Partner extends MyTable$/
+PartnerPlatforms	PartnerPlatforms.php	/^class PartnerPlatforms extends MyTable$/
+SessionLoad	Session.vim	/^let SessionLoad = 1$/
+TEAM_TABLE	Coupon.php	/^    const TEAM_TABLE  = 'team';$/
+TEAM_TABLE	Order.php	/^    const TEAM_TABLE  = 'team';$/
+TEAM_TABLE	Team.php	/^    const TEAM_TABLE  = 'team';$/
+Team	Team.php	/^class Team extends MyTable$/
+USER_TABLE	Coupon.php	/^    const USER_TABLE  = 'user';$/
+USER_TABLE	Order.php	/^    const USER_TABLE  = 'user';$/
+[%	Session.vim	/^vmap [% [%m'gv``$/
+[[	Session.vim	/^nnoremap <buffer> <silent> [[ ?\\(.*\\%#\\)\\@!\\_^\\s*\\zs\\(\\(abstract\\s\\+\\|final\\s\\+\\|private\\s\\+\\|protected\\s\\+\\|public\\s\\+\\|static\\s\\+\\)*function\\|\\(abstract\\s\\+\\|final\\s\\+\\)*class\\|interface\\)?$/
+[[	Session.vim	/^onoremap <buffer> <silent> [[ ?\\(.*\\%#\\)\\@!\\_^\\s*\\zs\\(\\(abstract\\s\\+\\|final\\s\\+\\|private\\s\\+\\|protected\\s\\+\\|public\\s\\+\\|static\\s\\+\\)*function\\|\\(abstract\\s\\+\\|final\\s\\+\\)*class\\|interface\\)?$/
+]%	Session.vim	/^vmap ]% ]%m'gv``$/
+]]	Session.vim	/^nnoremap <buffer> <silent> ]] \/\\(.*\\%#\\)\\@!\\_^\\s*\\zs\\(\\(abstract\\s\\+\\|final\\s\\+\\|private\\s\\+\\|protected\\s\\+\\|public\\s\\+\\|static\\s\\+\\)*function\\|\\(abstract\\s\\+\\|final\\s\\+\\)*class\\|interface\\)\/$/
+]]	Session.vim	/^onoremap <buffer> <silent> ]] \/\\(.*\\%#\\)\\@!\\_^\\s*\\zs\\(\\(abstract\\s\\+\\|final\\s\\+\\|private\\s\\+\\|protected\\s\\+\\|public\\s\\+\\|static\\s\\+\\)*function\\|\\(abstract\\s\\+\\|final\\s\\+\\)*class\\|interface\\)\/$/
+__construct	Coupon.php	/^    public function __construct()$/
+__construct	Order.php	/^    public function __construct()$/
+__construct	Partner.php	/^    public function __construct()$/
+__construct	PartnerPlatforms.php	/^    public function __construct()$/
+__construct	Team.php	/^    public function __construct()$/
+a%	Session.vim	/^vmap a% [%v]%$/
+cd.	Session.vim	/^map cd. :cd %:p:h$/
+cdlq	Session.vim	/^nmap cdlq :cd $HOME\/work\/host\/laiqu$/
+cdo	Session.vim	/^nmap cdo :cd $HOME\/work\/host\/o2o$/
+cdpg	Session.vim	/^nmap cdpg :cd \/Users\/everpointer\/work\/mobile_web_apps\/laiqu-phonegap\/$/
+ce=	Session.vim	/^nmap ce= ^f=c\$$/
+changePass	Partner.php	/^    public function changePass($partnerId, $originPasswd, $newPasswd)$/
+cl=	Session.vim	/^nmap cl= ^f=c^$/
+consume_coupon	Coupon.php	/^    public function consume_coupon($couponId, $consumed_times = 1)$/
+consumedCouponList	Coupon.php	/^        $consumedCouponList = array();$/
+consumed_times	Coupon.php	/^    public function consume_coupon($couponId, $consumed_times = 1)$/
+consumedtimes	Coupon.php	/^            $consumedtimes += $couponRow['consume_times'];$/
+consumedtimes	Coupon.php	/^        $consumedtimes = 0;$/
+consumedtimes	Order.php	/^            $consumedtimes += $couponRow['consumeTimes'];$/
+consumedtimes	Order.php	/^        $consumedtimes = 0;$/
+couponInfo	Coupon.php	/^        $couponInfo['id'] = $insertedcouponId;$/
+couponNums	Coupon.php	/^        $couponNums = 0;$/
+couponNums	Coupon.php	/^        $couponNums = mysql_num_rows($result);$/
+cp.	Session.vim	/^nmap <silent> cp. :let @+ = expand("%:p")$/
+cpd	Session.vim	/^nmap <silent> cpd :let @+ = expand("%:h")$/
+cpf	Session.vim	/^nmap <silent> cpf :let @+ = expand("%:t")$/
+cr=	Session.vim	/^nmap cr= ^f=cf;   $/
+cs	Session.vim	/^nmap cs <Plug>Csurround$/
+ds	Session.vim	/^nmap ds <Plug>Dsurround$/
+fieldKey	Coupon.php	/^        foreach ($searchFields as $fieldKey => $fieldValue)$/
+fieldKey	Team.php	/^        foreach ($searchFields as $fieldKey => $fieldValue)$/
+for	Partner.php	/^ * Partner.php  class for handling table partner$/
+for	PartnerPlatforms.php	/^ * PartnerPlatforms.php  class for handling table partner_platforms$/
+gP	Session.vim	/^nnoremap <silent> gP :YRPaste 'gP'$/
+gen_couponSearchSql	Coupon.php	/^    public function gen_couponSearchSql($searchFields, $start = 0, $offset = -1)$/
+get_consumedCouponNums	Coupon.php	/^    public function get_consumedCouponNums($searchFields)$/
+get_consumedCoupons	Coupon.php	/^    public function get_consumedCoupons($searchFields, $start, $offset)$/
+get_consumedCoupontimes	Coupon.php	/^    public function get_consumedCoupontimes($searchFields)$/
+get_consumedCoupontimes	Order.php	/^    public function get_consumedCoupontimes($searchFields)$/
+get_teamNums	Team.php	/^    public function get_teamNums($searchFields)$/
+get_teams	Team.php	/^    public function get_teams($searchFields, $start, $offset)$/
+gp	Session.vim	/^nnoremap <silent> gp :YRPaste 'gp'$/
+gv	Session.vim	/^vnoremap <silent> gv :call VisualSearch('gv')$/
+gx	Session.vim	/^nmap gx <Plug>NetrwBrowseX$/
+insertSql	Coupon.php	/^        $insertSql .= $keys . $values;$/
+insertSql	Coupon.php	/^        $insertSql = "INSERT INTO ".$this->get_dbTableName(self::COUPON_TABLE);$/
+insertSql	Order.php	/^        $insertSql .= $keys . $values;$/
+insertSql	Order.php	/^        $insertSql = "INSERT INTO ".$this->get_dbTableName(self::ORDER_TABLE);$/
+insertSql	Team.php	/^        $insertSql .= $keys . $values;$/
+insertSql	Team.php	/^        $insertSql = "INSERT INTO ".$this->get_dbTableName(self::TEAM_TABLE);$/
+insertTeamId	Team.php	/^        $insertTeamId = mysql_insert_id();$/
+insert_coupon	Coupon.php	/^    public function insert_coupon($couponInfo)$/
+insert_order	Order.php	/^    public function insert_order($orderInfo)$/
+insert_team	Team.php	/^    public function insert_team($teamInfo)$/
+insertedOrderId	Order.php	/^        $insertedOrderId = mysql_insert_id();$/
+insertedcouponId	Coupon.php	/^        $insertedcouponId = mysql_insert_id();$/
+key	Coupon.php	/^        foreach($couponInfo as $key => $value)$/
+key	Order.php	/^        foreach($orderInfo as $key => $value)$/
+key	Team.php	/^        foreach($teamInfo as $key => $value)$/
+keys	Coupon.php	/^            $keys .= $key . ",";$/
+keys	Coupon.php	/^        $keys = "(";$/
+keys	Coupon.php	/^        $keys = substr($keys, 0, -1) . ")";$/
+keys	Order.php	/^            $keys .= $key . ",";$/
+keys	Order.php	/^        $keys = "(";$/
+keys	Order.php	/^        $keys = substr($keys, 0, -1) . ")";$/
+keys	Team.php	/^            $keys .= $key . ",";$/
+keys	Team.php	/^        $keys = "(";$/
+keys	Team.php	/^        $keys = substr($keys, 0, -1) . ")";$/
+newPasswd	Partner.php	/^        $newPasswd = mysql_real_escape_string($newPasswd);$/
+offset	Coupon.php	/^        if ($offset <= 0) $offset = 6;$/
+offset	Coupon.php	/^        if ($start > 0 && $offset === -1) {$/
+offset	Team.php	/^        if ($offset <= 0) $offset = 4;$/
+orderInfo	Order.php	/^        $orderInfo['id'] = $insertedOrderId;$/
+originPasswd	Partner.php	/^            $originPasswd = crypt_pass($originPasswd);$/
+originPasswd	Partner.php	/^        $originPasswd = mysql_real_escape_string($originPasswd);$/
+p	Session.vim	/^nnoremap <silent> p :YRPaste 'p'$/
+parse_couponList	Coupon.php	/^    private function parse_couponList($result)$/
+parse_teamList	Team.php	/^    private function parse_teamList($result)$/
+result	Coupon.php	/^        $result = $this->get_select_result($searchFields);$/
+result	Coupon.php	/^        $result = mysql_query($insertSql);$/
+result	Coupon.php	/^        $result = mysql_query($sql);$/
+result	Order.php	/^        $result = mysql_query($insertSql);$/
+result	Order.php	/^        $result = mysql_query($sql);$/
+result	Partner.php	/^            $result = mysql_query($selectSql);$/
+result	Team.php	/^        $result = mysql_query($insertSql);$/
+result	Team.php	/^        $result = mysql_query($sql);$/
+s:cpo_save	Session.vim	/^let s:cpo_save=&cpo$/
+s:l	Session.vim	/^let s:l = 1 - ((0 * winheight(0) + 18) \/ 36)$/
+s:l	Session.vim	/^let s:l = 11 - ((10 * winheight(0) + 18) \/ 36)$/
+s:l	Session.vim	/^let s:l = 140 - ((35 * winheight(0) + 18) \/ 36)$/
+s:l	Session.vim	/^let s:l = 170 - ((8 * winheight(0) + 18) \/ 36)$/
+s:l	Session.vim	/^let s:l = 172 - ((27 * winheight(0) + 18) \/ 36)$/
+s:l	Session.vim	/^let s:l = 21 - ((20 * winheight(0) + 18) \/ 36)$/
+s:l	Session.vim	/^let s:l = 29 - ((14 * winheight(0) + 18) \/ 36)$/
+s:l	Session.vim	/^let s:l = 29 - ((16 * winheight(0) + 18) \/ 36)$/
+s:l	Session.vim	/^let s:l = 293 - ((26 * winheight(0) + 18) \/ 36)$/
+s:l	Session.vim	/^let s:l = 61 - ((17 * winheight(0) + 18) \/ 36)$/
+s:l	Session.vim	/^let s:l = 61 - ((7 * winheight(0) + 18) \/ 36)$/
+s:l	Session.vim	/^let s:l = 72 - ((8 * winheight(0) + 18) \/ 36)$/
+s:l	Session.vim	/^let s:l = 81 - ((28 * winheight(0) + 18) \/ 36)$/
+s:l	Session.vim	/^let s:l = 87 - ((21 * winheight(0) + 18) \/ 36)$/
+s:so_save	Session.vim	/^let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0$/
+s:sx	Session.vim	/^let s:sx = expand("<sfile>:p:r")."x.vim"$/
+s:wipebuf	Session.vim	/^  let s:wipebuf = bufnr('%')$/
+select	Coupon.php	/^        $select .= "u.username as username, u.email as email, o.subbranch as subbranch, c.consume_time as consumeTime,c.consume_times as consumeTimes,c.platform_coupon_id as platformCouponId,c.consumer_mobile as consumerMobile";$/
+select	Coupon.php	/^        $select .= ' from '.self::DBDATABASE.'.'.self::TEAM_TABLE.' t,'.self::DBDATABASE.'.'.self::ORDER_TABLE.' o,';$/
+select	Coupon.php	/^        $select .= self::DBDATABASE.'.'.self::COUPON_TABLE.' c left join '.self::DBDATABASE.'.'.self::USER_TABLE.' u on c.user_id=u.id';$/
+select	Coupon.php	/^        $select = "select c.order_id as orderId, t.title as teamTitle, c.id as couponId, c.platform_order_id as platformOrderId, c.operation_type as operationType, c.taobao_id as taobaoId,";$/
+select	Team.php	/^        $select .= "t.expire_time as expireTime, t.now_num as nowNum, t.min_num as minNum, t.team_price as teamPrice,";$/
+select	Team.php	/^        $select .= "t.market_price as marketPrice, t.platform_key as platformKey, t.state,";$/
+select	Team.php	/^        $select .= "t.platform_record_id as productId";$/
+select	Team.php	/^        $select .= ' from '.self::DBDATABASE.'.'.self::TEAM_TABLE.' t,'.self::DBDATABASE.'.'.self::PLATFORM_TABLE.' p';$/
+select	Team.php	/^        $select = "select t.id as teamId, t.title as teamTitle, p.title as platformTitle, t.create_date as createDate,";$/
+selectSql	Partner.php	/^            $selectSql = "SELECT * FROM ".$this->get_dbTableName(self::PARTNER_TABLE)." WHERE id=".$partnerId.$/
+shop	Team.php	/^        if ((isset($partnerId) && $partnerId <= 0) || (isset($shop) && $shop === ""))$/
+sql	Coupon.php	/^                    $sql .= " AND c.platform_order_id=$oderId";$/
+sql	Coupon.php	/^                    $sql .= " AND c.taobao_id=$orderId";$/
+sql	Coupon.php	/^                $sql .= " AND c.consumer_mobile='$mobile'";$/
+sql	Coupon.php	/^                $sql .= " AND c.partner_id=$partnerId";$/
+sql	Coupon.php	/^                $sql .= " AND c.platform_coupon_id=$couponId";$/
+sql	Coupon.php	/^                $sql .= " AND c.platform_key='$platform'";$/
+sql	Coupon.php	/^                $sql .= " AND c.platform_product_id='$productId'";$/
+sql	Coupon.php	/^                $sql .= " AND c.team_id=$teamId ";$/
+sql	Coupon.php	/^            $sql .= " LIMIT $start";$/
+sql	Coupon.php	/^           $sql .= " LIMIT $start,$offset"; $/
+sql	Coupon.php	/^        $sql .= " AND t.platform_record_id=c.platform_product_id AND o.platform_record_id=c.platform_order_id ";$/
+sql	Coupon.php	/^        $sql .= " order by c.consume_time desc";$/
+sql	Coupon.php	/^        $sql = $select." WHERE operation_type='兑换' ";$/
+sql	Coupon.php	/^        $sql = $this->gen_couponSearchSql($searchFields);$/
+sql	Coupon.php	/^        $sql = $this->gen_couponSearchSql($searchFields, $start, $offset);$/
+sql	Coupon.php	/^        $sql = $update.$where;$/
+sql	Order.php	/^        $sql = $this->gen_couponSearchSql($searchFields);$/
+sql	Team.php	/^            $sql .= "AND t.partner_id=$partnerId ";$/
+sql	Team.php	/^            $sql .= "AND t.shop='$shop' ";$/
+sql	Team.php	/^        $sql .= " WHERE partner_id=$partnerId";$/
+sql	Team.php	/^        $sql .= "AND 1=1 order by t.state desc,t.expire_time desc,t.id desc ";$/
+sql	Team.php	/^        $sql .= "LIMIT $start,$offset ";$/
+sql	Team.php	/^        $sql = "SELECT count(*) as teamNums FROM ".$this->get_dbTableName(self::TEAM_TABLE);$/
+sql	Team.php	/^        $sql = $select." WHERE t.platform_key=p.key ";$/
+start	Coupon.php	/^        if ($start < 0) $start = 0;$/
+start	Coupon.php	/^    public function gen_couponSearchSql($searchFields, $start = 0, $offset = -1)$/
+start	Team.php	/^        if ($start < 0) $start = 0;$/
+ta	Session.vim	/^nnoremap <silent> ta :TagbarToggle$/
+teamInfo	Team.php	/^        $teamInfo['id'] = $insertTeamId;$/
+teamList	Team.php	/^        $teamList = array();$/
+teamNums	Team.php	/^            $teamNums = $teamRow['teamNums'];$/
+teamNums	Team.php	/^        $teamNums = 0;$/
+teamNums	Team.php	/^        $teamNums = mysql_num_rows($result);$/
+teamRow	Team.php	/^            $teamRow = mysql_fetch_array($result);$/
+this	Coupon.php	/^        $this->assure_dbConnection();$/
+this	Order.php	/^        $this->assure_dbConnection();$/
+this	Partner.php	/^        $this->assure_dbConnection();$/
+this	Team.php	/^        $this->assure_dbConnection();$/
+update	Coupon.php	/^        $update .= " set consume='Y',consume_time=UNIX_TIMESTAMP(),consume_times=consume_times+".$consumed_times;$/
+update	Coupon.php	/^        $update = 'UPDATE '.$this->get_dbTableName(self::COUPON_TABLE);$/
+updateSql	Partner.php	/^                $updateSql .= " password='".crypt_pass($newPasswd)."'"." WHERE id=".$partnerId;$/
+updateSql	Partner.php	/^                $updateSql = "UPDATE ".$this->get_dbTableName(self::PARTNER_TABLE)." SET";$/
+values	Coupon.php	/^                $values .=  $value. ",";$/
+values	Coupon.php	/^                $values .= "'" . $value . "'" . ",";$/
+values	Coupon.php	/^        $values = " VALUES(";$/
+values	Coupon.php	/^        $values = substr($values, 0, -1) . ")";$/
+values	Order.php	/^                $values .=  $value. ",";$/
+values	Order.php	/^                $values .= "'" . $value . "'" . ",";$/
+values	Order.php	/^        $values = " VALUES(";$/
+values	Order.php	/^        $values = substr($values, 0, -1) . ")";$/
+values	Team.php	/^                $values .=  $value. ",";$/
+values	Team.php	/^                $values .= "'" . $value . "'" . ",";$/
+values	Team.php	/^        $values = " VALUES(";$/
+values	Team.php	/^        $values = substr($values, 0, -1) . ")";$/
+where	Coupon.php	/^        $where = " WHERE id=".$couponId;$/
+yS	Session.vim	/^nmap yS <Plug>YSurround$/
+ySS	Session.vim	/^nmap ySS <Plug>YSsurround$/
+ySs	Session.vim	/^nmap ySs <Plug>YSsurround$/
+ys	Session.vim	/^nmap ys <Plug>Ysurround$/
+yss	Session.vim	/^nmap yss <Plug>Yssurround$/
+zt	Session.vim	/^normal! zt$/
+±	Session.vim	/^inoremap <buffer> <silent> ± =EchoFuncP()$/
+ê	Session.vim	/^nmap ê mz:m+$/
+ê	Session.vim	/^vmap ê :m'>+$/
+ë	Session.vim	/^nmap ë mz:m-2$/
+ë	Session.vim	/^vmap ë :m`<-2$/
+≠	Session.vim	/^inoremap <buffer> <silent> ≠ =EchoFuncN()$/

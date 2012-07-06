@@ -1,12 +1,12 @@
 .main {width:960px;}
-.body{ width:914px; min-height:300px; height:auto; overflow:hidden;}
-.body_r{ width:760px; height:auto; background-color:#eef0f2; margin-left:4px; padding-bottom:6px;}
+.body{ width:760px; min-height:300px; height:auto; overflow:hidden;}
+.body_r{ width:480px; height:auto; background-color:#eef0f2; margin-left:4px; padding-bottom:6px;}
 .title_r{ color:#faad08; margin-left:6px; margin-top:6px; font-size:14px;}
-.title_line{ height:1px; width:748px; margin-left:6px; margin-top:6px; background-image:url(../images/title_line.jpg); background-repeat:repeat-x;}
-.table{ width:748px; margin-left:6px;}
+.title_line{ height:1px; width:660px; margin-left:6px; margin-top:6px; background-image:url(../images/title_line.jpg); background-repeat:repeat-x;}
+.table{ width:562px; margin-left:30px;}
 
-.search{ width:748px; height:26px; margin-left:6px; margin-top:6px;}
-*html .search{ width:748px; height:26px; margin-top:-3px; float:right;}
+.search{ height:26px; margin-left:6px; margin-top:6px;}
+*html .search{ width:554px; height:26px; margin-top:-3px; float:right;}
 .search_text{ margin-top:2px;}
 .back_text{ margin-right:0px;  color:#C00; font-size:14px;}
 *html  .back_text{ margin-right:132px; color:#C00; font-size:14px;}
@@ -48,3 +48,5 @@
 
 .page_turn{ float:right; margin-right:20px; margin-top:8px; margin-bottom:10px;}
 .bottom_info{ float:left; margin-left:20px; margin-top:8px; margin-bottom:10px; color:#3C2BEE;}
+
+.product_title {float:right; margin-right:20px;  color:#C00; font-size:14px;}

@@ -130,12 +130,13 @@ $totalPages = cal_totalPages($couponTotalNums, TABLE_ROW_NUMS);
      	</div>
     
 		<div class="body_r fl">
-            <p class="title_r"i>><a href="teamList.php" style="color:#faad08;">项目列表</a>&nbsp>已消费券列表</p>
+            <p class="title_r"i>><a href="teamList.php" style="color:#faad08;">项目列表</a>&nbsp>已消费券列表
+            <a class="product_title" href="teamList.php?page=<?php echo $fromTeamPage; ?>"><?php echo $productTitle; ?></a>
+            </p>
             
             <div class="title_line"></div>
             
           	<div class="search" >
-            <a class="back_text fl" href="teamList.php?page=<?php echo $fromTeamPage; ?>"><?php echo $productTitle; ?></a>
             <span id='search_action_bar'>
             <p class="search_text fl">订单号</p>            
             <input class="orderId fl" name="" id="orderIdSearch" value=""/>
@@ -161,9 +162,9 @@ $totalPages = cal_totalPages($couponTotalNums, TABLE_ROW_NUMS);
                 <div class="t3 fl">
                 <p class="table_title_text">券号</p>
                 </div>
-                <div class="t4 fl">
+                <!-- <div class="t4 fl">
                 <p class="table_title_text">购买者手机号</p>
-                </div>
+                </div> -->
                 <div class="t1 fl">
                 <p class="table_title_text">销券次数</p>
                 </div>
@@ -193,9 +194,6 @@ $totalPages = cal_totalPages($couponTotalNums, TABLE_ROW_NUMS);
                             <div class='item3 fl$oddClass'>
                             <a class='table_item_text' >{$consumeCoupon['platformCouponId']}</a>
                             </div>
-                            <div class='item4 fl$oddClass'>
-                                <a class='table_item_text' >{$consumeCoupon['consumerMobile']}</a>
-                            </div>
                             <div class='item1 fl$oddClass'>
                             <a class='table_item_text' >{$consumeCoupon['consumeTimes']}</a>
                             </div>
@@ -215,7 +213,6 @@ $totalPages = cal_totalPages($couponTotalNums, TABLE_ROW_NUMS);
             
         <div class="bottom_info">
             总消费次数:<?php echo $consumeTimes; ?>
-            <span style="margin-left:136px;">总页数:<?php echo $totalPages; ?>&nbsp;&nbsp;当前页:<?php echo $page; ?></span>
         </div>
         <div class="page_turn">
             <a class="turn_text fl" href="javascript:void(0);" id='goPrevPage'> 上一页 </a>
