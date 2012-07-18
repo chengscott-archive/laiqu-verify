@@ -38,6 +38,9 @@ function exceptionHandler($exception)
 set_error_handler('runtimeErrorHandler', E_ERROR);
 set_exception_handler('exceptionHandler');
 
+check_and_send_other_coupon('8155644686', "juhuasuan");
+exit;
+
 $platform = $_REQUEST['platform']; 
 
 // 返回聚划算验证码
@@ -134,7 +137,8 @@ if ($responseCode === VerifyCouponCodeMsg::VERIFY_COUPON_SUCCESS)
     //     $responseCode = VerifyCouponCodeMsg::RECORD_COUPON_FAILED_ERROR;
     // }
     // sync_coupons($platform);
-    // 
+    // 检查是否属于其他券产品，如果属于，则将其他券信息发送给用户。
+    check_and_send_other_coupon($couponId, $platform);
 }
 if ($responseCode === VerifyCouponCodeMsg::RECORD_COUPON_FAILED_ERROR)
 {

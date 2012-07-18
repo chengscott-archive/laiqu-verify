@@ -490,7 +490,7 @@ function check_coupon_available($partnerTitle, $platform, $couponId, $consumed_t
     // 团购券已被使用
     if ($orderRow['remain_nums'] == 0)
     {
-        return COUPON_USED_UP;
+        return VerifyCouponCodeMsg::COUPON_USED_UP;
     }
     // 团购券可消费次数不足
     if ($orderRow['remain_nums'] < $consumed_times)
@@ -499,6 +499,69 @@ function check_coupon_available($partnerTitle, $platform, $couponId, $consumed_t
     }
 
     return true;
+}
+
+/**
+ * 检查指定券是否需要发送B券，满足要求就发送
+ * @param  string $couponId 平台券号
+ * @param  string $platform 平台标示
+ * @return boolean          true|false
+ */
+function check_and_send_other_coupon($couponId, $platform)
+{
+    $mysql = new MyTable();
+    $content = "";
+    $args = array();
+
+    $checkSql = "SELECT o.*, t.title, w.other_coupon_type FROM `order` o,`team` t, `who_use_other_coupon` w";
+    $checkSql .= " WHERE o.coupon_id='".$couponId."' AND o.platform_product_id=t.platform_record_id";
+    $checkSql .= " AND o.platform_product_id=w.platform_product_id AND w.status='enable'";
+    $checkSql .= " AND o.platform_key='".$platform."' AND w.platform_key='".$platform."'";
+
+    $checkResult = $mysql->query($checkSql);
+    if (!$checkResult || mysql_num_rows($checkResult) < 1)
+    {
+        return false;
+    }
+    $orderRow = mysql_fetch_assoc($checkResult);
+    if ($orderRow['other_coupon_type'] === 'B')
+    {
+        // 发送 B 券
+        $content = "您的A券已消费成功,这是您的B券号码:".$orderRow['b_coupon_id'].", 请在拿照片时再予以验证!";
+        $args = array(
+            "dest" => $orderRow['receiver_mobile'],
+            "content" => $content
+        );   
+    } else {
+        return false;
+    }
+    curl_post_async('http://'.$_SERVER['HTTP_HOST'].'/common/sms-zq-async.php', $args);
+}
+
+// 异步进行Http请求，其实就是请求后直接关闭连接
+function curl_post_async($url, $params)
+{
+    foreach ($params as $key => &$val) {
+      if (is_array($val)) $val = implode(',', $val);
+        $post_params[] = $key.'='.urlencode($val);
+    }
+    $post_string = implode('&', $post_params);
+
+    $parts=parse_url($url);
+
+    $fp = fsockopen($parts['host'],
+        isset($parts['port'])?$parts['port']:80,
+        $errno, $errstr, 30);
+
+    $out = "POST ".$parts['path']." HTTP/1.1\r\n";
+    $out.= "Host: ".$parts['host']."\r\n";
+    $out.= "Content-Type: application/x-www-form-urlencoded\r\n";
+    $out.= "Content-Length: ".strlen($post_string)."\r\n";
+    $out.= "Connection: Close\r\n\r\n";
+    if (isset($post_string)) $out.= $post_string;
+
+    fwrite($fp, $out);
+    fclose($fp);
 }
 
 ?>
