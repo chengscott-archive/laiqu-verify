@@ -8,9 +8,12 @@
  * @version   v1.000
  * @history   v1.000 first release 2012-3-14 上午10:44
  */
-require_once('../common/CodeMessages.php');
-require_once('../common/Exception.php');
+define('__ROOT__', dirname(dirname(__FILE__))); 
+require_once(__ROOT__.'/CodeMessages.php');
+require_once(__ROOT__.'/Exception.php');
 
+// require_once('../CodeMessages.php');
+// require_once('../Exception.php');
 class MyTable
 {
     /* database constants */
