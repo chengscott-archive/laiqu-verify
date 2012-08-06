@@ -34,7 +34,53 @@ function bind_search_table_events()
             discardOrder(orderId, discardTimes);
         });
     });
+    // 触发事件第3方通道重发短信, 支持改号码
+    $("[id^='third_resend_orderid_']").click(function() {
+        var orderId = $(this).attr('id').substr('third_resend_orderid_'.length);
+        if (window.confirm("确定要重发短信？"))
+        {
+            var targetPhone = "";
+            if (window.confirm("是否需要改号码?"))
+            {
+                resendHtml = "<h3>请输入新号码</h3><p><input type='text' id='newPhoneNum'></p>";
+                resendHtml += "<p><a href='javascript:void(0);' id='do_third_resend' style='color:black'>提交</a></p>";
+                $.modal(resendHtml);
+                $("#do_third_resend").click(function(){
+                    targetPhone = $("#newPhoneNum").val();
+                    thirdResendMsg(orderId, targetPhone);
+                });
+            } else {
+                thirdResendMsg(orderId, targetPhone);
+            }
+        }
+    });
     
+}
+
+//利用第三方平台重发短信
+function thirdResendMsg(orderId, targetPhone)
+{
+    var result = false;
+    var platform = $("#platform").val();
+    var resendmsgUrl = 'thirdresendmsg.php?platform='+platform+'&orderid='+orderId+'&target='+targetPhone;
+    $.ajax({
+        url: resendmsgUrl,
+        type: 'GET',
+        beforeSend: function() {
+            $("#search_loading_bar").html("<img src='../images/hor_loading.gif' />");
+        },
+        success: function(data){
+            $.modal.close();
+            $("#search_loading_bar").html("");
+            if (data && data.success === "true")
+            {
+                alert("重发短信成功");
+            } else {
+                alert("重发短信失败");
+            }
+        },
+        dataType: 'json'
+    });
 }
 
 function resendMsg(orderId)
@@ -151,10 +197,11 @@ function filterSearchResult(data)
         var resendMsg = "<a href='javascript:void(0);' id=resend_orderid_"+element.orderId+">重发短信</a>";
         var detailOperation = "<a href='javascript:void(0);' id=detail_orderid_" + element.orderId +">详细信息</a>";
         var discardOperation = "<a href='javascript:void(0);' id=discard_orderid_" + element.orderId +"_"+element.remainder+">作废</a>";
+        var thirdResendMsg =  "<a href='javascript:void(0);' id=third_resend_orderid_"+element.orderId+">第三方重发短信</a>";
         var operation = "";
         operation = detailOperation;
         if (element.remainder > 0) {
-            operation += "&nbsp;|&nbsp;" + resendMsg;
+            operation += "&nbsp;|&nbsp;" + resendMsg + "&nbsp;|&nbsp;" + thirdResendMsg;
             if (role !== "" && role !== "serv")
             {
                 operation += "&nbsp;|&nbsp;" + discardOperation;
