@@ -38,8 +38,8 @@ function exceptionHandler($exception)
 set_error_handler('runtimeErrorHandler', E_ERROR);
 set_exception_handler('exceptionHandler');
 
-check_and_send_other_coupon('8155644686', "juhuasuan");
-exit;
+// check_and_send_for_ticket('8155644686', "juhuasuan");
+// exit;
 
 $platform = $_REQUEST['platform']; 
 
@@ -139,6 +139,9 @@ if ($responseCode === VerifyCouponCodeMsg::VERIFY_COUPON_SUCCESS)
     // sync_coupons($platform);
     // 检查是否属于其他券产品，如果属于，则将其他券信息发送给用户。
     check_and_send_other_coupon($couponId, $platform);
+
+    // 增加对游泳训练中心和黄贤土楼产品的检查，同时发送邮寄地址的短信并记录.(一般针对票务)
+    check_and_send_for_ticket($couponId, $platform);
 }
 if ($responseCode === VerifyCouponCodeMsg::RECORD_COUPON_FAILED_ERROR)
 {

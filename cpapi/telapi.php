@@ -116,6 +116,11 @@ if($action=='consume')
 }
 elseif ($action === 'check-partner')
 {
+    if (!$callerid || $callerid === "unknown")
+    {
+        echo gen_response(PARTNER_NOT_BIND);
+        exit;
+    }
     $mysql->set_tablename('partner_bind');
     $conditions = array("phonenum"=>$callerid, "status"=>'bind');
     $result = $mysql->get_row($conditions);
@@ -138,6 +143,12 @@ elseif ($action === 'bind-partner')
     if (!$result) {
         echo gen_response(PARTNER_NOT_EXIST);
     } else {
+        // 检查callerid有没有被识别
+        if (!$callerid || $callerid === "unknown")
+        {
+            echo gen_response(PARTNER_NOT_EXIST);
+            exit;
+        }
         // 检查该商家账号是否之前绑定过
         $mysql->set_tablename('partner_bind');
         $cond = array("partner_acct"=>$acct, 'phonenum'=>$callerid);

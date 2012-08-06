@@ -535,7 +535,7 @@ function check_and_send_other_coupon($couponId, $platform)
     } else {
         return false;
     }
-    curl_post_async('http://'.$_SERVER['HTTP_HOST'].'/common/sms-zq-async.php', $args);
+    curl_post_async('http://'.$_SERVER['HTTP_HOST'].'/laiqu/common/sms/sms-zq-async.php', $args);
 }
 
 // 异步进行Http请求，其实就是请求后直接关闭连接
@@ -563,5 +563,58 @@ function curl_post_async($url, $params)
     fwrite($fp, $out);
     fclose($fp);
 }
+/**
+ * 针对票务商品像用户发送索取邮寄地址的短信
+ * 目前需要的商品有：游泳训练中心和黄闲土楼
+ * @param  string $couponId coupon id
+ * @param  string $platform platform key
+ */         
+function check_and_send_for_ticket($couponId, $platform)
+{
+    $target_products = "'ff808081389c987b01389c987b6d0001'";      // 宁波市游泳训练中心
+    $target_products .= ", 'ff808081389fb46a01389fb46a070001'";   // 黄闲土楼
 
+    // 接收和统计短信的手机号
+    $laiqu_mobile = "18067243069";
+
+    // alternative
+    $sms_temp = "您购买了%s，订单号%s。本产品需邮寄,请编辑'收件地址和姓名'至%s。";
+
+    $mysql = new MyTable();
+    // 检查订单是否属于特定的产品
+    $checkSql = "SELECT o.taobao_id, o.platform_key, o.platform_product_id,o.receiver_mobile,t.title FROM ".$mysql->get_dbTableName("order")." o,".$mysql->get_dbTableName("team")." t ";
+    $checkSql .= "WHERE o.coupon_id='".$couponId."' AND o.platform_key='".$platform."' ";
+    $checkSql .= "AND o.platform_product_id in (". $target_products.") ";
+    $checkSql .= "AND o.platform_product_id=t.platform_record_id AND o.platform_key=t.platform_key ";
+    
+    $orderResult = $mysql->query($checkSql);
+    if ($orderResult && mysql_num_rows($orderResult) > 0)
+    {
+        $orderRow = mysql_fetch_assoc($orderResult);
+        // 检查同产品是否已向该用户发送过短信
+        $checkSendSql = "SELECT * FROM ".$mysql->get_dbTableName("ticket_sms_send_record");
+        $checkSendSql .= " WHERE platform_product_id='".$orderRow['platform_product_id']."' ";
+        $checkSendSql .= " AND mobile='".$orderRow['receiver_mobile']."' AND platform_key='".$platform."' ";
+
+        $sendResult = $mysql->query($checkSendSql);
+
+        // 记录存在，标示已经发送，直接返回
+        if($sendResult && mysql_num_rows($sendResult) > 0)
+            return;
+        // 发送短信
+        $content = sprintf($sms_temp, $orderRow['title'], $orderRow['taobao_id'],$laiqu_mobile);
+        $args = array(
+            "dest" => $orderRow['receiver_mobile'],
+            "content" => $content
+        );
+        var_dump($args);
+        echo 'http://'.$_SERVER['HTTP_HOST'].'/laiqu/common/sms/sms-zq-async.php';
+        curl_post_async('http://'.$_SERVER['HTTP_HOST'].'/laiqu/common/sms/sms-zq-async.php', $args);
+        // 插入发送记录
+        $insertSql = "INSERT INTO ".$mysql->get_dbTableName("ticket_sms_send_record");
+        $insertSql .= "(platform_product_id,mobile,platform_key) ";
+        $insertSql .= " VALUES('".$orderRow['platform_product_id']."','".$orderRow['receiver_mobile']."','".$platform."')";
+        $mysql->query($insertSql);
+    }
+}
 ?>
