@@ -25,7 +25,7 @@
 	//echo "非法访问";
 	//exit;
 //}
-// 测试地址：http://localhost:8888/laiqu/common/sms/sms-zq-async.php?dest=15657832367&content=%E6%9D%A5%E8%B6%A3%E6%B5%8B%E8%AF%95
+// 测试地址：http://localhost:8888/laiqu/common/sms/sms-zq-async.php?dest=18858260247&content=%E6%9D%A5%E8%B6%A3%E6%B5%8B%E8%AF%95
 
 
 $dest = $_REQUEST['dest'];
