@@ -9,7 +9,7 @@
     msgMissingName = "请输入的用户名!";
     msgMissingPass = "请输入的密码!";
     verifyLoginUrl = "doVerifyLogin.php";
-    afterLoginUrl = "../VerifyCoupon/index.html";
+    afterLoginUrl = "../verifyCoupon/index.php";
     triggerKeyCode = 13;
     do_login = function(name, passwd) {
       return $.ajax({

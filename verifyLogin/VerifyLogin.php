@@ -71,8 +71,9 @@ class VerifyLogin
             session_start();
             $partnerId = $row['id'];
             $_SESSION['partnerId'] = $partnerId;
-            $_SESSION['username']  = $row['username'];
-            $_SESSION['title']     = $row['title'];
+            $_SESSION['username'] = $row['username'];
+            $_SESSION['title'] = $row['title'];
+            $_SESSION['subbranch_matters'] = $row['subbranch_matters'];
 
             // 进行平台账户登陆
             $this->do_loginPlatform($partnerId);

@@ -23,12 +23,13 @@ foreach ($_REQUEST as $key => $value)
 if (!isset($partner_acct_name) || $partner_acct_name === "" ||
     !isset($partner_acct_title) || $partner_acct_title === "" ||
     !isset($partner_acct_pwd) || $partner_acct_pwd === "" ||
-    !isset($partner_acct_pwd_confirm) || $partner_acct_pwd_confirm === "")
+    !isset($partner_acct_pwd_confirm) || $partner_acct_pwd_confirm === "" ||
+    !isset($subbranch_matters) || $subbranch_matters === "")
 {
     echo gen_json_response(NEW_PARTNER_INFO_NOT_COMPLETE);
     exit;
 }
-
+$subbranch_matters = intval($subbranch_matters);
 //检查用户名是否被使用
 $mysql->set_tablename('partner');
 $params = array("username" => $partner_acct_name);
@@ -51,8 +52,8 @@ $partner_acct = create_partner_acct();
 $partner_acct_pwd = crypt_pass($partner_acct_pwd);
 // 插入新商户
 $insertPartnerSql = "INSERT ".$mysql->get_dbTableName("partner");
-$insertPartnerSql .= "(partner_acct,username, password, title,address, mobile, create_time) ";
-$insertPartnerSql .= "VALUES('$partner_acct','$partner_acct_name','$partner_acct_pwd','$partner_acct_title','$partner_acct_address','$partner_acct_phone',UNIX_TIMESTAMP())";
+$insertPartnerSql .= "(partner_acct,username, password, title,address, mobile, create_time,subbranch_matters) ";
+$insertPartnerSql .= "VALUES('$partner_acct','$partner_acct_name','$partner_acct_pwd','$partner_acct_title','$partner_acct_address','$partner_acct_phone',UNIX_TIMESTAMP(), $subbranch_matters)";
 
 $insertResult = $mysql->query($insertPartnerSql);
 if (mysql_affected_rows() < 1)

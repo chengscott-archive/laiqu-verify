@@ -54,8 +54,8 @@ $(document).ready(function() {
             bindHtml += "<p>商家用户名:<input type=text value='"+partner_username+"' name='partner_username' d='partner_acct_name'>*</p>";
             bindHtml += "<p>平台登录名:<input type=text value='' name='platform_username'>*</p>";
             bindHtml += "<p>终端编号:<input type=text value='' name='platform_terminalid'>*</p>";
-            bindHtml += "<p>平台密码:<input type=password value='' name='platform_pwd'>*</p>";
-            bindHtml += "<p>密码确认:<input type=password value='' name='platform_pwd_confirm'>*</p>";
+            bindHtml += "<p>平台密码:<input type=password value='123456' name='platform_pwd'>*</p>";
+            bindHtml += "<p>密码确认:<input type=password value='123456' name='platform_pwd_confirm'>*</p>";
             bindHtml += "<input type=hidden value='"+platform+"' name=platform >";
         }
         bindHtml += "</div>";

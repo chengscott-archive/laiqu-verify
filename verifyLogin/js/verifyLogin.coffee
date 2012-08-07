@@ -4,7 +4,7 @@ $ ->
     msgMissingName = "请输入的用户名!"
     msgMissingPass = "请输入的密码!"
     verifyLoginUrl = "doVerifyLogin.php"
-    afterLoginUrl  = "../VerifyCoupon/index.html"
+    afterLoginUrl  = "../verifyCoupon/index.php"
     #13 means enter key code
     triggerKeyCode = 13 
 
