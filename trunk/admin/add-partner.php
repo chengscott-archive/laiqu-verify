@@ -20,6 +20,12 @@
              <p>密码确认:<input type="password" value="" name="partner_acct_pwd_confirm">*</p>
              <p>联系电话:<input type="text" value="" name="partner_acct_phone"></p>
              <p>地址:<input type="text" value="" name="partner_acct_address"></p>
+             <p>是否区分分店:
+                <select id="subbranch_matters" name="subbranch_matters">
+                    <option value='0'>否</option>
+                    <option value='1'>是</option>
+                </select>
+             </p>
         </div>
         <div id='operation_bar'><input type="submit" value="提交"></div>
      </form>

@@ -59,6 +59,10 @@ $searchFields = array(
     'platform_key' => $platform,
     'platform_product_id' => $productId,
     'operation_type' => '兑换');
+if (isset($_SESSION['subbranch_matters']) && $_SESSION['subbranch_matters'] == 1)
+{
+    $searchFields['terminal_id'] = $_SESSION['partner_'.$platform]['p_terminalid'];
+}
 $couponObj = new Coupon();
 $consumeTimes = $couponObj->get_consumedCoupontimes($searchFields);
 
